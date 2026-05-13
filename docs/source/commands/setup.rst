@@ -132,7 +132,7 @@ And the contents of ``acetic.dma.sh`` will be:
    exit $pexit
 
 Once again, the submission of this job will create a job array, where
-each array id corresponds to a conformer for DMA. **Note**: It’s not
+each array id corresponds to a conformer for DMA. **Note**: It's not
 recommended to use many processors for DMA jobs, as GDMA is not
 parallellized, and will often be the bottleneck especially if you
 utilise many cores for the single point energy calculation.

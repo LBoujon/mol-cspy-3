@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.2] - 13/05/2026
+- Removed fancy quote from documentation that was breaking ReadTheDocs
+
 ## [3.0.1] - 13/05/2026
 - Added missing dependencies that were required ReadTheDocs
 

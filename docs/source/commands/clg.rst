@@ -47,7 +47,7 @@ The mapping process can be outlined as follows:
       
       \sqrt{1 + 2 \cos(a)\cos(b)\cos(c) - \cos^2(a) - \cos^2(b) - \cos^2(c)}
    
-   is checked to be ``> 0.5``. If not, it’s considered a *flat cell* and a **FAILURE**
+   is checked to be ``> 0.5``. If not, it's considered a *flat cell* and a **FAILURE**
 
 4. Each molecule is subjected to a random rotation.
 
