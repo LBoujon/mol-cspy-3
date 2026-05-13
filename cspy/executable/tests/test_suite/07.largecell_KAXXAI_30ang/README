@@ -1,0 +1,8 @@
+To run NEIGHCRYS, type
+   cp NEIGHCRYS_input/* .
+   neighcrys.out < neighcrys_answers
+
+In order to use your NEIGHCRYS output files as DMACRYS input, remove the line starting SPLI, and double the second number in the CUTO line and the number in the RDMA line.
+
+To run DMACRYS, type
+   dmacrys.out < KAXXAI02.dmain > KAXXAI02.dmaout

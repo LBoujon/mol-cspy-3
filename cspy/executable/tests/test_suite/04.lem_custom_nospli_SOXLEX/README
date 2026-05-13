@@ -1,0 +1,8 @@
+To run NEIGHCRYS, type
+   cp NEIGHCRYS_input/* .
+   neighcrys.out < neighcrys_answers
+
+In order to use your NEIGHCRYS output files as DMACRYS input, change 'MOLE 0' to 'MOLE 1' in the PRIN line and remove the line starting SPLI
+
+To run DMACRYS, type
+   dmacrys.out < SOXLEX_af395.dmain > SOXLEX_af395.dmaout

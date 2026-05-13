@@ -1,0 +1,6 @@
+To run NEIGHCRYS, type
+   cp NEIGHCRYS_input/* .
+   neighcrys.out < neighcrys_answers
+
+To run DMACRYS, type
+   dmacrys.out < FINVAZ_A395.dmain > FINVAZ_A395.dmaout

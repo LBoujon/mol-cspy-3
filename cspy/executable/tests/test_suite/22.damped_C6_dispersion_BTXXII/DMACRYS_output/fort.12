@@ -1,0 +1,36 @@
+ Summary file for DMACRYS version 2.3.0        Run on 2018-04-24  10:14
+
+ 22.damped_C6_dispersion_BTXXII_20.res 
+
+ Valid minimisation - converged on gradients
+
+ Eigenvalue calculation is approximate
+ Minimum passed eigenvalue test
+ Number of Iterations:    22
+ Lattice is P Centred. Calculated Lattice Energies
+Initial Lattice Energy:      -129.1484 kJ/mol
+Final Lattice Energy:        -133.0953 kJ/mol
+
+                  a (Ang)    b (Ang)    c (Ang)  alpha (Deg) beta (Deg) gamma (Deg)
+   Initial =>     8.5279     7.7436    15.7458    90.0000    77.2517    90.0000
+     Final =>     8.4802     7.6326    15.2869    90.0000    78.3025    90.0000
+diff.(abs) =>    -0.0477    -0.1110    -0.4589     0.0000     1.0508     0.0000
+  diff.(%) =>    -0.5599    -1.4337    -2.9144     0.0000     1.3602     0.0000
+
+           Cell Volume ( Cubic Angstroms )  Cell density ( g/cubic cm)
+
+   Initial =>          1014.1676                        1.6263
+   Final   =>           968.9021                        1.7023
+diff.(abs) =>           -45.2655                        0.0760
+diff.(%)   =>            -4.4633                        4.6718
+
+ F =    21.568595
+
+Contributions to lattice energy (eV per primitive unit cell [kJ/mol])  ( Z =        4)
+Inter-molecular charge-charge energy....=              -1.7118[             -41.2898 ]
+Total charge-dipole+dipole-dipole energy=               0.0000[               0.0000 ]
+Higher multipole interaction energy.....=               0.0000[               0.0000 ]
+Total isotropic repulsion-dispersion....=              -3.8060[             -91.8054 ]
+Total anisotropic repulsion energy......=               0.0000[               0.0000 ]
+Intermolecular induction energy.........=               0.0000[               0.0000 ]
+PV energy..(P =   0.00E+00 Pa)..........=               0.0000[               0.0000 ]

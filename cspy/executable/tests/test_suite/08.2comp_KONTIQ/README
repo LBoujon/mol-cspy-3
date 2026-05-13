@@ -1,0 +1,6 @@
+To run NEIGHCRYS, type
+   cp NEIGHCRYS_input/* .
+   neighcrys.out < neighcrys_answers
+
+To run DMACRYS, type
+   dmacrys.out < KONTOQ_A2312.dmain > KONTOQ_A2312.dmaout

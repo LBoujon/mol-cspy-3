@@ -1,0 +1,49 @@
+ Summary file for DMACRYS version 2.3.0        Run on 2018-04-19  15:07
+
+ 12.properties_DCLBEN.res 
+
+ Valid minimisation - converged on gradients
+
+ Eigenvalue calculation is exact
+ Minimum passed eigenvalue test
+ Number of Iterations:    14
+ Lattice is P Centred. Calculated Lattice Energies
+Initial Lattice Energy:       -72.7683 kJ/mol
+Final Lattice Energy:         -72.7695 kJ/mol
+
+                  a (Ang)    b (Ang)    c (Ang)  alpha (Deg) beta (Deg) gamma (Deg)
+   Initial =>     7.3104     5.6607     3.8447    92.9105   109.0073    93.9971
+     Final =>     7.3156     5.6533     3.8479    92.8923   109.0915    93.9925
+diff.(abs) =>     0.0052    -0.0074     0.0032    -0.0182     0.0842    -0.0046
+  diff.(%) =>     0.0707    -0.1305     0.0830    -0.0196     0.0772    -0.0049
+
+           Cell Volume ( Cubic Angstroms )  Cell density ( g/cubic cm)
+
+   Initial =>           149.6047                        1.6316
+   Final   =>           149.5668                        1.6321
+diff.(abs) =>            -0.0379                        0.0004
+diff.(%)   =>            -0.0253                        0.0253
+
+ F =     0.039213
+
+Contributions to lattice energy (eV per primitive unit cell [kJ/mol])  ( Z =        1)
+Inter-molecular charge-charge energy....=               0.1323[              12.7639 ]
+Total charge-dipole+dipole-dipole energy=              -0.0862[              -8.3179 ]
+Higher multipole interaction energy.....=              -0.1142[             -11.0154 ]
+Total isotropic repulsion-dispersion....=              -1.3280[            -128.1338 ]
+Total anisotropic repulsion energy......=               0.6419[              61.9337 ]
+Intermolecular induction energy.........=               0.0000[               0.0000 ]
+PV energy..(P =   0.00E+00 Pa)..........=               0.0000[               0.0000 ]
+
+
+ Zone Centre Phonon Frequencies  (cm-1)
+    0.0000       0.0000       0.0000      49.1063      66.8034     103.7450
+
+
+ Elastic stiffness tensor (Cij): GPa (10**10 DYNE/CM**2)
+     23.58876      9.62432      6.02847      3.21779     -2.34157     -3.50538
+      9.62432     17.06762      6.37537      2.05584     -0.82018     -3.71365
+      6.02847      6.37537     13.46004     -1.47659      0.10214      0.10800
+      3.21779      2.05584     -1.47659      4.27730     -0.55820     -2.35944
+     -2.34157     -0.82018      0.10214     -0.55820      3.49188      2.78290
+     -3.50538     -3.71365      0.10800     -2.35944      2.78290      9.11696

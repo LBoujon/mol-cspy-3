@@ -1,0 +1,36 @@
+ Summary file for DMACRYS version 2.3.0        Run on 2018-04-19  15:33
+
+ SpaceGroup_Pa-3 (no transformation needed) 
+
+ Valid minimisation - converged on gradients
+
+ Eigenvalue calculation is approximate
+ Minimum passed eigenvalue test
+ Number of Iterations:    25
+ Lattice is P Centred. Calculated Lattice Energies
+Initial Lattice Energy:      -206.0935 kJ/mol
+Final Lattice Energy:        -206.4054 kJ/mol
+
+                  a (Ang)    b (Ang)    c (Ang)  alpha (Deg) beta (Deg) gamma (Deg)
+   Initial =>    24.0907    24.0907    24.0907    90.0000    90.0000    90.0000
+     Final =>    24.0920    24.0920    24.0920    90.0000    90.0000    90.0000
+diff.(abs) =>     0.0013     0.0013     0.0013     0.0000     0.0000     0.0000
+  diff.(%) =>     0.0053     0.0053     0.0053     0.0000     0.0000     0.0000
+
+           Cell Volume ( Cubic Angstroms )  Cell density ( g/cubic cm)
+
+   Initial =>         13981.3227                        1.3182
+   Final   =>         13983.5413                        1.3180
+diff.(abs) =>             2.2186                       -0.0002
+diff.(%)   =>             0.0159                       -0.0159
+
+ F =     0.494052
+
+Contributions to lattice energy (eV per primitive unit cell [kJ/mol])  ( Z =       24)
+Inter-molecular charge-charge energy....=              -6.9043[             -27.7567 ]
+Total charge-dipole+dipole-dipole energy=              -4.2383[             -17.0388 ]
+Higher multipole interaction energy.....=               1.3131[               5.2789 ]
+Total isotropic repulsion-dispersion....=             -41.5127[            -166.8889 ]
+Total anisotropic repulsion energy......=               0.0000[               0.0000 ]
+Intermolecular induction energy.........=               0.0000[               0.0000 ]
+PV energy..(P =   0.00E+00 Pa)..........=               0.0000[               0.0000 ]

@@ -1,0 +1,10 @@
+The reasons for carrying out symmetry reduction are given in the "reasons" directory.  This gives the representation that needs removing as the 3rd.
+
+To run NEIGHCRYS, type
+   cp NEIGHCRYS_input/* .
+   neighcrys.out < neighcrys_answers
+
+To run DMACRYS, type
+   dmacrys.out < PAPTUX_CO1_Z2.dmain > PAPTUX_CO1_Z2.dmaout
+
+There are some changes required to give files suitable to take forwards to subsequent calculations.  These are in the "final_minimization" directory.

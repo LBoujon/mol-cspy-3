@@ -1,0 +1,205 @@
+#!/bin/bash
+#SBATCH --job-name=VASIC{{mname}}
+#SBATCH --partition=batch
+#SBATCH --time=2:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=40
+#SBATCH --ntasks=40
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user={{user}}@soton.ac.uk
+
+. ~/.bashrc
+conda activate {{conda}}
+
+WD=`pwd`
+
+vasp_sp_slurm_script_generator () {
+for var in `cat {{mname}}-${1}.dat`;do
+  var2={{mname}}-QR-${var}-3-OPT-1
+  cd $var2
+python3 - <<END
+from cspy.fmcspworkflow.fmcspwf import VASP_sp_script_generator 
+VASP_sp_script_generator("${var}","batch","{{vasp_sp_offset}}","{{mname}}")
+END
+  sbatch SP${var}.sh
+  vasp_sp_process_id=$(squeue --name="SP${var}" -h -o %A)
+  vasp_sp_ids+=("$vasp_sp_process_id")
+  cd ..
+done
+}
+
+vasp_input_files_generator () {
+for var1 in `cat {{mname}}.dat`;do
+  var2={{mname}}-QR-${var1}-3-OPT-1
+  if [ ! -d "$var2" ];then
+    mkdir $var2
+  fi
+  cd $var2
+  if [ -f "INCAR" ] && [ -f "KPOINTS" ] && [ -f "POTCAR" ] && [ -f "POSCAR" ] && [ -f "SP${var1}.sh" ];then
+    cd ..
+    continue
+  fi
+  cp ../../Unique-{{vasp_sp_offset}}/${var2}.cif .
+  cp /home/{{user}}/{{conda}}/cspy/util/make_vasp_inputs_masih.py .
+  python3 make_vasp_inputs_masih.py ${var2}.cif --ncpu 80
+  mv INCAR INCAR.tmp
+  echo "SYSTEM = "$var2 > INCAR
+  cat INCAR.tmp >> INCAR
+  rm -rf make_vasp_inputs_masih.py INCAR.tmp ${var2}.cif
+  cd ..
+done
+}
+
+is_there_failed_structures () {
+if [ -f "failed_set_of_vasp_sp.dat" ];then
+  grep -v -f failed_set_of_vasp_sp.dat {{mname}}.dat > {{mname}}.dat.tmp
+  mv {{mname}}.dat.tmp {{mname}}.dat
+  if [ -f "input-for-vasp-sp.txt" ] && [ -s "input-for-vasp-sp.txt" ];then
+    grep -v -f failed_set_of_vasp_sp.dat input-for-vasp-sp.txt > input-for-vasp-sp.txt.tmp
+    mv input-for-vasp-sp.txt.tmp input-for-vasp-sp.txt
+  fi
+fi
+if [ -f "symmetry_fails_sp.dat" ];then
+  grep -v -f symmetry_fails_sp.dat {{mname}}.dat > {{mname}}.dat.tmp
+  mv {{mname}}.dat.tmp {{mname}}.dat
+  if [ -f "input-for-vasp-sp.txt" ] && [ -s "input-for-vasp-sp.txt" ];then
+    grep -v -f symmetry_fails_sp.dat input-for-vasp-sp.txt > input-for-vasp-sp.txt.tmp
+    mv input-for-vasp-sp.txt.tmp input-for-vasp-sp.txt
+  fi
+fi
+}
+
+# The FIRST TASK is the generation of the input-for-vasp-sp.txt file 
+cd Unique-{{vasp_sp_offset}}
+NSG=`ls input_*.txt`
+if [ -f "all_unique_dftb_structures.txt" ];then
+  rm -rf all_unique_dftb_structures.txt
+  touch "all_unique_dftb_structures.txt"
+else
+  touch "all_unique_dftb_structures.txt"
+fi
+for var in $NSG;do
+  cat $var >> all_unique_dftb_structures.txt
+done
+sort -k2,2n all_unique_dftb_structures.txt > all_unique_dftb_structures-Eordered.txt
+awk 'NR == 1 { threshold = $2 + {{vasp_sp_offset}} } $2 < threshold' all_unique_dftb_structures-Eordered.txt > input-for-vasp-sp.txt
+cd ..
+
+
+{%- set NSGs2 = "(" + sg_list|join(" ") + ")" %}
+NSGs={{ NSGs2 }}
+vasp_sp_ids=()
+# The SECOND TASK is to check if we have the {{name}} folder
+if [ ! -d "{{name}}" ];then
+
+  mkdir {{name}}
+  cp Unique-{{vasp_sp_offset}}/input-for-vasp-sp.txt {{name}}
+  cd {{name}}
+  awk '{print $1}' input-for-vasp-sp.txt > {{mname}}.dat
+  sed -i "s%"{{mname}}-QR-"%""%g" {{mname}}.dat
+  sed -i "s%"-3-OPT-1.cif"%""%g" {{mname}}.dat
+  echo "VASIC{{mname}}:   Generated Unique-{{vasp_sp_offset}} folder .....Done!" >> $WD/out.log
+
+  vasp_input_files_generator
+  echo "VASIC{{mname}}:   Generated all the {{name}} folders and inputs.....Done!" >> $WD/out.log
+
+  for SG in "${NSGs[@]}"; do
+    grep "QR-${SG}-" input-for-vasp-sp.txt | awk '{print $1}' > {{mname}}-${SG}.dat
+    sed -i "s%"{{mname}}-QR-"%""%g" {{mname}}-${SG}.dat
+    sed -i "s%"-3-OPT-1.cif"%""%g" {{mname}}-${SG}.dat
+    vasp_sp_slurm_script_generator $SG
+  done
+  cd ..
+
+else
+
+  cd {{name}}
+  cp ../Unique-{{vasp_sp_offset}}/input-for-vasp-sp.txt .
+  awk '{print $1}' input-for-vasp-sp.txt > {{mname}}.dat
+  sed -i "s%"{{mname}}-QR-"%""%g" {{mname}}.dat
+  sed -i "s%"-3-OPT-1.cif"%""%g" {{mname}}.dat
+  NSTR=$(ls | grep "{{mname}}-QR" | wc -l)
+  rm -rf finished.dat input-for-vasp-sp.txt
+  touch "finished.dat"
+  touch "input-for-vasp-sp.txt"
+  if [ -z "$NSTR" ];then
+
+    vasp_input_files_generator
+    echo "VASIC{{mname}}:   Generated all the VASP-SP folders and inputs.....Done!" >> $WD/out.log
+
+#-- Split {{name}} runs in SGs
+    for SG in "${NSGs[@]}"; do
+      grep "QR-${SG}-" input-for-vasp-sp.txt | awk '{print $1}' > {{mname}}-${SG}.dat
+      sed -i "s%"{{mname}}-QR-"%""%g" {{mname}}-${SG}.dat
+      sed -i "s%"-3-OPT-1.cif"%""%g" {{mname}}-${SG}.dat
+      vasp_sp_slurm_script_generator $SG
+    done
+
+  else
+
+    for var1 in `cat {{mname}}.dat`;do
+      var2={{mname}}-QR-${var1}-3-OPT-1
+      if [ -d "$var2" ];then
+        cd $var2
+      else
+        mkdir $var2
+        cd $var2
+      fi
+      if [ -f "OUTCAR" ];then
+        ENER=`grep 'free  energy   TOTEN  =' OUTCAR | awk '{print $5}'`
+        if [ -z "$ENER" ];then
+          echo $var2 >> ../input-for-vasp-sp.txt
+        else
+          echo $var1 >> ../finished.dat
+        fi
+      else
+        echo $var2 >> ../input-for-vasp-sp.txt
+      fi
+      cd ..
+    done
+
+    if [ -f "input-for-vasp-sp.txt" ] && [ -s "input-for-vasp-sp.txt" ];then
+
+#---- Do we have failed structures? Let's remove them from the final {{mname}}.dat 
+      is_there_failed_structures
+
+      cp input-for-vasp-sp.txt {{mname}}.dat
+      sed -i "s%"{{mname}}-QR-"%""%g" {{mname}}.dat
+      sed -i "s%"-3-OPT-1"%""%g" {{mname}}.dat
+
+      vasp_input_files_generator
+
+      for SG in "${NSGs[@]}"; do
+        rm -rf SP{{mname}}-${SG}_*.sh {{mname}}-${SG}_* {{mname}}-${SG}.dat
+        grep "QR-${SG}-" input-for-vasp-sp.txt | awk '{print $1}' > {{mname}}-${SG}.dat
+        sed -i "s%"{{mname}}-QR-"%""%g" {{mname}}-${SG}.dat
+        sed -i "s%"-3-OPT-1"%""%g" {{mname}}-${SG}.dat
+        vasp_sp_slurm_script_generator $SG
+      done
+
+    fi
+
+  fi
+
+  cd ..
+
+fi
+
+if [ ! -f "{{name}}/finished.dat" ];then
+  touch "{{name}}/finished.dat"
+fi
+
+# LAST TASK: submit the {{name}} jobs to the slurm queue with VASOPT{{mname}}.sh dependency
+dependency=""
+for element in "${vasp_sp_ids[@]}"; do
+  if [ -z "$dependency" ]; then
+    dependency="$element"
+  else
+    dependency="$dependency:$element"
+  fi
+done
+if [ ! -z "$vasp_sp_ids" ];then
+  sbatch --dependency=afterok:$dependency VASOPT{{mname}}.sh
+else
+  sbatch VASOPT{{mname}}.sh
+fi

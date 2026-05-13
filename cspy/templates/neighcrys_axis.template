@@ -1,0 +1,15 @@
+MOLX {{nmols}}
+{%- for l, p in molecular_axes %}
+{{l.axis}} LINE  {{l.atom_a}} {{l.atom_b}} {{l.sep_ab}}
+{{p.axis}} PLANE {{p.atom_a}} {{p.atom_b}} {{p.sep_ab}} {{p.atom_c}} {{p.sep_ac}}
+{%- endfor %}
+{%- if anisotropic_axes %}
+ANIS
+{% for label, l, p in anisotropic_axes -%}
+{{label}}
+  {{l.axis}} LINE  {{l.atom_a}} {{l.atom_b}} {{l.sep_ab}}
+  {{p.axis}} PLANE {{p.atom_a}} {{p.atom_b}} {{p.sep_ab}} {{p.atom_c}} {{p.sep_ac}}
+{% endfor -%}
+ENDS
+{%- endif %}
+ENDS

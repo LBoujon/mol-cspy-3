@@ -1,0 +1,23 @@
+#!/bin/bash
+#PBS -N {{prefix}}.opt
+#PBS -l walltime={{walltime}}
+#PBS -t {{array_ids}}
+#PBS -l nodes=1:ppn={{procs}}
+#PBS -l mem=60GB
+#PBS -j oe
+#PBS -o "opt-{{prefix}}_${PBS_ARRAYID}-${PBS_JOBID}.out"
+
+export GAUSS_PDEF={{procs}}
+export GAUSS_MDEF=58GB
+DIR={{workdir}}
+com_file={{prefix}}_${PBS_ARRAYID}{{suffix}}
+NAME=${com_file%{{suffix}}}
+echo "Geometry optimisation for $NAME"
+workdir="${DIR}/${NAME}"
+mkdir -p ${workdir}
+cp  ${com_file} ${workdir}
+cd ${workdir}
+g09 ${com_file}
+pexit=$?
+echo "exiting with status ${pexit}"
+exit $pexit

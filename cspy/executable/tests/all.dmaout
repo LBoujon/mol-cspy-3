@@ -1,0 +1,4183 @@
+ DMACRYS Version 2.3.0        Dated November 2017 .
+ Needs NEIGHCRYS version 2.3.0        or higher
+ Run on 2019-05-22  10:25
+Phonon calculation bug fixed
+
+
+
+
+
+
+ ==============================================================================
+
+ a.res.d ACETAC01.xyz ACETAC01.xyz
+
+ ==============================================================================
+
+
+ Scaling factor for multipoles =       1.00000000
+
+
+ Symmetry Adapted
+
+
+ Number of formula units per primitive cell
+ (read from crystallographic file and scaled by centring factor) =       1
+
+ The printing options are as follows.
+  PLUT  LATT  BASI  MINI  MOLE  GEOM
+    12     0     0     2     0     1
+                  C-vector magnitude=  20.000000 Angstroms
+ Cut off for repulsion-dispersion potentials =  15.000000 Angstroms 
+
+ Cut off for higher multipole summation =      15.00000000 Angstroms
+
+
+
+
+
+ START OF LATTICE VECTOR PROCESSING.
+ THE LATTICE VECTORS ARE AS FOLLOWS.
+
+    1.000000000000001   0.000000000000000   0.000000000000000
+    0.000000000000000   1.000000000000001   0.000000000000000
+    0.000000000000000   0.000000000000000   1.000000000000001
+
+
+
+
+ Start of basis species processing.
+
+ Basis species as input
+
+
+ the   8 basis species are as follows.
+ all quantities are in lattice units 
+
+  no.                    orthogonal coordinates                        label      molecule
+                x                   y                   z
+
+     1       0.02401619       0.99687100       0.98544394   C_F1_1____1____         1
+     2      -0.02636231       1.01535800       1.03655744   C_F1_2____2____         1
+     3       0.03526319       0.94885450       0.90268793   H_F2_1____3____         1
+     4      -0.00067381       1.04272000       1.07777694   H_F1_2____4____         1
+     5      -0.06389631       1.04885500       1.01662544   H_F1_3____5____         1
+     6      -0.05058631       0.97278100       1.05758543   H_F1_4____6____         1
+     7      -0.00020781       0.96040900       0.93614793   O_F1_1____7____         1
+     8       0.08244719       1.01415150       0.98717494   O_F1_2____8____         1
+ Origin of basis
+
+       0.00000000      0.00000000      0.00000000
+ Basis origin shifted
+
+
+ Cut off value for direct lattice sum =     1.482837 lattice units
+ Cut off value for reciprocal lattice sum =     2.965675 reciprocal lattice units
+ Values of the constants used in these summations are:
+Eta parameter for division of sum between real and reciprocal lattice=    2.506628
+PI/(ETA^2 * Vol.Cell) =     0.500000
+
+
+
+ Potentials will be cutoff with a spline terminating at     2.00Angstroms
+ with limit in expansion set to     4.00 Angstroms
+
+
+
+ Cut off value for direct lattice sum =     1.682837 lattice units
+ Cut off value for reciprocal lattice sum =     2.613214 reciprocal lattice units
+ Values of the constants used in these summations are:
+Eta parameter for division of sum between real and reciprocal lattice=    2.208723
+PI/(ETA^2 * Vol.Cell) =     0.643972
+
+
+
+
+
+ START OF REPULSION-DISPERSION POTENTIAL PROCESSING
+
+
+ The species types input are as follows:
+
+ Index     Label        Type         Charge          Mass
+
+
+ Distributed multipoles (Atomic Units: [electron charge and Bohr radii])
+
+     1     C_F1_1____   0.472400E+00   0.120107E+02
+     2     C_F1_2____   0.157370E+00   0.120107E+02
+     3     H_F2_1____   0.460800E+00   0.100794E+01
+     4     H_F1_2____   0.499000E-02   0.100794E+01
+     5     H_F1_3____  -0.760000E-03   0.100794E+01
+     6     H_F1_4____  -0.620000E-02   0.100794E+01
+     7     O_F1_1____  -0.573090E+00   0.159994E+02
+     8     O_F1_2____  -0.515520E+00   0.159994E+02
+
+
+ POTENTIAL BETWEEN SPECIES C_F1 AND C_F1 WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.38321470E+04   0.27777800E+00   0.25286950E+02                    0.00000000E+00   0.70000000E+02
+
+
+ POTENTIAL BETWEEN SPECIES C_F1 AND H_F2 WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.44694997E+03   0.24213100E+00   0.23737720E+01                    0.00000000E+00   0.70000000E+02
+
+
+ POTENTIAL BETWEEN SPECIES C_F1 AND H_F1 WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.68953673E+03   0.27248000E+00   0.59789720E+01                    0.00000000E+00   0.70000000E+02
+
+
+ POTENTIAL BETWEEN SPECIES C_F1 AND O_F1 WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.30228503E+04   0.26455000E+00   0.17160239E+02                    0.00000000E+00   0.70000000E+02
+
+
+ POTENTIAL BETWEEN SPECIES H_F2 AND H_F2 WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.52128552E+02   0.21459200E+00   0.22283400E+00                    0.00000000E+00   0.70000000E+02
+
+
+ POTENTIAL BETWEEN SPECIES H_F1 AND H_F2 WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.80421867E+02   0.23809500E+00   0.56126600E+00                    0.00000000E+00   0.70000000E+02
+
+
+ POTENTIAL BETWEEN SPECIES O_F1 AND H_F2 WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.35256029E+03   0.23201800E+00   0.16108900E+01                    0.00000000E+00   0.70000000E+02
+
+
+ POTENTIAL BETWEEN SPECIES H_F1 AND H_F1 WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.12407168E+03   0.26738000E+00   0.14136980E+01                    0.00000000E+00   0.70000000E+02
+
+
+ POTENTIAL BETWEEN SPECIES O_F1 AND H_F1 WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.54391606E+03   0.25974000E+00   0.40574520E+01                    0.00000000E+00   0.70000000E+02
+
+
+ POTENTIAL BETWEEN SPECIES O_F1 AND O_F1 WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.23844659E+04   0.25252500E+00   0.11645288E+02                    0.00000000E+00   0.70000000E+02
+
+Charges on each molecule 
+
+molecule          charge (e)
+
+   1             -0.100000E-04
+
+       Warning: Unit cell not charge neutral - total charge =   -0.1000000E-04
+
+      Program requested to continue with directive CHGC
+
+
+Local axis set for molecule:    1
+ x=>          -0.679776          0.249452          0.689694
+ y=>          -0.715173         -0.433911         -0.547950
+ z=>           0.162578         -0.865734          0.473364
+
+ QUARTERNION PARAMETERS
+  0.29986523D+00  0.26493902D+00 -0.43946044D+00  0.80421557D+00
+Atom positions in local axis system for molecule    1
+
+basis No.  Species         x y z (Angstroms)       Mass
+
+   1       C_F1_1____    -0.040690    -0.070601     0.000995    12.010700
+   2       C_F1_2____     1.441518    -0.070601     0.000995    12.010700
+   3       H_F2_1____    -1.574682     1.092149     0.085481     1.007940
+   4       H_F1_2____     1.797356    -1.127213     0.000995     1.007940
+   5       H_F1_3____     1.843991     0.394006    -0.889741     1.007940
+   6       H_F1_4____     1.848495     0.414933     0.858513     1.007940
+   7       O_F1_1____    -0.573246     1.132546     0.086858    15.999400
+   8       O_F1_2____    -0.725000    -1.075300    -0.091831    15.999400
+
+
+Molecule No.           Centred at               Total Mass
+                    x       y       z (Angstroms)
+
+
+       1            0.402010         19.917797         19.697786         60.051960
+
+Molecule No.           Principal axes of inertia
+
+       1               -0.41664882E-02 -0.80319530E-01  0.99676046E+00
+                        0.14535295E+00  0.98613446E+00  0.80070861E-01
+                        0.98937109E+00 -0.14521569E+00 -0.75659633E-02
+
+Principal moments of inertia (amu.Ang**2) for molecule  1
+
+    Ix =  0.93488374E+02, Iy =  0.53014034E+02, Iz =  0.43557311E+02
+
+
+ Maximum intramolecular distance =   0.41400000E+01 Angstroms
+ Multipole tables are set up out to   0.27280000E+02 Angstroms
+ Multipoles are calculated out to   0.15000000E+02 Angstroms
+ Splines are added out to   0.17000000E+02 Angstroms
+
+ STAR PLUT
+
+
+
+
+ Commencing with PLUTO calculation.
+
+ Start variable-cell relaxation
+
+
+ Maximum number of iterations =                                   1000
+ Maximum relaxation of a coordinate per cycle (Angstroms) =   0.50000000E+00
+ Maximum rotation of a molecule per cycle (Degrees) =   0.14323945E+01
+ Maximum number of hessian updates before recalculation =             1000
+ Iteration will terminate when all displacements are less than   0.50000000E-07
+ Iteration will also terminate when dot product of gradient and displacement vectors is less than   0.50000000E-11
+
+ Hessian will be recalculated if surface is abnormal
+
+
+ Contributions to intra-molecular electrostatics
+ (eV per unit cell [kJ/mol])
+ Z =        1
+CHAR-CHAR          -7.5507    (     -728.5286  )
+CHAR-DIPL           0.0000    (        0.0000  )
+DIPL-DIPL           0.0000    (        0.0000  )
+QUAD-CHAR           0.0000    (        0.0000  )
+QUAD-DIPL           0.0000    (        0.0000  )
+OCTO-CHAR           0.0000    (        0.0000  )
+QUAD-QUAD           0.0000    (        0.0000  )
+OCTO-DIPL           0.0000    (        0.0000  )
+HEXA-CHAR           0.0000    (        0.0000  )
+
+Number of Energy calculations =       28
+
+
+Molecular dipole moments in local axis systems (eA)
+
+ Molecule                      dipole                  magnitude
+                 x             y             z
+
+      1      0.1803964     0.3555909     0.0329383     0.4000908
+
+Dipole per unit cell in global axis system (eA)
+       x             y             z       total dipole
+  -0.3715831    -0.1378103    -0.0548359     0.4000908
+
+ Cutoffs used in original reciprocal sum
+       3       3       3
+
+Centralisation of forces (global axes)
+and torques (global axes) for molecule:    1
+
+Basis No.   Species                                force (eV per Angstrom)
+                             x                    y                    z                  magnitude
+       1  C_F1_1____    0.13686964E-02       0.46308102E-03       0.22472603E-03       0.14622844E-02
+       2  C_F1_2____    0.51550893E-03       0.12888326E-03       0.95705232E-04       0.53992578E-03
+       3  H_F2_1____    0.11481501E-02       0.50743416E-03       0.11304809E-03       0.12603642E-02
+       4  H_F1_2____    0.15784209E-04       0.39598493E-05       0.38257749E-05       0.16717003E-04
+       5  H_F1_3____   -0.27329332E-05      -0.66340630E-06      -0.29966579E-06       0.28282205E-05
+       6  H_F1_4____   -0.20855513E-04      -0.41461255E-05      -0.48920922E-05       0.21819151E-04
+       7  O_F1_1____   -0.15901202E-02      -0.55691751E-03      -0.13780224E-03       0.16904522E-02
+       8  O_F1_2____   -0.14344310E-02      -0.54163125E-03      -0.29431113E-03       0.15612738E-02
+
+    Central force       0.14987759E-17       0.68693897E-18       0.59951037E-17       0.62176751E-17
+   Central torque       0.10801972E-03       0.48432631E-03      -0.14697251E-03       0.51753372E-03
+ (eV per radian) [     -0.53979064E-04      -0.20687361E-03      -0.47130746E-03    ]
+
+Strain derivatives for matrix deformation of form: 
+
+                /                       | 
+               |     E   1/2 E   1/2 E  |
+               |      1       6       5 |
+               |                        |
+   R =>   R  + | 1/2 E       E   1/2 E  |  R
+               |      6       2       4 |
+               |                        |
+               | 1/2 E   1/2 E       E  |
+               |      5       4       3/
+
+
+   dU/dE        dU/dE        dU/dE        dU/dE        dU/dE        dU/dE
+        1            2            3            4            5            6
+
+     0.0022       0.0001      -0.0003      -0.0000      -0.0001      -0.0002
+[      0.21         0.01        -0.03        -0.00        -0.01        -0.02 ]
+
+ Units for strain derivatives : eV [kJ/mol].
+
+
+
+Contributions to lattice energy (eV per unit cell [kJ/mol])
+ Z =        1
+ Ewald summed charge-charge energy.......=  -0.75513602E+01[  -0.72858960E+03 ]
+ Intra-molecular charge-charge energy....=  -0.75507283E+01[  -0.72852864E+03 ]
+ Inter-molecular charge-charge energy....=  -0.63187629E-03[  -0.60966301E-01 ]
+               Total charge-dipole energy=   0.00000000E+00[   0.00000000E+00 ]
+               Total dipole-dipole energy=   0.00000000E+00[   0.00000000E+00 ]
+ Total charge-dipole+dipole-dipole energy=   0.00000000E+00[   0.00000000E+00 ]
+ Higher multipole interaction energy.....=   0.00000000E+00[   0.00000000E+00 ]
+ Total isotropic repulsion-dispersion....=  -0.25160246E-08[  -0.24275751E-06 ]
+ Total anisotropic repulsion energy......=   0.00000000E+00[   0.00000000E+00 ]
+ Intermolecular induction energy.........=   0.00000000E+00[   0.00000000E+00 ]
+ PV energy..(P =   0.00E+00 Pa)..........    0.00000000E+00[   0.00000000E+00]
+ Total lattice energy....................=  -0.63187880E-03[  -0.60966543E-01 ]
+
+ GD1 = -0.7521E-06
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+      MINIMISATION SET-UP.
+
+ GD1 = -0.7521E-06
+
+ Lattice energy =          -0.00175396   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7521E-06 GD2=  0.2995E-05
+
+
+ LINEAR INTERPOLATION
+
+
+ ALPHA= -0.7993E+00 ALPHA2=  0.2007E+00 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.7521E-06   GD2 =  0.2995E-05   GD3 =  0.2995E-05   GD4 = -0.7521E-06
+
+ Lattice energy =          -0.00175642   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7521E-06 GD2=  0.7164E-07
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.4480E-04
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.45E-04 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT    4
+ Lattice energy =          -0.00184404   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4480E-04 GD2= -0.4520E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.4480E-04   GD2 = -0.4520E-04   GD3 = -0.4520E-04   GD4 = -0.4480E-04
+
+ Lattice energy =          -0.00193782   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4480E-04 GD2= -0.4602E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.2000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.4480E-04   GD2 = -0.4602E-04   GD3 = -0.4602E-04   GD4 = -0.4480E-04
+
+ Lattice energy =          -0.00214161   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4480E-04 GD2= -0.4801E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.4000E+01 ALPHA2=  0.8000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.4480E-04   GD2 = -0.4801E-04   GD3 = -0.4801E-04   GD4 = -0.4480E-04
+
+ Lattice energy =          -0.00263725   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4480E-04 GD2= -0.5523E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.8000E+01 ALPHA2=  0.1600E+02 ALPHA3=  0.8000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.4480E-04   GD2 = -0.5523E-04   GD3 = -0.5523E-04   GD4 = -0.4480E-04
+
+ Lattice energy =          -0.00412262   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4480E-04 GD2= -0.7137E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.1600E+02 ALPHA2=  0.3200E+02 ALPHA3=  0.1600E+02 ALPHA4=  0.0000E+00
+  GD1 = -0.4480E-04   GD2 = -0.7137E-04   GD3 = -0.7137E-04   GD4 = -0.4480E-04
+
+ Lattice energy =          -0.00338640   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4480E-04 GD2=  0.2166E-03
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA= -0.9985E+01 ALPHA2=  0.2201E+02 ALPHA3=  0.3200E+02 ALPHA4=  0.1600E+02
+  GD1 = -0.4480E-04   GD2 = -0.7137E-04   GD3 =  0.2166E-03   GD4 = -0.7137E-04
+
+ Lattice energy =          -0.00555829   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4480E-04 GD2= -0.5259E-04
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA=  0.3138E+01 ALPHA2=  0.2515E+02 ALPHA3=  0.3200E+02 ALPHA4=  0.2201E+02
+  GD1 = -0.4480E-04   GD2 = -0.5259E-04   GD3 =  0.2166E-03   GD4 = -0.5259E-04
+
+ Lattice energy =          -0.00606496   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4480E-04 GD2= -0.8418E-05
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.5013E-06
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.50E-06 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT   10
+ Lattice energy =          -0.00606994   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5013E-06 GD2= -0.3986E-06
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.5013E-06   GD2 = -0.3986E-06   GD3 = -0.3986E-06   GD4 = -0.5013E-06
+
+ Lattice energy =          -0.00607332   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5013E-06 GD2=  0.2889E-06
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA= -0.3267E+00 ALPHA2=  0.1673E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.5013E-06   GD2 = -0.3986E-06   GD3 =  0.2889E-06   GD4 = -0.3986E-06
+
+ Lattice energy =          -0.00607198   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5013E-06 GD2=  0.4947E-07
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.9509E-06
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.95E-06 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT   10
+ Lattice energy =          -0.00607593   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.9509E-06 GD2= -0.6148E-06
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.9509E-06   GD2 = -0.6148E-06   GD3 = -0.6148E-06   GD4 = -0.9509E-06
+
+ Lattice energy =          -0.00608195   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.9509E-06 GD2= -0.1926E-06
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1397E-04
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.14E-04 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT   10
+ Lattice energy =          -0.00610851   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1397E-04 GD2= -0.1374E-04
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1397E-04   GD2 = -0.1374E-04   GD3 = -0.1374E-04   GD4 = -0.1397E-04
+
+ Lattice energy =          -0.00613604   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1397E-04 GD2= -0.1375E-04
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA= -0.5198E+00 ALPHA2=  0.1480E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.1397E-04   GD2 = -0.1375E-04   GD3 = -0.1375E-04   GD4 = -0.1374E-04
+
+ Lattice energy =          -0.00611951   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1397E-04 GD2= -0.1362E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1371E-04
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.14E-04 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT   10
+ Lattice energy =          -0.00615174   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1371E-04 GD2= -0.1372E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1371E-04   GD2 = -0.1372E-04   GD3 = -0.1372E-04   GD4 = -0.1371E-04
+
+ Lattice energy =          -0.00617936   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1371E-04 GD2= -0.1355E-04
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.1371E-04   GD2 = -0.1355E-04   GD3 = -0.1355E-04   GD4 = -0.1372E-04
+
+ Lattice energy =          -0.00620913   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1371E-04 GD2= -0.1412E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.2000E+01 ALPHA2=  0.5000E+01 ALPHA3=  0.3000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1371E-04   GD2 = -0.1412E-04   GD3 = -0.1412E-04   GD4 = -0.1371E-04
+
+ Lattice energy =          -0.00626363   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1371E-04 GD2= -0.1480E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.6000E+01 ALPHA3=  0.5000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1371E-04   GD2 = -0.1480E-04   GD3 = -0.1480E-04   GD4 = -0.1371E-04
+
+ Lattice energy =          -0.00629974   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1371E-04 GD2= -0.1387E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.2000E+01 ALPHA2=  0.8000E+01 ALPHA3=  0.6000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1371E-04   GD2 = -0.1387E-04   GD3 = -0.1387E-04   GD4 = -0.1371E-04
+
+ Lattice energy =          -0.00637053   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1371E-04 GD2= -0.1528E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.4000E+01 ALPHA2=  0.1200E+02 ALPHA3=  0.8000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1371E-04   GD2 = -0.1528E-04   GD3 = -0.1528E-04   GD4 = -0.1371E-04
+
+ Lattice energy =          -0.00652676   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1371E-04 GD2= -0.1607E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.8000E+01 ALPHA2=  0.2000E+02 ALPHA3=  0.1200E+02 ALPHA4=  0.0000E+00
+  GD1 = -0.1371E-04   GD2 = -0.1607E-04   GD3 = -0.1607E-04   GD4 = -0.1371E-04
+
+ Lattice energy =          -0.00687913   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1371E-04 GD2= -0.1642E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.4000E+01 ALPHA2=  0.2400E+02 ALPHA3=  0.2000E+02 ALPHA4=  0.0000E+00
+  GD1 = -0.1371E-04   GD2 = -0.1642E-04   GD3 = -0.1642E-04   GD4 = -0.1371E-04
+
+ Lattice energy =          -0.00707179   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1371E-04 GD2= -0.1345E-04
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2500E+02 ALPHA3=  0.2400E+02 ALPHA4=  0.2000E+02
+  GD1 = -0.1371E-04   GD2 = -0.1345E-04   GD3 = -0.1345E-04   GD4 = -0.1642E-04
+
+ Lattice energy =          -0.00711890   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1371E-04 GD2= -0.1111E-04
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2600E+02 ALPHA3=  0.2500E+02 ALPHA4=  0.2400E+02
+  GD1 = -0.1371E-04   GD2 = -0.1111E-04   GD3 = -0.1111E-04   GD4 = -0.1345E-04
+
+ Lattice energy =          -0.00716486   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1371E-04 GD2= -0.9407E-05
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2700E+02 ALPHA3=  0.2600E+02 ALPHA4=  0.2500E+02
+  GD1 = -0.1371E-04   GD2 = -0.9407E-05   GD3 = -0.9407E-05   GD4 = -0.1111E-04
+
+ Lattice energy =          -0.00721358   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1371E-04 GD2= -0.6915E-05
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2800E+02 ALPHA3=  0.2700E+02 ALPHA4=  0.2600E+02
+  GD1 = -0.1371E-04   GD2 = -0.6915E-05   GD3 = -0.6915E-05   GD4 = -0.9407E-05
+
+ Lattice energy =          -0.00725308   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1371E-04 GD2= -0.4752E-05
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2900E+02 ALPHA3=  0.2800E+02 ALPHA4=  0.2700E+02
+  GD1 = -0.1371E-04   GD2 = -0.4752E-05   GD3 = -0.4752E-05   GD4 = -0.6915E-05
+
+ Lattice energy =          -0.00729034   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1371E-04 GD2= -0.1993E-05
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1110E-04
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.11E-04 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT   10
+ Lattice energy =          -0.00731124   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1110E-04 GD2= -0.6634E-05
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1110E-04   GD2 = -0.6634E-05   GD3 = -0.6634E-05   GD4 = -0.1110E-04
+
+ Lattice energy =          -0.00732244   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1110E-04 GD2= -0.2576E-05
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.2588E-04
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.26E-04 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT   12
+ Lattice energy =          -0.00737999   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2588E-04 GD2= -0.2714E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2588E-04   GD2 = -0.2714E-04   GD3 = -0.2714E-04   GD4 = -0.2588E-04
+
+ Lattice energy =          -0.00743886   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2588E-04 GD2= -0.2820E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.2000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2588E-04   GD2 = -0.2820E-04   GD3 = -0.2820E-04   GD4 = -0.2588E-04
+
+ Lattice energy =          -0.00754703   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2588E-04 GD2= -0.2741E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.4000E+01 ALPHA2=  0.8000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2588E-04   GD2 = -0.2741E-04   GD3 = -0.2741E-04   GD4 = -0.2588E-04
+
+ Lattice energy =          -0.00783550   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2588E-04 GD2= -0.3112E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.8000E+01 ALPHA2=  0.1600E+02 ALPHA3=  0.8000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2588E-04   GD2 = -0.3112E-04   GD3 = -0.3112E-04   GD4 = -0.2588E-04
+
+ Lattice energy =          -0.00880742   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2588E-04 GD2= -0.5046E-04
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.1600E+02 ALPHA2=  0.3200E+02 ALPHA3=  0.1600E+02 ALPHA4=  0.0000E+00
+  GD1 = -0.2588E-04   GD2 = -0.5046E-04   GD3 = -0.5046E-04   GD4 = -0.2588E-04
+
+ Lattice energy =          -0.02453961   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2588E-04 GD2= -0.8393E-03
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.3200E+02 ALPHA2=  0.6400E+02 ALPHA3=  0.3200E+02 ALPHA4=  0.0000E+00
+  GD1 = -0.2588E-04   GD2 = -0.8393E-03   GD3 = -0.8393E-03   GD4 = -0.2588E-04
+
+
+ Hessian recalculated - Volume has become negative
+
+ Lattice energy =          -0.02030214   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1 = -0.4862E-03
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+      MINIMISATION SET-UP.
+
+ GD1 = -0.4862E-03
+
+ Lattice energy =          -0.02129130   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4862E-03 GD2= -0.4990E-03
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.4862E-03   GD2 = -0.4990E-03   GD3 = -0.4990E-03   GD4 = -0.4862E-03
+
+ Lattice energy =          -0.02231162   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4862E-03 GD2= -0.5092E-03
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.2000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.4862E-03   GD2 = -0.5092E-03   GD3 = -0.5092E-03   GD4 = -0.4862E-03
+
+ Lattice energy =          -0.02440253   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4862E-03 GD2= -0.5212E-03
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.4000E+01 ALPHA2=  0.8000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.4862E-03   GD2 = -0.5212E-03   GD3 = -0.5212E-03   GD4 = -0.4862E-03
+
+ Lattice energy =          -0.02867096   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4862E-03 GD2= -0.5166E-03
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.8000E+01 ALPHA2=  0.1600E+02 ALPHA3=  0.8000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.4862E-03   GD2 = -0.5166E-03   GD3 = -0.5166E-03   GD4 = -0.4862E-03
+
+ Lattice energy =          -0.03636721   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4862E-03 GD2= -0.3651E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.1700E+02 ALPHA3=  0.1600E+02 ALPHA4=  0.8000E+01
+  GD1 = -0.4862E-03   GD2 = -0.3651E-03   GD3 = -0.3651E-03   GD4 = -0.5166E-03
+
+ Lattice energy =          -0.03711957   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4862E-03 GD2= -0.3248E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.1800E+02 ALPHA3=  0.1700E+02 ALPHA4=  0.1600E+02
+  GD1 = -0.4862E-03   GD2 = -0.3248E-03   GD3 = -0.3248E-03   GD4 = -0.3651E-03
+
+ Lattice energy =          -0.03778096   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4862E-03 GD2= -0.2770E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.1900E+02 ALPHA3=  0.1800E+02 ALPHA4=  0.1700E+02
+  GD1 = -0.4862E-03   GD2 = -0.2770E-03   GD3 = -0.2770E-03   GD4 = -0.3248E-03
+
+ Lattice energy =          -0.03834961   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4862E-03 GD2= -0.2208E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+02 ALPHA3=  0.1900E+02 ALPHA4=  0.1800E+02
+  GD1 = -0.4862E-03   GD2 = -0.2208E-03   GD3 = -0.2208E-03   GD4 = -0.2770E-03
+
+ Lattice energy =          -0.03878666   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4862E-03 GD2= -0.1535E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2100E+02 ALPHA3=  0.2000E+02 ALPHA4=  0.1900E+02
+  GD1 = -0.4862E-03   GD2 = -0.1535E-03   GD3 = -0.1535E-03   GD4 = -0.2208E-03
+
+ Lattice energy =          -0.03909080   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4862E-03 GD2= -0.7578E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.3465E-03
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.35E-03 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT    5
+ Lattice energy =          -0.03977102   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3465E-03 GD2= -0.3282E-03
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.3465E-03   GD2 = -0.3282E-03   GD3 = -0.3282E-03   GD4 = -0.3465E-03
+
+ Lattice energy =          -0.04041274   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3465E-03 GD2= -0.2994E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.3465E-03   GD2 = -0.2994E-03   GD3 = -0.2994E-03   GD4 = -0.3282E-03
+
+ Lattice energy =          -0.04098203   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3465E-03 GD2= -0.2582E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.3000E+01 ALPHA4=  0.2000E+01
+  GD1 = -0.3465E-03   GD2 = -0.2582E-03   GD3 = -0.2582E-03   GD4 = -0.2994E-03
+
+ Lattice energy =          -0.04145171   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3465E-03 GD2= -0.2023E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.5000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.3000E+01
+  GD1 = -0.3465E-03   GD2 = -0.2023E-03   GD3 = -0.2023E-03   GD4 = -0.2582E-03
+
+ Lattice energy =          -0.04179755   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3465E-03 GD2= -0.1305E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.6000E+01 ALPHA3=  0.5000E+01 ALPHA4=  0.4000E+01
+  GD1 = -0.3465E-03   GD2 = -0.1305E-03   GD3 = -0.1305E-03   GD4 = -0.2023E-03
+
+ Lattice energy =          -0.04198698   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3465E-03 GD2= -0.4033E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.7797E-03
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.78E-03 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT    5
+ Lattice energy =          -0.04353901   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7797E-03 GD2= -0.7673E-03
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.7797E-03   GD2 = -0.7673E-03   GD3 = -0.7673E-03   GD4 = -0.7797E-03
+
+ Lattice energy =          -0.04504086   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7797E-03 GD2= -0.7322E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.7797E-03   GD2 = -0.7322E-03   GD3 = -0.7322E-03   GD4 = -0.7673E-03
+
+ Lattice energy =          -0.04645450   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7797E-03 GD2= -0.6704E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.3000E+01 ALPHA4=  0.2000E+01
+  GD1 = -0.7797E-03   GD2 = -0.6704E-03   GD3 = -0.6704E-03   GD4 = -0.7322E-03
+
+ Lattice energy =          -0.04772302   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7797E-03 GD2= -0.5758E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.5000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.3000E+01
+  GD1 = -0.7797E-03   GD2 = -0.5758E-03   GD3 = -0.5758E-03   GD4 = -0.6704E-03
+
+ Lattice energy =          -0.04876718   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7797E-03 GD2= -0.4421E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.6000E+01 ALPHA3=  0.5000E+01 ALPHA4=  0.4000E+01
+  GD1 = -0.7797E-03   GD2 = -0.4421E-03   GD3 = -0.4421E-03   GD4 = -0.5758E-03
+
+ Lattice energy =          -0.04949571   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7797E-03 GD2= -0.2615E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.7000E+01 ALPHA3=  0.6000E+01 ALPHA4=  0.5000E+01
+  GD1 = -0.7797E-03   GD2 = -0.2615E-03   GD3 = -0.2615E-03   GD4 = -0.4421E-03
+
+ Lattice energy =          -0.04981039   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7797E-03 GD2= -0.2481E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.2981E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.30E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT    7
+ Lattice energy =          -0.05590100   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2981E-02 GD2= -0.3077E-02
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2981E-02   GD2 = -0.3077E-02   GD3 = -0.3077E-02   GD4 = -0.2981E-02
+
+ Lattice energy =          -0.06202015   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2981E-02 GD2= -0.2972E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.2981E-02   GD2 = -0.2972E-02   GD3 = -0.2972E-02   GD4 = -0.3077E-02
+
+ Lattice energy =          -0.06762666   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2981E-02 GD2= -0.2584E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.3000E+01 ALPHA4=  0.2000E+01
+  GD1 = -0.2981E-02   GD2 = -0.2584E-02   GD3 = -0.2584E-02   GD4 = -0.2972E-02
+
+ Lattice energy =          -0.07198353   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2981E-02 GD2= -0.1792E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.5000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.3000E+01
+  GD1 = -0.2981E-02   GD2 = -0.1792E-02   GD3 = -0.1792E-02   GD4 = -0.2584E-02
+
+ Lattice energy =          -0.07402252   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2981E-02 GD2= -0.4325E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.2885E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.29E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT    7
+ Lattice energy =          -0.07902413   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2885E-02 GD2= -0.2099E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2885E-02   GD2 = -0.2099E-02   GD3 = -0.2099E-02   GD4 = -0.2885E-02
+
+ Lattice energy =          -0.08185995   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2885E-02 GD2= -0.8777E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.5620E+00 ALPHA2=  0.2562E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.2885E-02   GD2 = -0.8777E-03   GD3 = -0.8777E-03   GD4 = -0.2099E-02
+
+ Lattice energy =          -0.08211124   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2885E-02 GD2=  0.4042E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1592E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.16E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT    5
+ Lattice energy =          -0.08515870   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1592E-02 GD2= -0.1461E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1592E-02   GD2 = -0.1461E-02   GD3 = -0.1461E-02   GD4 = -0.1592E-02
+
+ Lattice energy =          -0.08794959   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1592E-02 GD2= -0.1332E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.1592E-02   GD2 = -0.1332E-02   GD3 = -0.1332E-02   GD4 = -0.1461E-02
+
+ Lattice energy =          -0.09047628   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1592E-02 GD2= -0.1204E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.3000E+01 ALPHA4=  0.2000E+01
+  GD1 = -0.1592E-02   GD2 = -0.1204E-02   GD3 = -0.1204E-02   GD4 = -0.1332E-02
+
+ Lattice energy =          -0.09274749   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1592E-02 GD2= -0.1079E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.5000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.3000E+01
+  GD1 = -0.1592E-02   GD2 = -0.1079E-02   GD3 = -0.1079E-02   GD4 = -0.1204E-02
+
+ Lattice energy =          -0.09476981   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1592E-02 GD2= -0.9554E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.6000E+01 ALPHA3=  0.5000E+01 ALPHA4=  0.4000E+01
+  GD1 = -0.1592E-02   GD2 = -0.9554E-03   GD3 = -0.9554E-03   GD4 = -0.1079E-02
+
+ Lattice energy =          -0.09654511   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1592E-02 GD2= -0.8350E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.7000E+01 ALPHA3=  0.6000E+01 ALPHA4=  0.5000E+01
+  GD1 = -0.1592E-02   GD2 = -0.8350E-03   GD3 = -0.8350E-03   GD4 = -0.9554E-03
+
+ Lattice energy =          -0.09808159   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1592E-02 GD2= -0.7177E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.8000E+01 ALPHA3=  0.7000E+01 ALPHA4=  0.6000E+01
+  GD1 = -0.1592E-02   GD2 = -0.7177E-03   GD3 = -0.7177E-03   GD4 = -0.8350E-03
+
+ Lattice energy =          -0.09938438   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1592E-02 GD2= -0.6040E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.9000E+01 ALPHA3=  0.8000E+01 ALPHA4=  0.7000E+01
+  GD1 = -0.1592E-02   GD2 = -0.6040E-03   GD3 = -0.6040E-03   GD4 = -0.7177E-03
+
+ Lattice energy =          -0.10046472   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1592E-02 GD2= -0.4945E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.1000E+02 ALPHA3=  0.9000E+01 ALPHA4=  0.8000E+01
+  GD1 = -0.1592E-02   GD2 = -0.4945E-03   GD3 = -0.4945E-03   GD4 = -0.6040E-03
+
+ Lattice energy =          -0.10133956   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1592E-02 GD2= -0.3897E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.2388E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.24E-02 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT    5
+ Lattice energy =          -0.10613060   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2388E-02 GD2= -0.2403E-02
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2388E-02   GD2 = -0.2403E-02   GD3 = -0.2403E-02   GD4 = -0.2388E-02
+
+ Lattice energy =          -0.11090085   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2388E-02 GD2= -0.2362E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.2388E-02   GD2 = -0.2362E-02   GD3 = -0.2362E-02   GD4 = -0.2403E-02
+
+ Lattice energy =          -0.11552163   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2388E-02 GD2= -0.2264E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.3000E+01 ALPHA4=  0.2000E+01
+  GD1 = -0.2388E-02   GD2 = -0.2264E-02   GD3 = -0.2264E-02   GD4 = -0.2362E-02
+
+ Lattice energy =          -0.11987303   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2388E-02 GD2= -0.2108E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.5000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.3000E+01
+  GD1 = -0.2388E-02   GD2 = -0.2108E-02   GD3 = -0.2108E-02   GD4 = -0.2264E-02
+
+ Lattice energy =          -0.12385198   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2388E-02 GD2= -0.1898E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.6000E+01 ALPHA3=  0.5000E+01 ALPHA4=  0.4000E+01
+  GD1 = -0.2388E-02   GD2 = -0.1898E-02   GD3 = -0.1898E-02   GD4 = -0.2108E-02
+
+ Lattice energy =          -0.12734652   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2388E-02 GD2= -0.1640E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.7000E+01 ALPHA3=  0.6000E+01 ALPHA4=  0.5000E+01
+  GD1 = -0.2388E-02   GD2 = -0.1640E-02   GD3 = -0.1640E-02   GD4 = -0.1898E-02
+
+ Lattice energy =          -0.13025873   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2388E-02 GD2= -0.1342E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.8000E+01 ALPHA3=  0.7000E+01 ALPHA4=  0.6000E+01
+  GD1 = -0.2388E-02   GD2 = -0.1342E-02   GD3 = -0.1342E-02   GD4 = -0.1640E-02
+
+ Lattice energy =          -0.13253439   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2388E-02 GD2= -0.1021E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.9000E+01 ALPHA3=  0.8000E+01 ALPHA4=  0.7000E+01
+  GD1 = -0.2388E-02   GD2 = -0.1021E-02   GD3 = -0.1021E-02   GD4 = -0.1342E-02
+
+ Lattice energy =          -0.13413000   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2388E-02 GD2= -0.6960E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.1000E+02 ALPHA3=  0.9000E+01 ALPHA4=  0.8000E+01
+  GD1 = -0.2388E-02   GD2 = -0.6960E-03   GD3 = -0.6960E-03   GD4 = -0.1021E-02
+
+ Lattice energy =          -0.13504698   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2388E-02 GD2= -0.3896E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1571E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.16E-02 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT    5
+ Lattice energy =          -0.13824835   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1571E-02 GD2= -0.1644E-02
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1571E-02   GD2 = -0.1644E-02   GD3 = -0.1644E-02   GD4 = -0.1571E-02
+
+ Lattice energy =          -0.14155330   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1571E-02 GD2= -0.1740E-02
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.2000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1571E-02   GD2 = -0.1740E-02   GD3 = -0.1740E-02   GD4 = -0.1571E-02
+
+ Lattice energy =          -0.14870709   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1571E-02 GD2= -0.1960E-02
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.4000E+01 ALPHA2=  0.8000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1571E-02   GD2 = -0.1960E-02   GD3 = -0.1960E-02   GD4 = -0.1571E-02
+
+ Lattice energy =          -0.16497917   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1571E-02 GD2= -0.2173E-02
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.8000E+01 ALPHA2=  0.1600E+02 ALPHA3=  0.8000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1571E-02   GD2 = -0.2173E-02   GD3 = -0.2173E-02   GD4 = -0.1571E-02
+
+ Lattice energy =          -0.18880093   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1571E-02 GD2= -0.2352E-03
+
+
+ HESSIAN RECALCULATED. - NEGATIVE CURVATURE
+
+ Lattice energy =          -0.18880093   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1 = -0.2688E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+      MINIMISATION SET-UP.
+
+ GD1 = -0.2688E-02
+
+ Lattice energy =          -0.19411510   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2688E-02 GD2= -0.2624E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2688E-02   GD2 = -0.2624E-02   GD3 = -0.2624E-02   GD4 = -0.2688E-02
+
+ Lattice energy =          -0.19929379   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2688E-02 GD2= -0.2549E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.2688E-02   GD2 = -0.2549E-02   GD3 = -0.2549E-02   GD4 = -0.2624E-02
+
+ Lattice energy =          -0.20431253   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2688E-02 GD2= -0.2457E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.3000E+01 ALPHA4=  0.2000E+01
+  GD1 = -0.2688E-02   GD2 = -0.2457E-02   GD3 = -0.2457E-02   GD4 = -0.2549E-02
+
+ Lattice energy =          -0.20911953   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2688E-02 GD2= -0.2342E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.5000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.3000E+01
+  GD1 = -0.2688E-02   GD2 = -0.2342E-02   GD3 = -0.2342E-02   GD4 = -0.2457E-02
+
+ Lattice energy =          -0.21367133   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2688E-02 GD2= -0.2197E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.6000E+01 ALPHA3=  0.5000E+01 ALPHA4=  0.4000E+01
+  GD1 = -0.2688E-02   GD2 = -0.2197E-02   GD3 = -0.2197E-02   GD4 = -0.2342E-02
+
+ Lattice energy =          -0.21790096   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2688E-02 GD2= -0.2016E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.7000E+01 ALPHA3=  0.6000E+01 ALPHA4=  0.5000E+01
+  GD1 = -0.2688E-02   GD2 = -0.2016E-02   GD3 = -0.2016E-02   GD4 = -0.2197E-02
+
+ Lattice energy =          -0.22173275   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2688E-02 GD2= -0.1797E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.8000E+01 ALPHA3=  0.7000E+01 ALPHA4=  0.6000E+01
+  GD1 = -0.2688E-02   GD2 = -0.1797E-02   GD3 = -0.1797E-02   GD4 = -0.2016E-02
+
+ Lattice energy =          -0.22508251   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2688E-02 GD2= -0.1538E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.9000E+01 ALPHA3=  0.8000E+01 ALPHA4=  0.7000E+01
+  GD1 = -0.2688E-02   GD2 = -0.1538E-02   GD3 = -0.1538E-02   GD4 = -0.1797E-02
+
+ Lattice energy =          -0.22788016   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2688E-02 GD2= -0.1241E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.1000E+02 ALPHA3=  0.9000E+01 ALPHA4=  0.8000E+01
+  GD1 = -0.2688E-02   GD2 = -0.1241E-02   GD3 = -0.1241E-02   GD4 = -0.1538E-02
+
+ Lattice energy =          -0.23005029   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2688E-02 GD2= -0.9101E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.1100E+02 ALPHA3=  0.1000E+02 ALPHA4=  0.9000E+01
+  GD1 = -0.2688E-02   GD2 = -0.9101E-03   GD3 = -0.9101E-03   GD4 = -0.1241E-02
+
+ Lattice energy =          -0.23152216   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2688E-02 GD2= -0.5514E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.2810E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.28E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT    5
+ Lattice energy =          -0.23669873   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2810E-02 GD2= -0.2289E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2810E-02   GD2 = -0.2289E-02   GD3 = -0.2289E-02   GD4 = -0.2810E-02
+
+ Lattice energy =          -0.24098281   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2810E-02 GD2= -0.1802E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.2810E-02   GD2 = -0.1802E-02   GD3 = -0.1802E-02   GD4 = -0.2289E-02
+
+ Lattice energy =          -0.24439082   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2810E-02 GD2= -0.1361E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.3000E+01 ALPHA4=  0.2000E+01
+  GD1 = -0.2810E-02   GD2 = -0.1361E-02   GD3 = -0.1361E-02   GD4 = -0.1802E-02
+
+ Lattice energy =          -0.24699192   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2810E-02 GD2= -0.9906E-03
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.5000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.3000E+01
+  GD1 = -0.2810E-02   GD2 = -0.9906E-03   GD3 = -0.9906E-03   GD4 = -0.1361E-02
+
+ Lattice energy =          -0.24885323   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2810E-02 GD2= -0.6899E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.7278E-03
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.73E-03 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT   10
+ Lattice energy =          -0.25014449   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7278E-03 GD2= -0.5687E-03
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.7278E-03   GD2 = -0.5687E-03   GD3 = -0.5687E-03   GD4 = -0.7278E-03
+
+ Lattice energy =          -0.25115709   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7278E-03 GD2= -0.4200E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.7278E-03   GD2 = -0.4200E-03   GD3 = -0.4200E-03   GD4 = -0.5687E-03
+
+ Lattice energy =          -0.25193373   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7278E-03 GD2= -0.2836E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.3000E+01 ALPHA4=  0.2000E+01
+  GD1 = -0.7278E-03   GD2 = -0.2836E-03   GD3 = -0.2836E-03   GD4 = -0.4200E-03
+
+ Lattice energy =          -0.25245373   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7278E-03 GD2= -0.1530E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.3661E-03
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.37E-03 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT   10
+ Lattice energy =          -0.25308621   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3661E-03 GD2= -0.2782E-03
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.3661E-03   GD2 = -0.2782E-03   GD3 = -0.2782E-03   GD4 = -0.3661E-03
+
+ Lattice energy =          -0.25358482   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3661E-03 GD2= -0.1881E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.3661E-03   GD2 = -0.1881E-03   GD3 = -0.1881E-03   GD4 = -0.2782E-03
+
+ Lattice energy =          -0.25396237   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3661E-03 GD2= -0.1057E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.3000E+01 ALPHA4=  0.2000E+01
+  GD1 = -0.3661E-03   GD2 = -0.1057E-03   GD3 = -0.1057E-03   GD4 = -0.1881E-03
+
+ Lattice energy =          -0.25421738   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3661E-03 GD2= -0.2816E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.2801E-03
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.28E-03 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT   10
+ Lattice energy =          -0.25482176   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2801E-03 GD2= -0.3142E-03
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2801E-03   GD2 = -0.3142E-03   GD3 = -0.3142E-03   GD4 = -0.2801E-03
+
+ Lattice energy =          -0.25556103   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2801E-03 GD2= -0.3596E-03
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.2000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2801E-03   GD2 = -0.3596E-03   GD3 = -0.3596E-03   GD4 = -0.2801E-03
+
+ Lattice energy =          -0.25753202   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2801E-03 GD2= -0.4954E-03
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.4000E+01 ALPHA2=  0.8000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2801E-03   GD2 = -0.4954E-03   GD3 = -0.4954E-03   GD4 = -0.2801E-03
+
+ Lattice energy =          -0.26530007   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2801E-03 GD2= -0.1033E-02
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.8000E+01 ALPHA2=  0.1600E+02 ALPHA3=  0.8000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2801E-03   GD2 = -0.1033E-02   GD3 = -0.1033E-02   GD4 = -0.2801E-03
+
+ Lattice energy =          -0.32901368   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2801E-03 GD2= -0.4321E-02
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.1600E+02 ALPHA2=  0.3200E+02 ALPHA3=  0.1600E+02 ALPHA4=  0.0000E+00
+  GD1 = -0.2801E-03   GD2 = -0.4321E-02   GD3 = -0.4321E-02   GD4 = -0.2801E-03
+
+ Lattice energy =           7.88044913   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2801E-03 GD2=  0.1544E+00
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA= -0.1515E+02 ALPHA2=  0.1685E+02 ALPHA3=  0.3200E+02 ALPHA4=  0.1600E+02
+  GD1 = -0.2801E-03   GD2 = -0.4321E-02   GD3 =  0.1544E+00   GD4 = -0.4321E-02
+
+ Lattice energy =          -0.34419486   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2801E-03 GD2= -0.4884E-02
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA=  0.2697E+01 ALPHA2=  0.1954E+02 ALPHA3=  0.3200E+02 ALPHA4=  0.1685E+02
+  GD1 = -0.2801E-03   GD2 = -0.4884E-02   GD3 =  0.1544E+00   GD4 = -0.4884E-02
+
+ Lattice energy =          -0.41055195   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2801E-03 GD2= -0.6456E-02
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA=  0.1858E+01 ALPHA2=  0.2140E+02 ALPHA3=  0.3200E+02 ALPHA4=  0.1954E+02
+  GD1 = -0.2801E-03   GD2 = -0.6456E-02   GD3 =  0.1544E+00   GD4 = -0.6456E-02
+
+ Lattice energy =          -0.47141415   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2801E-03 GD2= -0.6551E-02
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA=  0.1578E+01 ALPHA2=  0.2298E+02 ALPHA3=  0.3200E+02 ALPHA4=  0.2140E+02
+  GD1 = -0.2801E-03   GD2 = -0.6551E-02   GD3 =  0.1544E+00   GD4 = -0.6551E-02
+
+ Lattice energy =          -0.52429288   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2801E-03 GD2= -0.4807E-02
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA=  0.9512E+00 ALPHA2=  0.2393E+02 ALPHA3=  0.3200E+02 ALPHA4=  0.2298E+02
+  GD1 = -0.2801E-03   GD2 = -0.4807E-02   GD3 =  0.1544E+00   GD4 = -0.4807E-02
+
+ Lattice energy =          -0.54761426   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2801E-03 GD2= -0.2122E-02
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA=  0.3999E+00 ALPHA2=  0.2433E+02 ALPHA3=  0.3200E+02 ALPHA4=  0.2393E+02
+  GD1 = -0.2801E-03   GD2 = -0.2122E-02   GD3 =  0.1544E+00   GD4 = -0.2122E-02
+
+ Lattice energy =          -0.55269906   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2801E-03 GD2= -0.4097E-03
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA=  0.7843E-01 ALPHA2=  0.2441E+02 ALPHA3=  0.3200E+02 ALPHA4=  0.2433E+02
+  GD1 = -0.2801E-03   GD2 = -0.4097E-03   GD3 =  0.1544E+00   GD4 = -0.4097E-03
+
+ Lattice energy =          -0.55321163   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2801E-03 GD2= -0.2176E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1835E-03
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.18E-03 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT   10
+ Lattice energy =          -0.55173769   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1835E-03 GD2=  0.1733E-02
+
+
+ LINEAR INTERPOLATION
+
+
+ ALPHA= -0.9043E+00 ALPHA2=  0.9575E-01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1835E-03   GD2 =  0.1733E-02   GD3 =  0.1733E-02   GD4 = -0.1835E-03
+
+ Lattice energy =          -0.55323816   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1835E-03 GD2= -0.1254E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.8055E-03
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.81E-03 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.1247887E-01 IN COMPONENT    5
+ Lattice energy =          -0.55463459   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.8055E-03 GD2= -0.5931E-03
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1003E+01 ALPHA2=  0.2003E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.8055E-03   GD2 = -0.5931E-03   GD3 = -0.5931E-03   GD4 = -0.8055E-03
+
+ Lattice energy =          -0.55562426   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.8055E-03 GD2= -0.3882E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3003E+01 ALPHA3=  0.2003E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.8055E-03   GD2 = -0.3882E-03   GD3 = -0.3882E-03   GD4 = -0.5931E-03
+
+ Lattice energy =          -0.55621664   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.8055E-03 GD2= -0.1954E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1195E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.12E-02 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT    5
+ Lattice energy =          -0.55881529   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1195E-02 GD2= -0.1392E-02
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1195E-02   GD2 = -0.1392E-02   GD3 = -0.1392E-02   GD4 = -0.1195E-02
+
+ Lattice energy =          -0.56181125   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1195E-02 GD2= -0.1518E-02
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.2000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1195E-02   GD2 = -0.1518E-02   GD3 = -0.1518E-02   GD4 = -0.1195E-02
+
+ Lattice energy =          -0.56827205   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1195E-02 GD2= -0.1518E-02
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.4000E+01 ALPHA2=  0.8000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1195E-02   GD2 = -0.1518E-02   GD3 = -0.1518E-02   GD4 = -0.1195E-02
+
+ Lattice energy =          -0.57921060   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1195E-02 GD2= -0.6760E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.9000E+01 ALPHA3=  0.8000E+01 ALPHA4=  0.4000E+01
+  GD1 = -0.1195E-02   GD2 = -0.6760E-03   GD3 = -0.6760E-03   GD4 = -0.1518E-02
+
+ Lattice energy =          -0.58095025   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1195E-02 GD2= -0.3708E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.1000E+02 ALPHA3=  0.9000E+01 ALPHA4=  0.8000E+01
+  GD1 = -0.1195E-02   GD2 = -0.3708E-03   GD3 = -0.3708E-03   GD4 = -0.6760E-03
+
+ Lattice energy =          -0.58221432   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1195E-02 GD2= -0.5920E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1617E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.16E-02 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT    6
+ Lattice energy =          -0.58524552   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1617E-02 GD2= -0.1318E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1617E-02   GD2 = -0.1318E-02   GD3 = -0.1318E-02   GD4 = -0.1617E-02
+
+ Lattice energy =          -0.58780450   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1617E-02 GD2= -0.9789E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.1617E-02   GD2 = -0.9789E-03   GD3 = -0.9789E-03   GD4 = -0.1318E-02
+
+ Lattice energy =          -0.58983379   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1617E-02 GD2= -0.5958E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.3000E+01 ALPHA4=  0.2000E+01
+  GD1 = -0.1617E-02   GD2 = -0.5958E-03   GD3 = -0.5958E-03   GD4 = -0.9789E-03
+
+ Lattice energy =          -0.59125968   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1617E-02 GD2= -0.1664E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.2127E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.21E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT    5
+ Lattice energy =          -0.59458739   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2127E-02 GD2= -0.1064E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2127E-02   GD2 = -0.1064E-02   GD3 = -0.1064E-02   GD4 = -0.2127E-02
+
+ Lattice energy =          -0.59584779   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2127E-02 GD2=  0.1601E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.4085E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.41E-02 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT   12
+ Lattice energy =          -0.60313645   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4085E-02 GD2= -0.2965E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.4085E-02   GD2 = -0.2965E-02   GD3 = -0.2965E-02   GD4 = -0.4085E-02
+
+ Lattice energy =          -0.60822774   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4085E-02 GD2= -0.1581E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.9613E+00 ALPHA2=  0.2961E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.4085E-02   GD2 = -0.1581E-02   GD3 = -0.1581E-02   GD4 = -0.2965E-02
+
+ Lattice energy =          -0.61059719   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4085E-02 GD2= -0.3091E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.8256E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.83E-02 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT    7
+ Lattice energy =          -0.62577896   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.8256E-02 GD2= -0.6757E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.8256E-02   GD2 = -0.6757E-02   GD3 = -0.6757E-02   GD4 = -0.8256E-02
+
+ Lattice energy =          -0.63740730   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.8256E-02 GD2= -0.4550E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.8256E-02   GD2 = -0.4550E-02   GD3 = -0.4550E-02   GD4 = -0.6757E-02
+
+ Lattice energy =          -0.64352777   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.8256E-02 GD2= -0.1309E-02
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.2911E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.29E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT   11
+ Lattice energy =          -0.64736877   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2911E-02 GD2= -0.7222E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1372E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.14E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT   12
+ Lattice energy =          -0.65002983   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1372E-02 GD2= -0.1336E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1372E-02   GD2 = -0.1336E-02   GD3 = -0.1336E-02   GD4 = -0.1372E-02
+
+ Lattice energy =          -0.65250452   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1372E-02 GD2= -0.1292E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.1372E-02   GD2 = -0.1292E-02   GD3 = -0.1292E-02   GD4 = -0.1336E-02
+
+ Lattice energy =          -0.65481663   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1372E-02 GD2= -0.1248E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.3000E+01 ALPHA4=  0.2000E+01
+  GD1 = -0.1372E-02   GD2 = -0.1248E-02   GD3 = -0.1248E-02   GD4 = -0.1292E-02
+
+ Lattice energy =          -0.65697437   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1372E-02 GD2= -0.1206E-02
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.5000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.3000E+01
+  GD1 = -0.1372E-02   GD2 = -0.1206E-02   GD3 = -0.1206E-02   GD4 = -0.1248E-02
+
+ Lattice energy =          -0.65899475   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1372E-02 GD2= -0.1171E-02
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.6000E+01 ALPHA3=  0.5000E+01 ALPHA4=  0.4000E+01
+  GD1 = -0.1372E-02   GD2 = -0.1171E-02   GD3 = -0.1171E-02   GD4 = -0.1206E-02
+
+ Lattice energy =          -0.66088463   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1372E-02 GD2= -0.1132E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.7000E+01 ALPHA3=  0.6000E+01 ALPHA4=  0.5000E+01
+  GD1 = -0.1372E-02   GD2 = -0.1132E-02   GD3 = -0.1132E-02   GD4 = -0.1171E-02
+
+ Lattice energy =          -0.66274554   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1372E-02 GD2= -0.1107E-02
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.8000E+01 ALPHA3=  0.7000E+01 ALPHA4=  0.6000E+01
+  GD1 = -0.1372E-02   GD2 = -0.1107E-02   GD3 = -0.1107E-02   GD4 = -0.1132E-02
+
+ Lattice energy =          -0.66462315   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1372E-02 GD2= -0.1102E-02
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA= -0.2157E+00 ALPHA2=  0.7784E+01 ALPHA3=  0.8000E+01 ALPHA4=  0.7000E+01
+  GD1 = -0.1372E-02   GD2 = -0.1102E-02   GD3 = -0.1102E-02   GD4 = -0.1107E-02
+
+ Lattice energy =          -0.66421943   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1372E-02 GD2= -0.1104E-02
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1143E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.11E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT   12
+ Lattice energy =          -0.66637303   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1143E-02 GD2= -0.1036E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1143E-02   GD2 = -0.1036E-02   GD3 = -0.1036E-02   GD4 = -0.1143E-02
+
+ Lattice energy =          -0.66833866   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1143E-02 GD2= -0.9325E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.1143E-02   GD2 = -0.9325E-03   GD3 = -0.9325E-03   GD4 = -0.1036E-02
+
+ Lattice energy =          -0.67015804   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1143E-02 GD2= -0.8312E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.3000E+01 ALPHA4=  0.2000E+01
+  GD1 = -0.1143E-02   GD2 = -0.8312E-03   GD3 = -0.8312E-03   GD4 = -0.9325E-03
+
+ Lattice energy =          -0.67193370   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1143E-02 GD2= -0.7428E-03
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.5000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.3000E+01
+  GD1 = -0.1143E-02   GD2 = -0.7428E-03   GD3 = -0.7428E-03   GD4 = -0.8312E-03
+
+ Lattice energy =          -0.67369294   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1143E-02 GD2= -0.6469E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.6000E+01 ALPHA3=  0.5000E+01 ALPHA4=  0.4000E+01
+  GD1 = -0.1143E-02   GD2 = -0.6469E-03   GD3 = -0.6469E-03   GD4 = -0.7428E-03
+
+ Lattice energy =          -0.67552447   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1143E-02 GD2= -0.5650E-03
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.7000E+01 ALPHA3=  0.6000E+01 ALPHA4=  0.5000E+01
+  GD1 = -0.1143E-02   GD2 = -0.5650E-03   GD3 = -0.5650E-03   GD4 = -0.6469E-03
+
+ Lattice energy =          -0.67758823   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1143E-02 GD2= -0.4974E-03
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.8000E+01 ALPHA3=  0.7000E+01 ALPHA4=  0.6000E+01
+  GD1 = -0.1143E-02   GD2 = -0.4974E-03   GD3 = -0.4974E-03   GD4 = -0.5650E-03
+
+ Lattice energy =          -0.67991951   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1143E-02 GD2= -0.4352E-03
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.9000E+01 ALPHA3=  0.8000E+01 ALPHA4=  0.7000E+01
+  GD1 = -0.1143E-02   GD2 = -0.4352E-03   GD3 = -0.4352E-03   GD4 = -0.4974E-03
+
+ Lattice energy =          -0.68267030   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1143E-02 GD2= -0.3863E-03
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.1000E+02 ALPHA3=  0.9000E+01 ALPHA4=  0.8000E+01
+  GD1 = -0.1143E-02   GD2 = -0.3863E-03   GD3 = -0.3863E-03   GD4 = -0.4352E-03
+
+ Lattice energy =          -0.68599897   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1143E-02 GD2= -0.3546E-03
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.1100E+02 ALPHA3=  0.1000E+02 ALPHA4=  0.9000E+01
+  GD1 = -0.1143E-02   GD2 = -0.3546E-03   GD3 = -0.3546E-03   GD4 = -0.3863E-03
+
+ Lattice energy =          -0.69006966   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1143E-02 GD2= -0.3381E-03
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.5777E+00 ALPHA2=  0.1158E+02 ALPHA3=  0.1100E+02 ALPHA4=  0.1000E+02
+  GD1 = -0.1143E-02   GD2 = -0.3381E-03   GD3 = -0.3381E-03   GD4 = -0.3546E-03
+
+ Lattice energy =          -0.69282853   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1143E-02 GD2= -0.3377E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.3430E-03
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.34E-03 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT   12
+ Lattice energy =          -0.69336999   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3430E-03 GD2= -0.9680E-04
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.3932E+00 ALPHA2=  0.1393E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.3430E-03   GD2 = -0.9680E-04   GD3 = -0.9680E-04   GD4 = -0.3430E-03
+
+ Lattice energy =          -0.69349485   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3430E-03 GD2=  0.1526E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1509E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.15E-02 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT   12
+ Lattice energy =          -0.69653459   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1509E-02 GD2= -0.1341E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1509E-02   GD2 = -0.1341E-02   GD3 = -0.1341E-02   GD4 = -0.1509E-02
+
+ Lattice energy =          -0.69974511   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1509E-02 GD2= -0.1192E-02
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.1509E-02   GD2 = -0.1192E-02   GD3 = -0.1192E-02   GD4 = -0.1341E-02
+
+ Lattice energy =          -0.70330755   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1509E-02 GD2= -0.1046E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.3000E+01 ALPHA4=  0.2000E+01
+  GD1 = -0.1509E-02   GD2 = -0.1046E-02   GD3 = -0.1046E-02   GD4 = -0.1192E-02
+
+ Lattice energy =          -0.70734974   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1509E-02 GD2= -0.8874E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.5000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.3000E+01
+  GD1 = -0.1509E-02   GD2 = -0.8874E-03   GD3 = -0.8874E-03   GD4 = -0.1046E-02
+
+ Lattice energy =          -0.71205019   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1509E-02 GD2= -0.6681E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.6000E+01 ALPHA3=  0.5000E+01 ALPHA4=  0.4000E+01
+  GD1 = -0.1509E-02   GD2 = -0.6681E-03   GD3 = -0.6681E-03   GD4 = -0.8874E-03
+
+ Lattice energy =          -0.71732562   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1509E-02 GD2= -0.2643E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1515E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.15E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT    7
+ Lattice energy =          -0.72034643   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1515E-02 GD2= -0.1133E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1515E-02   GD2 = -0.1133E-02   GD3 = -0.1133E-02   GD4 = -0.1515E-02
+
+ Lattice energy =          -0.72302152   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1515E-02 GD2= -0.4085E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.4225E+00 ALPHA2=  0.2422E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.1515E-02   GD2 = -0.4085E-03   GD3 = -0.4085E-03   GD4 = -0.1133E-02
+
+ Lattice energy =          -0.72379298   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1515E-02 GD2=  0.6650E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.4451E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.45E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT    7
+ Lattice energy =          -0.73329874   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4451E-02 GD2= -0.4840E-02
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.4451E-02   GD2 = -0.4840E-02   GD3 = -0.4840E-02   GD4 = -0.4451E-02
+
+ Lattice energy =          -0.74415534   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4451E-02 GD2= -0.5331E-02
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.2000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.4451E-02   GD2 = -0.5331E-02   GD3 = -0.5331E-02   GD4 = -0.4451E-02
+
+ Lattice energy =          -0.77120652   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4451E-02 GD2= -0.6595E-02
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.4000E+01 ALPHA2=  0.8000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.4451E-02   GD2 = -0.6595E-02   GD3 = -0.6595E-02   GD4 = -0.4451E-02
+
+ Lattice energy =          -0.85283794   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4451E-02 GD2= -0.8751E-02
+
+
+ NEGATIVE CURVATURE
+
+
+ ALPHA=  0.8000E+01 ALPHA2=  0.1600E+02 ALPHA3=  0.8000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.4451E-02   GD2 = -0.8751E-02   GD3 = -0.8751E-02   GD4 = -0.4451E-02
+
+ Lattice energy =           0.24513890   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4451E-02 GD2=  0.2564E+00
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA= -0.7496E+01 ALPHA2=  0.8504E+01 ALPHA3=  0.1600E+02 ALPHA4=  0.8000E+01
+  GD1 = -0.4451E-02   GD2 = -0.8751E-02   GD3 =  0.2564E+00   GD4 = -0.8751E-02
+
+ Lattice energy =          -0.86511425   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4451E-02 GD2= -0.8532E-02
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA=  0.1129E+01 ALPHA2=  0.9633E+01 ALPHA3=  0.1600E+02 ALPHA4=  0.8504E+01
+  GD1 = -0.4451E-02   GD2 = -0.8532E-02   GD3 =  0.2564E+00   GD4 = -0.8532E-02
+
+ Lattice energy =          -0.89111096   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4451E-02 GD2= -0.6725E-02
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA=  0.6190E+00 ALPHA2=  0.1025E+02 ALPHA3=  0.1600E+02 ALPHA4=  0.9633E+01
+  GD1 = -0.4451E-02   GD2 = -0.6725E-02   GD3 =  0.2564E+00   GD4 = -0.6725E-02
+
+ Lattice energy =          -0.90248837   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4451E-02 GD2= -0.4504E-02
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA=  0.4300E+00 ALPHA2=  0.1068E+02 ALPHA3=  0.1600E+02 ALPHA4=  0.1025E+02
+  GD1 = -0.4451E-02   GD2 = -0.4504E-02   GD3 =  0.2564E+00   GD4 = -0.4504E-02
+
+ Lattice energy =          -0.90790378   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4451E-02 GD2= -0.2176E-02
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA=  0.2124E+00 ALPHA2=  0.1089E+02 ALPHA3=  0.1600E+02 ALPHA4=  0.1068E+02
+  GD1 = -0.4451E-02   GD2 = -0.2176E-02   GD3 =  0.2564E+00   GD4 = -0.2176E-02
+
+ Lattice energy =          -0.90951232   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4451E-02 GD2= -0.7243E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.2491E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.25E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT    7
+ Lattice energy =          -0.90815334   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2491E-02 GD2=  0.4482E-02
+
+
+ LINEAR INTERPOLATION
+
+
+ ALPHA= -0.6428E+00 ALPHA2=  0.3572E+00 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2491E-02   GD2 =  0.4482E-02   GD3 =  0.4482E-02   GD4 = -0.2491E-02
+
+ Lattice energy =          -0.91058647   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2491E-02 GD2= -0.4010E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.5348E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.53E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.1020161E-01 IN COMPONENT   12
+ Lattice energy =          -0.92058367   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5348E-02 GD2= -0.4638E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1451E+01 ALPHA2=  0.2451E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.5348E-02   GD2 = -0.4638E-02   GD3 = -0.4638E-02   GD4 = -0.5348E-02
+
+ Lattice energy =          -0.93225888   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5348E-02 GD2= -0.3418E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3451E+01 ALPHA3=  0.2451E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.5348E-02   GD2 = -0.3418E-02   GD3 = -0.3418E-02   GD4 = -0.4638E-02
+
+ Lattice energy =          -0.93791570   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5348E-02 GD2= -0.2423E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4451E+01 ALPHA3=  0.3451E+01 ALPHA4=  0.2451E+01
+  GD1 = -0.5348E-02   GD2 = -0.2423E-02   GD3 = -0.2423E-02   GD4 = -0.3418E-02
+
+ Lattice energy =          -0.94137298   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5348E-02 GD2= -0.1291E-02
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.6993E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.70E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.1622299E-01 IN COMPONENT   11
+ Lattice energy =          -0.95187306   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.6993E-02 GD2= -0.3532E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.5410E+00 ALPHA2=  0.1541E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.6993E-02   GD2 = -0.3532E-02   GD3 = -0.3532E-02   GD4 = -0.6993E-02
+
+ Lattice energy =          -0.95421319   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.6993E-02 GD2= -0.1219E-02
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.5317E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.53E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.1124780E-01 IN COMPONENT   12
+ Lattice energy =          -0.96407881   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5317E-02 GD2= -0.4586E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1223E+01 ALPHA2=  0.2223E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.5317E-02   GD2 = -0.4586E-02   GD3 = -0.4586E-02   GD4 = -0.5317E-02
+
+ Lattice energy =          -0.97398050   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5317E-02 GD2= -0.3690E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3223E+01 ALPHA3=  0.2223E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.5317E-02   GD2 = -0.3690E-02   GD3 = -0.3690E-02   GD4 = -0.4586E-02
+
+ Lattice energy =          -0.98031443   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5317E-02 GD2= -0.2952E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4223E+01 ALPHA3=  0.3223E+01 ALPHA4=  0.2223E+01
+  GD1 = -0.5317E-02   GD2 = -0.2952E-02   GD3 = -0.2952E-02   GD4 = -0.3690E-02
+
+ Lattice energy =          -0.98503248   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5317E-02 GD2= -0.2211E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.5223E+01 ALPHA3=  0.4223E+01 ALPHA4=  0.3223E+01
+  GD1 = -0.5317E-02   GD2 = -0.2211E-02   GD3 = -0.2211E-02   GD4 = -0.2952E-02
+
+ Lattice energy =          -0.98813029   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5317E-02 GD2= -0.1465E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.6223E+01 ALPHA3=  0.5223E+01 ALPHA4=  0.4223E+01
+  GD1 = -0.5317E-02   GD2 = -0.1465E-02   GD3 = -0.1465E-02   GD4 = -0.2211E-02
+
+ Lattice energy =          -0.98958442   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5317E-02 GD2= -0.7148E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.5496E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.55E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2106080E-01 IN COMPONENT   12
+ Lattice energy =          -0.99950830   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5496E-02 GD2= -0.4638E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1870E+00 ALPHA2=  0.1187E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.5496E-02   GD2 = -0.4638E-02   GD3 = -0.4638E-02   GD4 = -0.5496E-02
+
+ Lattice energy =          -1.00115426   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5496E-02 GD2= -0.4490E-02
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2187E+01 ALPHA3=  0.1187E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.5496E-02   GD2 = -0.4490E-02   GD3 = -0.4490E-02   GD4 = -0.4638E-02
+
+ Lattice energy =          -1.00885813   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5496E-02 GD2= -0.3754E-02
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3187E+01 ALPHA3=  0.2187E+01 ALPHA4=  0.1187E+01
+  GD1 = -0.5496E-02   GD2 = -0.3754E-02   GD3 = -0.3754E-02   GD4 = -0.4490E-02
+
+ Lattice energy =          -1.01484034   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5496E-02 GD2= -0.3113E-02
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4187E+01 ALPHA3=  0.3187E+01 ALPHA4=  0.2187E+01
+  GD1 = -0.5496E-02   GD2 = -0.3113E-02   GD3 = -0.3113E-02   GD4 = -0.3754E-02
+
+ Lattice energy =          -1.01923716   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5496E-02 GD2= -0.2524E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.5187E+01 ALPHA3=  0.4187E+01 ALPHA4=  0.3187E+01
+  GD1 = -0.5496E-02   GD2 = -0.2524E-02   GD3 = -0.2524E-02   GD4 = -0.3113E-02
+
+ Lattice energy =          -1.02208813   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5496E-02 GD2= -0.1980E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.6187E+01 ALPHA3=  0.5187E+01 ALPHA4=  0.4187E+01
+  GD1 = -0.5496E-02   GD2 = -0.1980E-02   GD3 = -0.1980E-02   GD4 = -0.2524E-02
+
+ Lattice energy =          -1.02334531   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5496E-02 GD2= -0.1440E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.7187E+01 ALPHA3=  0.6187E+01 ALPHA4=  0.5187E+01
+  GD1 = -0.5496E-02   GD2 = -0.1440E-02   GD3 = -0.1440E-02   GD4 = -0.1980E-02
+
+ Lattice energy =          -1.02289911   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5496E-02 GD2= -0.8830E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.3358E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.34E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT   12
+ Lattice energy =          -1.02912909   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3358E-02 GD2= -0.3169E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.3358E-02   GD2 = -0.3169E-02   GD3 = -0.3169E-02   GD4 = -0.3358E-02
+
+ Lattice energy =          -1.03431455   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3358E-02 GD2= -0.2877E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.3358E-02   GD2 = -0.2877E-02   GD3 = -0.2877E-02   GD4 = -0.3169E-02
+
+ Lattice energy =          -1.03819918   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3358E-02 GD2= -0.2429E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4000E+01 ALPHA3=  0.3000E+01 ALPHA4=  0.2000E+01
+  GD1 = -0.3358E-02   GD2 = -0.2429E-02   GD3 = -0.2429E-02   GD4 = -0.2877E-02
+
+ Lattice energy =          -1.04050772   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3358E-02 GD2= -0.1807E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.5000E+01 ALPHA3=  0.4000E+01 ALPHA4=  0.3000E+01
+  GD1 = -0.3358E-02   GD2 = -0.1807E-02   GD3 = -0.1807E-02   GD4 = -0.2429E-02
+
+ Lattice energy =          -1.04081232   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3358E-02 GD2= -0.9725E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.9355E+00 ALPHA2=  0.5936E+01 ALPHA3=  0.5000E+01 ALPHA4=  0.4000E+01
+  GD1 = -0.3358E-02   GD2 = -0.9725E-03   GD3 = -0.9725E-03   GD4 = -0.1807E-02
+
+ Lattice energy =          -1.03885355   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3358E-02 GD2=  0.1052E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.5038E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.50E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.1884372E-01 IN COMPONENT   12
+ Lattice energy =          -1.04804622   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5038E-02 GD2= -0.4335E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.3267E+00 ALPHA2=  0.1327E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.5038E-02   GD2 = -0.4335E-02   GD3 = -0.4335E-02   GD4 = -0.5038E-02
+
+ Lattice energy =          -1.05064939   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5038E-02 GD2= -0.4105E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2327E+01 ALPHA3=  0.1327E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.5038E-02   GD2 = -0.4105E-02   GD3 = -0.4105E-02   GD4 = -0.4335E-02
+
+ Lattice energy =          -1.05755667   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5038E-02 GD2= -0.3421E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3327E+01 ALPHA3=  0.2327E+01 ALPHA4=  0.1327E+01
+  GD1 = -0.5038E-02   GD2 = -0.3421E-02   GD3 = -0.3421E-02   GD4 = -0.4105E-02
+
+ Lattice energy =          -1.06293969   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5038E-02 GD2= -0.2758E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4327E+01 ALPHA3=  0.3327E+01 ALPHA4=  0.2327E+01
+  GD1 = -0.5038E-02   GD2 = -0.2758E-02   GD3 = -0.2758E-02   GD4 = -0.3421E-02
+
+ Lattice energy =          -1.06692691   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5038E-02 GD2= -0.2127E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.5327E+01 ALPHA3=  0.4327E+01 ALPHA4=  0.3327E+01
+  GD1 = -0.5038E-02   GD2 = -0.2127E-02   GD3 = -0.2127E-02   GD4 = -0.2758E-02
+
+ Lattice energy =          -1.06975098   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5038E-02 GD2= -0.1527E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.6327E+01 ALPHA3=  0.5327E+01 ALPHA4=  0.4327E+01
+  GD1 = -0.5038E-02   GD2 = -0.1527E-02   GD3 = -0.1527E-02   GD4 = -0.2127E-02
+
+ Lattice energy =          -1.07149538   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5038E-02 GD2= -0.9642E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1318E-01
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.13E-01 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT    6
+ Lattice energy =          -1.09121537   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1318E-01 GD2= -0.7261E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1318E-01   GD2 = -0.7261E-02   GD3 = -0.7261E-02   GD4 = -0.1318E-01
+
+ Lattice energy =          -1.10145038   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1318E-01 GD2= -0.3717E-02
+
+
+ UNABLE TO FIND GD=0
+
+
+ ALPHA=  0.9913E+00 ALPHA2=  0.2991E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.1318E-01   GD2 = -0.3717E-02   GD3 = -0.3717E-02   GD4 = -0.7261E-02
+
+ Lattice energy =          -1.10598104   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1318E-01 GD2= -0.1575E-02
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.8909E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.89E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT   11
+ Lattice energy =          -1.12103085   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.8909E-02 GD2= -0.6211E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.8909E-02   GD2 = -0.6211E-02   GD3 = -0.6211E-02   GD4 = -0.8909E-02
+
+ Lattice energy =          -1.13120368   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.8909E-02 GD2= -0.3807E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.8909E-02   GD2 = -0.3807E-02   GD3 = -0.3807E-02   GD4 = -0.6211E-02
+
+ Lattice energy =          -1.13715940   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.8909E-02 GD2= -0.1699E-02
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.6969E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.70E-02 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT   12
+ Lattice energy =          -1.14985267   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.6969E-02 GD2= -0.5567E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.6969E-02   GD2 = -0.5567E-02   GD3 = -0.5567E-02   GD4 = -0.6969E-02
+
+ Lattice energy =          -1.15958291   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.6969E-02 GD2= -0.3813E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3000E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.6969E-02   GD2 = -0.3813E-02   GD3 = -0.3813E-02   GD4 = -0.5567E-02
+
+ Lattice energy =          -1.16546251   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.6969E-02 GD2= -0.1620E-02
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1030E-01
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.10E-01 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT   12
+ Lattice energy =          -1.18177564   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1030E-01 GD2= -0.5426E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1030E-01   GD2 = -0.5426E-02   GD3 = -0.5426E-02   GD4 = -0.1030E-01
+
+ Lattice energy =          -1.18466076   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1030E-01 GD2=  0.3271E-02
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA= -0.3277E+00 ALPHA2=  0.1672E+01 ALPHA3=  0.2000E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.1030E-01   GD2 = -0.5426E-02   GD3 =  0.3271E-02   GD4 = -0.5426E-02
+
+ Lattice energy =          -1.18576605   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1030E-01 GD2= -0.1150E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.5477E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.55E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.1756217E-01 IN COMPONENT   10
+ Lattice energy =          -1.19397743   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5477E-02 GD2= -0.2730E-02
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.4235E+00 ALPHA2=  0.1424E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.5477E-02   GD2 = -0.2730E-02   GD3 = -0.2730E-02   GD4 = -0.5477E-02
+
+ Lattice energy =          -1.19567598   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5477E-02 GD2= -0.1498E-02
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.4971E+00 ALPHA2=  0.1921E+01 ALPHA3=  0.1424E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.5477E-02   GD2 = -0.1498E-02   GD3 = -0.1498E-02   GD4 = -0.2730E-02
+
+ Lattice energy =          -1.19633861   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.5477E-02 GD2=  0.1317E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.3775E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.38E-02 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT   12
+ Lattice energy =          -1.19967686   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3775E-02 GD2=  0.3091E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.8222E-03
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.82E-03 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.9254484E-02 IN COMPONENT    5
+ Lattice energy =          -1.20122101   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.8222E-03 GD2= -0.7309E-03
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1701E+01 ALPHA2=  0.2701E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.8222E-03   GD2 = -0.7309E-03   GD3 = -0.7309E-03   GD4 = -0.8222E-03
+
+ Lattice energy =          -1.20335684   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.8222E-03 GD2= -0.5246E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.3701E+01 ALPHA3=  0.2701E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.8222E-03   GD2 = -0.5246E-03   GD3 = -0.5246E-03   GD4 = -0.7309E-03
+
+ Lattice energy =          -1.20420608   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.8222E-03 GD2= -0.3614E-03
+
+
+ QUADRATIC EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.4701E+01 ALPHA3=  0.3701E+01 ALPHA4=  0.2701E+01
+  GD1 = -0.8222E-03   GD2 = -0.3614E-03   GD3 = -0.3614E-03   GD4 = -0.5246E-03
+
+ Lattice energy =          -1.20474031   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.8222E-03 GD2= -0.1658E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1270E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.13E-02 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.2500000E-01 IN COMPONENT    5
+ Lattice energy =          -1.20696205   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1270E-02 GD2= -0.8881E-03
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1270E-02   GD2 = -0.8881E-03   GD3 = -0.8881E-03   GD4 = -0.1270E-02
+
+ Lattice energy =          -1.20800556   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1270E-02 GD2= -0.1269E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1650E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.17E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2500000E-01 IN COMPONENT    5
+ Lattice energy =          -1.21056172   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1650E-02 GD2= -0.9328E-03
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1000E+01 ALPHA2=  0.2000E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1650E-02   GD2 = -0.9328E-03   GD3 = -0.9328E-03   GD4 = -0.1650E-02
+
+ Lattice energy =          -1.21148603   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1650E-02 GD2= -0.4596E-05
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1016E-02
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.10E-02 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.1237682E-01 IN COMPONENT   11
+ Lattice energy =          -1.21269342   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1016E-02 GD2= -0.2206E-03
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1958E-03
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.20E-03 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.9212749E-02 IN COMPONENT    5
+ Lattice energy =          -1.21291297   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1958E-03 GD2= -0.1846E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.3506E-04
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.35E-04 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.2568923E-02 IN COMPONENT   10
+ Lattice energy =          -1.21295319   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3506E-04 GD2= -0.9576E-05
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.3758E+00 ALPHA2=  0.1376E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.3506E-04   GD2 = -0.9576E-05   GD3 = -0.9576E-05   GD4 = -0.3506E-04
+
+ Lattice energy =          -1.21295886   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.3506E-04 GD2=  0.8438E-08
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1144E-04
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.11E-04 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.9089048E-03 IN COMPONENT   11
+ Lattice energy =          -1.21298271   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1144E-04 GD2= -0.6975E-05
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1561E+01 ALPHA2=  0.2561E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1144E-04   GD2 = -0.6975E-05   GD3 = -0.6975E-05   GD4 = -0.1144E-04
+
+ Lattice energy =          -1.21299287   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1144E-04 GD2=  0.2005E-07
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.7742E-05
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.77E-05 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.3297045E-03 IN COMPONENT    7
+ Lattice energy =          -1.21300889   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7742E-05 GD2= -0.5959E-05
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.3341E+01 ALPHA2=  0.4341E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.7742E-05   GD2 = -0.5959E-05   GD3 = -0.5959E-05   GD4 = -0.7742E-05
+
+ Lattice energy =          -1.21303351   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7742E-05 GD2= -0.6395E-07
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1616E-04
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.16E-04 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.1781011E-02 IN COMPONENT   10
+ Lattice energy =          -1.21305803   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1616E-04 GD2= -0.1105E-04
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.2163E+01 ALPHA2=  0.3163E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1616E-04   GD2 = -0.1105E-04   GD3 = -0.1105E-04   GD4 = -0.1616E-04
+
+ Lattice energy =          -1.21307308   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1616E-04 GD2=  0.1646E-07
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1059E-04
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.11E-04 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.4937203E-03 IN COMPONENT   12
+ Lattice energy =          -1.21308929   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1059E-04 GD2= -0.1008E-04
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1981E+02 ALPHA2=  0.2081E+02 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1059E-04   GD2 = -0.1008E-04   GD3 = -0.1008E-04   GD4 = -0.1059E-04
+
+ Lattice energy =          -1.21328443   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1059E-04 GD2= -0.6898E-07
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1451E-03
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.15E-03 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.1216388E-01 IN COMPONENT   10
+ Lattice energy =          -1.21353283   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1451E-03 GD2= -0.9348E-04
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1055E+01 ALPHA2=  0.2055E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1451E-03   GD2 = -0.9348E-04   GD3 = -0.9348E-04   GD4 = -0.1451E-03
+
+ Lattice energy =          -1.21365494   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1451E-03 GD2= -0.2646E-04
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.6731E-04
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.67E-04 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.4807267E-02 IN COMPONENT    6
+ Lattice energy =          -1.21373191   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.6731E-04 GD2= -0.8143E-05
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.4797E-05
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.48E-05 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.1070301E-02 IN COMPONENT   11
+ Lattice energy =          -1.21373908   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.4797E-05 GD2= -0.8182E-06
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1070E-05
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.11E-05 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.6391902E-03 IN COMPONENT   10
+ Lattice energy =          -1.21374563   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1070E-05 GD2= -0.7908E-06
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.2836E+01 ALPHA2=  0.3836E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1070E-05   GD2 = -0.7908E-06   GD3 = -0.7908E-06   GD4 = -0.1070E-05
+
+ Lattice energy =          -1.21373599   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1070E-05 GD2=  0.3979E-07
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.7954E-06
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.80E-06 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.1402084E-03 IN COMPONENT    5
+ Lattice energy =          -1.21373755   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7954E-06 GD2= -0.7760E-06
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.3990E+02 ALPHA2=  0.4090E+02 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.7954E-06   GD2 = -0.7760E-06   GD3 = -0.7760E-06   GD4 = -0.7954E-06
+
+ Lattice energy =          -1.21377239   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.7954E-06 GD2= -0.1319E-07
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.2267E-04
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.23E-04 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.5800174E-02 IN COMPONENT   10
+ Lattice energy =          -1.21380587   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2267E-04 GD2= -0.1598E-04
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.2390E+01 ALPHA2=  0.3390E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2267E-04   GD2 = -0.1598E-04   GD3 = -0.1598E-04   GD4 = -0.2267E-04
+
+ Lattice energy =          -1.21385895   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.2267E-04 GD2= -0.3500E-05
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.8704E-05
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.87E-05 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.4952867E-02 IN COMPONENT   10
+ Lattice energy =          -1.21386563   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.8704E-05 GD2= -0.2670E-05
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.4426E+00 ALPHA2=  0.1443E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.8704E-05   GD2 = -0.2670E-05   GD3 = -0.2670E-05   GD4 = -0.8704E-05
+
+ Lattice energy =          -1.21385904   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.8704E-05 GD2= -0.3414E-06
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1089E-05
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.11E-05 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.1227154E-02 IN COMPONENT   10
+ Lattice energy =          -1.21385161   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1089E-05 GD2= -0.2469E-06
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1125E-06
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.11E-06 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.7266738E-03 IN COMPONENT   10
+ Lattice energy =          -1.21384974   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1125E-06 GD2= -0.2364E-07
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1423E-07
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.14E-07 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.4255147E-03 IN COMPONENT   10
+ Lattice energy =          -1.21385149   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1423E-07 GD2= -0.8533E-08
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1498E+01 ALPHA2=  0.2498E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1423E-07   GD2 = -0.8533E-08   GD3 = -0.8533E-08   GD4 = -0.1423E-07
+
+ Lattice energy =          -1.21384985   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1423E-07 GD2=  0.7032E-08
+
+
+ QUADRATIC INTERPOLATION
+
+
+ ALPHA= -0.5804E+00 ALPHA2=  0.1917E+01 ALPHA3=  0.2498E+01 ALPHA4=  0.1000E+01
+  GD1 = -0.1423E-07   GD2 = -0.8533E-08   GD3 =  0.7032E-08   GD4 = -0.8533E-08
+
+ Lattice energy =          -1.21385034   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1423E-07 GD2=  0.1049E-08
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1626E-08
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.16E-08 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.3419233E-04 IN COMPONENT   12
+ Lattice energy =          -1.21385034   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1626E-08 GD2= -0.3601E-09
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1445E-09
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.14E-09 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.8370313E-05 IN COMPONENT    5
+ Lattice energy =          -1.21385034   (in internal units)      (Repulsion-dispersion cutoff =      0.950 lattice units)
+
+ GD1= -0.1445E-09 GD2=  0.8635E-12
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.4509E-12
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.45E-12 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.1013664E-05 IN COMPONENT   10
+
+      VALID MINIMISATION - GRADIENT TEST SATISFIED
+ THIS PROBABLY INDICATES A MINIMUM WITH ZERO CURVATURE
+
+
+On returning from minimiser proposed alterations are:
+
+
+ Molecular translations (Angstroms)
+
+ Molecule No.      x         y          z     magnitude
+
+
+    1        0.000000       -0.000000        0.000000        0.000000
+
+All will be scaled by a factor of       1.000000
+
+
+Molecular rotations:
+
+ Molecule No. Global [local] rotation axis      magnitude
+                  x          y        z         (Degrees)
+
+
+    1        0.650655        0.733498        0.196544        0.000040
+     [        -0.900862        0.276277        0.334840 ]
+
+All will be scaled by a factor of       1.000000
+
+
+Strain matrix to be applied:
+
+
+       E            E            E            E            E            E
+        1            2            3            4            5            6
+
+  -0.000000     0.000000    -0.000000    -0.000001     0.000000     0.000000
+
+
+ Coordinates dumped
+
+
+Centralisation of forces (global axes)
+and torques (global axes) for molecule:    1
+
+Basis No.   Species                                force (eV per Angstrom)
+                             x                    y                    z                  magnitude
+       1  C_F1_1____   -0.56451748E-01       0.71117077E-01       0.36360374E-01       0.97808564E-01
+       2  C_F1_2____   -0.16203409E-01      -0.36430995E-02      -0.58867861E-02       0.17620355E-01
+       3  H_F2_1____   -0.22771509E+00      -0.36407563E-01       0.97251426E-01       0.25027488E+00
+       4  H_F1_2____   -0.12623016E+00       0.26454100E-01       0.78444480E-01       0.15095499E+00
+       5  H_F1_3____   -0.16377076E-01       0.13766051E-01      -0.49091612E-01       0.53550902E-01
+       6  H_F1_4____    0.42871428E-01      -0.59205110E-02       0.33140329E-01       0.54509570E-01
+       7  O_F1_1____    0.21947810E+00       0.78897739E-01      -0.78242531E-01       0.24600281E+00
+       8  O_F1_2____    0.18062796E+00      -0.14426379E+00      -0.11197568E+00       0.25685999E+00
+
+    Central force      -0.64906990E-14       0.17265899E-14      -0.15827074E-14       0.69003803E-14
+   Central torque      -0.59193064E-07       0.41532536E-08      -0.68639738E-07       0.90733026E-07
+ (eV per radian) [      0.16973184E-07      -0.15480340E-07      -0.87776717E-07    ]
+
+Strain derivatives for matrix deformation of form: 
+
+                /                       | 
+               |     E   1/2 E   1/2 E  |
+               |      1       6       5 |
+               |                        |
+   R =>   R  + | 1/2 E       E   1/2 E  |  R
+               |      6       2       4 |
+               |                        |
+               | 1/2 E   1/2 E       E  |
+               |      5       4       3/
+
+
+   dU/dE        dU/dE        dU/dE        dU/dE        dU/dE        dU/dE
+        1            2            3            4            5            6
+
+    -0.0000      -0.0000       0.0000      -0.0000       0.0000      -0.0000
+[     -0.00        -0.00         0.00        -0.00         0.00        -0.00 ]
+
+ Units for strain derivatives : eV [kJ/mol].
+
+
+
+Contributions to lattice energy (eV per unit cell [kJ/mol])
+ Z =        1
+ Ewald summed charge-charge energy.......=  -0.77522926E+01[  -0.74797648E+03 ]
+ Intra-molecular charge-charge energy....=  -0.75507283E+01[  -0.72852864E+03 ]
+ Inter-molecular charge-charge energy....=  -0.20156435E+00[  -0.19447846E+02 ]
+               Total charge-dipole energy=   0.00000000E+00[   0.00000000E+00 ]
+               Total dipole-dipole energy=   0.00000000E+00[   0.00000000E+00 ]
+ Total charge-dipole+dipole-dipole energy=   0.00000000E+00[   0.00000000E+00 ]
+ Higher multipole interaction energy.....=   0.00000000E+00[   0.00000000E+00 ]
+ Total isotropic repulsion-dispersion....=  -0.23541444E+00[  -0.22713857E+02 ]
+ Total anisotropic repulsion energy......=   0.00000000E+00[   0.00000000E+00 ]
+ Intermolecular induction energy.........=   0.00000000E+00[   0.00000000E+00 ]
+ PV energy..(P =   0.00E+00 Pa)..........    0.00000000E+00[   0.00000000E+00]
+ Total lattice energy....................=  -0.43697879E+00[  -0.42161703E+02 ]
+
+ Warning - NOPR directive was used - properties will only be approximate
+
+
+
+ MECHANICAL PROPERTIES CALCULATIED FROM HESSIAN MATRIX
+
+
+ Elastic stiffness tensor (Cij): GPa (10**10 DYNE/CM**2)
+     22.10536     -1.45050      0.52860      1.12067      2.04823    -12.59189
+     -1.45050     12.96352     -1.02481      5.79928      0.58152     -1.40444
+      0.52860     -1.02481     -6.92146     -0.54528     -0.02956     -1.68101
+      1.12067      5.79928     -0.54528      0.30280     -1.52698     -0.80510
+      2.04823      0.58152     -0.02956     -1.52698      0.94298      1.69244
+    -12.59189     -1.40444     -1.68101     -0.80510      1.69244      2.22256
+
+WARNING: Born stability criteria not met.
+The elastic constant matrix is not positive definite.
+   Lowest eigenvalue:  -0.76557576E+01
+ Lowest eigenvalue of shear submatrix of Cij =   -1.02550 GPa
+ Corresponding eigenvector     0.68697   0.70016  -0.19455 )
+
+
+ Elastic compliance tensor (Sij): GPa^(-1) (10**-10 CM**2/DYNE)
+     -0.00638      0.01296      0.02209     -0.05421      0.07049     -0.08454
+      0.01296      0.01862     -0.02374      0.13195      0.09056      0.04609
+      0.02209     -0.02374     -0.15086      0.04319     -0.02956      0.03422
+     -0.05421      0.13195      0.04319     -0.32288     -0.18477     -0.16734
+      0.07049      0.09056     -0.02956     -0.18477      0.29395      0.14344
+     -0.08454      0.04609      0.03422     -0.16734      0.14344     -0.14384
+
+ Mechanical properties calculated for a microcrystalline aggregate.
+ Bulk modulus from elastic constants (Voigt averaging):     2.69489 GPa
+ Bulk modulus from compliance constants (Reuss averaging):    -8.62128 GPa
+ Arithmetic mean:    -2.96320 GPa
+ Geometric mean:         NaN GPa
+
+ Shear modulus from elastic constants (Voigt averaging):     2.69994 GPa
+ Shear modulus from compliance constants (Reuss averaging):   -13.41626 GPa
+ Arithmetic mean:    -5.35816 GPa
+ Geometric mean:         NaN GPa
+
+ Young's modulus from elastic constants (Voigt averaging):     6.07202 GPa
+ Young's modulus from compliance constants (Reuss averaging):   -26.50166 GPa
+ Arithmetic mean:   -10.21482 GPa
+ Geometric mean:         NaN GPa
+
+ Poisson's ratio from elastic constants (Voigt averaging):     0.12447 GPa
+ Poisson's ratio from compliance constants (Reuss averaging):    -0.01233 GPa
+ Arithmetic mean:     0.05607 GPa
+ Geometric mean:         NaN GPa
+
+ Single crystal Young's modulus along optical axes     x-component:  -156.82525 GPa
+     y-component:    53.71592 GPa
+     z-component:    -6.62849 GPa
+     arithmetic mean:   -36.57928 GPa
+
+ EIGENVALUES FOR REPRESENTATION   1
+ -0.51668041E+01 -0.33051864E+01 -0.13464421E+01 -0.11368684E-12 -0.11368684E-12
+  0.56843419E-13  0.81759108E+00  0.15892498E+01  0.19176839E+01  0.10422685E+02
+  0.11882983E+02  0.19143693E+02
+
+On returning from minimiser proposed alterations are:
+
+
+ Molecular translations (Angstroms)
+
+ Molecule No.      x         y          z     magnitude
+
+
+    1        0.000000       -0.000000        0.000000        0.000000
+
+All will be scaled by a factor of       1.000000
+
+
+Molecular rotations:
+
+ Molecule No. Global [local] rotation axis      magnitude
+                  x          y        z         (Degrees)
+
+
+    1        0.650655        0.733498        0.196544        0.000040
+     [        -0.900862        0.276277        0.334840 ]
+
+All will be scaled by a factor of       1.000000
+
+
+Strain matrix to be applied:
+
+
+       E            E            E            E            E            E
+        1            2            3            4            5            6
+
+  -0.000000     0.000000    -0.000000    -0.000001     0.000000     0.000000
+
+
+ Final lattice vectors are
+      0.230663159819482   0.033907650764731  -0.092562039032186
+      0.518579567212426  -0.101411330675796  -0.590706055198240
+     -0.056111894469570   0.383674417130322   0.629143674828225
+
+ Final basis positions are
+ C_F1_1____1____      0.684481242036412     -0.479717593680125     -0.750353111107758    1
+ C_F1_2____2____      0.662850416009938     -0.550490626910078     -0.754307570998233    1
+ H_F2_1____3____      0.757250341642989     -0.420430312512561     -0.772039794165207    1
+ H_F1_2____4____      0.613682366605687     -0.555534538147592     -0.728526039216232    1
+ H_F1_3____5____      0.655331036727140     -0.566405929118186     -0.805476865700916    1
+ H_F1_4____6____      0.697318326518340     -0.583649159876474     -0.730764960229389    1
+ O_F1_1____7____      0.744349456828029     -0.468717238273204     -0.775674343621090    1
+ O_F1_2____8____      0.650466682114275     -0.434791508426336     -0.727105522281244    1
+
+ Final molecular centres of mass
+Molecule    Centre of mass coords
+
+    1           0.6868023124     -0.4824492032     -0.7522905856
+
+ Final molecular axes 
+
+Axes for molecule        1
+    -0.2918729841   -0.9549675254   -0.0533590353
+     0.8323786292   -0.2261339437   -0.5059735736
+     0.4711220424   -0.1920949374    0.8608969486
+
+Number of iterations =      292
+
+
+Changes in structure during program run (Refer to centered cell)
+
+
+Lattice vectors (Angstroms and Degrees)
+                  a          b          c        alpha       beta      gamma
+
+
+   Initial =>    20.0000    20.0000    20.0000    90.0000    90.0000    90.0000
+     Final =>     5.0169    15.8511    14.7807   138.6423   108.2867    30.7507
+
+diff.(abs) =>   -14.9831    -4.1489    -5.2193    48.6423    18.2867   -59.2493
+  diff.(%) =>   -74.9156   -20.7445   -26.0963    54.0470    20.3186   -65.8325
+
+           Cell Volume ( Cubic Angstroms )  Cell density ( g/cubic cm)
+
+   Initial =>          8000.0000                        0.0125
+   Final   =>            77.8525                        1.2809
+
+diff.(abs) =>         -7922.1475                        1.2684
+diff.(%)   =>           -99.0268                    10175.8357
+Dipole per unit cell in global axis system (eA)
+                x       y      z     total dipole
+ Initial : -0.3715831  -0.1378103  -0.0548359   0.4000908
+ Final   :  0.2588514  -0.2590111  -0.1611889   0.4000908
+
+ Initial crystalographic positions of molecule centres of mass
+
+Molecule    a-vectors      b-vectors      c-vectors
+
+     1      0.020101      0.995890      0.984889
+
+Final crystalographic positions of molecule centres of mass
+
+Molecule    a-vectors      b-vectors      c-vectors
+
+     1     11.082548     -3.960408     -3.283676
+
+Direction cosines between axes before and after program run for molecule    1
+
+new axis           old axis
+  ||        X         Y         Z
+  //
+   X    -.076612  0.652348  0.754037
+   Y    -.971208  -.219925  0.091589
+   Z    0.225579  -.725310  0.650415
+
+Actual angles between axes (Degrees):
+
+new axis           old axis
+  ||        X         Y         Z
+  //
+   X     94.393836   49.281103   41.058682
+   Y    166.217671  102.704607   84.744969
+   Z     76.963052  136.494648   49.427125
+
+
+Euler (y-convention) angles of new system in old:
+
+ first  rotation about z Phi  = -107.276264
+ first  rotation about y Theta=   49.427125
+ second rotation about z Psi  =    6.925500
+
+Equivalent to a single rotation of 108.848134 degrees
+
+    around the global axis vector:     0.431592   -0.279200    0.857773
+
+[local axis {orig. system} vector:     0.228568   -0.657532    0.717919 ]
+
+Molecular movement including strains (Angstroms)
+ Mol.       | Dx |
+
+    1      47.530082
+
+RMS Aver.  47.530082
+
+
+Figure of shame as defined in Acta Cryst. B49 868 1993. 
+in our case RMS values are used to take the place of symmetry independent factors so 
+
+    |                |2      |           |2                 |        |2
+F = |0.5 RMS D THETA |     + | 10 RMS Dx |  + SUM (d=a,b,c) | 100 Dd | 
+    |                |       |           |                  |        | 
+
+
+                                  2
+   + SUM (d= alpha,beta,gamma) Dd
+
+In this case: F= ************
+
+ Terms in order are as follows: 
+ 2961.979077  ************   6723.690673   6210.954164
+
+ Initial crystalographic positions of atoms for molecule    1
+
+  No. Label Type      a-vectors     b-vectors     c-vectors
+
+   1  C_F1_1____      0.024016      0.996871      0.985444
+   2  C_F1_2____     -0.026362      1.015358      1.036557
+   3  H_F2_1____      0.035263      0.948854      0.902688
+   4  H_F1_2____     -0.000674      1.042720      1.077777
+   5  H_F1_3____     -0.063896      1.048855      1.016625
+   6  H_F1_4____     -0.050586      0.972781      1.057585
+   7  O_F1_1____     -0.000208      0.960409      0.936148
+   8  O_F1_2____      0.082447      1.014152      0.987175
+
+
+Final crystalographic positions of atoms for molecule    1
+
+  No. Label Type      a-vectors     b-vectors     c-vectors
+
+   1  C_F1_1____     10.999913     -3.925571     -3.260046
+   2  C_F1_2____     12.691118     -4.780098     -3.819834
+   3  H_F2_1____     10.001097     -3.296719     -2.851034
+   4  H_F1_2____     12.532360     -4.804909     -3.825508
+   5  H_F1_3____     12.028412     -4.489673     -3.725984
+   6  H_F1_4____     14.734172     -5.676915     -4.323858
+   7  O_F1_1____     11.167449     -3.881895     -3.234637
+   8  O_F1_2____      9.539290     -3.296862     -2.847689
+ Sorted displacements for molecule     1
+
+No. Label Type   Displacement, including strain (Angstroms)
+                 a-vectors      b-vectors      c-vectors      magnitude
+
+   1  C_F1_1____   219.517941   -98.448838   -84.909795     0.000000
+   2  C_F1_2____   254.349615   **********   -97.127837     0.000000
+   3  H_F2_1____   199.316671   -84.911471   -75.074431     0.000000
+   4  H_F1_2____   250.660672   **********   -98.065705     0.000000
+   5  H_F1_3____   241.846170   **********   -94.852193     0.000000
+   6  H_F1_4____   295.695169   **********   **********     0.000000
+   7  O_F1_1____   223.353139   -96.846073   -83.415690     0.000000
+   8  O_F1_2____   189.136857   -86.220273   -76.697288     0.000000
+ STOP directive encountered. execution terminating.
+
+Timing information
+
+Program segment                              Time taken (CPU seconds)
+
+Time to set things up...................             0.080000
+Reciprocal space part of Ewald sum......             0.000000
+Real space part of Ewald sum............             0.150002
+Short range potential calculation.......             0.019999
+
+Higher multipole energy calculation
+
+Energy calculation......................             0.000000
+First derivative chain rule.............             0.000000
+Second derivative chain rule............             0.000000
+All other program sections..............            17.820002
+Total run time..........................            18.070002

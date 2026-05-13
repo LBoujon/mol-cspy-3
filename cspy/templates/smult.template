@@ -1,0 +1,14 @@
+{%- for mol in molecules -%}
+{%- for label, type, position, multipole in mol -%}
+{{label}} {{"% 14.10f % 14.10f % 14.10f " | format(*position)}} Rank {{multipole.rank}}{% if include_types %} Type {{type}}{% endif %}{{'\n'}}
+{%- for pole in multipole.ranks() -%}
+{%- for x in pole | batch(5) -%}
+
+{% for r in x %}{{"% 14.10f " | format(r)}}{% endfor %}
+{% endfor %}
+{%- endfor -%}
+{%- endfor -%}
+{%- if not loop.last -%}
+#ENDMOL {{'\n'}}
+{%- endif -%}
+{%- endfor -%}

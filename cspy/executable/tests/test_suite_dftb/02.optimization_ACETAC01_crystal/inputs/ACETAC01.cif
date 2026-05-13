@@ -1,0 +1,72 @@
+
+#######################################################################
+#
+#                 Cambridge Crystallographic Data Centre
+#                                CCDC 
+#
+#######################################################################
+#
+# If this CIF has been generated from an entry in the Cambridge 
+# Structural Database, then it will include bibliographic, chemical, 
+# crystal, experimental, refinement or atomic coordinate data resulting 
+# from the CCDC's data processing and validation procedures.
+#
+#######################################################################
+
+data_ACETAC01
+_symmetry_cell_setting           triclinic
+_symmetry_space_group_name_H-M   'P 1'
+_symmetry_Int_Tables_number      1
+_space_group_name_Hall           'P 1'
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 x,y,z
+_cell_length_a                   13.310(1)
+_cell_length_b                   4.090(1)
+_cell_length_c                   5.769(1)
+_cell_angle_alpha               90
+_cell_angle_beta                 90
+_cell_angle_gamma            90
+_cell_volume                     314.052
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+C1 C 0.16510 0.28580 0.17090
+C2 C 0.08940 0.37620 0.34810
+H1 H 0.18200 0.05100 -0.11600
+H2 H 0.12800 0.51000 0.49100
+H3 H 0.03300 0.54000 0.27900
+H4 H 0.05300 0.16800 0.42100
+O1 O 0.12870 0.10750 0.00000
+O2 O 0.25290 0.37030 0.17690
+C1 C 0.33490 0.78580 0.67090
+C2 C 0.41060 0.87620 0.84810
+H1 H 0.31800 0.55100 0.38400
+H2 H 0.37200 1.01000 0.99100
+H3 H 0.46700 1.04000 0.77900
+H4 H 0.44700 0.66800 0.92100
+O1 O 0.37130 0.60750 0.50000
+O2 O 0.24710 0.87030 0.67690
+C1 C 0.83490 0.71420 0.67090
+C2 C 0.91060 0.62380 0.84810
+H1 H 0.81800 0.94900 0.38400
+H2 H 0.87200 0.49000 0.99100
+H3 H 0.96700 0.46000 0.77900
+H4 H 0.94700 0.83200 0.92100
+O1 O 0.87130 0.89250 0.50000
+O2 O 0.74710 0.62970 0.67690
+C1 C 0.66510 0.21420 0.17090
+C2 C 0.58940 0.12380 0.34810
+H1 H 0.68200 0.44900 -0.11600
+H2 H 0.62800 -0.01000 0.49100
+H3 H 0.53300 -0.04000 0.27900
+H4 H 0.55300 0.33200 0.42100
+O1 O 0.62870 0.39250 0.00000
+O2 O 0.75290 0.12970 0.17690
+
+#END
+

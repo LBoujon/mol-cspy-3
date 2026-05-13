@@ -1,0 +1,1447 @@
+ DMACRYS Version 2.3.0        Dated November 2017 .
+ Needs NEIGHCRYS version 2.3.0        or higher
+ Run on 2018-04-19  15:07
+Phonon calculation bug fixed
+
+
+
+
+
+
+ ==============================================================================
+
+ 12.properties_DCLBEN.res
+
+ ==============================================================================
+
+
+ Scaling factor for multipoles =       1.00000000
+
+
+ Symmetry Adapted
+
+
+ Number of formula units per primitive cell
+ (read from crystallographic file and scaled by centring factor) =       1
+
+
+ Madelung sum accuracy redefined to   0.1000E+09
+
+ reciprocal space weighting =   0.1000E+01
+
+ The printing options are as follows.
+  PLUT  LATT  BASI  MINI  MOLE  GEOM
+    12     0     0     2     1     1
+                  C-vector magnitude=   3.844700 Angstroms
+ Cut off for repulsion-dispersion potentials =  15.000001 Angstroms 
+
+ Cut off for higher multipole summation =      15.00000093 Angstroms
+
+
+
+
+
+ START OF LATTICE VECTOR PROCESSING.
+ THE LATTICE VECTORS ARE AS FOLLOWS.
+
+    1.790237541154901  -0.164196462010000  -0.619271746413800
+    0.000000000000000   1.470439328505301  -0.074759409062700
+    0.000000000000000   0.000000000000000   1.000000000000001
+
+
+
+
+ Start of basis species processing.
+
+ Basis species as input
+
+
+ the  12 basis species are as follows.
+ all quantities are in lattice units 
+
+  no.                    orthogonal coordinates                        label      molecule
+                x                   y                   z
+
+     1       1.17718878       0.32559838      -0.41200646   ClCL_1____1____         1
+     2       2.40328631      -0.65399130      -0.82653703   ClCL_2____2____         1
+     3       1.51821650       0.05288790      -0.52661720   C_BO_1____3____         1
+     4       1.85986407       0.15956812      -0.46988145   C_CA_2____4____         1
+     5       1.44735659      -0.27033372      -0.67435779   C_CA_3____5____         1
+     6       2.06225859      -0.38128082      -0.71192630   C_BO_4____6____         1
+     7       1.72061101      -0.48796104      -0.76866204   C_CA_5____7____         1
+     8       2.13311850      -0.05805920      -0.56418570   C_CA_6____8____         1
+     9       1.91151634       0.41083175      -0.35511795   H_HY_1____9____         1
+    10       1.18131724      -0.35015794      -0.71707126   H_HY_2____10___         1
+    11       1.66895874      -0.73922468      -0.88342554   H_HY_3____11___         1
+    12       2.39915784       0.02176502      -0.52147224   H_HY_4____12___         1
+ Origin of basis
+
+       0.00000000      0.00000000      0.00000000
+ Basis origin shifted
+
+
+ Cut off value for direct lattice sum =     2.209702 lattice units
+ Cut off value for reciprocal lattice sum =     2.653519 reciprocal lattice units
+ Values of the constants used in these summations are:
+Eta parameter for division of sum between real and reciprocal lattice=    1.942313
+PI/(ETA^2 * Vol.Cell) =     0.316340
+
+
+
+ Potentials will be cutoff with a spline terminating at     2.00Angstroms
+ with limit in expansion set to     4.00 Angstroms
+
+
+
+ Cut off value for direct lattice sum =     3.250095 lattice units
+ Cut off value for reciprocal lattice sum =     1.804097 reciprocal lattice units
+ Values of the constants used in these summations are:
+Eta parameter for division of sum between real and reciprocal lattice=    1.320556
+PI/(ETA^2 * Vol.Cell) =     0.684350
+
+
+
+
+
+ START OF REPULSION-DISPERSION POTENTIAL PROCESSING
+
+
+ The species types input are as follows:
+
+ Index     Label        Type         Charge          Mass
+
+
+ Distributed multipoles (Atomic Units: [electron charge and Bohr radii])
+
+     1     ClCL_1____   0.254203E+00   0.354527E+02
+ Level 1 multipoles   0.33500000D-03  0.82081500D+00  0.60000000D-05
+ Level 2 multipoles  -0.10516800D+01 -0.74400000D-03  0.00000000D+00
+                      0.18830950D+01  0.62000000D-04
+ Level 3 multipoles  -0.13590000D-02  0.48248700D+00  0.67000000D-04
+                      0.14440000D-02  0.10000000D-05
+                     -0.65770100D+00 -0.11400000D-03
+ Level 4 multipoles  -0.83068000D+00  0.86300000D-03 -0.10000000D-05
+                      0.11287040D+01  0.50000000D-04 -0.52800000D-03
+                     -0.10000000D-05 -0.23820220D+01  0.17600000D-03
+     2     ClCL_2____   0.254203E+00   0.354527E+02
+ Level 1 multipoles  -0.33500000D-03 -0.82081500D+00 -0.60000000D-05
+ Level 2 multipoles  -0.10516800D+01 -0.74400000D-03  0.00000000D+00
+                      0.18830950D+01  0.62000000D-04
+ Level 3 multipoles   0.13590000D-02 -0.48248700D+00 -0.67000000D-04
+                     -0.14440000D-02 -0.10000000D-05
+                      0.65770100D+00  0.11400000D-03
+ Level 4 multipoles  -0.83068000D+00  0.86300000D-03 -0.10000000D-05
+                      0.11287040D+01  0.50000000D-04 -0.52800000D-03
+                     -0.10000000D-05 -0.23820220D+01  0.17600000D-03
+     3     C_BO_1____  -0.316879E+00   0.120107E+02
+ Level 1 multipoles  -0.48000000D-04  0.60797800D+00  0.47000000D-04
+ Level 2 multipoles  -0.81592400D+00  0.19510000D-02  0.00000000D+00
+                     -0.55171900D+00 -0.27000000D-04
+ Level 3 multipoles  -0.19090000D-02  0.98654000D-01 -0.18000000D-04
+                      0.24590000D-02 -0.10000000D-05
+                     -0.12031200D+01 -0.94000000D-04
+ Level 4 multipoles   0.10599700D+01  0.29420000D-02  0.10000000D-05
+                     -0.23007850D+01  0.61000000D-04 -0.14700000D-03
+                     -0.20000000D-05  0.26229710D+01 -0.12200000D-03
+     4     C_CA_2____  -0.769250E-01   0.120107E+02
+ Level 1 multipoles   0.16540000D-02  0.66913000D-01  0.11880500D+00
+ Level 2 multipoles  -0.10756710D+01  0.90860000D-02  0.65400000D-03
+                     -0.69382000D-01  0.36690000D-01
+ Level 3 multipoles  -0.99540000D-02 -0.56243000D-01  0.50814000D-01
+                      0.92800000D-02  0.10400000D-03
+                      0.17736590D+01  0.43550000D-01
+ Level 4 multipoles  -0.22753400D+00  0.13809000D-01  0.91070000D-02
+                      0.20701600D+00 -0.59076000D+00 -0.51340000D-02
+                     -0.26450000D-02 -0.10452670D+01 -0.14353580D+01
+     5     C_CA_3____  -0.769820E-01   0.120107E+02
+ Level 1 multipoles   0.16550000D-02  0.67016000D-01 -0.11864500D+00
+ Level 2 multipoles  -0.10759780D+01  0.90870000D-02 -0.64700000D-03
+                     -0.69450000D-01 -0.35725000D-01
+ Level 3 multipoles  -0.99580000D-02 -0.56369000D-01 -0.51249000D-01
+                      0.92770000D-02 -0.92000000D-04
+                      0.17731440D+01 -0.42565000D-01
+ Level 4 multipoles  -0.22753900D+00  0.13816000D-01 -0.90910000D-02
+                      0.20751400D+00  0.59208900D+00 -0.51520000D-02
+                      0.26240000D-02 -0.10466110D+01  0.14348860D+01
+     6     C_BO_4____  -0.316879E+00   0.120107E+02
+ Level 1 multipoles   0.48000000D-04 -0.60797800D+00 -0.47000000D-04
+ Level 2 multipoles  -0.81592400D+00  0.19510000D-02  0.00000000D+00
+                     -0.55171900D+00 -0.27000000D-04
+ Level 3 multipoles   0.19090000D-02 -0.98654000D-01  0.18000000D-04
+                     -0.24590000D-02  0.10000000D-05
+                      0.12031200D+01  0.94000000D-04
+ Level 4 multipoles   0.10599700D+01  0.29420000D-02  0.10000000D-05
+                     -0.23007850D+01  0.61000000D-04 -0.14700000D-03
+                     -0.20000000D-05  0.26229710D+01 -0.12200000D-03
+     7     C_CA_5____  -0.769250E-01   0.120107E+02
+ Level 1 multipoles  -0.16540000D-02 -0.66913000D-01 -0.11880500D+00
+ Level 2 multipoles  -0.10756710D+01  0.90860000D-02  0.65400000D-03
+                     -0.69382000D-01  0.36690000D-01
+ Level 3 multipoles   0.99540000D-02  0.56243000D-01 -0.50814000D-01
+                     -0.92800000D-02 -0.10400000D-03
+                     -0.17736590D+01 -0.43550000D-01
+ Level 4 multipoles  -0.22753400D+00  0.13809000D-01  0.91070000D-02
+                      0.20701600D+00 -0.59076000D+00 -0.51340000D-02
+                     -0.26450000D-02 -0.10452670D+01 -0.14353580D+01
+     8     C_CA_6____  -0.769820E-01   0.120107E+02
+ Level 1 multipoles  -0.16550000D-02 -0.67016000D-01  0.11864500D+00
+ Level 2 multipoles  -0.10759780D+01  0.90870000D-02 -0.64700000D-03
+                     -0.69450000D-01 -0.35725000D-01
+ Level 3 multipoles   0.99580000D-02  0.56369000D-01  0.51249000D-01
+                     -0.92770000D-02  0.92000000D-04
+                     -0.17731440D+01  0.42565000D-01
+ Level 4 multipoles  -0.22753900D+00  0.13816000D-01 -0.90910000D-02
+                      0.20751400D+00  0.59208900D+00 -0.51520000D-02
+                      0.26240000D-02 -0.10466110D+01  0.14348860D+01
+     9     H_HY_1____   0.108324E+00   0.100794E+01
+ Level 1 multipoles   0.28800000D-03  0.59239000D-01  0.11354300D+00
+ Level 2 multipoles  -0.12787400D+00  0.44000000D-03 -0.11700000D-03
+                     -0.49449000D-01  0.81882000D-01
+ Level 3 multipoles   0.24900000D-03  0.55479000D-01  0.10889600D+00
+                      0.21900000D-03 -0.48800000D-03
+                      0.14767100D+00  0.21248000D-01
+ Level 4 multipoles  -0.12151400D+00  0.79800000D-03 -0.52000000D-04
+                     -0.39031000D-01  0.69807000D-01 -0.23300000D-03
+                     -0.88400000D-03 -0.34060000D-01 -0.94898000D-01
+    10     H_HY_2____   0.108257E+00   0.100794E+01
+ Level 1 multipoles   0.28900000D-03  0.59365000D-01 -0.11354700D+00
+ Level 2 multipoles  -0.12790000D+00  0.44000000D-03  0.11700000D-03
+                     -0.49425000D-01 -0.81793000D-01
+ Level 3 multipoles   0.24900000D-03  0.55545000D-01 -0.10892700D+00
+                      0.21800000D-03  0.48900000D-03
+                      0.14764600D+00 -0.21133000D-01
+ Level 4 multipoles  -0.12151900D+00  0.79800000D-03  0.53000000D-04
+                     -0.39024000D-01 -0.69706000D-01 -0.23500000D-03
+                      0.88500000D-03 -0.34300000D-01  0.95007000D-01
+    11     H_HY_3____   0.108324E+00   0.100794E+01
+ Level 1 multipoles  -0.28800000D-03 -0.59239000D-01 -0.11354300D+00
+ Level 2 multipoles  -0.12787400D+00  0.44000000D-03 -0.11700000D-03
+                     -0.49449000D-01  0.81882000D-01
+ Level 3 multipoles  -0.24900000D-03 -0.55479000D-01 -0.10889600D+00
+                     -0.21900000D-03  0.48800000D-03
+                     -0.14767100D+00 -0.21248000D-01
+ Level 4 multipoles  -0.12151400D+00  0.79800000D-03 -0.52000000D-04
+                     -0.39031000D-01  0.69807000D-01 -0.23300000D-03
+                     -0.88400000D-03 -0.34060000D-01 -0.94898000D-01
+    12     H_HY_4____   0.108257E+00   0.100794E+01
+ Level 1 multipoles  -0.28900000D-03 -0.59365000D-01  0.11354700D+00
+ Level 2 multipoles  -0.12790000D+00  0.44000000D-03  0.11700000D-03
+                     -0.49425000D-01 -0.81793000D-01
+ Level 3 multipoles  -0.24900000D-03 -0.55545000D-01  0.10892700D+00
+                     -0.21800000D-03 -0.48900000D-03
+                     -0.14764600D+00  0.21133000D-01
+ Level 4 multipoles  -0.12151900D+00  0.79800000D-03  0.53000000D-04
+                     -0.39024000D-01 -0.69706000D-01 -0.23500000D-03
+                      0.88500000D-03 -0.34300000D-01  0.95007000D-01
+
+
+ POTENTIAL BETWEEN SPECIES ClCL AND ClCL WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.00000000E+00   0.29915900E+00   0.86717509E+02                    0.00000000E+00   0.70000000E+02
+
+ ANISOTROPIC REPULSION PARAMETERS V(R) = EXP(-ALPHA*R) * EXP(ALPHA * RHO)
+ RHO = SIGMA (RHO(K1,K2,L1,L2,J) * S(K1,K2,L1,L2,J)
+       1.0/ALPHA      K1      K2      L1      L2       J      RHO(K1,K2,L1,L2,J)
+
+  0.29915900E+00       0       0       0       0       0     0.25977660E+01
+  0.29915900E+00       0       0       1       0       1     0.15642000E-01
+  0.29915900E+00       0       0       0       1       1     0.15642000E-01
+  0.29915900E+00       0       0       2       0       2    -0.93860000E-01
+  0.29915900E+00       0       0       0       2       2    -0.93860000E-01
+
+
+ POTENTIAL BETWEEN SPECIES ClCL AND C_BO WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.00000000E+00   0.28189700E+00   0.43885782E+02                    0.00000000E+00   0.70000000E+02
+
+ ANISOTROPIC REPULSION PARAMETERS V(R) = EXP(-ALPHA*R) * EXP(ALPHA * RHO)
+ RHO = SIGMA (RHO(K1,K2,L1,L2,J) * S(K1,K2,L1,L2,J)
+       1.0/ALPHA      K1      K2      L1      L2       J      RHO(K1,K2,L1,L2,J)
+
+  0.28189700E+00       0       0       0       0       0     0.22448861E+01
+  0.28189700E+00       0       0       1       0       1     0.15642000E-01
+  0.28189700E+00       0       0       0       1       1    -0.20538300E+00
+  0.28189700E+00       0       0       2       0       2    -0.93860000E-01
+  0.28189700E+00       0       0       0       2       2    -0.31091000E+00
+
+
+ POTENTIAL BETWEEN SPECIES ClCL AND C_CA WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.00000000E+00   0.30802400E+00   0.43885782E+02                    0.00000000E+00   0.70000000E+02
+
+ ANISOTROPIC REPULSION PARAMETERS V(R) = EXP(-ALPHA*R) * EXP(ALPHA * RHO)
+ RHO = SIGMA (RHO(K1,K2,L1,L2,J) * S(K1,K2,L1,L2,J)
+       1.0/ALPHA      K1      K2      L1      L2       J      RHO(K1,K2,L1,L2,J)
+
+  0.30802400E+00       0       0       0       0       0     0.23808003E+01
+  0.30802400E+00       0       0       1       0       1     0.15642000E-01
+  0.30802400E+00       0       0       0       1       1    -0.25820000E-02
+  0.30802400E+00       0       0       2       0       2    -0.93860000E-01
+  0.30802400E+00       0       0       0       2       2     0.41915000E-01
+
+
+ POTENTIAL BETWEEN SPECIES ClCL AND H_HY WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.00000000E+00   0.30677700E+00   0.13402145E+02                    0.00000000E+00   0.70000000E+02
+
+ ANISOTROPIC REPULSION PARAMETERS V(R) = EXP(-ALPHA*R) * EXP(ALPHA * RHO)
+ RHO = SIGMA (RHO(K1,K2,L1,L2,J) * S(K1,K2,L1,L2,J)
+       1.0/ALPHA      K1      K2      L1      L2       J      RHO(K1,K2,L1,L2,J)
+
+  0.30677700E+00       0       0       0       0       0     0.17691302E+01
+  0.30677700E+00       0       0       1       0       1     0.15642000E-01
+  0.30677700E+00       0       0       0       1       1    -0.44912000E-01
+  0.30677700E+00       0       0       2       0       2    -0.93860000E-01
+  0.30677700E+00       0       0       0       2       2     0.36430000E-02
+
+
+ POTENTIAL BETWEEN SPECIES C_BO AND C_BO WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.00000000E+00   0.31122600E+00   0.22246048E+02                    0.00000000E+00   0.70000000E+02
+
+ ANISOTROPIC REPULSION PARAMETERS V(R) = EXP(-ALPHA*R) * EXP(ALPHA * RHO)
+ RHO = SIGMA (RHO(K1,K2,L1,L2,J) * S(K1,K2,L1,L2,J)
+       1.0/ALPHA      K1      K2      L1      L2       J      RHO(K1,K2,L1,L2,J)
+
+  0.31122600E+00       0       0       0       0       0     0.17752905E+01
+  0.31122600E+00       0       0       1       0       1    -0.20538300E+00
+  0.31122600E+00       0       0       0       1       1    -0.20538300E+00
+  0.31122600E+00       0       0       2       0       2    -0.31091000E+00
+  0.31122600E+00       0       0       0       2       2    -0.31091000E+00
+
+
+ POTENTIAL BETWEEN SPECIES C_CA AND C_BO WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.00000000E+00   0.30823300E+00   0.22246048E+02                    0.00000000E+00   0.70000000E+02
+
+ ANISOTROPIC REPULSION PARAMETERS V(R) = EXP(-ALPHA*R) * EXP(ALPHA * RHO)
+ RHO = SIGMA (RHO(K1,K2,L1,L2,J) * S(K1,K2,L1,L2,J)
+       1.0/ALPHA      K1      K2      L1      L2       J      RHO(K1,K2,L1,L2,J)
+
+  0.30823300E+00       0       0       0       0       0     0.19897546E+01
+  0.30823300E+00       0       0       1       0       1    -0.25820000E-02
+  0.30823300E+00       0       0       0       1       1    -0.20538300E+00
+  0.30823300E+00       0       0       2       0       2     0.41915000E-01
+  0.30823300E+00       0       0       0       2       2    -0.31091000E+00
+
+
+ POTENTIAL BETWEEN SPECIES C_BO AND H_HY WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.00000000E+00   0.29665700E+00   0.67751780E+01                    0.00000000E+00   0.70000000E+02
+
+ ANISOTROPIC REPULSION PARAMETERS V(R) = EXP(-ALPHA*R) * EXP(ALPHA * RHO)
+ RHO = SIGMA (RHO(K1,K2,L1,L2,J) * S(K1,K2,L1,L2,J)
+       1.0/ALPHA      K1      K2      L1      L2       J      RHO(K1,K2,L1,L2,J)
+
+  0.29665700E+00       0       0       0       0       0     0.14118191E+01
+  0.29665700E+00       0       0       1       0       1    -0.20538300E+00
+  0.29665700E+00       0       0       0       1       1    -0.44912000E-01
+  0.29665700E+00       0       0       2       0       2    -0.31091000E+00
+  0.29665700E+00       0       0       0       2       2     0.36430000E-02
+
+
+ POTENTIAL BETWEEN SPECIES C_CA AND C_CA WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.00000000E+00   0.31312600E+00   0.22246048E+02                    0.00000000E+00   0.70000000E+02
+
+ ANISOTROPIC REPULSION PARAMETERS V(R) = EXP(-ALPHA*R) * EXP(ALPHA * RHO)
+ RHO = SIGMA (RHO(K1,K2,L1,L2,J) * S(K1,K2,L1,L2,J)
+       1.0/ALPHA      K1      K2      L1      L2       J      RHO(K1,K2,L1,L2,J)
+
+  0.31312600E+00       0       0       0       0       0     0.21963624E+01
+  0.31312600E+00       0       0       1       0       1    -0.25820000E-02
+  0.31312600E+00       0       0       0       1       1    -0.25820000E-02
+  0.31312600E+00       0       0       2       0       2     0.41915000E-01
+  0.31312600E+00       0       0       0       2       2     0.41915000E-01
+
+
+ POTENTIAL BETWEEN SPECIES C_CA AND H_HY WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.00000000E+00   0.30624100E+00   0.67751780E+01                    0.00000000E+00   0.70000000E+02
+
+ ANISOTROPIC REPULSION PARAMETERS V(R) = EXP(-ALPHA*R) * EXP(ALPHA * RHO)
+ RHO = SIGMA (RHO(K1,K2,L1,L2,J) * S(K1,K2,L1,L2,J)
+       1.0/ALPHA      K1      K2      L1      L2       J      RHO(K1,K2,L1,L2,J)
+
+  0.30624100E+00       0       0       0       0       0     0.15828495E+01
+  0.30624100E+00       0       0       1       0       1    -0.25820000E-02
+  0.30624100E+00       0       0       0       1       1    -0.44912000E-01
+  0.30624100E+00       0       0       2       0       2     0.41915000E-01
+  0.30624100E+00       0       0       0       2       2     0.36430000E-02
+
+
+ POTENTIAL BETWEEN SPECIES H_HY AND H_HY WITH   1 RANGES
+
+
+ LIST OF GENERAL INTERACTIONS
+
+
+ BUCKINGHAM POTENTIAL V(R) = A * EXP(-R/RHO) - C/R**6
+         A               RHO               C                               RMIN             RMAX
+
+   0.00000000E+00   0.30698400E+00   0.20728710E+01                    0.00000000E+00   0.70000000E+02
+
+ ANISOTROPIC REPULSION PARAMETERS V(R) = EXP(-ALPHA*R) * EXP(ALPHA * RHO)
+ RHO = SIGMA (RHO(K1,K2,L1,L2,J) * S(K1,K2,L1,L2,J)
+       1.0/ALPHA      K1      K2      L1      L2       J      RHO(K1,K2,L1,L2,J)
+
+  0.30698400E+00       0       0       0       0       0     0.96266486E+00
+  0.30698400E+00       0       0       1       0       1    -0.44912000E-01
+  0.30698400E+00       0       0       0       1       1    -0.44912000E-01
+  0.30698400E+00       0       0       2       0       2     0.36430000E-02
+  0.30698400E+00       0       0       0       2       2     0.36430000E-02
+
+Charges on each molecule 
+
+molecule          charge (e)
+
+   1             -0.400000E-05
+
+       Warning: Unit cell not charge neutral - total charge =   -0.4000000E-05
+
+      Program requested to continue with directive CHGC
+
+
+ START OF NEIGHBOUR LIST PROCESSING
+
+ CUTOFF FOR INTRAMOLECULAR INTERACTIONS SEARCH =   0.63400000E+01
+ NEIGHBOUR LIST WILL BE SET UP OUT TO       20 NEIGHBOURS
+
+
+ THERE ARE        3 NEAREST NEIGHBOUR CUTOFFS (IN ANGSTROMS)
+       SPECIES TYPES                       CUTOFF
+
+ ClCL_1____         C_BO_1____           0.18000000E+01
+ ClCL_1____         C_CA_2____           0.18000000E+01
+ ClCL_1____         C_CA_3____           0.18000000E+01
+ ClCL_1____         C_BO_4____           0.18000000E+01
+ ClCL_1____         C_CA_5____           0.18000000E+01
+ ClCL_1____         C_CA_6____           0.18000000E+01
+ ClCL_2____         C_BO_1____           0.18000000E+01
+ ClCL_2____         C_CA_2____           0.18000000E+01
+ ClCL_2____         C_CA_3____           0.18000000E+01
+ ClCL_2____         C_BO_4____           0.18000000E+01
+ ClCL_2____         C_CA_5____           0.18000000E+01
+ ClCL_2____         C_CA_6____           0.18000000E+01
+ C_BO_1____         C_BO_1____           0.15000000E+01
+ C_BO_1____         C_CA_2____           0.15000000E+01
+ C_BO_1____         C_CA_3____           0.15000000E+01
+ C_BO_1____         C_BO_4____           0.15000000E+01
+ C_BO_1____         C_CA_5____           0.15000000E+01
+ C_BO_1____         C_CA_6____           0.15000000E+01
+ C_BO_1____         H_HY_1____           0.12000000E+01
+ C_BO_1____         H_HY_2____           0.12000000E+01
+ C_BO_1____         H_HY_3____           0.12000000E+01
+ C_BO_1____         H_HY_4____           0.12000000E+01
+ C_CA_2____         C_CA_2____           0.15000000E+01
+ C_CA_2____         C_CA_3____           0.15000000E+01
+ C_CA_2____         C_BO_4____           0.15000000E+01
+ C_CA_2____         C_CA_5____           0.15000000E+01
+ C_CA_2____         C_CA_6____           0.15000000E+01
+ C_CA_2____         H_HY_1____           0.12000000E+01
+ C_CA_2____         H_HY_2____           0.12000000E+01
+ C_CA_2____         H_HY_3____           0.12000000E+01
+ C_CA_2____         H_HY_4____           0.12000000E+01
+ C_CA_3____         C_CA_3____           0.15000000E+01
+ C_CA_3____         C_BO_4____           0.15000000E+01
+ C_CA_3____         C_CA_5____           0.15000000E+01
+ C_CA_3____         C_CA_6____           0.15000000E+01
+ C_CA_3____         H_HY_1____           0.12000000E+01
+ C_CA_3____         H_HY_2____           0.12000000E+01
+ C_CA_3____         H_HY_3____           0.12000000E+01
+ C_CA_3____         H_HY_4____           0.12000000E+01
+ C_BO_4____         C_BO_4____           0.15000000E+01
+ C_BO_4____         C_CA_5____           0.15000000E+01
+ C_BO_4____         C_CA_6____           0.15000000E+01
+ C_BO_4____         H_HY_1____           0.12000000E+01
+ C_BO_4____         H_HY_2____           0.12000000E+01
+ C_BO_4____         H_HY_3____           0.12000000E+01
+ C_BO_4____         H_HY_4____           0.12000000E+01
+ C_CA_5____         C_CA_5____           0.15000000E+01
+ C_CA_5____         C_CA_6____           0.15000000E+01
+ C_CA_5____         H_HY_1____           0.12000000E+01
+ C_CA_5____         H_HY_2____           0.12000000E+01
+ C_CA_5____         H_HY_3____           0.12000000E+01
+ C_CA_5____         H_HY_4____           0.12000000E+01
+ C_CA_6____         C_CA_6____           0.15000000E+01
+ C_CA_6____         H_HY_1____           0.12000000E+01
+ C_CA_6____         H_HY_2____           0.12000000E+01
+ C_CA_6____         H_HY_3____           0.12000000E+01
+ C_CA_6____         H_HY_4____           0.12000000E+01
+
+ LIST OF NEIGHBOURS
+     SPECIES NUMBERS AND TYPES  MOLECULE LATTICE VECTORS SPACING DISTANCE
+
+     1     2   ClCL_1____1____ ClCL_2____2____    1     0    0    0     5       6.24067966
+     1     3   ClCL_1____1____ C_BO_1____3____    1     0    0    0     1       1.73568738
+     1     4   ClCL_1____1____ C_CA_2____4____    1     0    0    0     2       2.71033929
+     1     5   ClCL_1____1____ C_CA_3____5____    1     0    0    0     2       2.71031970
+     1     6   ClCL_1____1____ C_BO_4____6____    1     0    0    0     4       4.50499543
+     1     7   ClCL_1____1____ C_CA_5____7____    1     0    0    0     3       4.00364150
+     1     8   ClCL_1____1____ C_CA_6____8____    1     0    0    0     3       4.00320476
+     1     9   ClCL_1____1____ H_HY_1____9____    1     0    0    0     3       2.85062663
+     1    10   ClCL_1____1____ H_HY_2____10___    1     0    0    0     3       2.85060116
+     1    11   ClCL_1____1____ H_HY_3____11___    1     0    0    0     4       4.86004416
+     1    12   ClCL_1____1____ H_HY_4____12___    1     0    0    0     4       4.85941161
+     2     3   ClCL_2____2____ C_BO_1____3____    1     0    0    0     4       4.50499543
+     2     4   ClCL_2____2____ C_CA_2____4____    1     0    0    0     3       4.00364150
+     2     5   ClCL_2____2____ C_CA_3____5____    1     0    0    0     3       4.00320476
+     2     6   ClCL_2____2____ C_BO_4____6____    1     0    0    0     1       1.73568738
+     2     7   ClCL_2____2____ C_CA_5____7____    1     0    0    0     2       2.71033929
+     2     8   ClCL_2____2____ C_CA_6____8____    1     0    0    0     2       2.71031970
+     2     9   ClCL_2____2____ H_HY_1____9____    1     0    0    0     4       4.86004416
+     2    10   ClCL_2____2____ H_HY_2____10___    1     0    0    0     4       4.85941161
+     2    11   ClCL_2____2____ H_HY_3____11___    1     0    0    0     3       2.85062663
+     2    12   ClCL_2____2____ H_HY_4____12___    1     0    0    0     3       2.85060116
+     3     4   C_BO_1____3____ C_CA_2____4____    1     0    0    0     1       1.39326049
+     3     5   C_BO_1____3____ C_CA_3____5____    1     0    0    0     1       1.39324961
+     3     6   C_BO_1____3____ C_BO_4____6____    1     0    0    0     3       2.76931513
+     3     7   C_BO_1____3____ C_CA_5____7____    1     0    0    0     2       2.40736814
+     3     8   C_BO_1____3____ C_CA_6____8____    1     0    0    0     2       2.40662596
+     3     9   C_BO_1____3____ H_HY_1____9____    1     0    0    0     2       2.14829148
+     3    10   C_BO_1____3____ H_HY_2____10___    1     0    0    0     2       2.14828890
+     3    11   C_BO_1____3____ H_HY_3____11___    1     0    0    0     3       3.39005265
+     3    12   C_BO_1____3____ H_HY_4____12___    1     0    0    0     3       3.38912595
+     4     5   C_CA_2____4____ C_CA_3____5____    1     0    0    0     2       2.42182102
+     4     6   C_CA_2____4____ C_BO_4____6____    1     0    0    0     2       2.40736814
+     4     7   C_CA_2____4____ C_CA_5____7____    1     0    0    0     3       2.79357943
+     4     8   C_CA_2____4____ C_CA_6____8____    1     0    0    0     1       1.39113831
+     4     9   C_CA_2____4____ H_HY_1____9____    1     0    0    0     1       1.08043616
+     4    10   C_CA_2____4____ H_HY_2____10___    1     0    0    0     3       3.39848266
+     4    11   C_CA_2____4____ H_HY_3____11___    1     0    0    0     4       3.87398514
+     4    12   C_CA_2____4____ H_HY_4____12___    1     0    0    0     2       2.14921507
+     5     6   C_CA_3____5____ C_BO_4____6____    1     0    0    0     2       2.40662596
+     5     7   C_CA_3____5____ C_CA_5____7____    1     0    0    0     1       1.39113831
+     5     8   C_CA_3____5____ C_CA_6____8____    1     0    0    0     3       2.79228933
+     5     9   C_CA_3____5____ H_HY_1____9____    1     0    0    0     3       3.39847287
+     5    10   C_CA_3____5____ H_HY_2____10___    1     0    0    0     1       1.08044470
+     5    11   C_CA_3____5____ H_HY_3____11___    1     0    0    0     2       2.14985630
+     5    12   C_CA_3____5____ H_HY_4____12___    1     0    0    0     4       3.87270524
+     6     7   C_BO_4____6____ C_CA_5____7____    1     0    0    0     1       1.39326049
+     6     8   C_BO_4____6____ C_CA_6____8____    1     0    0    0     1       1.39324961
+     6     9   C_BO_4____6____ H_HY_1____9____    1     0    0    0     3       3.39005265
+     6    10   C_BO_4____6____ H_HY_2____10___    1     0    0    0     3       3.38912595
+     6    11   C_BO_4____6____ H_HY_3____11___    1     0    0    0     2       2.14829148
+     6    12   C_BO_4____6____ H_HY_4____12___    1     0    0    0     2       2.14828890
+     7     8   C_CA_5____7____ C_CA_6____8____    1     0    0    0     2       2.42182102
+     7     9   C_CA_5____7____ H_HY_1____9____    1     0    0    0     4       3.87398514
+     7    10   C_CA_5____7____ H_HY_2____10___    1     0    0    0     2       2.14921507
+     7    11   C_CA_5____7____ H_HY_3____11___    1     0    0    0     1       1.08043616
+     7    12   C_CA_5____7____ H_HY_4____12___    1     0    0    0     3       3.39848266
+     8     9   C_CA_6____8____ H_HY_1____9____    1     0    0    0     2       2.14985630
+     8    10   C_CA_6____8____ H_HY_2____10___    1     0    0    0     4       3.87270524
+     8    11   C_CA_6____8____ H_HY_3____11___    1     0    0    0     3       3.39847287
+     8    12   C_CA_6____8____ H_HY_4____12___    1     0    0    0     1       1.08044470
+     9    10   H_HY_1____9____ H_HY_2____10___    1     0    0    0     4       4.28698055
+     9    11   H_HY_1____9____ H_HY_3____11___    1     0    0    0     5       4.95440413
+     9    12   H_HY_1____9____ H_HY_4____12___    1     0    0    0     3       2.48226201
+    10    11   H_HY_2____10___ H_HY_3____11___    1     0    0    0     3       2.48226201
+    10    12   H_HY_2____10___ H_HY_4____12___    1     0    0    0     5       4.95313372
+    11    12   H_HY_3____11___ H_HY_4____12___    1     0    0    0     4       4.28698055
+
+Local axis set for molecule:    1
+ x=>           0.755406         -0.604078         -0.253873
+ y=>          -0.654859         -0.682485         -0.324613
+ z=>           0.022827          0.411466         -0.911139
+
+ QUARTERNION PARAMETERS
+  0.20111066D+00 -0.91501786D+00  0.34396502D+00  0.63125971D-01
+Atom positions in local axis system for molecule    1
+
+basis No.  Species         x y z (Angstroms)       Mass
+
+   1       ClCL_1____    -3.120336    -0.000378    -0.005028    35.452700
+   2       ClCL_2____     3.120336     0.000378     0.005028    35.452700
+   3       C_BO_1____    -1.384648    -0.000378    -0.005028    12.010700
+   4       C_CA_2____    -0.695540    -1.211289    -0.005028    12.010700
+   5       C_CA_3____    -0.695562     1.210532    -0.005028    12.010700
+   6       C_BO_4____     1.384648     0.000378     0.005028    12.010700
+   7       C_CA_5____     0.695540     1.211289     0.005028    12.010700
+   8       C_CA_6____     0.695562    -1.210532     0.005028    12.010700
+   9       H_HY_1____    -1.241101    -2.143868    -0.005028     1.007940
+  10       H_HY_2____    -1.241140     2.143112    -0.005028     1.007940
+  11       H_HY_3____     1.241101     2.143868     0.005028     1.007940
+  12       H_HY_4____     1.241140    -2.143112     0.005028     1.007940
+
+
+Molecule No.           Centred at               Total Mass
+                    x       y       z (Angstroms)
+
+
+       1            0.000000          0.000000          0.000000        147.001360
+
+Molecule No.           Principal axes of inertia
+
+       1               -0.19232312E-02 -0.79639366E-06  0.99999815E+00
+                       -0.16247710E-03  0.99999999E+00  0.48391351E-06
+                        0.99999814E+00  0.16247587E-03  0.19232313E-02
+
+Principal moments of inertia (amu.Ang**2) for molecule  1
+
+    Ix =  0.85485061E+03, Iy =  0.76588200E+03, Iz =  0.88970375E+02
+
+
+ Maximum intramolecular distance =   0.62666895E+01 Angstroms
+ Multipole tables are set up out to   0.31533380E+02 Angstroms
+ Multipoles are calculated out to   0.15000001E+02 Angstroms
+ Splines are added out to   0.17000001E+02 Angstroms
+
+
+ Anisotropic short range potential axes in global axis system
+
+  Index        Type                   x(global)       y(global)       z(global)
+
+       1        ClCL_1____1____    x(axis) -0.65485888E+00 -0.68248512E+00 -0.32461348E+00
+                            y(axis) -0.22827306E-01 -0.41146597E+00  0.91113921E+00
+                            z(axis) -0.75540636E+00  0.60407766E+00  0.25387285E+00
+       2        ClCL_2____2____    x(axis)  0.65485888E+00  0.68248512E+00  0.32461348E+00
+                            y(axis) -0.22827306E-01 -0.41146597E+00  0.91113921E+00
+                            z(axis)  0.75540636E+00 -0.60407766E+00 -0.25387285E+00
+       3        C_BO_1____3____    x(axis) -0.65485888E+00 -0.68248512E+00 -0.32461348E+00
+                            y(axis) -0.22827306E-01 -0.41146597E+00  0.91113921E+00
+                            z(axis) -0.75540636E+00  0.60407766E+00  0.25387285E+00
+       4        C_CA_2____4____    x(axis) -0.98269799E+00  0.17679245E+00  0.55218539E-01
+                            y(axis) -0.22827261E-01 -0.41146599E+00  0.91113921E+00
+                            z(axis)  0.18380308E+00  0.89411418E+00  0.40838249E+00
+       5        C_CA_3____5____    x(axis)  0.32134911E+00 -0.86603197E+00 -0.38304487E+00
+                            y(axis) -0.22827297E-01 -0.41146601E+00  0.91113920E+00
+                            z(axis) -0.94668562E+00 -0.28404989E+00 -0.15199341E+00
+       6        C_BO_4____6____    x(axis)  0.65485888E+00  0.68248512E+00  0.32461348E+00
+                            y(axis) -0.22827306E-01 -0.41146597E+00  0.91113921E+00
+                            z(axis)  0.75540636E+00 -0.60407766E+00 -0.25387285E+00
+       7        C_CA_5____7____    x(axis)  0.98269799E+00 -0.17679245E+00 -0.55218539E-01
+                            y(axis) -0.22827261E-01 -0.41146599E+00  0.91113921E+00
+                            z(axis) -0.18380308E+00 -0.89411418E+00 -0.40838249E+00
+       8        C_CA_6____8____    x(axis) -0.32134911E+00  0.86603197E+00  0.38304487E+00
+                            y(axis) -0.22827297E-01 -0.41146601E+00  0.91113920E+00
+                            z(axis)  0.94668562E+00  0.28404989E+00  0.15199341E+00
+       9        H_HY_1____9____    x(axis) -0.98269799E+00  0.17679245E+00  0.55218539E-01
+                            y(axis) -0.22827261E-01 -0.41146599E+00  0.91113921E+00
+                            z(axis)  0.18380308E+00  0.89411418E+00  0.40838249E+00
+      10        H_HY_2____10___    x(axis)  0.32134911E+00 -0.86603197E+00 -0.38304487E+00
+                            y(axis) -0.22827297E-01 -0.41146601E+00  0.91113920E+00
+                            z(axis) -0.94668562E+00 -0.28404989E+00 -0.15199341E+00
+      11        H_HY_3____11___    x(axis)  0.98269799E+00 -0.17679245E+00 -0.55218539E-01
+                            y(axis) -0.22827261E-01 -0.41146599E+00  0.91113921E+00
+                            z(axis) -0.18380308E+00 -0.89411418E+00 -0.40838249E+00
+      12        H_HY_4____12___    x(axis) -0.32134911E+00  0.86603197E+00  0.38304487E+00
+                            y(axis) -0.22827297E-01 -0.41146601E+00  0.91113920E+00
+                            z(axis)  0.94668562E+00  0.28404989E+00  0.15199341E+00
+ STAR PROP
+
+
+
+
+ Commencing with PLUTO calculation.
+
+ Start variable-cell relaxation
+
+
+ Maximum number of iterations =                                   1000
+ Maximum relaxation of a coordinate per cycle (Angstroms) =   0.50000000E+00
+ Maximum rotation of a molecule per cycle (Degrees) =   0.74512679E+01
+ Maximum number of hessian updates before recalculation =             1000
+ Iteration will terminate when all displacements are less than   0.26009832E-06
+ Iteration will also terminate when dot product of gradient and displacement vectors is less than   0.26009832E-10
+
+ Contributions to intra-molecular electrostatics
+ (eV per unit cell [kJ/mol])
+ Z =        1
+CHAR-CHAR          -1.3021    (     -125.6329  )
+CHAR-DIPL          -4.4423    (     -428.6138  )
+DIPL-DIPL          -0.4656    (      -44.9251  )
+QUAD-CHAR          -2.0089    (     -193.8281  )
+QUAD-DIPL           1.7137    (      165.3431  )
+OCTO-CHAR          -0.0138    (       -1.3277  )
+QUAD-QUAD           5.2774    (      509.1878  )
+OCTO-DIPL           5.0831    (      490.4398  )
+HEXA-CHAR           1.1850    (      114.3320  )
+
+Number of Energy calculations =       66
+
+
+Molecular dipole moments in local axis systems (eA)
+
+ Molecule                      dipole                  magnitude
+                 x             y             z
+
+      1      0.0000000     0.0000000     0.0000000     0.0000000
+
+Dipole per unit cell in global axis system (eA)
+       x             y             z       total dipole
+   0.0000000     0.0000000     0.0000000     0.0000000
+
+ Cutoffs used in original reciprocal sum
+       4       3       2
+
+ Contributions to inter-molecular electrostatics
+ (eV per unit cell [kJ/mol])
+ Z =        1
+CHAR-CHAR           0.0000    (        0.0000  )
+CHAR-DIPL           0.0000    (        0.0000  )
+DIPL-DIPL           0.0000    (        0.0000  )
+QUAD-CHAR           0.2042    (       19.6987  )
+QUAD-DIPL          -0.3866    (      -37.3035  )
+OCTO-CHAR          -0.0076    (       -0.7357  )
+QUAD-QUAD           0.0721    (        6.9599  )
+OCTO-DIPL           0.0070    (        0.6762  )
+HEXA-CHAR          -0.0034    (       -0.3264  )
+                    0.0000    (        0.0000  )
+Number of atom pairs calculated =    10771
+
+
+Centralisation of forces (global axes)
+and torques (global axes) for molecule:    1
+
+Basis No.   Species                                force (eV per Angstrom)
+                             x                    y                    z                  magnitude
+       1  ClCL_1____    0.58555035E-01       0.43800949E-01      -0.44621346E-02       0.73260671E-01
+       2  ClCL_2____   -0.58555035E-01      -0.43800949E-01       0.44621346E-02       0.73260671E-01
+       3  C_BO_1____   -0.18920418E+00       0.10922299E-01       0.10156746E+00       0.21501969E+00
+       4  C_CA_2____    0.30627520E-01       0.71202752E-01       0.94892244E-01       0.12252516E+00
+       5  C_CA_3____   -0.51183783E-01      -0.37227146E-01      -0.75635318E-01       0.98622216E-01
+       6  C_BO_4____    0.18920418E+00      -0.10922299E-01      -0.10156746E+00       0.21501969E+00
+       7  C_CA_5____   -0.30627520E-01      -0.71202752E-01      -0.94892244E-01       0.12252516E+00
+       8  C_CA_6____    0.51183783E-01       0.37227146E-01       0.75635318E-01       0.98622216E-01
+       9  H_HY_1____    0.88569518E-02       0.34577364E-01      -0.31049763E-02       0.35828488E-01
+      10  H_HY_2____   -0.44901463E-02      -0.49585043E-02       0.45082342E-02       0.80667436E-02
+      11  H_HY_3____   -0.88569518E-02      -0.34577364E-01       0.31049763E-02       0.35828488E-01
+      12  H_HY_4____    0.44901463E-02       0.49585043E-02      -0.45082342E-02       0.80667437E-02
+
+    Central force       0.12226414E-14       0.19038816E-14       0.60751841E-15       0.23427965E-14
+   Central torque      -0.16972216E-02      -0.14886530E-02      -0.44596268E-02       0.49984918E-02
+ (eV per radian) [      0.74934821E-03       0.35750790E-02       0.34120680E-02    ]
+
+Strain derivatives for matrix deformation of form: 
+
+                /                       | 
+               |     E   1/2 E   1/2 E  |
+               |      1       6       5 |
+               |                        |
+   R =>   R  + | 1/2 E       E   1/2 E  |  R
+               |      6       2       4 |
+               |                        |
+               | 1/2 E   1/2 E       E  |
+               |      5       4       3/
+
+
+   dU/dE        dU/dE        dU/dE        dU/dE        dU/dE        dU/dE
+        1            2            3            4            5            6
+
+    -0.0006       0.0093      -0.0032      -0.0002       0.0023       0.0016
+[     -0.06         0.89        -0.30        -0.02         0.23         0.15 ]
+
+ Units for strain derivatives : eV [kJ/mol].
+
+
+
+Contributions to lattice energy (eV per unit cell [kJ/mol])
+ Z =        1
+ Ewald summed charge-charge energy.......=  -0.11691926E+01[  -0.11280902E+03 ]
+ Intra-molecular charge-charge energy....=  -0.13021036E+01[  -0.12563288E+03 ]
+ Inter-molecular charge-charge energy....=   0.13291105E+00[   0.12823863E+02 ]
+               Total charge-dipole energy=  -0.39779656E+00[  -0.38381223E+02 ]
+               Total dipole-dipole energy=   0.31115591E+00[   0.30021738E+02 ]
+ Total charge-dipole+dipole-dipole energy=  -0.86640650E-01[  -0.83594843E+01 ]
+ Higher multipole interaction energy.....=  -0.11432728E+00[  -0.11030816E+02 ]
+ Total isotropic repulsion-dispersion....=  -0.13269941E+01[  -0.12803444E+03 ]
+ Total anisotropic repulsion energy......=   0.64085421E+00[   0.61832531E+02 ]
+ Intermolecular induction energy.........=   0.00000000E+00[   0.00000000E+00 ]
+ PV energy..(P =   0.00E+00 Pa)..........    0.00000000E+00[   0.00000000E+00]
+ Total lattice energy....................=  -0.75419681E+00[  -0.72768341E+02 ]
+
+ GD1 = -0.2791E-05
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+      MINIMISATION SET-UP.
+
+ GD1 = -0.2791E-05
+
+ Lattice energy =          -0.40274041   (in internal units)      (Repulsion-dispersion cutoff =      4.942 lattice units)
+
+ GD1= -0.2791E-05 GD2= -0.1008E-05
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.5651E+00 ALPHA2=  0.1565E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2791E-05   GD2 = -0.1008E-05   GD3 = -0.1008E-05   GD4 = -0.2791E-05
+
+ Lattice energy =          -0.40274099   (in internal units)      (Repulsion-dispersion cutoff =      4.942 lattice units)
+
+ GD1= -0.2791E-05 GD2= -0.1153E-07
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1191E-05
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.12E-05 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.4431210E-03 IN COMPONENT    4
+ Lattice energy =          -0.40274275   (in internal units)      (Repulsion-dispersion cutoff =      4.942 lattice units)
+
+ GD1= -0.1191E-05 GD2= -0.5689E-06
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.9142E+00 ALPHA2=  0.1914E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1191E-05   GD2 = -0.5689E-06   GD3 = -0.5689E-06   GD4 = -0.1191E-05
+
+ Lattice energy =          -0.40274184   (in internal units)      (Repulsion-dispersion cutoff =      4.942 lattice units)
+
+ GD1= -0.1191E-05 GD2=  0.5135E-09
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.3567E-06
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.36E-06 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.3386607E-03 IN COMPONENT   12
+ Lattice energy =          -0.40274219   (in internal units)      (Repulsion-dispersion cutoff =      4.942 lattice units)
+
+ GD1= -0.3567E-06 GD2=  0.1369E-07
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.2049E-07
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.20E-07 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.7771212E-04 IN COMPONENT    4
+ Lattice energy =          -0.40274364   (in internal units)      (Repulsion-dispersion cutoff =      4.942 lattice units)
+
+ GD1= -0.2049E-07 GD2= -0.1054E-07
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1059E+01 ALPHA2=  0.2059E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.2049E-07   GD2 = -0.1054E-07   GD3 = -0.1054E-07   GD4 = -0.2049E-07
+
+ Lattice energy =          -0.40274365   (in internal units)      (Repulsion-dispersion cutoff =      4.942 lattice units)
+
+ GD1= -0.2049E-07 GD2= -0.1274E-09
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1146E-07
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.11E-07 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.5686123E-04 IN COMPONENT    4
+ Lattice energy =          -0.40274367   (in internal units)      (Repulsion-dispersion cutoff =      4.942 lattice units)
+
+ GD1= -0.1146E-07 GD2= -0.7047E-08
+
+
+ LINEAR EXTRAPOLATION
+
+
+ ALPHA=  0.1598E+01 ALPHA2=  0.2598E+01 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1146E-07   GD2 = -0.7047E-08   GD3 = -0.7047E-08   GD4 = -0.1146E-07
+
+ Lattice energy =          -0.40274368   (in internal units)      (Repulsion-dispersion cutoff =      4.942 lattice units)
+
+ GD1= -0.1146E-07 GD2=  0.3274E-12
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.2895E-08
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.29E-08 GD2=  0.00E+00 IKIND= 1 DELMAX= 0.4294808E-04 IN COMPONENT   10
+ Lattice energy =          -0.40274369   (in internal units)      (Repulsion-dispersion cutoff =      4.942 lattice units)
+
+ GD1= -0.2895E-08 GD2=  0.2936E-09
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.1128E-09
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.11E-09 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.5489533E-05 IN COMPONENT    5
+ Lattice energy =          -0.40274369   (in internal units)      (Repulsion-dispersion cutoff =      4.942 lattice units)
+
+ GD1= -0.1128E-09 GD2=  0.4301E-10
+
+
+ LINEAR INTERPOLATION
+
+
+ ALPHA= -0.2761E+00 ALPHA2=  0.7239E+00 ALPHA3=  0.1000E+01 ALPHA4=  0.0000E+00
+  GD1 = -0.1128E-09   GD2 =  0.4301E-10   GD3 =  0.4301E-10   GD4 = -0.1128E-09
+
+ Lattice energy =          -0.40274369   (in internal units)      (Repulsion-dispersion cutoff =      4.942 lattice units)
+
+ GD1= -0.1128E-09 GD2=  0.2035E-14
+
+
+      CHANGE DIRECTION
+
+ GD1 = -0.7430E-11
+
+
+      ALPHA=   1.00000      ALPHA2=    1.00000
+
+
+ HESSIAN UPDATE COMPLETE ... GD1= -0.74E-11 GD2=  0.00E+00 IKIND= 0 DELMAX= 0.1559404E-05 IN COMPONENT   10
+
+      VALID MINIMISATION - GRADIENT TEST SATISFIED
+ THIS PROBABLY INDICATES A MINIMUM WITH ZERO CURVATURE
+
+
+On returning from minimiser proposed alterations are:
+
+
+ Molecular translations (Angstroms)
+
+ Molecule No.      x         y          z     magnitude
+
+
+    1        0.000000        0.000000        0.000000        0.000000
+
+All will be scaled by a factor of       1.000000
+
+
+Molecular rotations:
+
+ Molecule No. Global [local] rotation axis      magnitude
+                  x          y        z         (Degrees)
+
+
+    1       -0.662148       -0.604413        0.442995        0.000068
+     [        -0.249143        0.702192       -0.666973 ]
+
+All will be scaled by a factor of       1.000000
+
+
+Strain matrix to be applied:
+
+
+       E            E            E            E            E            E
+        1            2            3            4            5            6
+
+   0.000000     0.000000     0.000000    -0.000002     0.000001     0.000000
+
+
+ Coordinates dumped
+
+
+ Contributions to inter-molecular electrostatics
+ (eV per unit cell [kJ/mol])
+ Z =        1
+CHAR-CHAR           0.0000    (        0.0000  )
+CHAR-DIPL           0.0000    (        0.0000  )
+DIPL-DIPL           0.0000    (        0.0000  )
+QUAD-CHAR           0.2036    (       19.6436  )
+QUAD-DIPL          -0.3857    (      -37.2112  )
+OCTO-CHAR          -0.0076    (       -0.7380  )
+QUAD-QUAD           0.0719    (        6.9372  )
+OCTO-DIPL           0.0070    (        0.6777  )
+HEXA-CHAR          -0.0034    (       -0.3246  )
+                    0.0000    (        0.0000  )
+Number of atom pairs calculated =    10770
+
+Zone Centre phonon eigenvectors
+For each mode:  
+molecule  1    Trans(X),   Trans(Y),   Trans(Z),     Rot(X),     Rot(Y),     Rot(Z)
+  -------------------  
+       1        1.000000    0.000000    0.000000    0.000000    0.000000    0.000000
+       2        0.000000    1.000000    0.000000    0.000000    0.000000    0.000000
+       3        0.000000    0.000000    1.000000    0.000000    0.000000    0.000000
+       4        0.000000    0.000000    0.000000   -0.387472    0.903894    0.181223
+       5        0.000000    0.000000    0.000000    0.912990    0.349010    0.211288
+       6        0.000000    0.000000    0.000000   -0.127733   -0.247322    0.960477
+ Zone Centre Phonon Frequencies 
+    THz               cm-1
+  --------          --------  
+      0.0000            0.0000
+      0.0000            0.0000
+      0.0000            0.0000
+      1.4722           49.1063
+      2.0027           66.8034
+      3.1102          103.7450
+
+ Cross check of phonon frequencies calculated from structures displaced by eigenvectors
+ ACCM may need to be at least 1.00000000 for check to work correctly
+
+      0.0339            1.1291
+     -0.1043           -3.4802
+      0.0586            1.9557
+      1.4780           49.3015
+      1.9975           66.6279
+      3.1085          103.6890
+
+Centralisation of forces (global axes)
+and torques (global axes) for molecule:    1
+
+Basis No.   Species                                force (eV per Angstrom)
+                             x                    y                    z                  magnitude
+       1  ClCL_1____    0.58715880E-01       0.43639657E-01      -0.39674900E-02       0.73264693E-01
+       2  ClCL_2____   -0.58715880E-01      -0.43639657E-01       0.39674900E-02       0.73264693E-01
+       3  C_BO_1____   -0.18976524E+00       0.10716240E-01       0.10172667E+00       0.21557829E+00
+       4  C_CA_2____    0.30272208E-01       0.72252655E-01       0.94737956E-01       0.12293142E+00
+       5  C_CA_3____   -0.51335041E-01      -0.37624163E-01      -0.75269524E-01       0.98571626E-01
+       6  C_BO_4____    0.18976524E+00      -0.10716240E-01      -0.10172667E+00       0.21557829E+00
+       7  C_CA_5____   -0.30272208E-01      -0.72252655E-01      -0.94737956E-01       0.12293142E+00
+       8  C_CA_6____    0.51335041E-01       0.37624163E-01       0.75269524E-01       0.98571626E-01
+       9  H_HY_1____    0.88926166E-02       0.35034074E-01      -0.29876417E-02       0.36268320E-01
+      10  H_HY_2____   -0.42653063E-02      -0.48743257E-02       0.43454449E-02       0.77996654E-02
+      11  H_HY_3____   -0.88926166E-02      -0.35034074E-01       0.29876417E-02       0.36268320E-01
+      12  H_HY_4____    0.42653063E-02       0.48743257E-02      -0.43454449E-02       0.77996654E-02
+
+    Central force      -0.70257518E-15       0.58132498E-15       0.10173187E-14       0.13661947E-14
+   Central torque      -0.99232114E-07       0.31730883E-05      -0.32301586E-05       0.45290464E-05
+ (eV per radian) [     -0.11635467E-05      -0.10529093E-05       0.42485059E-05    ]
+
+Strain derivatives for matrix deformation of form: 
+
+                /                       | 
+               |     E   1/2 E   1/2 E  |
+               |      1       6       5 |
+               |                        |
+   R =>   R  + | 1/2 E       E   1/2 E  |  R
+               |      6       2       4 |
+               |                        |
+               | 1/2 E   1/2 E       E  |
+               |      5       4       3/
+
+
+   dU/dE        dU/dE        dU/dE        dU/dE        dU/dE        dU/dE
+        1            2            3            4            5            6
+
+     0.0000       0.0000       0.0000       0.0000       0.0000       0.0000
+[      0.00         0.00         0.00         0.00         0.00         0.00 ]
+
+ Units for strain derivatives : eV [kJ/mol].
+
+
+
+Contributions to lattice energy (eV per unit cell [kJ/mol])
+ Z =        1
+ Ewald summed charge-charge energy.......=  -0.11698144E+01[  -0.11286902E+03 ]
+ Intra-molecular charge-charge energy....=  -0.13021036E+01[  -0.12563288E+03 ]
+ Inter-molecular charge-charge energy....=   0.13228922E+00[   0.12763866E+02 ]
+               Total charge-dipole energy=  -0.39628665E+00[  -0.38235540E+02 ]
+               Total dipole-dipole energy=   0.31007695E+00[   0.29917635E+02 ]
+ Total charge-dipole+dipole-dipole energy=  -0.86209700E-01[  -0.83179043E+01 ]
+ Higher multipole interaction energy.....=  -0.11416705E+00[  -0.11015357E+02 ]
+ Total isotropic repulsion-dispersion....=  -0.13280235E+01[  -0.12813375E+03 ]
+ Total anisotropic repulsion energy......=   0.64190242E+00[   0.61933667E+02 ]
+ Intermolecular induction energy.........=   0.00000000E+00[   0.00000000E+00 ]
+ PV energy..(P =   0.00E+00 Pa)..........    0.00000000E+00[   0.00000000E+00]
+ Total lattice energy....................=  -0.75420862E+00[  -0.72769481E+02 ]
+
+
+ MECHANICAL PROPERTIES CALCULATIED FROM HESSIAN MATRIX
+
+
+ Elastic stiffness tensor (Cij): GPa (10**10 DYNE/CM**2)
+     23.58876      9.62432      6.02847      3.21779     -2.34157     -3.50538
+      9.62432     17.06762      6.37537      2.05584     -0.82018     -3.71365
+      6.02847      6.37537     13.46004     -1.47659      0.10214      0.10800
+      3.21779      2.05584     -1.47659      4.27730     -0.55820     -2.35944
+     -2.34157     -0.82018      0.10214     -0.55820      3.49188      2.78290
+     -3.50538     -3.71365      0.10800     -2.35944      2.78290      9.11696
+
+ Born stability criteria satisfied.
+ Lowest eigenvalue of shear submatrix of Cij =    2.23826 GPa
+ Corresponding eigenvector     0.27544  -0.85460   0.44022 )
+
+
+ Elastic compliance tensor (Sij): GPa^(-1) (10**-10 CM**2/DYNE)
+      0.06715     -0.02263     -0.02475     -0.04704      0.03853     -0.00704
+     -0.02263      0.09406     -0.03755     -0.02780     -0.01936      0.02877
+     -0.02475     -0.03755      0.11113      0.07136     -0.01474     -0.00316
+     -0.04704     -0.02780      0.07136      0.34072     -0.04209      0.07077
+      0.03853     -0.01936     -0.01474     -0.04209      0.40224     -0.12657
+     -0.00704      0.02877     -0.00316      0.07077     -0.12657      0.17569
+
+ Mechanical properties calculated for a microcrystalline aggregate.
+ Bulk modulus from elastic constants (Voigt averaging):    10.90808 GPa
+ Bulk modulus from compliance constants (Reuss averaging):     9.75864 GPa
+ Arithmetic mean:    10.33336 GPa
+ Geometric mean:    10.31737 GPa
+
+ Shear modulus from elastic constants (Voigt averaging):     5.51645 GPa
+ Shear modulus from compliance constants (Reuss averaging):     3.58423 GPa
+ Arithmetic mean:     4.55034 GPa
+ Geometric mean:     4.44660 GPa
+
+ Young's modulus from elastic constants (Voigt averaging):    14.16200 GPa
+ Young's modulus from compliance constants (Reuss averaging):     9.57985 GPa
+ Arithmetic mean:    11.87092 GPa
+ Geometric mean:    11.64774 GPa
+
+ Poisson's ratio from elastic constants (Voigt averaging):     0.28362 GPa
+ Poisson's ratio from compliance constants (Reuss averaging):     0.33639 GPa
+ Arithmetic mean:     0.31000 GPa
+ Geometric mean:     0.30888 GPa
+
+ Single crystal Young's modulus along optical axes     x-component:    14.89264 GPa
+     y-component:    10.63190 GPa
+     z-component:     8.99865 GPa
+     arithmetic mean:    11.50773 GPa
+
+
+On returning from minimiser proposed alterations are:
+
+
+ Molecular translations (Angstroms)
+
+ Molecule No.      x         y          z     magnitude
+
+
+    1        0.000000        0.000000        0.000000        0.000000
+
+All will be scaled by a factor of       1.000000
+
+
+Molecular rotations:
+
+ Molecule No. Global [local] rotation axis      magnitude
+                  x          y        z         (Degrees)
+
+
+    1       -0.662148       -0.604413        0.442995        0.000068
+     [        -0.249143        0.702192       -0.666973 ]
+
+All will be scaled by a factor of       1.000000
+
+
+Strain matrix to be applied:
+
+
+       E            E            E            E            E            E
+        1            2            3            4            5            6
+
+   0.000000     0.000000     0.000000    -0.000002     0.000001     0.000000
+
+
+ Final lattice vectors are
+      1.791045138980609  -0.164171809271003  -0.621068601111442
+      0.000006618013055   1.468528703349593  -0.074508369116598
+     -0.000697328448118   0.000213046453881   1.000829799038177
+
+ Final basis positions are
+ ClCL_1____1____      1.177650157650651      0.324699306667118     -0.412650034972171    1
+ ClCL_2____2____      2.404440120310568     -0.653042925209033     -0.829487167250714    1
+ C_BO_1____3____      1.518871429195349      0.052501913840788     -0.527902596058936    1
+ C_CA_2____4____      1.860454525534485      0.159503966155966     -0.471385107394217    1
+ C_CA_3____5____      1.448229679897838     -0.270634134953724     -0.675934562187778    1
+ C_BO_4____6____      2.063218848765870     -0.380845532382803     -0.714234606164049    1
+ C_CA_5____7____      1.721635752426734     -0.487847584697880     -0.770752094828768    1
+ C_CA_6____8____      2.133860598063482     -0.057709483588191     -0.566202640035207    1
+ H_HY_1____9____      1.911937124855746      0.410697303334542     -0.356391717440805    1
+ H_HY_2____10___      1.182238336208355     -0.350710611833438     -0.718474442490593    1
+ H_HY_3____11___      1.670153153105473     -0.739040921876456     -0.885745484782181    1
+ H_HY_4____12___      2.399851941752865      0.022366993291423     -0.523662759732392    1
+
+ Final molecular centres of mass
+Molecule    Centre of mass coords
+
+    1           0.0000000000      0.0000000000      0.0000000000
+
+ Final molecular axes 
+
+Axes for molecule        1
+     0.7558350893   -0.6029411349   -0.2552945466
+    -0.6544101826   -0.6828601942   -0.3247295306
+     0.0214623081    0.4125093247   -0.9107005141
+
+ Final anisotropic repulsion potential axes in global axis system
+
+  Index        Type                   x(global)       y(global)       z(global)
+
+       1        ClCL_1____1____    x(axis) -0.65441018E+00 -0.68286018E+00 -0.32472956E+00
+                            y(axis) -0.21462328E-01 -0.41250935E+00  0.91070050E+00
+                            z(axis) -0.75583509E+00  0.60294113E+00  0.25529455E+00
+       2        ClCL_2____2____    x(axis)  0.65441018E+00  0.68286018E+00  0.32472956E+00
+                            y(axis) -0.21462328E-01 -0.41250935E+00  0.91070050E+00
+                            z(axis)  0.75583509E+00 -0.60294113E+00 -0.25529455E+00
+       3        C_BO_1____3____    x(axis) -0.65441018E+00 -0.68286018E+00 -0.32472956E+00
+                            y(axis) -0.21462328E-01 -0.41250935E+00  0.91070050E+00
+                            z(axis) -0.75583509E+00  0.60294113E+00  0.25529455E+00
+       4        C_CA_2____4____    x(axis) -0.98284149E+00  0.17562207E+00  0.56387063E-01
+                            y(axis) -0.21462284E-01 -0.41250936E+00  0.91070050E+00
+                            z(axis)  0.18319930E+00  0.89386404E+00  0.40920057E+00
+       5        C_CA_3____5____    x(axis)  0.32194574E+00 -0.86524038E+00 -0.38433062E+00
+                            y(axis) -0.21462319E-01 -0.41250939E+00  0.91070049E+00
+                            z(axis) -0.94651482E+00 -0.28494751E+00 -0.15137571E+00
+       6        C_BO_4____6____    x(axis)  0.65441018E+00  0.68286018E+00  0.32472956E+00
+                            y(axis) -0.21462328E-01 -0.41250935E+00  0.91070050E+00
+                            z(axis)  0.75583509E+00 -0.60294113E+00 -0.25529455E+00
+       7        C_CA_5____7____    x(axis)  0.98284149E+00 -0.17562207E+00 -0.56387063E-01
+                            y(axis) -0.21462284E-01 -0.41250936E+00  0.91070050E+00
+                            z(axis) -0.18319930E+00 -0.89386404E+00 -0.40920057E+00
+       8        C_CA_6____8____    x(axis) -0.32194574E+00  0.86524038E+00  0.38433062E+00
+                            y(axis) -0.21462319E-01 -0.41250939E+00  0.91070049E+00
+                            z(axis)  0.94651482E+00  0.28494751E+00  0.15137571E+00
+       9        H_HY_1____9____    x(axis) -0.98284149E+00  0.17562207E+00  0.56387063E-01
+                            y(axis) -0.21462284E-01 -0.41250936E+00  0.91070050E+00
+                            z(axis)  0.18319930E+00  0.89386404E+00  0.40920057E+00
+      10        H_HY_2____10___    x(axis)  0.32194574E+00 -0.86524038E+00 -0.38433062E+00
+                            y(axis) -0.21462319E-01 -0.41250939E+00  0.91070049E+00
+                            z(axis) -0.94651482E+00 -0.28494751E+00 -0.15137571E+00
+      11        H_HY_3____11___    x(axis)  0.98284149E+00 -0.17562207E+00 -0.56387063E-01
+                            y(axis) -0.21462284E-01 -0.41250936E+00  0.91070050E+00
+                            z(axis) -0.18319930E+00 -0.89386404E+00 -0.40920057E+00
+      12        H_HY_4____12___    x(axis) -0.32194574E+00  0.86524038E+00  0.38433062E+00
+                            y(axis) -0.21462319E-01 -0.41250939E+00  0.91070049E+00
+                            z(axis)  0.94651482E+00  0.28494751E+00  0.15137571E+00
+
+Number of iterations =       14
+
+
+Changes in structure during program run (Refer to centered cell)
+
+
+Lattice vectors (Angstroms and Degrees)
+                  a          b          c        alpha       beta      gamma
+
+
+   Initial =>     7.3104     5.6607     3.8447    92.9105   109.0073    93.9971
+     Final =>     7.3156     5.6533     3.8479    92.8923   109.0915    93.9925
+
+diff.(abs) =>     0.0052    -0.0074     0.0032    -0.0182     0.0842    -0.0046
+  diff.(%) =>     0.0707    -0.1305     0.0830    -0.0196     0.0772    -0.0049
+
+           Cell Volume ( Cubic Angstroms )  Cell density ( g/cubic cm)
+
+   Initial =>           149.6047                        1.6316
+   Final   =>           149.5668                        1.6321
+
+diff.(abs) =>            -0.0379                        0.0004
+diff.(%)   =>            -0.0253                        0.0253
+Dipole per unit cell in global axis system (eA)
+                x       y      z     total dipole
+ Initial :  0.0000000   0.0000000   0.0000000   0.0000000
+ Final   :  0.0000000   0.0000000   0.0000000   0.0000000
+
+ Initial crystalographic positions of molecule centres of mass
+
+Molecule    a-vectors      b-vectors      c-vectors
+
+     1      0.000000      0.000000      0.000000
+
+Final crystalographic positions of molecule centres of mass
+
+Molecule    a-vectors      b-vectors      c-vectors
+
+     1      0.000000      0.000000      0.000000
+
+Direction cosines between axes before and after program run for molecule    1
+
+new axis           old axis
+  ||        X         Y         Z
+  //
+   X    0.999998  -.000595  0.001773
+   Y    0.000595  1.000000  -.000038
+   Z    -.001773  0.000039  0.999998
+
+Actual angles between axes (Degrees):
+
+new axis           old axis
+  ||        X         Y         Z
+  //
+   X      0.107140   90.034086   89.898426
+   Y     89.965910    0.034161   90.002195
+   Z     90.101572   89.997744    0.101597
+
+
+Euler (y-convention) angles of new system in old:
+
+ first  rotation about z Phi  =    1.272199
+ first  rotation about y Theta=    0.101597
+ second rotation about z Psi  =   -1.238111
+
+Equivalent to a single rotation of   0.107163 degrees
+
+    around the global axis vector:     0.000000    1.000000    0.000000
+
+[local axis {orig. system} vector:    -0.604078   -0.682485    0.411466 ]
+
+Molecular movement including strains (Angstroms)
+ Mol.       | Dx |
+
+    1       0.000000
+
+RMS Aver.   0.000000
+
+
+Figure of shame as defined in Acta Cryst. B49 868 1993. 
+in our case RMS values are used to take the place of symmetry independent factors so 
+
+    |                |2      |           |2                 |        |2
+F = |0.5 RMS D THETA |     + | 10 RMS Dx |  + SUM (d=a,b,c) | 100 Dd | 
+    |                |       |           |                  |        | 
+
+
+                                  2
+   + SUM (d= alpha,beta,gamma) Dd
+
+In this case: F=     0.039213
+
+ Terms in order are as follows: 
+    0.002871      0.000000      0.028908      0.007434
+
+ Initial crystalographic positions of atoms for molecule    1
+
+  No. Label Type      a-vectors     b-vectors     c-vectors
+
+   1  ClCL_1____      0.657560      0.294856      0.017245
+   2  ClCL_2____      1.342440     -0.294856     -0.017245
+   3  C_BO_1____      0.848053      0.130665      0.008327
+   4  C_CA_2____      1.038892      0.224525      0.190261
+   5  C_CA_3____      0.808472     -0.093568     -0.180689
+   6  C_BO_4____      1.151947     -0.130665     -0.008327
+   7  C_CA_5____      0.961108     -0.224525     -0.190261
+   8  C_CA_6____      1.191528      0.093568      0.180689
+   9  H_HY_1____      1.067745      0.398623      0.335907
+  10  H_HY_2____      0.659866     -0.164448     -0.320729
+  11  H_HY_3____      0.932255     -0.398623     -0.335907
+  12  H_HY_4____      1.340134      0.164448      0.320729
+
+
+Final crystalographic positions of atoms for molecule    1
+
+  No. Label Type      a-vectors     b-vectors     c-vectors
+
+   1  ClCL_1____      0.657527      0.294610      0.017656
+   2  ClCL_2____      1.342473     -0.294610     -0.017656
+   3  C_BO_1____      0.848039      0.130555      0.008508
+   4  C_CA_2____      1.038827      0.224721      0.190383
+   5  C_CA_3____      0.808525     -0.093875     -0.180630
+   6  C_BO_4____      1.151961     -0.130555     -0.008508
+   7  C_CA_5____      0.961173     -0.224721     -0.190383
+   8  C_CA_6____      1.191475      0.093875      0.180630
+   9  H_HY_1____      1.067627      0.398971      0.336126
+  10  H_HY_2____      0.659959     -0.164992     -0.320622
+  11  H_HY_3____      0.932373     -0.398971     -0.336126
+  12  H_HY_4____      1.340041      0.164992      0.320622
+ Sorted displacements for molecule     1
+
+No. Label Type   Displacement, including strain (Angstroms)
+                 a-vectors      b-vectors      c-vectors      magnitude
+
+   1  ClCL_1____    -0.000127    -0.000945     0.001578     0.000000
+   2  ClCL_2____     0.000127     0.000945    -0.001578     0.000000
+   3  C_BO_1____    -0.000053    -0.000422     0.000699     0.000000
+   4  C_CA_2____    -0.000252     0.000754     0.000472     0.000000
+   5  C_CA_3____     0.000204    -0.001183     0.000228     0.000000
+   6  C_BO_4____     0.000053     0.000422    -0.000699     0.000000
+   7  C_CA_5____     0.000252    -0.000754    -0.000472     0.000000
+   8  C_CA_6____    -0.000204     0.001183    -0.000228     0.000000
+   9  H_HY_1____    -0.000450     0.001335     0.000842     0.000000
+  10  H_HY_2____     0.000356    -0.002094     0.000410     0.000000
+  11  H_HY_3____     0.000450    -0.001335    -0.000842     0.000000
+  12  H_HY_4____    -0.000356     0.002094    -0.000410     0.000000
+ STOP directive encountered. execution terminating.
+
+Timing information
+
+Program segment                              Time taken (CPU seconds)
+
+Time to set things up...................             0.190000
+Reciprocal space part of Ewald sum......             0.000000
+Real space part of Ewald sum............             0.000000
+Short range potential calculation.......             0.000000
+
+Higher multipole energy calculation
+
+Energy calculation......................             0.030000
+First derivative chain rule.............             0.000000
+Second derivative chain rule............             0.000000
+All other program sections..............             2.480000
+Total run time..........................             2.700000

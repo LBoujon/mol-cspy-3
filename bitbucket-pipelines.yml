@@ -1,0 +1,33 @@
+clone:
+    depth: 1
+
+pipelines:
+    custom:
+        build-test-3.11-conda:
+            - step:
+                name: Build and test version 3.11 in a Conda env
+                image: continuumio/miniconda3
+                script:
+                - conda env create -f conda/Python3.11/Flexible/cspy.yml
+                - conda activate cspy
+                - pip install -e .[all]
+                - export USER="user"
+                - pytest
+                - python setup.py bdist_wheel
+                artifacts:
+                - dist/*.whl
+                caches:
+                - pip
+        build-test-3.11-pip:
+            - step:
+                name: Build and test version 3.11 without Conda env
+                image: python:3.11
+                script:
+                - pip install -e .[all]
+                - export USER="user"
+                - pytest
+                - python setup.py bdist_wheel
+                artifacts:
+                - dist/*.whl
+                caches:
+                - pip

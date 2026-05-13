@@ -1,0 +1,28 @@
+Compack: a program for comparing molecular crystal structures by searching for similarity in molecular packing.
+
+to use type program name followed by options followed by models (res files) to compare. For example:
+
+1) compack model1.res model2.res
+compares model1.res and model2.res using default search settings
+
+2) compack -d25 model1.res model2.res
+compares models using a distance tolerance of 25%.
+
+3) compack -n20 model1.res model2.res
+compares models using a molecular cluster containing 20 molecules. 
+
+4) compack -n20 -b model1.res model2.res
+compares models using 20 molecules and including bond type information. (mmm cant remember if res files have bond types).
+
+5) compack -h model1.res model2.res
+compares models and includes hydrogen atoms (default is to ignore hydrogens).
+
+6) compack -n20 -d25 -bh model1.res model2.res
+combining comparison options.
+
+7) compack model1.res modellist.txt
+compares model1 with all the models listed in the text file 'modellist.txt'. This method of comparing 'one with many' is much faster than the sum of carrying out each comparison separately as the initial transforming the reference structure into a molecular cluster and then to a geometric query is performed once only. This might be useful if performance is an issue.
+
+8) compack modellist1.txt modellist2.txt
+compares many with many.
+

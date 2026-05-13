@@ -1,0 +1,14 @@
+To run NEIGHCRYS, type
+   cp NEIGHCRYS_input/* .
+   neighcrys.out < neighcrys_answers
+
+In order to use your NEIGHCRYS output files as DMACRYS input, change 'MOLE 0' to 'MOLE 1' in the PRIN line,
+       add a line 'ACCM 100000000' after the CHGC line,
+       change the STAR PLUT line to STAR PROP and remove the NOPR line
+
+To run DMACRYS, type
+   dmacrys.out < DCLBEN_beta_abi1.dmain > DCLBEN_beta_abi1.dmaout
+
+To postprocess the DMACRYS result on Xenon, type
+   /home/cposs/bin/FvibSetup_DMACRYS.pl < DCLBEN_beta_abi1.dmaout > fort.10
+   /home/cposs/bin/elastphon.out

@@ -1,0 +1,37 @@
+ Summary file for DMACRYS version 2.3.0        Run on 2018-04-19  15:59
+
+ 21.longcell_BTXXIII 
+
+ Valid minimisation - converged on gradients
+
+ Eigenvalue calculation is approximate
+ Warning - Non-zero eigenvalues found.
+ A subgroup has a lower energy structure
+ Number of Iterations:    21
+ Lattice is A Centred. Calculated Lattice Energies
+Initial Lattice Energy:      -128.0126 kJ/mol
+Final Lattice Energy:        -129.4032 kJ/mol
+
+                  a (Ang)    b (Ang)    c (Ang)  alpha (Deg) beta (Deg) gamma (Deg)
+   Initial =>    14.6575    70.1116     4.5850    90.0000    90.0000    90.0000
+     Final =>    14.5659    69.8043     4.5551    90.0000    90.0000    90.0000
+diff.(abs) =>    -0.0916    -0.3073    -0.0299     0.0000     0.0000     0.0000
+  diff.(%) =>    -0.6247    -0.4383    -0.6529     0.0000     0.0000     0.0000
+
+           Cell Volume ( Cubic Angstroms )  Cell density ( g/cubic cm)
+
+   Initial =>          4711.8247                        1.0890
+   Final   =>          4631.4271                        1.1079
+diff.(abs) =>           -80.3975                        0.0189
+diff.(%)   =>            -1.7063                        1.7359
+
+ F =     2.989268
+
+Contributions to lattice energy (eV per primitive unit cell [kJ/mol])  ( Z =        4)
+Inter-molecular charge-charge energy....=               0.3095[               7.4656 ]
+Total charge-dipole+dipole-dipole energy=              -0.4048[              -9.7653 ]
+Higher multipole interaction energy.....=              -0.2867[              -6.9167 ]
+Total isotropic repulsion-dispersion....=              -4.9826[            -120.1868 ]
+Total anisotropic repulsion energy......=               0.0000[               0.0000 ]
+Intermolecular induction energy.........=               0.0000[               0.0000 ]
+PV energy..(P =   0.00E+00 Pa)..........=               0.0000[               0.0000 ]

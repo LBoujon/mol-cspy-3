@@ -1,0 +1,8 @@
+To run NEIGHCRYS, type
+   cp NEIGHCRYS_input/* .
+   neighcrys.out < neighcrys_answers
+
+In order to use your NEIGHCRYS output files as DMACRYS input, add a line 'ACCM 100000000' after the CHGC line, change the STAR PLUT line to STAR PROP and remove the NOPR line.
+
+To run DMACRYS, type
+   dmacrys.out < FINVAZ_A395.dmain > FINVAZ_A395.dmaout

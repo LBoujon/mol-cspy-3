@@ -1,0 +1,6 @@
+MOLX 2
+X LINE  C_F1_2____  C_F1_1____ 1
+Y PLANE C_F1_2____  C_F1_1____ 1 C_F1_6____ 2
+X LINE  O_F1_6____  H_Wa_7____ 1
+Y PLANE O_F1_6____  H_Wa_7____ 1 H_Wa_8____ 1
+ENDS

@@ -1,0 +1,34 @@
+{{title}}
+{{iswitch}} {{irosen}} {{iuser_e}} {{irot}} {{isystem}} {{nmol}} {{sthl}} {{ck}} {{dmax}} {{ddmax}} {{icross}} {{allow_change}} {{coefftable}}
+{{ls_cycles}} {{rss_cycles-}}
+{{' %f %f %f %f' | format(
+    steps[0], steps[1],
+    steps[2], steps[3])
+-}}
+{{' %f %f %f %f' | format(
+    frac_changes[0], frac_changes[1],
+    frac_changes[2], frac_changes[3])
+}}
+{%- for (l1, l2), p in cross_terms.items() %}
+{{"%6s %6s %14.7f %14.7f %14.7f %14.7f" | format(l1, l2, p.A, p.B, p.C, 70.0)}}
+{%- endfor %}
+{{'%8s' | format(refcode)}}
+{{'%10.5f %10.5f %10.5f %10.5f %10.5f %10.5f' | format(*lattice_parameters)}}
+{{natom}} {{nsym}} {{molwt}}
+{%- for R, T in symops %}
+{{'%5f %5d %5d %5d %5f %5d %5d %5d %5f %5d %5d %5d' | format(
+    T[0], R[0][0], R[0][1], R[0][2],
+    T[1], R[1][0], R[1][1], R[1][2],
+    T[2], R[2][0], R[2][1], R[2][2])
+}}
+{%- endfor %}
+{%- for atom in atoms %}
+{{'     %6s%5d' | format(atom.label, atom.code)-}}
+{{'%10.5f%10.5f%10.5f%10.5f%10.5f%10.5f%10.5f%10.5f' | format(
+    atom.a, atom.b, atom.c, atom.charge,
+    atom.potential.A, atom.potential.B, atom.potential.C, atom.mass)}}
+{%- endfor %}
+{{'%-36d' | format(refinement_code)}}
+{%- for group_batch in group_identifiers | batch(24) %}
+{{group_batch | join}}
+{%- endfor %}

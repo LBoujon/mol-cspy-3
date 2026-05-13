@@ -1,0 +1,412 @@
+ Symmetry Interface to DMACRYS (NEIGHCRYS) Version 2.3.0        Dated November 2017 .
+ Needed for DMACRYS version 2.3.0       
+ Run on 2018-04-19  15:06
+Allow B centred orthorhombic cells
+
+
+ LATTICE CENTRING TYPE    P
+
+
+ LATTICE CONSTANTS ARE 
+ A =       0.73104000E+01 B =       0.56607000E+01 C =       0.38447000E+01
+ ALPHA =   0.92910500E+02 BETA =    0.10900730E+03 GAMMA =   0.93997100E+02
+
+
+ ORTHOGONAL COORDINATE SYSTEM DEFINED AS FOLLOWS
+
+ X IS PARALLEL TO RECIPROCAL A, Z IS PARALLEL TO C, Y IS ORTHOGONAL TO X AND Z AND FORMS A RIGHT HANDED SET
+ COORDINATES ARE NORMALISED SO THAT 1 LATTICE UNIT EQUALS SPACING ALONG C AXIS
+
+
+ LATTICE VECTORS 
+    0.17902375E+01   -0.16419646E+00   -0.61927175E+00
+    0.00000000E+00    0.14704393E+01   -0.74759409E-01
+    0.00000000E+00    0.00000000E+00    0.10000000E+01
+
+ RECIPROCAL LATTICE VECTORS 
+    0.55858509E+00    0.00000000E+00    0.00000000E+00
+    0.62374349E-01    0.68006886E+00    0.00000000E+00
+    0.35057903E+00    0.50841546E-01    0.10000000E+01
+
+ TRANSFORMATION MATRICES 
+    0.17902375E+01   -0.16419646E+00   -0.61927175E+00
+    0.00000000E+00    0.14704393E+01   -0.74759409E-01
+    0.00000000E+00    0.00000000E+00    0.10000000E+01
+
+    0.55858509E+00    0.62374349E-01    0.35057903E+00
+    0.00000000E+00    0.68006886E+00    0.50841546E-01
+    0.00000000E+00    0.00000000E+00    0.10000000E+01
+
+
+ ROTATION MATRICES OF SPACE GROUP ARE
+           ORTHOGONAL COORDINATES                            CRYSTAL COORDINATES                CLASS
+
+
+   1.000000   0.000000   0.000000   0.000000        1.000000   0.000000   0.000000   0.000000       1
+   0.000000   1.000000   0.000000   0.000000        0.000000   1.000000   0.000000   0.000000
+   0.000000   0.000000   1.000000   0.000000        0.000000   0.000000   1.000000   0.000000
+
+
+ GROUP MULTIPLICATION TABLE 
+           1
+   1       1
+
+ CHARACTER TABLE 
+
+
+       NOCLS    1
+
+      MEMCLS    1
+
+ NOREP DIMRP
+
+
+   1     1   1.000000
+             0.000000
+
+ LINEAR BASIS FUNCTIONS
+     X          Y          Z      REP
+    1.00000    0.00000    0.00000   1
+    0.00000    1.00000    0.00000   1
+    0.00000    0.00000    1.00000   1
+
+
+ QUADRATIC BASIS FUNCTIONS
+     XX         YY         ZZ         YZ         XZ         XY     REP
+    1.00000    0.00000    0.00000    0.00000    0.00000    0.00000   1
+    0.00000    1.00000    0.00000    0.00000    0.00000    0.00000   1
+    0.00000    0.00000    1.00000    0.00000    0.00000    0.00000   1
+    0.00000    0.00000    0.00000    1.00000    0.00000    0.00000   1
+    0.00000    0.00000    0.00000    0.00000    1.00000    0.00000   1
+    0.00000    0.00000    0.00000    0.00000    0.00000    1.00000   1
+
+
+ ROTATION BASIS FUNCTIONS
+     X          Y          Z      REP
+    1.00000    0.00000    0.00000   1
+    0.00000    1.00000    0.00000   1
+    0.00000    0.00000    1.00000   1
+
+
+ BASIS ATOMS. CORES
+
+
+ BASIS ATOMS FOR ELEMENT Cl
+
+
+ BASIS ATOM TYPE Cl        1____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      1         1             1             1.17718878  0.32559838 -0.41200646
+
+ BASIS ATOMS FOR ELEMENT Cl
+
+
+ BASIS ATOM TYPE Cl        2____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      2         1             1             0.61304876  0.98064449  0.71797530
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        3____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      3         1             1             1.51821650  0.05288790 -0.52661720
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        4____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      4         1             1             0.06962653  0.32376458  0.14939030
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        5____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      5         1             1             1.44735659  1.20010561  0.25088280
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        6____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      6         1             1             0.27202104  1.25335497  0.83258604
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        7____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      7         1             1             1.72061101  0.98247828  0.15657855
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        8____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      8         1             1             0.34288096  0.10613726  0.05508604
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        9____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      9         1             1             0.12127880  0.57502822  0.26415379
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        10___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     10         1             1             1.18131724  1.12028139  0.20816933
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        11___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     11         1             1             1.66895874  0.73121465  0.04181505
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        12___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     12         1             1             0.60892030  0.18596148  0.09779951
+
+ POINTER FROM SYMMETRY MATRIX TO MEMBER IN CLASS 
+ CLASS  MEMBERS
+
+     1        1
+   1
+
+ POINTER FROM MEMBER IN CLASS TO SYMMETRY MATRIX 
+ CLASS  MEMBER
+
+     1        1
+   1
+
+ BASIS ATOMS. CORES
+
+
+ BASIS ATOMS FOR ELEMENT CO
+
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      1         1             1             0.00000000  0.00000000  0.00000000
+
+ POINTER FROM SYMMETRY MATRIX TO MEMBER IN CLASS 
+ CLASS  MEMBERS
+
+     1        1
+   1
+
+ POINTER FROM MEMBER IN CLASS TO SYMMETRY MATRIX 
+ CLASS  MEMBER
+
+     1        1
+   1
+
+Number of asymmetric units  in primitive cell   1
+
+ BASIS SYMMETRY TYPE NUMBER     1
+
+ NOREP   X            Y            Z            X            Y            Z            X            Y            Z
+
+
+ TRANSLATION FUNCTIONS
+
+     1
+        1.00000000  0.00000000  0.00000000
+     1
+        0.00000000  1.00000000  0.00000000
+     1
+        0.00000000  0.00000000  1.00000000
+
+ ROTATION FUNCTIONS
+
+     1
+        1.00000000  0.00000000  0.00000000
+     1
+        0.00000000  1.00000000  0.00000000
+     1
+        0.00000000  0.00000000  1.00000000
+
+ Inequivalent basis atoms
+
+
+  atom   atomic       name      input  molecule  invert 
+ index   number                  name    number    flag 
+     1      17  ClCL_1____1____    Cl1         1       F
+     2      17  ClCL_2____2____    Cl2         1       F
+     3       6  C_BO_1____3____    C1          1       F
+     4       6  C_CA_2____4____    C2          1       F
+     5       6  C_CA_3____5____    C3          1       F
+     6       6  C_BO_4____6____    C4          1       F
+     7       6  C_CA_5____7____    C5          1       F
+     8       6  C_CA_6____8____    C6          1       F
+     9       1  H_HY_1____9____    H1          1       F
+    10       1  H_HY_2____10___    H2          1       F
+    11       1  H_HY_3____11___    H3          1       F
+    12       1  H_HY_4____12___    H4          1       F
+
+  atom        name                       coordinates
+ index                                   orthonormal
+                                         crystallographic
+     1  ClCL_1____1____  0.11771888E+01  0.32559838E+00 -0.41200646E+00
+                         0.65756010E+00  0.29485570E+00  0.17245170E-01
+     2  ClCL_2____2____  0.61304876E+00  0.98064449E+00  0.71797530E+00
+                         0.13424399E+01 -0.29485570E+00 -0.17245170E-01
+     3  C_BO_1____3____  0.15182165E+01  0.52887901E-01 -0.52661720E+00
+                         0.84805310E+00  0.13066518E+00  0.83265800E-02
+     4  C_CA_2____4____  0.69626527E-01  0.32376458E+00  0.14939030E+00
+                         0.10388923E+01  0.22452512E+00  0.19026059E+00
+     5  C_CA_3____5____  0.14473566E+01  0.12001056E+01  0.25088280E+00
+                         0.80847181E+00 -0.93567620E-01 -0.18068910E+00
+     6  C_BO_4____6____  0.27202104E+00  0.12533550E+01  0.83258604E+00
+                         0.11519469E+01 -0.13066518E+00 -0.83265800E-02
+     7  C_CA_5____7____  0.17206110E+01  0.98247828E+00  0.15657855E+00
+                         0.96110766E+00 -0.22452512E+00 -0.19026059E+00
+     8  C_CA_6____8____  0.34288096E+00  0.10613726E+00  0.55086043E-01
+                         0.11915282E+01  0.93567620E-01  0.18068910E+00
+     9  H_HY_1____9____  0.12127880E+00  0.57502822E+00  0.26415379E+00
+                         0.10677445E+01  0.39862347E+00  0.33590692E+00
+    10  H_HY_2____10___  0.11813172E+01  0.11202814E+01  0.20816933E+00
+                         0.65986620E+00 -0.16444762E+00 -0.32072877E+00
+    11  H_HY_3____11___  0.16689587E+01  0.73121465E+00  0.41815053E-01
+                         0.93225547E+00 -0.39862347E+00 -0.33590692E+00
+    12  H_HY_4____12___  0.60892030E+00  0.18596148E+00  0.97799511E-01
+                         0.13401338E+01  0.16444762E+00  0.32072877E+00
+
+ Equivalent basis atoms
+
+
+  atom   atomic       name      input  molecule  invert 
+ index   number                  name    number    flag 
+     1      17  ClCL_1____1____    Cl1         1       F
+     2      17  ClCL_2____2____    Cl2         1       F
+     3       6  C_BO_1____3____    C1          1       F
+     4       6  C_CA_2____4____    C2          1       F
+     5       6  C_CA_3____5____    C3          1       F
+     6       6  C_BO_4____6____    C4          1       F
+     7       6  C_CA_5____7____    C5          1       F
+     8       6  C_CA_6____8____    C6          1       F
+     9       1  H_HY_1____9____    H1          1       F
+    10       1  H_HY_2____10___    H2          1       F
+    11       1  H_HY_3____11___    H3          1       F
+    12       1  H_HY_4____12___    H4          1       F
+
+  atom        name                       coordinates
+ index                                   orthonormal
+                                         crystallographic
+     1  ClCL_1____1____  0.11771888E+01  0.32559838E+00 -0.41200646E+00
+                         0.65756010E+00  0.29485570E+00  0.17245170E-01
+     2  ClCL_2____2____  0.24032863E+01 -0.65399130E+00 -0.82653703E+00
+                         0.13424399E+01 -0.29485570E+00 -0.17245170E-01
+     3  C_BO_1____3____  0.15182165E+01  0.52887901E-01 -0.52661720E+00
+                         0.84805310E+00  0.13066518E+00  0.83265800E-02
+     4  C_CA_2____4____  0.18598641E+01  0.15956812E+00 -0.46988145E+00
+                         0.10388923E+01  0.22452512E+00  0.19026059E+00
+     5  C_CA_3____5____  0.14473566E+01 -0.27033372E+00 -0.67435779E+00
+                         0.80847181E+00 -0.93567620E-01 -0.18068910E+00
+     6  C_BO_4____6____  0.20622586E+01 -0.38128082E+00 -0.71192630E+00
+                         0.11519469E+01 -0.13066518E+00 -0.83265800E-02
+     7  C_CA_5____7____  0.17206110E+01 -0.48796104E+00 -0.76866204E+00
+                         0.96110766E+00 -0.22452512E+00 -0.19026059E+00
+     8  C_CA_6____8____  0.21331185E+01 -0.58059205E-01 -0.56418570E+00
+                         0.11915282E+01  0.93567620E-01  0.18068910E+00
+     9  H_HY_1____9____  0.19115163E+01  0.41083175E+00 -0.35511795E+00
+                         0.10677445E+01  0.39862347E+00  0.33590692E+00
+    10  H_HY_2____10___  0.11813172E+01 -0.35015794E+00 -0.71707126E+00
+                         0.65986620E+00 -0.16444762E+00 -0.32072877E+00
+    11  H_HY_3____11___  0.16689587E+01 -0.73922468E+00 -0.88342554E+00
+                         0.93225547E+00 -0.39862347E+00 -0.33590692E+00
+    12  H_HY_4____12___  0.23991578E+01  0.21765019E-01 -0.52147224E+00
+                         0.13401338E+01  0.16444762E+00  0.32072877E+00
+
+ REPRESENTATIONS RENUMBERED, COMPLEX CONJUGATE REPRESENTATIONS DELETED 
+
+
+ REP       INDEX OF                   NUMBER OF PROJECTED FUNCTIONS          NUMBER OF BASIS FUNCTIONS
+      1ST ROT     1ST BULK      TRANS+ROT  ROT   ONLY  BULK ONLY        ALL          LINEAR  QUADRATIC
+   1          4          7               6          3          6         12               3          6
+
+ MAXIMUM PROJECTED ARRAY SIZE =      144
+
+    1    ClCL_1____           -5.896580   -0.000714   -0.009502    Next   2    Limit   4
+    2    ClCL_2____            5.896580    0.000714    0.009502    Next   3    Limit   4
+    3    C_BO_1____           -2.616606   -0.000714   -0.009502    Next   4    Limit   4
+    4    C_CA_2____           -1.314401   -2.289004   -0.009502    Next   5    Limit   4
+    5    C_CA_3____           -1.314401    2.287574   -0.009502    Next   6    Limit   4
+    6    C_BO_4____            2.616606    0.000714    0.009502    Next   7    Limit   4
+    7    C_CA_5____            1.314401    2.289004    0.009502    Next   8    Limit   4
+    8    C_CA_6____            1.314401   -2.287574    0.009502    Next   9    Limit   4
+    9    H_HY_1____           -2.345379   -4.051323   -0.009502    Next  10    Limit   4
+   10    H_HY_2____           -2.345379    4.049895   -0.009502    Next  11    Limit   4
+   11    H_HY_3____            2.345379    4.051323    0.009502    Next  12    Limit   4
+   12    H_HY_4____            2.345379   -4.049895    0.009502    Next   0    Limit   4
+
+ Local axes from input dataset
+
+
+Local axis set for molecule:    1
+ x=>           0.755406         -0.604078         -0.253873
+ y=>          -0.654859         -0.682485         -0.324613
+ z=>           0.022827          0.411466         -0.911139
+
+ Atom positions in local axis system for molecule    1
+
+basis No.  Species         x y z (Angstroms)       Mass
+
+   1 ClCL_1____    -3.120336    -0.000378    -0.005028    35.452700
+   2 ClCL_2____     3.120336     0.000378     0.005028    35.452700
+   3 C_BO_1____    -1.384648    -0.000378    -0.005028    12.010700
+   4 C_CA_2____    -0.695540    -1.211289    -0.005028    12.010700
+   5 C_CA_3____    -0.695562     1.210532    -0.005028    12.010700
+   6 C_BO_4____     1.384648     0.000378     0.005028    12.010700
+   7 C_CA_5____     0.695540     1.211289     0.005028    12.010700
+   8 C_CA_6____     0.695562    -1.210532     0.005028    12.010700
+   9 H_HY_1____    -1.241101    -2.143868    -0.005028     1.007940
+  10 H_HY_2____    -1.241140     2.143112    -0.005028     1.007940
+  11 H_HY_3____     1.241101     2.143868     0.005028     1.007940
+  12 H_HY_4____     1.241140    -2.143112     0.005028     1.007940
+
+basis No.  Species         x y z (AU)       Mass
+
+   1 ClCL_1____    -5.896582    -0.000715    -0.009502    35.452700
+   2 ClCL_2____     5.896582     0.000715     0.009502    35.452700
+   3 C_BO_1____    -2.616607    -0.000715    -0.009502    12.010700
+   4 C_CA_2____    -1.314381    -2.289005    -0.009502    12.010700
+   5 C_CA_3____    -1.314422     2.287575    -0.009502    12.010700
+   6 C_BO_4____     2.616607     0.000715     0.009502    12.010700
+   7 C_CA_5____     1.314381     2.289005     0.009502    12.010700
+   8 C_CA_6____     1.314422    -2.287575     0.009502    12.010700
+   9 H_HY_1____    -2.345343    -4.051326    -0.009502     1.007940
+  10 H_HY_2____    -2.345416     4.049897    -0.009502     1.007940
+  11 H_HY_3____     2.345343     4.051326     0.009502     1.007940
+  12 H_HY_4____     2.345416    -4.049897     0.009502     1.007940

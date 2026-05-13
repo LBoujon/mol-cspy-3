@@ -1,0 +1,2316 @@
+ Symmetry Interface to DMACRYS (NEIGHCRYS) Version 2.3.0        Dated November 2017 .
+ Needed for DMACRYS version 2.3.0       
+ Run on 2018-04-24  09:47
+Allow B centred orthorhombic cells
+
+
+ LATTICE CENTRING TYPE    A
+
+
+ LATTICE CONSTANTS ARE 
+ A =       0.14657500E+02 B =       0.70111600E+02 C =       0.45850000E+01
+ ALPHA =   0.90000000E+02 BETA =    0.90000000E+02 GAMMA =   0.90000000E+02
+
+
+ ORTHOGONAL COORDINATE SYSTEM DEFINED AS FOLLOWS
+
+ X IS PARALLEL TO A, Z IS PARALLEL TO C, Y IS ORTHOGONAL TO X AND Z
+ COORDINATES ARE NORMALISED SO THAT 1 LATTICE UNIT EQUALS SPACING ALONG C AXIS
+
+
+ LATTICE VECTORS 
+    0.31968375E+01    0.19574984E-15    0.19574984E-15
+    0.00000000E+00    0.15291516E+02    0.93633529E-15
+    0.00000000E+00    0.76457579E+01    0.50000000E+00
+
+ RECIPROCAL LATTICE VECTORS 
+    0.31280914E+00    0.00000000E+00    0.00000000E+00
+    0.57228006E-16    0.65395741E-01   -0.10000000E+01
+   -0.12246468E-15   -0.12246468E-15    0.20000000E+01
+
+ TRANSFORMATION MATRICES 
+    0.31968375E+01    0.19574984E-15    0.19574984E-15
+    0.00000000E+00    0.15291516E+02    0.93633529E-15
+    0.00000000E+00    0.00000000E+00    0.10000000E+01
+
+    0.31280914E+00   -0.40043342E-17   -0.61232340E-16
+    0.00000000E+00    0.65395741E-01   -0.61232340E-16
+    0.00000000E+00    0.00000000E+00    0.10000000E+01
+
+
+ ROTATION MATRICES OF SPACE GROUP ARE
+           ORTHOGONAL COORDINATES                            CRYSTAL COORDINATES                CLASS
+
+
+   1.000000   0.000000   0.000000   0.000000        1.000000   0.000000   0.000000   0.000000       1
+   0.000000   1.000000   0.000000   0.000000        0.000000   1.000000   0.000000   0.000000
+   0.000000   0.000000   1.000000   0.000000        0.000000   0.000000   1.000000   0.000000
+
+  -1.000000   0.000000   0.000000   0.000000       -1.000000   0.000000   0.000000   0.000000       2
+   0.000000  -1.000000   0.000000   0.000000        0.000000  -1.000000   0.000000   0.000000
+   0.000000   0.000000   1.000000   0.000000        0.000000   0.000000   1.000000   0.000000
+
+   1.000000   0.000000   0.000000   1.598419        1.000000   0.000000   0.000000   0.500000       3
+   0.000000  -1.000000   0.000000   7.645758        0.000000  -1.000000   0.000000   0.500000
+   0.000000   0.000000   1.000000   0.000000        0.000000   0.000000   1.000000   0.000000
+
+  -1.000000   0.000000   0.000000   1.598419       -1.000000   0.000000   0.000000   0.500000       4
+   0.000000   1.000000   0.000000   7.645758        0.000000   1.000000   0.000000   0.500000
+   0.000000   0.000000   1.000000   0.000000        0.000000   0.000000   1.000000   0.000000
+
+
+ GROUP MULTIPLICATION TABLE 
+           1   2   3   4
+   1       1   2   3   4
+   2       2   1   4   3
+   3       3   4   1   2
+   4       4   3   2   1
+
+ CHARACTER TABLE 
+
+
+       NOCLS    1        2        3        4
+
+      MEMCLS    1        1        1        1
+
+ NOREP DIMRP
+
+
+   1     1   1.000000 1.000000-1.000000-1.000000
+             0.000000 0.000000 0.000000 0.000000
+
+   2     1   1.000000-1.000000-1.000000 1.000000
+             0.000000 0.000000 0.000000 0.000000
+
+   3     1   1.000000-1.000000 1.000000-1.000000
+             0.000000 0.000000 0.000000 0.000000
+
+   4     1   1.000000 1.000000 1.000000 1.000000
+             0.000000 0.000000 0.000000 0.000000
+
+ LINEAR BASIS FUNCTIONS
+     X          Y          Z      REP
+    0.00000    1.00000    0.00000   2
+    1.00000    0.00000    0.00000   3
+    0.00000    0.00000    1.00000   4
+
+
+ QUADRATIC BASIS FUNCTIONS
+     XX         YY         ZZ         YZ         XZ         XY     REP
+    0.00000    0.00000    0.00000    0.00000    0.00000    1.00000   1
+    0.00000    0.00000    0.00000    1.00000    0.00000    0.00000   2
+    0.00000    0.00000    0.00000    0.00000    1.00000    0.00000   3
+    1.00000    0.00000    0.00000    0.00000    0.00000    0.00000   4
+    0.00000    1.00000    0.00000    0.00000    0.00000    0.00000   4
+    0.00000    0.00000    1.00000    0.00000    0.00000    0.00000   4
+
+
+ ROTATION BASIS FUNCTIONS
+     X          Y          Z      REP
+    0.00000    0.00000    1.00000   1
+    1.00000    0.00000    0.00000   2
+    0.00000    1.00000    0.00000   3
+
+
+ BASIS ATOMS. CORES
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        1____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      1         1             4             2.73729212 14.17783472  0.39467000
+        0.45954539 16.40519691  0.39467000  1.13887336  8.75943900  0.39467000  2.05796415  6.53207681  0.39467000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        2____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      2         1             4             2.95518857  6.37518586  0.04239000
+        0.24164895  8.91632996  0.04239000  1.35676981  1.27057205  0.04239000  1.84006770 14.02094376  0.04239000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        3____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      3         1             4             0.03666773  6.49874131  0.05881000
+        3.16016979  8.79277451  0.05881000  1.63508648  1.14701660  0.05881000  1.56175103 14.14449921  0.05881000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        4____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      4         1             4             0.09772732 14.41515904  0.43191000
+        3.09911019 16.16787258  0.43191000  1.69614608  8.52211468  0.43191000  1.50069143  6.76940114  0.43191000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        5____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      5         1             4             3.07503800 14.56838003  0.28509000
+        0.12179951 16.01465160  0.28509000  1.47661925  8.36889369  0.28509000  1.72021827  6.92262212  0.28509000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        6____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      6         1             4             2.79563441 14.44696539  0.26775000
+        0.40120311 16.13606623  0.26775000  1.19721565  8.49030832  0.26775000  1.99962186  6.80120749  0.26775000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        7____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      7         1             4             2.88300397  6.08113001  0.17548000
+        0.31383354  9.21038580  0.17548000  1.28458522 16.85614371  0.17548000  1.91225230 13.72688791  0.17548000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        8____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      8         1             4             3.13277289  5.93479020  0.33958000
+        0.06406462  9.35672561  0.33958000  1.53435413 17.00248352  0.33958000  1.66248338 13.58054811  0.33958000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        9____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      9         1             4             2.77725259 12.84854325  0.04905000
+        0.41958492  2.44297257  0.04905000  1.17883383 10.08873047  0.04905000  2.01800368  5.20278534  0.04905000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        10___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     10         1             4             2.98674135 12.73141024  0.23852000
+        0.21009616 17.85162139  0.23852000  1.38832260 10.20586348  0.23852000  1.80851492  5.08565233  0.23852000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        11___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     11         1             4             0.03868173 12.89900525  0.30255000
+        3.15815578 17.68402638  0.30255000  1.63710049 10.03826847  0.30255000  1.55973702  5.25324734  0.30255000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        12___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     12         1             4             0.07710772 13.17012382  0.17263000
+        3.11972979 17.41290780  0.17263000  1.67552648  9.76714989  0.17263000  1.52131104  5.52436592  0.17263000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        13___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     13         1             4             3.06781315 20.93408515  0.47908000
+        0.12902436  9.64894648  0.47908000  1.46939439 17.29470438  0.47908000  1.72744312 13.28832724  0.47908000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        14___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     14         1             4             2.81727700 20.76878386  0.42266000
+        0.37956052  9.81424776  0.42266000  1.21885824 17.46000567  0.42266000  1.97797927 13.12302596  0.42266000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        15___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     15         1             4             3.08382931  4.38132511  0.15517000
+        0.11300821 10.91019070  0.15517000  1.48541055  3.26443280  0.15517000  1.71142696 12.02708302  0.15517000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        16___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     16         1             4             0.10936381  4.17978293  0.22356000
+        3.08747370 11.11173288  0.22356000  1.70778257  3.46597497  0.22356000  1.48905495 11.82554084  0.22356000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        17___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     17         1             4             0.38058351  4.18834618  0.09071000
+        2.81625401 11.10316963  0.09071000  1.97900226  3.45741173  0.09071000  1.21783525 11.83410409  0.09071000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        18___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     18         1             4             0.43259605 12.04787948  0.37821000
+        2.76424146 18.53515215  0.37821000  2.03101481 10.88939424  0.37821000  1.16582270 19.69363738  0.37821000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        19___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     19         1             4             0.21987848 12.25018623  0.30650000
+        2.97695903 18.33284539  0.30650000  1.81829724 10.68708749  0.30650000  1.37854027 19.89594414  0.30650000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        20___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     20         1             4             3.14070105 12.25018623  0.44465000
+        0.05613647 18.33284539  0.44465000  1.54228229 10.68708749  0.44465000  1.65455522 19.89594414  0.44465000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_        21___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     21         1             4             2.80813404 19.62864844  0.31602000
+        0.38870347 10.95438318  0.31602000  1.20971528 18.60014109  0.31602000  1.98712223 11.98289054  0.31602000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        22___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     22         1             4             2.51766938 14.08715603  0.37833000
+        0.67916813 16.49587560  0.37833000  0.91925063  8.85011769  0.37833000  2.27758689  6.44139812  0.37833000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        23___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     23         1             4             0.21428402  6.38787782  0.17085000
+        2.98255350  8.90363800  0.17085000  1.81270278 16.54939590  0.17085000  1.38413474 14.03363572  0.17085000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        24___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     24         1             4             2.62591430 14.56715671  0.15259000
+        0.57092321 16.01587492  0.15259000  1.02749555  8.37011701  0.15259000  2.16934197  6.92139880  0.15259000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        25___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     25         1             4             2.80698318 13.58284184  0.49846000
+        0.38985433 17.00018979  0.49846000  1.20856442  9.35443188  0.49846000  1.98827309 21.22859974  0.49846000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        26___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     26         1             4             2.69480615  6.10804308  0.32290000
+        0.50203136  9.18347274  0.32290000  1.09638739 16.82923064  0.32290000  2.10045012 13.75380098  0.32290000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        27___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     27         1             4             0.12173557  5.90573632  0.18926000
+        3.07510194  9.38577949  0.18926000  1.72015433 17.03153740  0.18926000  1.47668318 13.55149423  0.18926000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        28___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     28         1             4             0.01451364 13.72902873  0.01163000
+        3.18232387  1.56248709  0.01163000  1.61293240  9.20824499  0.01163000  1.58390511  6.08327082  0.01163000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        29___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     29         1             4             2.58282093 20.36692283  0.49743000
+        0.61401658 10.21610880  0.49743000  0.98440218 17.86186671  0.49743000  2.21243534 12.72116492  0.49743000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        30___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     30         1             4             0.19973841 12.81734855  0.45731000
+        2.99709911 17.76568307  0.45731000  1.79815716 10.11992516  0.45731000  1.39868035 20.46310646  0.45731000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        31___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     31         1             4             0.27201890 13.29673757  0.22575000
+        2.92481861 17.28629405  0.22575000  1.87043766  9.64053614  0.22575000  1.32639985  5.65097967  0.22575000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        32___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     32         1             4             2.64982665  5.55923057  0.27471000
+        0.54701087  9.73228524  0.27471000  1.05140789 17.37804315  0.27471000  2.14542962 13.20498848  0.27471000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        33___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     33         1             4             2.72830901 12.41823999  0.43918000
+        0.46852851 18.16479163  0.43918000  1.12989025 10.51903373  0.43918000  2.06694726 20.06399790  0.43918000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        34___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     34         1             4             0.05802260 19.30630329  0.38684000
+        3.13881491 11.27672834  0.38684000  1.65644136 18.92248624  0.38684000  1.54039616 11.66054538  0.38684000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        35___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     35         1             4             0.54819370  4.02962025  0.14762000
+        2.64864382 11.26189557  0.14762000  2.14661245  3.61613766  0.14762000  1.05022506 11.67537815  0.14762000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        36___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     36         1             4             0.64157332 12.05476066  0.26410000
+        2.55526419 18.52827096  0.26410000  2.23999208 10.88251306  0.26410000  0.95684544  4.40900275  0.26410000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        37___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     37         1             4             0.26217264 12.41059423  0.13650000
+        2.93466487  2.88092158  0.13650000  1.86059140 10.52667949  0.13650000  1.33624611  4.76483633  0.13650000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_        38___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     38         1             4             2.41597798 19.74822810  0.35067000
+        0.78085953 10.83480353  0.35067000  0.81755923 18.48056144  0.35067000  2.37927829 12.10247019  0.35067000
+
+
+ BASIS ATOMS FOR ELEMENT N_
+
+
+ BASIS ATOM TYPE N_        39___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     39         1             4             2.93514439 12.45769210  0.36901000
+        0.26169312 18.12533952  0.36901000  1.33672564 10.47958162  0.36901000  1.86011188 20.10345001  0.36901000
+
+
+ BASIS ATOMS FOR ELEMENT O_
+
+
+ BASIS ATOM TYPE O_        40___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     40         1             4             2.77009167 11.80764976  0.01331000
+        0.42674584  3.48386605  0.01331000  1.17167292 11.12962395  0.01331000  2.02516460  4.16189186  0.01331000
+
+
+ BASIS ATOMS FOR ELEMENT O_
+
+
+ BASIS ATOM TYPE O_        41___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     41         1             4             2.57917654  4.51191466  0.22455000
+        0.61766098 10.77960116  0.22455000  0.98075778 18.42535906  0.22455000  2.21607973 12.15767256  0.22455000
+
+
+ BASIS ATOMS FOR ELEMENT Cl
+
+
+ BASIS ATOM TYPE Cl        42___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     42         1             4             0.44867615 14.55507641  0.46094000
+        2.74816137 16.02795521  0.46094000  2.04709490  8.38219731  0.46094000  1.14974261 22.20083432  0.46094000
+
+
+ BASIS ATOMS FOR ELEMENT Cl
+
+
+ BASIS ATOM TYPE Cl        43___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     43         1             4             3.14150026 14.90448755  0.12421000
+        0.05533726 15.67854408  0.12421000  1.54308150  8.03278617  0.12421000  1.65375601  7.25872964  0.12421000
+
+
+ POINTER FROM SYMMETRY MATRIX TO MEMBER IN CLASS 
+ CLASS  MEMBERS
+
+     1        4
+   1   2   3   4
+
+ POINTER FROM MEMBER IN CLASS TO SYMMETRY MATRIX 
+ CLASS  MEMBER
+
+     1        4
+   1   2   3   4
+
+ SYSTEM HAS FREE IONS, THESE WILL BE REORDERED
+ TO END OF LIST
+
+
+ BASIS ATOMS. CORES
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   1____1____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      1         1             4             2.73729212 14.17783472  0.39467000
+        0.45954539 16.40519691  0.39467000  1.13887336  8.75943900  0.39467000  2.05796415  6.53207681  0.39467000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   2____2____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      2         1             4             2.95518857  6.37518586  0.04239000
+        0.24164895  8.91632996  0.04239000  1.35676981  1.27057205  0.04239000  1.84006770 14.02094376  0.04239000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   3____3____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      3         1             4             0.03666773  6.49874131  0.05881000
+        3.16016979  8.79277451  0.05881000  1.63508648  1.14701660  0.05881000  1.56175103 14.14449921  0.05881000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   4____4____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      4         1             4             0.09772732 14.41515904  0.43191000
+        3.09911019 16.16787258  0.43191000  1.69614608  8.52211468  0.43191000  1.50069143  6.76940114  0.43191000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   5____5____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      5         1             4             3.07503800 14.56838003  0.28509000
+        0.12179951 16.01465160  0.28509000  1.47661925  8.36889369  0.28509000  1.72021827  6.92262212  0.28509000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   6____6____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      6         1             4             2.79563441 14.44696539  0.26775000
+        0.40120311 16.13606623  0.26775000  1.19721565  8.49030832  0.26775000  1.99962186  6.80120749  0.26775000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   7____7____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      7         1             4             2.88300397  6.08113001  0.17548000
+        0.31383354  9.21038580  0.17548000  1.28458522 16.85614371  0.17548000  1.91225230 13.72688791  0.17548000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   8____8____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      8         1             4             3.13277289  5.93479020  0.33958000
+        0.06406462  9.35672561  0.33958000  1.53435413 17.00248352  0.33958000  1.66248338 13.58054811  0.33958000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   9____9____
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      9         1             4             2.77725259 12.84854325  0.04905000
+        0.41958492  2.44297257  0.04905000  1.17883383 10.08873047  0.04905000  2.01800368  5.20278534  0.04905000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   10___10___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     10         1             4             2.98674135 12.73141024  0.23852000
+        0.21009616 17.85162139  0.23852000  1.38832260 10.20586348  0.23852000  1.80851492  5.08565233  0.23852000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   11___11___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     11         1             4             0.03868173 12.89900525  0.30255000
+        3.15815578 17.68402638  0.30255000  1.63710049 10.03826847  0.30255000  1.55973702  5.25324734  0.30255000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   12___12___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     12         1             4             0.07710772 13.17012382  0.17263000
+        3.11972979 17.41290780  0.17263000  1.67552648  9.76714989  0.17263000  1.52131104  5.52436592  0.17263000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   13___13___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     13         1             4             3.06781315 20.93408515  0.47908000
+        0.12902436  9.64894648  0.47908000  1.46939439 17.29470438  0.47908000  1.72744312 13.28832724  0.47908000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   14___14___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     14         1             4             2.81727700 20.76878386  0.42266000
+        0.37956052  9.81424776  0.42266000  1.21885824 17.46000567  0.42266000  1.97797927 13.12302596  0.42266000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   15___15___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     15         1             4             3.08382931  4.38132511  0.15517000
+        0.11300821 10.91019070  0.15517000  1.48541055  3.26443280  0.15517000  1.71142696 12.02708302  0.15517000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   16___16___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     16         1             4             0.10936381  4.17978293  0.22356000
+        3.08747370 11.11173288  0.22356000  1.70778257  3.46597497  0.22356000  1.48905495 11.82554084  0.22356000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   17___17___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     17         1             4             0.38058351  4.18834618  0.09071000
+        2.81625401 11.10316963  0.09071000  1.97900226  3.45741173  0.09071000  1.21783525 11.83410409  0.09071000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   18___18___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     18         1             4             0.43259605 12.04787948  0.37821000
+        2.76424146 18.53515215  0.37821000  2.03101481 10.88939424  0.37821000  1.16582270 19.69363738  0.37821000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   19___19___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     19         1             4             0.21987848 12.25018623  0.30650000
+        2.97695903 18.33284539  0.30650000  1.81829724 10.68708749  0.30650000  1.37854027 19.89594414  0.30650000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   20___20___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     20         1             4             3.14070105 12.25018623  0.44465000
+        0.05613647 18.33284539  0.44465000  1.54228229 10.68708749  0.44465000  1.65455522 19.89594414  0.44465000
+
+
+ BASIS ATOMS FOR ELEMENT C_
+
+
+ BASIS ATOM TYPE C_   21___21___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     21         1             4             2.80813404 19.62864844  0.31602000
+        0.38870347 10.95438318  0.31602000  1.20971528 18.60014109  0.31602000  1.98712223 11.98289054  0.31602000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   1____22___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     22         1             4             2.51766938 14.08715603  0.37833000
+        0.67916813 16.49587560  0.37833000  0.91925063  8.85011769  0.37833000  2.27758689  6.44139812  0.37833000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   2____23___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     23         1             4             0.21428402  6.38787782  0.17085000
+        2.98255350  8.90363800  0.17085000  1.81270278 16.54939590  0.17085000  1.38413474 14.03363572  0.17085000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   3____24___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     24         1             4             2.62591430 14.56715671  0.15259000
+        0.57092321 16.01587492  0.15259000  1.02749555  8.37011701  0.15259000  2.16934197  6.92139880  0.15259000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   4____25___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     25         1             4             2.80698318 13.58284184  0.49846000
+        0.38985433 17.00018979  0.49846000  1.20856442  9.35443188  0.49846000  1.98827309 21.22859974  0.49846000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   5____26___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     26         1             4             2.69480615  6.10804308  0.32290000
+        0.50203136  9.18347274  0.32290000  1.09638739 16.82923064  0.32290000  2.10045012 13.75380098  0.32290000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   6____27___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     27         1             4             0.12173557  5.90573632  0.18926000
+        3.07510194  9.38577949  0.18926000  1.72015433 17.03153740  0.18926000  1.47668318 13.55149423  0.18926000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   7____28___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     28         1             4             0.01451364 13.72902873  0.01163000
+        3.18232387  1.56248709  0.01163000  1.61293240  9.20824499  0.01163000  1.58390511  6.08327082  0.01163000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   8____29___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     29         1             4             2.58282093 20.36692283  0.49743000
+        0.61401658 10.21610880  0.49743000  0.98440218 17.86186671  0.49743000  2.21243534 12.72116492  0.49743000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   9____30___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     30         1             4             0.19973841 12.81734855  0.45731000
+        2.99709911 17.76568307  0.45731000  1.79815716 10.11992516  0.45731000  1.39868035 20.46310646  0.45731000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   10___31___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     31         1             4             0.27201890 13.29673757  0.22575000
+        2.92481861 17.28629405  0.22575000  1.87043766  9.64053614  0.22575000  1.32639985  5.65097967  0.22575000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   11___32___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     32         1             4             2.64982665  5.55923057  0.27471000
+        0.54701087  9.73228524  0.27471000  1.05140789 17.37804315  0.27471000  2.14542962 13.20498848  0.27471000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   12___33___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     33         1             4             2.72830901 12.41823999  0.43918000
+        0.46852851 18.16479163  0.43918000  1.12989025 10.51903373  0.43918000  2.06694726 20.06399790  0.43918000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   13___34___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     34         1             4             0.05802260 19.30630329  0.38684000
+        3.13881491 11.27672834  0.38684000  1.65644136 18.92248624  0.38684000  1.54039616 11.66054538  0.38684000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   14___35___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     35         1             4             0.54819370  4.02962025  0.14762000
+        2.64864382 11.26189557  0.14762000  2.14661245  3.61613766  0.14762000  1.05022506 11.67537815  0.14762000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   15___36___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     36         1             4             0.64157332 12.05476066  0.26410000
+        2.55526419 18.52827096  0.26410000  2.23999208 10.88251306  0.26410000  0.95684544  4.40900275  0.26410000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   16___37___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     37         1             4             0.26217264 12.41059423  0.13650000
+        2.93466487  2.88092158  0.13650000  1.86059140 10.52667949  0.13650000  1.33624611  4.76483633  0.13650000
+
+
+ BASIS ATOMS FOR ELEMENT H_
+
+
+ BASIS ATOM TYPE H_   17___38___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     38         1             4             2.41597798 19.74822810  0.35067000
+        0.78085953 10.83480353  0.35067000  0.81755923 18.48056144  0.35067000  2.37927829 12.10247019  0.35067000
+
+
+ BASIS ATOMS FOR ELEMENT N_
+
+
+ BASIS ATOM TYPE N_   1____39___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     39         1             4             2.93514439 12.45769210  0.36901000
+        0.26169312 18.12533952  0.36901000  1.33672564 10.47958162  0.36901000  1.86011188 20.10345001  0.36901000
+
+
+ BASIS ATOMS FOR ELEMENT O_
+
+
+ BASIS ATOM TYPE O_   2____41___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     40         1             4             2.57917654  4.51191466  0.22455000
+        0.61766098 10.77960116  0.22455000  0.98075778 18.42535906  0.22455000  2.21607973 12.15767256  0.22455000
+
+
+ BASIS ATOMS FOR ELEMENT O_
+
+
+ BASIS ATOM TYPE O_   1____40___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     41         1             4             2.77009167 11.80764976  0.01331000
+        0.42674584  3.48386605  0.01331000  1.17167292 11.12962395  0.01331000  2.02516460  4.16189186  0.01331000
+
+
+ BASIS ATOMS FOR ELEMENT Cl
+
+
+ BASIS ATOM TYPE Cl   1____42___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     42         1             4             0.44867615 14.55507641  0.46094000
+        2.74816137 16.02795521  0.46094000  2.04709490  8.38219731  0.46094000  1.14974261 22.20083432  0.46094000
+
+
+ BASIS ATOMS FOR ELEMENT Cl
+
+
+ BASIS ATOM TYPE Cl   2____43___
+ NUMBER  SYMMETRY TYPE  MEMBERS                 X           Y           Z
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+     43         1             4             3.14150026 14.90448755  0.12421000
+        0.05533726 15.67854408  0.12421000  1.54308150  8.03278617  0.12421000  1.65375601  7.25872964  0.12421000
+
+
+ POINTER FROM SYMMETRY MATRIX TO MEMBER IN CLASS 
+ CLASS  MEMBERS
+
+     1        4
+   1   2   3   4
+
+ POINTER FROM MEMBER IN CLASS TO SYMMETRY MATRIX 
+ CLASS  MEMBER
+
+     1        4
+   1   2   3   4
+
+ BASIS ATOMS. CORES
+
+
+ BASIS ATOMS FOR ELEMENT CO
+
+            X           Y           Z           X           Y           Z           X           Y           Z
+
+      1         1             4             3.13005366 20.99844631  0.43091032
+        0.06678385  9.58458532  0.43091032  1.53163490 17.23034323  0.43091032  1.66520261 13.35268840  0.43091032
+
+      2         1             4             2.77009167 11.80764976  0.01331000
+        0.42674584  3.48386605  0.01331000  1.17167292 11.12962395  0.01331000  2.02516460  4.16189186  0.01331000
+
+
+ POINTER FROM SYMMETRY MATRIX TO MEMBER IN CLASS 
+ CLASS  MEMBERS
+
+     1        4
+   1   2   3   4
+
+ POINTER FROM MEMBER IN CLASS TO SYMMETRY MATRIX 
+ CLASS  MEMBER
+
+     1        4
+   1   2   3   4
+
+Number of asymmetric units  in primitive cell   4
+
+ BASIS SYMMETRY TYPE NUMBER     1
+
+ NOREP   X            Y            Z            X            Y            Z            X            Y            Z
+
+
+ TRANSLATION FUNCTIONS
+
+     1
+        0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000
+        0.50000000  0.00000000  0.00000000
+     1
+        0.00000000  0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000  0.50000000  0.00000000
+        0.00000000 -0.50000000  0.00000000
+     1
+        0.00000000  0.00000000  0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000 -0.50000000
+        0.00000000  0.00000000 -0.50000000
+     2
+        0.00000000  0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000  0.50000000  0.00000000
+        0.00000000  0.50000000  0.00000000
+     2
+        0.00000000  0.00000000  0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000 -0.50000000
+        0.00000000  0.00000000  0.50000000
+     2
+        0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000
+       -0.50000000  0.00000000  0.00000000
+     3
+        0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000
+        0.50000000  0.00000000  0.00000000
+     3
+        0.00000000  0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000
+        0.00000000 -0.50000000  0.00000000
+     3
+        0.00000000  0.00000000  0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000  0.50000000
+        0.00000000  0.00000000 -0.50000000
+     4
+        0.00000000  0.00000000  0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000  0.50000000
+        0.00000000  0.00000000  0.50000000
+     4
+        0.00000000  0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000
+        0.00000000  0.50000000  0.00000000
+     4
+       -0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000
+        0.50000000  0.00000000  0.00000000
+
+ ROTATION FUNCTIONS
+
+     1
+        0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000
+       -0.50000000  0.00000000  0.00000000
+     1
+        0.00000000  0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000
+        0.00000000  0.50000000  0.00000000
+     1
+        0.00000000  0.00000000  0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000  0.50000000
+        0.00000000  0.00000000  0.50000000
+     2
+        0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000
+        0.50000000  0.00000000  0.00000000
+     2
+        0.00000000  0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000
+        0.00000000 -0.50000000  0.00000000
+     2
+        0.00000000  0.00000000  0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000  0.50000000
+        0.00000000  0.00000000 -0.50000000
+     3
+        0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000
+       -0.50000000  0.00000000  0.00000000
+     3
+        0.00000000  0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000  0.50000000  0.00000000
+        0.00000000  0.50000000  0.00000000
+     3
+        0.00000000  0.00000000  0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000 -0.50000000
+        0.00000000  0.00000000  0.50000000
+     4
+        0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000
+        0.50000000  0.00000000  0.00000000
+     4
+        0.00000000  0.50000000  0.00000000  0.00000000 -0.50000000  0.00000000  0.00000000  0.50000000  0.00000000
+        0.00000000 -0.50000000  0.00000000
+     4
+        0.00000000  0.00000000  0.50000000  0.00000000  0.00000000  0.50000000  0.00000000  0.00000000 -0.50000000
+        0.00000000  0.00000000 -0.50000000
+
+ Inequivalent basis atoms
+
+
+  atom   atomic       name      input  molecule  invert 
+ index   number                  name    number    flag 
+     1       6  C_F1_1____1____    C1          1       F
+     2       6  C_F1_2____2____    C2          1       F
+     3       6  C_F1_3____3____    C3          1       F
+     4       6  C_F1_4____4____    C4          1       F
+     5       6  C_F1_5____5____    C5          1       F
+     6       6  C_F1_6____6____    C6          1       F
+     7       6  C_F1_7____7____    C7          1       F
+     8       6  C_F1_8____8____    C8          1       F
+     9       6  C_F1_9____9____    C9          1       F
+    10       6  C_F1_10___10___    C10         1       F
+    11       6  C_F1_11___11___    C11         1       F
+    12       6  C_F1_12___12___    C12         1       F
+    13       6  C_F1_13___13___    C13         1       F
+    14       6  C_F1_14___14___    C14         1       F
+    15       6  C_F1_15___15___    C15         1       F
+    16       6  C_F1_16___16___    C16         1       F
+    17       6  C_F1_17___17___    C17         1       F
+    18       6  C_F1_18___18___    C18         1       F
+    19       6  C_F1_19___19___    C19         1       F
+    20       6  C_F1_20___20___    C20         1       F
+    21       6  C_F1_21___21___    C21         1       F
+    22       1  H_F1_1____22___    H1          1       F
+    23       1  H_F1_2____23___    H2          1       F
+    24       1  H_F1_3____24___    H3          1       F
+    25       1  H_F1_4____25___    H4          1       F
+    26       1  H_F1_5____26___    H5          1       F
+    27       1  H_F1_6____27___    H6          1       F
+    28       1  H_F1_7____28___    H7          1       F
+    29       1  H_F1_8____29___    H8          1       F
+    30       1  H_F1_9____30___    H9          1       F
+    31       1  H_F1_10___31___    H10         1       F
+    32       1  H_F1_11___32___    H11         1       F
+    33       1  H_F2_12___33___    H12         1       F
+    34       1  H_F1_13___34___    H13         1       F
+    35       1  H_F1_14___35___    H14         1       F
+    36       1  H_F1_15___36___    H15         1       F
+    37       1  H_F1_16___37___    H16         1       F
+    38       1  H_F2_17___38___    H17         1       F
+    39       7  N_F1_1____39___    N1          1       F
+    40       8  O_F1_1____41___    O2          1       F
+    41       8  O_01_2____40___    O1          0       F
+    42      17  ClF1_1____42___    Cl1         1       F
+    43      17  ClF1_2____43___    Cl2         1       F
+
+  atom        name                       coordinates
+ index                                   orthonormal
+                                         crystallographic
+     1  C_F1_1____1____  0.27372921E+01  0.14177835E+02  0.39467000E+00
+                         0.85625000E+00  0.92717000E+00 -0.60533000E+00
+     2  C_F1_2____2____  0.29551886E+01  0.63751859E+01  0.42390000E-01
+                         0.92441000E+00  0.91691000E+00 -0.45761000E+00
+     3  C_F1_3____3____  0.36667726E-01  0.64987413E+01  0.58810000E-01
+                         0.10114700E+01  0.92499000E+00 -0.44119000E+00
+     4  C_F1_4____4____  0.97727323E-01  0.14415159E+02  0.43191000E+00
+                         0.10305700E+01  0.94269000E+00 -0.56809000E+00
+     5  C_F1_5____5____  0.30750380E+01  0.14568380E+02  0.28509000E+00
+                         0.96190000E+00  0.95271000E+00 -0.71491000E+00
+     6  C_F1_6____6____  0.27956344E+01  0.14446965E+02  0.26775000E+00
+                         0.87450000E+00  0.94477000E+00 -0.73225000E+00
+     7  C_F1_7____7____  0.28830040E+01  0.60811300E+01  0.17548000E+00
+                         0.90183000E+00  0.89768000E+00 -0.32452000E+00
+     8  C_F1_8____8____  0.31327729E+01  0.59347902E+01  0.33958000E+00
+                         0.97996000E+00  0.88811000E+00 -0.16042000E+00
+     9  C_F1_9____9____  0.27772526E+01  0.12848543E+02  0.49050000E-01
+                         0.86875000E+00  0.84024000E+00  0.49050000E-01
+    10  C_F1_10___10___  0.29867414E+01  0.12731410E+02  0.23852000E+00
+                         0.93428000E+00  0.83258000E+00  0.23852000E+00
+    11  C_F1_11___11___  0.38681734E-01  0.12899005E+02  0.30255000E+00
+                         0.10121000E+01  0.84354000E+00  0.30255000E+00
+    12  C_F1_12___12___  0.77107721E-01  0.13170124E+02  0.17263000E+00
+                         0.10241200E+01  0.86127000E+00  0.17263000E+00
+    13  C_F1_13___13___  0.30678132E+01  0.20934085E+02  0.47908000E+00
+                         0.95964000E+00  0.86900000E+00 -0.20920000E-01
+    14  C_F1_14___14___  0.28172770E+01  0.20768784E+02  0.42266000E+00
+                         0.88127000E+00  0.85819000E+00 -0.77340000E-01
+    15  C_F1_15___15___  0.30838293E+01  0.43813251E+01  0.15517000E+00
+                         0.96465000E+00  0.78652000E+00  0.65517000E+00
+    16  C_F1_16___16___  0.10936381E+00  0.41797829E+01  0.22356000E+00
+                         0.10342100E+01  0.77334000E+00  0.72356000E+00
+    17  C_F1_17___17___  0.38058351E+00  0.41883462E+01  0.90710000E-01
+                         0.11190500E+01  0.77390000E+00  0.59071000E+00
+    18  C_F1_18___18___  0.43259605E+00  0.12047879E+02  0.37821000E+00
+                         0.11353200E+01  0.78788000E+00  0.37821000E+00
+    19  C_F1_19___19___  0.21987848E+00  0.12250186E+02  0.30650000E+00
+                         0.10687800E+01  0.80111000E+00  0.30650000E+00
+    20  C_F1_20___20___  0.31407010E+01  0.12250186E+02  0.44465000E+00
+                         0.98244000E+00  0.80111000E+00  0.44465000E+00
+    21  C_F1_21___21___  0.28081340E+01  0.19628648E+02  0.31602000E+00
+                         0.87841000E+00  0.78363000E+00  0.81602000E+00
+    22  H_F1_1____22___  0.25176694E+01  0.14087156E+02  0.37833000E+00
+                         0.78755000E+00  0.92124000E+00 -0.62167000E+00
+    23  H_F1_2____23___  0.21428402E+00  0.63878778E+01  0.17085000E+00
+                         0.10670300E+01  0.91774000E+00 -0.32915000E+00
+    24  H_F1_3____24___  0.26259143E+01  0.14567157E+02  0.15259000E+00
+                         0.82141000E+00  0.95263000E+00 -0.84741000E+00
+    25  H_F1_4____25___  0.28069832E+01  0.13582842E+02  0.49846000E+00
+                         0.87805000E+00  0.88826000E+00 -0.50154000E+00
+    26  H_F1_5____26___  0.26948062E+01  0.61080431E+01  0.32290000E+00
+                         0.84296000E+00  0.89944000E+00 -0.17710000E+00
+    27  H_F1_6____27___  0.12173557E+00  0.59057363E+01  0.18926000E+00
+                         0.10380800E+01  0.88621000E+00 -0.31074000E+00
+    28  H_F1_7____28___  0.14513642E-01  0.13729029E+02  0.11630000E-01
+                         0.10045400E+01  0.89782000E+00  0.11630000E-01
+    29  H_F1_8____29___  0.25828209E+01  0.20366923E+02  0.49743000E+00
+                         0.80793000E+00  0.83191000E+00 -0.25700000E-02
+    30  H_F1_9____30___  0.19973841E+00  0.12817349E+02  0.45731000E+00
+                         0.10624800E+01  0.83820000E+00  0.45731000E+00
+    31  H_F1_10___31___  0.27201890E+00  0.13296738E+02  0.22575000E+00
+                         0.10850900E+01  0.86955000E+00  0.22575000E+00
+    32  H_F1_11___32___  0.26498266E+01  0.55592306E+01  0.27471000E+00
+                         0.82889000E+00  0.86355000E+00 -0.22529000E+00
+    33  H_F2_12___33___  0.27283090E+01  0.12418240E+02  0.43918000E+00
+                         0.85344000E+00  0.81210000E+00  0.43918000E+00
+    34  H_F1_13___34___  0.58022601E-01  0.19306303E+02  0.38684000E+00
+                         0.10181500E+01  0.76255000E+00  0.88684000E+00
+    35  H_F1_14___35___  0.54819370E+00  0.40296202E+01  0.14762000E+00
+                         0.11714800E+01  0.76352000E+00  0.64762000E+00
+    36  H_F1_15___36___  0.64157332E+00  0.12054761E+02  0.26410000E+00
+                         0.12006900E+01  0.78833000E+00  0.26410000E+00
+    37  H_F1_16___37___  0.26217264E+00  0.12410594E+02  0.13650000E+00
+                         0.10820100E+01  0.81160000E+00  0.13650000E+00
+    38  H_F2_17___38___  0.24159780E+01  0.19748228E+02  0.35067000E+00
+                         0.75574000E+00  0.79145000E+00  0.85067000E+00
+    39  N_F1_1____39___  0.29351444E+01  0.12457692E+02  0.36901000E+00
+                         0.91814000E+00  0.81468000E+00  0.36901000E+00
+    40  O_F1_1____41___  0.25791765E+01  0.45119147E+01  0.22455000E+00
+                         0.80679000E+00  0.79506000E+00  0.72455000E+00
+    41  O_01_2____40___  0.27700917E+01  0.11807650E+02  0.13310000E-01
+                         0.86651000E+00  0.77217000E+00  0.10133100E+01
+    42  ClF1_1____42___  0.44867615E+00  0.14555076E+02  0.46094000E+00
+                         0.11403500E+01  0.95184000E+00 -0.53906000E+00
+    43  ClF1_2____43___  0.31415003E+01  0.14904488E+02  0.12421000E+00
+                         0.98269000E+00  0.97469000E+00 -0.87579000E+00
+
+ Equivalent basis atoms
+
+
+  atom   atomic       name      input  molecule  invert 
+ index   number                  name    number    flag 
+     1       6  C_F1_1____1____    C1          1       F
+     2       6  C_F1_1____44___    C1          2       F
+     3       6  C_F1I44___45___    C1          3       T
+     4       6  C_F1I44___46___    C1          4       T
+     5       6  C_F1_2____2____    C2          1       F
+     6       6  C_F1_2____47___    C2          2       F
+     7       6  C_F1I45___48___    C2          3       T
+     8       6  C_F1I45___49___    C2          4       T
+     9       6  C_F1_3____3____    C3          1       F
+    10       6  C_F1_3____50___    C3          2       F
+    11       6  C_F1I46___51___    C3          3       T
+    12       6  C_F1I46___52___    C3          4       T
+    13       6  C_F1_4____4____    C4          1       F
+    14       6  C_F1_4____53___    C4          2       F
+    15       6  C_F1I47___54___    C4          3       T
+    16       6  C_F1I47___55___    C4          4       T
+    17       6  C_F1_5____5____    C5          1       F
+    18       6  C_F1_5____56___    C5          2       F
+    19       6  C_F1I48___57___    C5          3       T
+    20       6  C_F1I48___58___    C5          4       T
+    21       6  C_F1_6____6____    C6          1       F
+    22       6  C_F1_6____59___    C6          2       F
+    23       6  C_F1I49___60___    C6          3       T
+    24       6  C_F1I49___61___    C6          4       T
+    25       6  C_F1_7____7____    C7          1       F
+    26       6  C_F1_7____62___    C7          2       F
+    27       6  C_F1I50___63___    C7          3       T
+    28       6  C_F1I50___64___    C7          4       T
+    29       6  C_F1_8____8____    C8          1       F
+    30       6  C_F1_8____65___    C8          2       F
+    31       6  C_F1I51___66___    C8          3       T
+    32       6  C_F1I51___67___    C8          4       T
+    33       6  C_F1_9____9____    C9          1       F
+    34       6  C_F1_9____68___    C9          2       F
+    35       6  C_F1I52___69___    C9          3       T
+    36       6  C_F1I52___70___    C9          4       T
+    37       6  C_F1_10___10___    C10         1       F
+    38       6  C_F1_10___71___    C10         2       F
+    39       6  C_F1I53___72___    C10         3       T
+    40       6  C_F1I53___73___    C10         4       T
+    41       6  C_F1_11___11___    C11         1       F
+    42       6  C_F1_11___74___    C11         2       F
+    43       6  C_F1I54___75___    C11         3       T
+    44       6  C_F1I54___76___    C11         4       T
+    45       6  C_F1_12___12___    C12         1       F
+    46       6  C_F1_12___77___    C12         2       F
+    47       6  C_F1I55___78___    C12         3       T
+    48       6  C_F1I55___79___    C12         4       T
+    49       6  C_F1_13___13___    C13         1       F
+    50       6  C_F1_13___80___    C13         2       F
+    51       6  C_F1I56___81___    C13         3       T
+    52       6  C_F1I56___82___    C13         4       T
+    53       6  C_F1_14___14___    C14         1       F
+    54       6  C_F1_14___83___    C14         2       F
+    55       6  C_F1I57___84___    C14         3       T
+    56       6  C_F1I57___85___    C14         4       T
+    57       6  C_F1_15___15___    C15         1       F
+    58       6  C_F1_15___86___    C15         2       F
+    59       6  C_F1I58___87___    C15         3       T
+    60       6  C_F1I58___88___    C15         4       T
+    61       6  C_F1_16___16___    C16         1       F
+    62       6  C_F1_16___89___    C16         2       F
+    63       6  C_F1I59___90___    C16         3       T
+    64       6  C_F1I59___91___    C16         4       T
+    65       6  C_F1_17___17___    C17         1       F
+    66       6  C_F1_17___92___    C17         2       F
+    67       6  C_F1I60___93___    C17         3       T
+    68       6  C_F1I60___94___    C17         4       T
+    69       6  C_F1_18___18___    C18         1       F
+    70       6  C_F1_18___95___    C18         2       F
+    71       6  C_F1I61___96___    C18         3       T
+    72       6  C_F1I61___97___    C18         4       T
+    73       6  C_F1_19___19___    C19         1       F
+    74       6  C_F1_19___98___    C19         2       F
+    75       6  C_F1I62___99___    C19         3       T
+    76       6  C_F1I62___100__    C19         4       T
+    77       6  C_F1_20___20___    C20         1       F
+    78       6  C_F1_20___101__    C20         2       F
+    79       6  C_F1I63___102__    C20         3       T
+    80       6  C_F1I63___103__    C20         4       T
+    81       6  C_F1_21___21___    C21         1       F
+    82       6  C_F1_21___104__    C21         2       F
+    83       6  C_F1I64___105__    C21         3       T
+    84       6  C_F1I64___106__    C21         4       T
+    85       1  H_F1_1____22___    H1          1       F
+    86       1  H_F1_1____107__    H1          2       F
+    87       1  H_F1I44___108__    H1          3       T
+    88       1  H_F1I44___109__    H1          4       T
+    89       1  H_F1_2____23___    H2          1       F
+    90       1  H_F1_2____110__    H2          2       F
+    91       1  H_F1I45___111__    H2          3       T
+    92       1  H_F1I45___112__    H2          4       T
+    93       1  H_F1_3____24___    H3          1       F
+    94       1  H_F1_3____113__    H3          2       F
+    95       1  H_F1I46___114__    H3          3       T
+    96       1  H_F1I46___115__    H3          4       T
+    97       1  H_F1_4____25___    H4          1       F
+    98       1  H_F1_4____116__    H4          2       F
+    99       1  H_F1I47___117__    H4          3       T
+   100       1  H_F1I47___118__    H4          4       T
+   101       1  H_F1_5____26___    H5          1       F
+   102       1  H_F1_5____119__    H5          2       F
+   103       1  H_F1I48___120__    H5          3       T
+   104       1  H_F1I48___121__    H5          4       T
+   105       1  H_F1_6____27___    H6          1       F
+   106       1  H_F1_6____122__    H6          2       F
+   107       1  H_F1I49___123__    H6          3       T
+   108       1  H_F1I49___124__    H6          4       T
+   109       1  H_F1_7____28___    H7          1       F
+   110       1  H_F1_7____125__    H7          2       F
+   111       1  H_F1I50___126__    H7          3       T
+   112       1  H_F1I50___127__    H7          4       T
+   113       1  H_F1_8____29___    H8          1       F
+   114       1  H_F1_8____128__    H8          2       F
+   115       1  H_F1I51___129__    H8          3       T
+   116       1  H_F1I51___130__    H8          4       T
+   117       1  H_F1_9____30___    H9          1       F
+   118       1  H_F1_9____131__    H9          2       F
+   119       1  H_F1I52___132__    H9          3       T
+   120       1  H_F1I52___133__    H9          4       T
+   121       1  H_F1_10___31___    H10         1       F
+   122       1  H_F1_10___134__    H10         2       F
+   123       1  H_F1I53___135__    H10         3       T
+   124       1  H_F1I53___136__    H10         4       T
+   125       1  H_F1_11___32___    H11         1       F
+   126       1  H_F1_11___137__    H11         2       F
+   127       1  H_F1I54___138__    H11         3       T
+   128       1  H_F1I54___139__    H11         4       T
+   129       1  H_F2_12___33___    H12         1       F
+   130       1  H_F2_12___140__    H12         2       F
+   131       1  H_F2I55___141__    H12         3       T
+   132       1  H_F2I55___142__    H12         4       T
+   133       1  H_F1_13___34___    H13         1       F
+   134       1  H_F1_13___143__    H13         2       F
+   135       1  H_F1I56___144__    H13         3       T
+   136       1  H_F1I56___145__    H13         4       T
+   137       1  H_F1_14___35___    H14         1       F
+   138       1  H_F1_14___146__    H14         2       F
+   139       1  H_F1I57___147__    H14         3       T
+   140       1  H_F1I57___148__    H14         4       T
+   141       1  H_F1_15___36___    H15         1       F
+   142       1  H_F1_15___149__    H15         2       F
+   143       1  H_F1I58___150__    H15         3       T
+   144       1  H_F1I58___151__    H15         4       T
+   145       1  H_F1_16___37___    H16         1       F
+   146       1  H_F1_16___152__    H16         2       F
+   147       1  H_F1I59___153__    H16         3       T
+   148       1  H_F1I59___154__    H16         4       T
+   149       1  H_F2_17___38___    H17         1       F
+   150       1  H_F2_17___155__    H17         2       F
+   151       1  H_F2I60___156__    H17         3       T
+   152       1  H_F2I60___157__    H17         4       T
+   153       7  N_F1_1____39___    N1          1       F
+   154       7  N_F1_1____158__    N1          2       F
+   155       7  N_F1I44___159__    N1          3       T
+   156       7  N_F1I44___160__    N1          4       T
+   157       8  O_F1_1____41___    O2          1       F
+   158       8  O_F1_1____161__    O2          2       F
+   159       8  O_F1I44___162__    O2          3       T
+   160       8  O_F1I44___163__    O2          4       T
+   161       8  O_01_2____40___    O1          0       F
+   162       8  O_01_2____164__    O1          0       F
+   163       8  O_01I45___165__    O1          0       T
+   164       8  O_01I45___166__    O1          0       T
+   165      17  ClF1_1____42___    Cl1         1       F
+   166      17  ClF1_1____167__    Cl1         2       F
+   167      17  ClF1I44___168__    Cl1         3       T
+   168      17  ClF1I44___169__    Cl1         4       T
+   169      17  ClF1_2____43___    Cl2         1       F
+   170      17  ClF1_2____170__    Cl2         2       F
+   171      17  ClF1I45___171__    Cl2         3       T
+   172      17  ClF1I45___172__    Cl2         4       T
+
+  atom        name                       coordinates
+ index                                   orthonormal
+                                         crystallographic
+     1  C_F1_1____1____  0.27372921E+01  0.14177835E+02  0.39467000E+00
+                         0.85625000E+00  0.92717000E+00 -0.60533000E+00
+     2  C_F1_1____44___  0.45954539E+00  0.16405197E+02  0.39467000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+     3  C_F1I44___45___  0.11388734E+01  0.87594390E+01  0.39467000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+     4  C_F1I44___46___  0.20579641E+01  0.65320768E+01  0.39467000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+     5  C_F1_2____2____  0.29551886E+01  0.14020944E+02  0.54239000E+00
+                         0.92441000E+00  0.91691000E+00 -0.45761000E+00
+     6  C_F1_2____47___  0.24164895E+00  0.16562088E+02  0.54239000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+     7  C_F1I45___48___  0.13567698E+01  0.89163300E+01  0.54239000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+     8  C_F1I45___49___  0.18400677E+01  0.63751859E+01  0.54239000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+     9  C_F1_3____3____  0.32335052E+01  0.14144499E+02  0.55881000E+00
+                         0.10114700E+01  0.92499000E+00 -0.44119000E+00
+    10  C_F1_3____50___ -0.36667726E-01  0.16438532E+02  0.55881000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    11  C_F1I46___51___  0.16350865E+01  0.87927745E+01  0.55881000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    12  C_F1I46___52___  0.15617510E+01  0.64987413E+01  0.55881000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    13  C_F1_4____4____  0.32945648E+01  0.14415159E+02  0.43191000E+00
+                         0.10305700E+01  0.94269000E+00 -0.56809000E+00
+    14  C_F1_4____53___ -0.97727323E-01  0.16167873E+02  0.43191000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    15  C_F1I47___54___  0.16961461E+01  0.85221147E+01  0.43191000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    16  C_F1I47___55___  0.15006914E+01  0.67694011E+01  0.43191000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    17  C_F1_5____5____  0.30750380E+01  0.14568380E+02  0.28509000E+00
+                         0.96190000E+00  0.95271000E+00 -0.71491000E+00
+    18  C_F1_5____56___  0.12179951E+00  0.16014652E+02  0.28509000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    19  C_F1I48___57___  0.14766192E+01  0.83688937E+01  0.28509000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    20  C_F1I48___58___  0.17202183E+01  0.69226221E+01  0.28509000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    21  C_F1_6____6____  0.27956344E+01  0.14446965E+02  0.26775000E+00
+                         0.87450000E+00  0.94477000E+00 -0.73225000E+00
+    22  C_F1_6____59___  0.40120311E+00  0.16136066E+02  0.26775000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    23  C_F1I49___60___  0.11972156E+01  0.84903083E+01  0.26775000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    24  C_F1I49___61___  0.19996219E+01  0.68012075E+01  0.26775000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    25  C_F1_7____7____  0.28830040E+01  0.13726888E+02  0.67548000E+00
+                         0.90183000E+00  0.89768000E+00 -0.32452000E+00
+    26  C_F1_7____62___  0.31383354E+00  0.16856144E+02  0.67548000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    27  C_F1I50___63___  0.12845852E+01  0.92103858E+01  0.67548000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    28  C_F1I50___64___  0.19122523E+01  0.60811300E+01  0.67548000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    29  C_F1_8____8____  0.31327729E+01  0.13580548E+02  0.83958000E+00
+                         0.97996000E+00  0.88811000E+00 -0.16042000E+00
+    30  C_F1_8____65___  0.64064624E-01  0.17002484E+02  0.83958000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    31  C_F1I51___66___  0.15343541E+01  0.93567256E+01  0.83958000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    32  C_F1I51___67___  0.16624834E+01  0.59347902E+01  0.83958000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    33  C_F1_9____9____  0.27772526E+01  0.12848543E+02  0.10490500E+01
+                         0.86875000E+00  0.84024000E+00  0.49050000E-01
+    34  C_F1_9____68___  0.41958492E+00  0.17734488E+02  0.10490500E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    35  C_F1I52___69___  0.11788338E+01  0.10088730E+02  0.10490500E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    36  C_F1I52___70___  0.20180037E+01  0.52027853E+01  0.10490500E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    37  C_F1_10___10___  0.29867414E+01  0.12731410E+02  0.12385200E+01
+                         0.93428000E+00  0.83258000E+00  0.23852000E+00
+    38  C_F1_10___71___  0.21009616E+00  0.17851621E+02  0.12385200E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    39  C_F1I53___72___  0.13883226E+01  0.10205863E+02  0.12385200E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    40  C_F1I53___73___  0.18085149E+01  0.50856523E+01  0.12385200E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    41  C_F1_11___11___  0.32355192E+01  0.12899005E+02  0.13025500E+01
+                         0.10121000E+01  0.84354000E+00  0.30255000E+00
+    42  C_F1_11___74___ -0.38681734E-01  0.17684026E+02  0.13025500E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    43  C_F1I54___75___  0.16371005E+01  0.10038268E+02  0.13025500E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    44  C_F1I54___76___  0.15597370E+01  0.52532473E+01  0.13025500E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    45  C_F1_12___12___  0.32739452E+01  0.13170124E+02  0.11726300E+01
+                         0.10241200E+01  0.86127000E+00  0.17263000E+00
+    46  C_F1_12___77___ -0.77107721E-01  0.17412908E+02  0.11726300E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    47  C_F1I55___78___  0.16755265E+01  0.97671499E+01  0.11726300E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    48  C_F1I55___79___  0.15213110E+01  0.55243659E+01  0.11726300E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    49  C_F1_13___13___  0.30678132E+01  0.13288327E+02  0.97908000E+00
+                         0.95964000E+00  0.86900000E+00 -0.20920000E-01
+    50  C_F1_13___80___  0.12902436E+00  0.17294704E+02  0.97908000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    51  C_F1I56___81___  0.14693944E+01  0.96489465E+01  0.97908000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    52  C_F1I56___82___  0.17274431E+01  0.56425693E+01  0.97908000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    53  C_F1_14___14___  0.28172770E+01  0.13123026E+02  0.92266000E+00
+                         0.88127000E+00  0.85819000E+00 -0.77340000E-01
+    54  C_F1_14___83___  0.37956052E+00  0.17460006E+02  0.92266000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    55  C_F1I57___84___  0.12188582E+01  0.98142478E+01  0.92266000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    56  C_F1I57___85___  0.19779793E+01  0.54772680E+01  0.92266000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    57  C_F1_15___15___  0.30838293E+01  0.12027083E+02  0.16551700E+01
+                         0.96465000E+00  0.78652000E+00  0.65517000E+00
+    58  C_F1_15___86___  0.11300821E+00  0.18555949E+02  0.16551700E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    59  C_F1I58___87___  0.14854106E+01  0.10910191E+02  0.16551700E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    60  C_F1I58___88___  0.17114270E+01  0.43813251E+01  0.16551700E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    61  C_F1_16___16___  0.33062013E+01  0.11825541E+02  0.17235600E+01
+                         0.10342100E+01  0.77334000E+00  0.72356000E+00
+    62  C_F1_16___89___ -0.10936381E+00  0.18757491E+02  0.17235600E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    63  C_F1I59___90___  0.17077826E+01  0.11111733E+02  0.17235600E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    64  C_F1I59___91___  0.14890549E+01  0.41797829E+01  0.17235600E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    65  C_F1_17___17___  0.35774210E+01  0.11834104E+02  0.15907100E+01
+                         0.11190500E+01  0.77390000E+00  0.59071000E+00
+    66  C_F1_17___92___ -0.38058351E+00  0.18748928E+02  0.15907100E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    67  C_F1I60___93___  0.19790023E+01  0.11103170E+02  0.15907100E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    68  C_F1I60___94___  0.12178353E+01  0.41883462E+01  0.15907100E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    69  C_F1_18___18___  0.36294336E+01  0.12047879E+02  0.13782100E+01
+                         0.11353200E+01  0.78788000E+00  0.37821000E+00
+    70  C_F1_18___95___ -0.43259605E+00  0.18535152E+02  0.13782100E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    71  C_F1I61___96___  0.20310148E+01  0.10889394E+02  0.13782100E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    72  C_F1I61___97___  0.11658227E+01  0.44021216E+01  0.13782100E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    73  C_F1_19___19___  0.34167160E+01  0.12250186E+02  0.13065000E+01
+                         0.10687800E+01  0.80111000E+00  0.30650000E+00
+    74  C_F1_19___98___ -0.21987848E+00  0.18332845E+02  0.13065000E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    75  C_F1I62___99___  0.18182972E+01  0.10687087E+02  0.13065000E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    76  C_F1I62___100__  0.13785403E+01  0.46044283E+01  0.13065000E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    77  C_F1_20___20___  0.31407010E+01  0.12250186E+02  0.14446500E+01
+                         0.98244000E+00  0.80111000E+00  0.44465000E+00
+    78  C_F1_20___101__  0.56136467E-01  0.18332845E+02  0.14446500E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    79  C_F1I63___102__  0.15422823E+01  0.10687087E+02  0.14446500E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    80  C_F1I63___103__  0.16545552E+01  0.46044283E+01  0.14446500E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    81  C_F1_21___21___  0.28081340E+01  0.11982891E+02  0.18160200E+01
+                         0.87841000E+00  0.78363000E+00  0.81602000E+00
+    82  C_F1_21___104__  0.38870347E+00  0.18600141E+02  0.18160200E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    83  C_F1I64___105__  0.12097153E+01  0.10954383E+02  0.18160200E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    84  C_F1I64___106__  0.19871222E+01  0.43371326E+01  0.18160200E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    85  H_F1_1____22___  0.25176694E+01  0.14087156E+02  0.37833000E+00
+                         0.78755000E+00  0.92124000E+00 -0.62167000E+00
+    86  H_F1_1____107__  0.67916813E+00  0.16495876E+02  0.37833000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    87  H_F1I44___108__  0.91925063E+00  0.88501177E+01  0.37833000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    88  H_F1I44___109__  0.22775869E+01  0.64413981E+01  0.37833000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    89  H_F1_2____23___  0.34111215E+01  0.14033636E+02  0.67085000E+00
+                         0.10670300E+01  0.91774000E+00 -0.32915000E+00
+    90  H_F1_2____110__ -0.21428402E+00  0.16549396E+02  0.67085000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    91  H_F1I45___111__  0.18127028E+01  0.89036380E+01  0.67085000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    92  H_F1I45___112__  0.13841347E+01  0.63878778E+01  0.67085000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    93  H_F1_3____24___  0.26259143E+01  0.14567157E+02  0.15259000E+00
+                         0.82141000E+00  0.95263000E+00 -0.84741000E+00
+    94  H_F1_3____113__  0.57092321E+00  0.16015875E+02  0.15259000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    95  H_F1I46___114__  0.10274955E+01  0.83701170E+01  0.15259000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    96  H_F1I46___115__  0.21693420E+01  0.69213988E+01  0.15259000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    97  H_F1_4____25___  0.28069832E+01  0.13582842E+02  0.49846000E+00
+                         0.87805000E+00  0.88826000E+00 -0.50154000E+00
+    98  H_F1_4____116__  0.38985433E+00  0.17000190E+02  0.49846000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+    99  H_F1I47___117__  0.12085644E+01  0.93544319E+01  0.49846000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   100  H_F1I47___118__  0.19882731E+01  0.59370839E+01  0.49846000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   101  H_F1_5____26___  0.26948062E+01  0.13753801E+02  0.82290000E+00
+                         0.84296000E+00  0.89944000E+00 -0.17710000E+00
+   102  H_F1_5____119__  0.50203136E+00  0.16829231E+02  0.82290000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   103  H_F1I48___120__  0.10963874E+01  0.91834727E+01  0.82290000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   104  H_F1I48___121__  0.21004501E+01  0.61080431E+01  0.82290000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   105  H_F1_6____27___  0.33185731E+01  0.13551494E+02  0.68926000E+00
+                         0.10380800E+01  0.88621000E+00 -0.31074000E+00
+   106  H_F1_6____122__ -0.12173557E+00  0.17031537E+02  0.68926000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   107  H_F1I49___123__  0.17201543E+01  0.93857795E+01  0.68926000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   108  H_F1I49___124__  0.14766832E+01  0.59057363E+01  0.68926000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   109  H_F1_7____28___  0.32113512E+01  0.13729029E+02  0.10116300E+01
+                         0.10045400E+01  0.89782000E+00  0.11630000E-01
+   110  H_F1_7____125__ -0.14513642E-01  0.16854003E+02  0.10116300E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   111  H_F1I50___126__  0.16129324E+01  0.92082450E+01  0.10116300E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   112  H_F1I50___127__  0.15839051E+01  0.60832708E+01  0.10116300E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   113  H_F1_8____29___  0.25828209E+01  0.12721165E+02  0.99743000E+00
+                         0.80793000E+00  0.83191000E+00 -0.25700000E-02
+   114  H_F1_8____128__  0.61401658E+00  0.17861867E+02  0.99743000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   115  H_F1I51___129__  0.98440218E+00  0.10216109E+02  0.99743000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   116  H_F1I51___130__  0.22124353E+01  0.50754070E+01  0.99743000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   117  H_F1_9____30___  0.33965759E+01  0.12817349E+02  0.14573100E+01
+                         0.10624800E+01  0.83820000E+00  0.45731000E+00
+   118  H_F1_9____131__ -0.19973841E+00  0.17765683E+02  0.14573100E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   119  H_F1I52___132__  0.17981572E+01  0.10119925E+02  0.14573100E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   120  H_F1I52___133__  0.13986803E+01  0.51715906E+01  0.14573100E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   121  H_F1_10___31___  0.34688564E+01  0.13296738E+02  0.12257500E+01
+                         0.10850900E+01  0.86955000E+00  0.22575000E+00
+   122  H_F1_10___134__ -0.27201890E+00  0.17286294E+02  0.12257500E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   123  H_F1I53___135__  0.18704377E+01  0.96405361E+01  0.12257500E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   124  H_F1I53___136__  0.13263999E+01  0.56509797E+01  0.12257500E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   125  H_F1_11___32___  0.26498266E+01  0.13204988E+02  0.77471000E+00
+                         0.82889000E+00  0.86355000E+00 -0.22529000E+00
+   126  H_F1_11___137__  0.54701087E+00  0.17378043E+02  0.77471000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   127  H_F1I54___138__  0.10514079E+01  0.97322852E+01  0.77471000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   128  H_F1I54___139__  0.21454296E+01  0.55592306E+01  0.77471000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   129  H_F2_12___33___  0.27283090E+01  0.12418240E+02  0.14391800E+01
+                         0.85344000E+00  0.81210000E+00  0.43918000E+00
+   130  H_F2_12___140__  0.46852851E+00  0.18164792E+02  0.14391800E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   131  H_F2I55___141__  0.11298903E+01  0.10519034E+02  0.14391800E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   132  H_F2I55___142__  0.20669473E+01  0.47724821E+01  0.14391800E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   133  H_F1_13___34___  0.32548601E+01  0.11660545E+02  0.18868400E+01
+                         0.10181500E+01  0.76255000E+00  0.88684000E+00
+   134  H_F1_13___143__ -0.58022601E-01  0.18922486E+02  0.18868400E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   135  H_F1I56___144__  0.16564414E+01  0.11276728E+02  0.18868400E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   136  H_F1I56___145__  0.15403962E+01  0.40147875E+01  0.18868400E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   137  H_F1_14___35___  0.37450312E+01  0.11675378E+02  0.16476200E+01
+                         0.11714800E+01  0.76352000E+00  0.64762000E+00
+   138  H_F1_14___146__ -0.54819370E+00  0.18907653E+02  0.16476200E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   139  H_F1I57___147__  0.21466125E+01  0.11261896E+02  0.16476200E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   140  H_F1I57___148__  0.10502251E+01  0.40296202E+01  0.16476200E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   141  H_F1_15___36___  0.38384108E+01  0.12054761E+02  0.12641000E+01
+                         0.12006900E+01  0.78833000E+00  0.26410000E+00
+   142  H_F1_15___149__ -0.64157332E+00  0.18528271E+02  0.12641000E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   143  H_F1I58___150__  0.22399921E+01  0.10882513E+02  0.12641000E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   144  H_F1I58___151__  0.95684544E+00  0.44090028E+01  0.12641000E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   145  H_F1_16___37___  0.34590102E+01  0.12410594E+02  0.11365000E+01
+                         0.10820100E+01  0.81160000E+00  0.13650000E+00
+   146  H_F1_16___152__ -0.26217264E+00  0.18172437E+02  0.11365000E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   147  H_F1I59___153__  0.18605914E+01  0.10526679E+02  0.11365000E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   148  H_F1I59___154__  0.13362461E+01  0.47648363E+01  0.11365000E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   149  H_F2_17___38___  0.24159780E+01  0.12102470E+02  0.18506700E+01
+                         0.75574000E+00  0.79145000E+00  0.85067000E+00
+   150  H_F2_17___155__  0.78085953E+00  0.18480561E+02  0.18506700E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   151  H_F2I60___156__  0.81755923E+00  0.10834804E+02  0.18506700E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   152  H_F2I60___157__  0.23792783E+01  0.44567123E+01  0.18506700E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   153  N_F1_1____39___  0.29351444E+01  0.12457692E+02  0.13690100E+01
+                         0.91814000E+00  0.81468000E+00  0.36901000E+00
+   154  N_F1_1____158__  0.26169312E+00  0.18125340E+02  0.13690100E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   155  N_F1I44___159__  0.13367256E+01  0.10479582E+02  0.13690100E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   156  N_F1I44___160__  0.18601119E+01  0.48119342E+01  0.13690100E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   157  O_F1_1____41___  0.25791765E+01  0.12157673E+02  0.17245500E+01
+                         0.80679000E+00  0.79506000E+00  0.72455000E+00
+   158  O_F1_1____161__  0.61766098E+00  0.18425359E+02  0.17245500E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   159  O_F1I44___162__  0.98075778E+00  0.10779601E+02  0.17245500E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   160  O_F1I44___163__  0.22160797E+01  0.45119147E+01  0.17245500E+01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   161  O_01_2____40___  0.27700917E+01  0.11807650E+02  0.13310000E-01
+                         0.86651000E+00  0.77217000E+00  0.10133100E+01
+   162  O_01_2____164__  0.42674584E+00  0.34838660E+01  0.13310000E-01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   163  O_01I45___165__  0.11716729E+01  0.11129624E+02  0.13310000E-01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   164  O_01I45___166__  0.20251646E+01  0.41618919E+01  0.13310000E-01
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   165  ClF1_1____42___  0.36455137E+01  0.14555076E+02  0.46094000E+00
+                         0.11403500E+01  0.95184000E+00 -0.53906000E+00
+   166  ClF1_1____167__ -0.44867615E+00  0.16027955E+02  0.46094000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   167  ClF1I44___168__  0.20470949E+01  0.83821973E+01  0.46094000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   168  ClF1I44___169__  0.11497426E+01  0.69093185E+01  0.46094000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   169  ClF1_2____43___  0.31415003E+01  0.14904488E+02  0.12421000E+00
+                         0.98269000E+00  0.97469000E+00 -0.87579000E+00
+   170  ClF1_2____170__  0.55337257E-01  0.15678544E+02  0.12421000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   171  ClF1I45___171__  0.15430815E+01  0.80327862E+01  0.12421000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+   172  ClF1I45___172__  0.16537560E+01  0.72587296E+01  0.12421000E+00
+                         0.00000000E+00  0.00000000E+00  0.00000000E+00
+
+ REPRESENTATIONS RENUMBERED, COMPLEX CONJUGATE REPRESENTATIONS DELETED 
+
+
+ REP       INDEX OF                   NUMBER OF PROJECTED FUNCTIONS          NUMBER OF BASIS FUNCTIONS
+      1ST ROT     1ST BULK      TRANS+ROT  ROT   ONLY  BULK ONLY        ALL          LINEAR  QUADRATIC
+   1          7         10               9          3          1         10               0          1
+   2          7         10               9          3          1         10               1          1
+   3          7         10               9          3          1         10               1          1
+   4          7         10               9          3          3         12               1          3
+
+ MAXIMUM PROJECTED ARRAY SIZE =      144
+
+    1    C_F1_1____           -8.312495   -5.052542   -0.886824    Next   2    Limit   4
+    2    C_F1_2____           -5.705784   -4.851273   -0.426162    Next   3    Limit   4
+    3    C_F1_3____           -4.374916   -7.065195    0.128964    Next   4    Limit   4
+    4    C_F1_4____           -5.591813   -9.409929    0.231478    Next   5    Limit   4
+    5    C_F1_5____           -8.191668   -9.576087   -0.228937    Next   6    Limit   4
+    6    C_F1_6____           -9.540706   -7.372540   -0.790045    Next   7    Limit   4
+    7    C_F1_7____           -4.444046   -2.280435   -0.528760    Next   8    Limit   4
+    8    C_F1_8____           -1.594455   -2.292769   -0.087914    Next   9    Limit   4
+    9    C_F1_9____           -0.152131    4.841699   -0.231803    Next  10    Limit   4
+   10    C_F1_10___            2.497424    4.841699   -0.231803    Next  11    Limit   4
+   11    C_F1_11___            3.762462    2.505221   -0.278336    Next  12    Limit   4
+   12    C_F1_12___            2.393038    0.264208   -0.248716    Next  13    Limit   4
+   13    C_F1_13___           -0.261627    0.236259   -0.211457    Next  14    Limit   4
+   14    C_F1_14___           -1.503986    2.572669   -0.231803    Next  15    Limit   4
+   15    C_F1_15___            7.647586    9.784365   -0.049390    Next  16    Limit   4
+   16    C_F1_16___           10.003426   10.202561    1.128153    Next  17    Limit   4
+   17    C_F1_17___           10.871810    8.692627    3.082295    Next  18    Limit   4
+   18    C_F1_18___            9.330925    6.712162    3.934177    Next  19    Limit   4
+   19    C_F1_19___            7.011759    6.239029    2.815110    Next  20    Limit   4
+   20    C_F1_20___            6.114636    7.715170    0.773852    Next  21    Limit   4
+   21    C_F1_21___            7.020898   11.596140   -2.078927    Next  22    Limit   4
+   22    H_F1_1____           -9.403324   -3.356747   -1.327221    Next  23    Limit   4
+   23    H_F1_2____           -2.351505   -7.031274    0.498258    Next  24    Limit   4
+   24    H_F1_3____          -11.565058   -7.515586   -1.140992    Next  25    Limit   4
+   25    H_F1_4____           -5.367625   -1.061325    0.887398    Next  26    Limit   4
+   26    H_F1_5____           -4.859225   -1.411864   -2.377578    Next  27    Limit   4
+   27    H_F1_6____           -1.202030   -3.137450    1.778714    Next  28    Limit   4
+   28    H_F1_7____           -0.697311   -3.560904   -1.476698    Next  29    Limit   4
+   29    H_F1_8____           -1.160464    6.641310   -0.197493    Next  30    Limit   4
+   30    H_F1_9____            5.819601    2.454579   -0.371163    Next  31    Limit   4
+   31    H_F1_10___            3.415508   -1.529675   -0.287843    Next  32    Limit   4
+   32    H_F1_11___           -3.564160    2.658990   -0.212184    Next  33    Limit   4
+   33    H_F2_12___            3.079660    8.520157   -1.468631    Next  34    Limit   4
+   34    H_F1_13___           11.122673   11.785175    0.430447    Next  35    Limit   4
+   35    H_F1_14___           12.699062    9.061533    3.959065    Next  36    Limit   4
+   36    H_F1_15___            9.936050    5.535473    5.518023    Next  37    Limit   4
+   37    H_F1_16___            5.818136    4.726456    3.538325    Next  38    Limit   4
+   38    H_F2_17___            4.482049   12.686746   -4.331708    Next  39    Limit   4
+   39    N_F1_1____            3.800018    7.165324   -0.309055    Next  40    Limit   4
+   40    O_F1_1____            8.435577   13.220116   -2.914111    Next  41    Limit   4
+   41    O_F1_2____            4.590683   11.377255   -3.029104    Next  42    Limit   4
+   42    ClF1_1____           -3.816999  -12.081864    0.933054    Next  43    Limit   4
+   43    ClF1_2____           -9.776171  -12.446383   -0.117509    Next   0    Limit   4
+
+ Local axes from input dataset
+
+
+Local axis set for molecule:    1
+ x=>           0.685085         -0.383057          0.619618
+ y=>          -0.561074         -0.819954          0.113448
+ z=>           0.464601         -0.425373         -0.776661
+
+ Atom positions in local axis system for molecule    1
+
+basis No.  Species         x y z (Angstroms)       Mass
+
+   1 C_F1_1____    -4.206356    -2.370672    -0.536425    12.010700
+   5 C_F1_2____    -2.826704    -2.264548    -0.292302    12.010700
+   9 C_F1_3____    -2.122833    -3.436489     0.001121    12.010700
+  13 C_F1_4____    -2.766918    -4.677118     0.055202    12.010700
+  17 C_F1_5____    -4.142689    -4.764782    -0.188441    12.010700
+  21 C_F1_6____    -4.856348    -3.598572    -0.485079    12.010700
+  25 C_F1_7____    -2.158888    -0.904123    -0.346494    12.010700
+  29 C_F1_8____    -0.651117    -0.911138    -0.113384    12.010700
+  33 C_F1_9____     0.112878     2.864370    -0.188978    12.010700
+  37 C_F1_10___     1.514903     2.864370    -0.188978    12.010700
+  41 C_F1_11___     2.183899     1.627617    -0.213909    12.010700
+  45 C_F1_12___     1.459334     0.441918    -0.198182    12.010700
+  49 C_F1_13___     0.054381     0.427136    -0.178591    12.010700
+  53 C_F1_14___    -0.602546     1.663748    -0.188978    12.010700
+  57 C_F1_15___     4.240568     5.479245    -0.092173    12.010700
+  61 C_F1_16___     5.487328     5.700457     0.531062    12.010700
+  65 C_F1_17___     5.946800     4.901441     1.565190    12.010700
+  69 C_F1_18___     5.131019     3.853417     2.015764    12.010700
+  73 C_F1_19___     3.903810     3.602767     1.423426    12.010700
+  77 C_F1_20___     3.429293     4.384683     0.343508    12.010700
+  81 C_F1_21___     3.909161     6.438288    -1.166054    12.010700
+  85 H_F1_1____    -4.783377    -1.473280    -0.769224     1.007940
+  89 H_F1_2____    -1.051909    -3.418342     0.196726     1.007940
+  93 H_F1_3____    -5.927715    -3.673722    -0.670946     1.007940
+  97 H_F1_4____    -2.647592    -0.259096     0.402872     1.007940
+ 101 H_F1_5____    -2.378493    -0.444476    -1.324844     1.007940
+ 105 H_F1_6____    -0.443521    -1.358077     0.874360     1.007940
+ 109 H_F1_7____    -0.176287    -1.582001    -0.848253     1.007940
+ 113 H_F1_8____    -0.420788     3.816578    -0.170906     1.007940
+ 117 H_F1_9____     3.272876     1.600782    -0.262667     1.007940
+ 121 H_F1_10___     2.000110    -0.507868    -0.219082     1.007940
+ 125 H_F1_11___    -1.692797     1.709424    -0.178686     1.007940
+ 129 H_F2_12___     1.823228     4.810930    -0.843251     1.007940
+ 133 H_F1_13___     6.079713     6.537765     0.162053     1.007940
+ 137 H_F1_14___     6.913734     5.096591     2.029146     1.007940
+ 141 H_F1_15___     5.451174     3.230592     2.853851     1.007940
+ 145 H_F1_16___     3.271973     2.802485     1.806040     1.007940
+ 149 H_F2_17___     2.565773     7.015584    -2.358033     1.007940
+ 153 N_F1_1____     2.204281     4.094021    -0.229721    14.006740
+ 157 O_F1_1____     2.623145     6.322616    -1.668939    15.999400
+ 165 ClF1_1____    -1.827814    -6.090860     0.426531    35.452700
+ 169 ClF1_2____    -4.981286    -6.283034    -0.129494    35.452700
+
+basis No.  Species         x y z (AU)       Mass
+
+   1 C_F1_1____    -7.948864    -4.479922    -1.013697    12.010700
+   5 C_F1_2____    -5.341698    -4.279377    -0.552371    12.010700
+   9 C_F1_3____    -4.011575    -6.494026     0.002118    12.010700
+  13 C_F1_4____    -5.228720    -8.838475     0.104317    12.010700
+  17 C_F1_5____    -7.828552    -9.004137    -0.356102    12.010700
+  21 C_F1_6____    -9.177171    -6.800318    -0.916667    12.010700
+  25 C_F1_7____    -4.079708    -1.708545    -0.654779    12.010700
+  29 C_F1_8____    -1.230433    -1.721802    -0.214265    12.010700
+  33 C_F1_9____     0.213308     5.412878    -0.357116    12.010700
+  37 C_F1_10___     2.862753     5.412878    -0.357116    12.010700
+  41 C_F1_11___     4.126972     3.075751    -0.404229    12.010700
+  45 C_F1_12___     2.757742     0.835104    -0.374510    12.010700
+  49 C_F1_13___     0.102766     0.807171    -0.337487    12.010700
+  53 C_F1_14___    -1.138648     3.144030    -0.357116    12.010700
+  57 C_F1_15___     8.013516    10.354277    -0.174182    12.010700
+  61 C_F1_16___    10.369551    10.772308     1.003562    12.010700
+  65 C_F1_17___    11.237828     9.262385     2.957782    12.010700
+  69 C_F1_18___     9.696225     7.281906     3.809243    12.010700
+  73 C_F1_19___     7.377135     6.808246     2.689886    12.010700
+  77 C_F1_20___     6.480427     8.285853     0.649137    12.010700
+  81 C_F1_21___     7.387246    12.166605    -2.203524    12.010700
+  85 H_F1_1____    -9.039276    -2.784097    -1.453624     1.007940
+  89 H_F1_2____    -1.987821    -6.459734     0.371759     1.007940
+  93 H_F1_3____   -11.201763    -6.942331    -1.267904     1.007940
+  97 H_F1_4____    -5.003226    -0.489621     0.761318     1.007940
+ 101 H_F1_5____    -4.494703    -0.839939    -2.503593     1.007940
+ 105 H_F1_6____    -0.838133    -2.566394     1.652302     1.007940
+ 109 H_F1_7____    -0.333134    -2.989549    -1.602966     1.007940
+ 113 H_F1_8____    -0.795174     7.212290    -0.322966     1.007940
+ 117 H_F1_9____     6.184842     3.025041    -0.496369     1.007940
+ 121 H_F1_10___     3.779661    -0.959732    -0.414005     1.007940
+ 125 H_F1_11___    -3.198925     3.230344    -0.337667     1.007940
+ 129 H_F2_12___     3.445402     9.091344    -1.593514     1.007940
+ 133 H_F1_13___    11.488998    12.354590     0.306236     1.007940
+ 137 H_F1_14___    13.065069     9.631164     3.834531     1.007940
+ 141 H_F1_15___    10.301231     6.104937     5.392999     1.007940
+ 145 H_F1_16___     6.183135     5.295931     3.412922     1.007940
+ 149 H_F2_17___     4.848611    13.257538    -4.456038     1.007940
+ 153 N_F1_1____     4.165490     7.736582    -0.434109    14.006740
+ 157 O_F1_1____     4.957028    11.948018    -3.153838    15.999400
+ 165 ClF1_1____    -3.454070   -11.510063     0.806027    35.452700
+ 169 ClF1_2____    -9.413270   -11.873219    -0.244708    35.452700
+
+Local axis set for molecule:    2
+ x=>          -0.685085          0.383057          0.619618
+ y=>           0.561074          0.819954          0.113448
+ z=>          -0.464601          0.425373         -0.776661
+
+ Atom positions in local axis system for molecule    2
+
+basis No.  Species         x y z (Angstroms)       Mass
+
+   2 C_F1_1____    -4.206356    -2.370672    -0.536425    12.010700
+   6 C_F1_2____    -2.826704    -2.264548    -0.292302    12.010700
+  10 C_F1_3____    -2.122833    -3.436489     0.001121    12.010700
+  14 C_F1_4____    -2.766918    -4.677118     0.055202    12.010700
+  18 C_F1_5____    -4.142689    -4.764782    -0.188441    12.010700
+  22 C_F1_6____    -4.856348    -3.598572    -0.485079    12.010700
+  26 C_F1_7____    -2.158888    -0.904123    -0.346494    12.010700
+  30 C_F1_8____    -0.651117    -0.911138    -0.113384    12.010700
+  34 C_F1_9____     0.112878     2.864370    -0.188978    12.010700
+  38 C_F1_10___     1.514903     2.864370    -0.188978    12.010700
+  42 C_F1_11___     2.183899     1.627617    -0.213909    12.010700
+  46 C_F1_12___     1.459334     0.441918    -0.198182    12.010700
+  50 C_F1_13___     0.054381     0.427136    -0.178591    12.010700
+  54 C_F1_14___    -0.602546     1.663748    -0.188978    12.010700
+  58 C_F1_15___     4.240568     5.479245    -0.092173    12.010700
+  62 C_F1_16___     5.487328     5.700457     0.531062    12.010700
+  66 C_F1_17___     5.946800     4.901441     1.565190    12.010700
+  70 C_F1_18___     5.131019     3.853417     2.015764    12.010700
+  74 C_F1_19___     3.903810     3.602767     1.423426    12.010700
+  78 C_F1_20___     3.429293     4.384683     0.343508    12.010700
+  82 C_F1_21___     3.909161     6.438288    -1.166054    12.010700
+  86 H_F1_1____    -4.783377    -1.473280    -0.769224     1.007940
+  90 H_F1_2____    -1.051909    -3.418342     0.196726     1.007940
+  94 H_F1_3____    -5.927715    -3.673722    -0.670946     1.007940
+  98 H_F1_4____    -2.647592    -0.259096     0.402872     1.007940
+ 102 H_F1_5____    -2.378493    -0.444476    -1.324844     1.007940
+ 106 H_F1_6____    -0.443521    -1.358077     0.874360     1.007940
+ 110 H_F1_7____    -0.176287    -1.582001    -0.848253     1.007940
+ 114 H_F1_8____    -0.420788     3.816578    -0.170906     1.007940
+ 118 H_F1_9____     3.272876     1.600782    -0.262667     1.007940
+ 122 H_F1_10___     2.000110    -0.507868    -0.219082     1.007940
+ 126 H_F1_11___    -1.692797     1.709424    -0.178686     1.007940
+ 130 H_F2_12___     1.823228     4.810930    -0.843251     1.007940
+ 134 H_F1_13___     6.079713     6.537765     0.162053     1.007940
+ 138 H_F1_14___     6.913734     5.096591     2.029146     1.007940
+ 142 H_F1_15___     5.451174     3.230592     2.853851     1.007940
+ 146 H_F1_16___     3.271973     2.802485     1.806040     1.007940
+ 150 H_F2_17___     2.565773     7.015584    -2.358033     1.007940
+ 154 N_F1_1____     2.204281     4.094021    -0.229721    14.006740
+ 158 O_F1_1____     2.623145     6.322616    -1.668939    15.999400
+ 166 ClF1_1____    -1.827814    -6.090860     0.426531    35.452700
+ 170 ClF1_2____    -4.981286    -6.283034    -0.129494    35.452700
+
+basis No.  Species         x y z (AU)       Mass
+
+   2 C_F1_1____    -7.948864    -4.479922    -1.013697    12.010700
+   6 C_F1_2____    -5.341698    -4.279377    -0.552371    12.010700
+  10 C_F1_3____    -4.011575    -6.494026     0.002118    12.010700
+  14 C_F1_4____    -5.228720    -8.838475     0.104317    12.010700
+  18 C_F1_5____    -7.828552    -9.004137    -0.356102    12.010700
+  22 C_F1_6____    -9.177171    -6.800318    -0.916667    12.010700
+  26 C_F1_7____    -4.079708    -1.708545    -0.654779    12.010700
+  30 C_F1_8____    -1.230433    -1.721802    -0.214265    12.010700
+  34 C_F1_9____     0.213308     5.412878    -0.357116    12.010700
+  38 C_F1_10___     2.862753     5.412878    -0.357116    12.010700
+  42 C_F1_11___     4.126972     3.075751    -0.404229    12.010700
+  46 C_F1_12___     2.757742     0.835104    -0.374510    12.010700
+  50 C_F1_13___     0.102766     0.807171    -0.337487    12.010700
+  54 C_F1_14___    -1.138648     3.144030    -0.357116    12.010700
+  58 C_F1_15___     8.013516    10.354277    -0.174182    12.010700
+  62 C_F1_16___    10.369551    10.772308     1.003562    12.010700
+  66 C_F1_17___    11.237828     9.262385     2.957782    12.010700
+  70 C_F1_18___     9.696225     7.281906     3.809243    12.010700
+  74 C_F1_19___     7.377135     6.808246     2.689886    12.010700
+  78 C_F1_20___     6.480427     8.285853     0.649137    12.010700
+  82 C_F1_21___     7.387246    12.166605    -2.203524    12.010700
+  86 H_F1_1____    -9.039276    -2.784097    -1.453624     1.007940
+  90 H_F1_2____    -1.987821    -6.459734     0.371759     1.007940
+  94 H_F1_3____   -11.201763    -6.942331    -1.267904     1.007940
+  98 H_F1_4____    -5.003226    -0.489621     0.761318     1.007940
+ 102 H_F1_5____    -4.494703    -0.839939    -2.503593     1.007940
+ 106 H_F1_6____    -0.838133    -2.566394     1.652302     1.007940
+ 110 H_F1_7____    -0.333134    -2.989549    -1.602966     1.007940
+ 114 H_F1_8____    -0.795174     7.212290    -0.322966     1.007940
+ 118 H_F1_9____     6.184842     3.025041    -0.496369     1.007940
+ 122 H_F1_10___     3.779661    -0.959732    -0.414005     1.007940
+ 126 H_F1_11___    -3.198925     3.230344    -0.337667     1.007940
+ 130 H_F2_12___     3.445402     9.091344    -1.593514     1.007940
+ 134 H_F1_13___    11.488998    12.354590     0.306236     1.007940
+ 138 H_F1_14___    13.065069     9.631164     3.834531     1.007940
+ 142 H_F1_15___    10.301231     6.104937     5.392999     1.007940
+ 146 H_F1_16___     6.183135     5.295931     3.412922     1.007940
+ 150 H_F2_17___     4.848611    13.257538    -4.456038     1.007940
+ 154 N_F1_1____     4.165490     7.736582    -0.434109    14.006740
+ 158 O_F1_1____     4.957028    11.948018    -3.153838    15.999400
+ 166 ClF1_1____    -3.454070   -11.510063     0.806027    35.452700
+ 170 ClF1_2____    -9.413270   -11.873219    -0.244708    35.452700
+
+Local axis set for molecule:    3
+ x=>           0.685085          0.383057          0.619618
+ y=>          -0.561074          0.819954          0.113448
+ z=>          -0.464601         -0.425373          0.776661
+
+ Atom positions in local axis system for molecule    3
+
+basis No.  Species         x y z (Angstroms)       Mass
+
+   3 C_F1I44___    -4.206356    -2.370672     0.536425    12.010700
+   7 C_F1I45___    -2.826704    -2.264548     0.292302    12.010700
+  11 C_F1I46___    -2.122833    -3.436489    -0.001121    12.010700
+  15 C_F1I47___    -2.766918    -4.677118    -0.055202    12.010700
+  19 C_F1I48___    -4.142689    -4.764782     0.188441    12.010700
+  23 C_F1I49___    -4.856348    -3.598572     0.485079    12.010700
+  27 C_F1I50___    -2.158888    -0.904123     0.346494    12.010700
+  31 C_F1I51___    -0.651117    -0.911138     0.113384    12.010700
+  35 C_F1I52___     0.112878     2.864370     0.188978    12.010700
+  39 C_F1I53___     1.514903     2.864370     0.188978    12.010700
+  43 C_F1I54___     2.183899     1.627617     0.213909    12.010700
+  47 C_F1I55___     1.459334     0.441918     0.198182    12.010700
+  51 C_F1I56___     0.054381     0.427136     0.178591    12.010700
+  55 C_F1I57___    -0.602546     1.663748     0.188978    12.010700
+  59 C_F1I58___     4.240568     5.479245     0.092173    12.010700
+  63 C_F1I59___     5.487328     5.700457    -0.531062    12.010700
+  67 C_F1I60___     5.946800     4.901441    -1.565190    12.010700
+  71 C_F1I61___     5.131019     3.853417    -2.015764    12.010700
+  75 C_F1I62___     3.903810     3.602767    -1.423426    12.010700
+  79 C_F1I63___     3.429293     4.384683    -0.343508    12.010700
+  83 C_F1I64___     3.909161     6.438288     1.166054    12.010700
+  87 H_F1I44___    -4.783377    -1.473280     0.769224     1.007940
+  91 H_F1I45___    -1.051909    -3.418342    -0.196726     1.007940
+  95 H_F1I46___    -5.927715    -3.673722     0.670946     1.007940
+  99 H_F1I47___    -2.647592    -0.259096    -0.402872     1.007940
+ 103 H_F1I48___    -2.378493    -0.444476     1.324844     1.007940
+ 107 H_F1I49___    -0.443521    -1.358077    -0.874360     1.007940
+ 111 H_F1I50___    -0.176287    -1.582001     0.848253     1.007940
+ 115 H_F1I51___    -0.420788     3.816578     0.170906     1.007940
+ 119 H_F1I52___     3.272876     1.600782     0.262667     1.007940
+ 123 H_F1I53___     2.000110    -0.507868     0.219082     1.007940
+ 127 H_F1I54___    -1.692797     1.709424     0.178686     1.007940
+ 131 H_F2I55___     1.823228     4.810930     0.843251     1.007940
+ 135 H_F1I56___     6.079713     6.537765    -0.162053     1.007940
+ 139 H_F1I57___     6.913734     5.096591    -2.029146     1.007940
+ 143 H_F1I58___     5.451174     3.230592    -2.853851     1.007940
+ 147 H_F1I59___     3.271973     2.802485    -1.806040     1.007940
+ 151 H_F2I60___     2.565773     7.015584     2.358033     1.007940
+ 155 N_F1I44___     2.204281     4.094021     0.229721    14.006740
+ 159 O_F1I44___     2.623145     6.322616     1.668939    15.999400
+ 167 ClF1I44___    -1.827814    -6.090860    -0.426531    35.452700
+ 171 ClF1I45___    -4.981286    -6.283034     0.129494    35.452700
+
+basis No.  Species         x y z (AU)       Mass
+
+   3 C_F1I44___    -7.948864    -4.479922     1.013697    12.010700
+   7 C_F1I45___    -5.341698    -4.279377     0.552371    12.010700
+  11 C_F1I46___    -4.011575    -6.494026    -0.002118    12.010700
+  15 C_F1I47___    -5.228720    -8.838475    -0.104317    12.010700
+  19 C_F1I48___    -7.828552    -9.004137     0.356102    12.010700
+  23 C_F1I49___    -9.177171    -6.800318     0.916667    12.010700
+  27 C_F1I50___    -4.079708    -1.708545     0.654779    12.010700
+  31 C_F1I51___    -1.230433    -1.721802     0.214265    12.010700
+  35 C_F1I52___     0.213308     5.412878     0.357116    12.010700
+  39 C_F1I53___     2.862753     5.412878     0.357116    12.010700
+  43 C_F1I54___     4.126972     3.075751     0.404229    12.010700
+  47 C_F1I55___     2.757742     0.835104     0.374510    12.010700
+  51 C_F1I56___     0.102766     0.807171     0.337487    12.010700
+  55 C_F1I57___    -1.138648     3.144030     0.357116    12.010700
+  59 C_F1I58___     8.013516    10.354277     0.174182    12.010700
+  63 C_F1I59___    10.369551    10.772308    -1.003562    12.010700
+  67 C_F1I60___    11.237828     9.262385    -2.957782    12.010700
+  71 C_F1I61___     9.696225     7.281906    -3.809243    12.010700
+  75 C_F1I62___     7.377135     6.808246    -2.689886    12.010700
+  79 C_F1I63___     6.480427     8.285853    -0.649137    12.010700
+  83 C_F1I64___     7.387246    12.166605     2.203524    12.010700
+  87 H_F1I44___    -9.039276    -2.784097     1.453624     1.007940
+  91 H_F1I45___    -1.987821    -6.459734    -0.371759     1.007940
+  95 H_F1I46___   -11.201763    -6.942331     1.267904     1.007940
+  99 H_F1I47___    -5.003226    -0.489621    -0.761318     1.007940
+ 103 H_F1I48___    -4.494703    -0.839939     2.503593     1.007940
+ 107 H_F1I49___    -0.838133    -2.566394    -1.652302     1.007940
+ 111 H_F1I50___    -0.333134    -2.989549     1.602966     1.007940
+ 115 H_F1I51___    -0.795174     7.212290     0.322966     1.007940
+ 119 H_F1I52___     6.184842     3.025041     0.496369     1.007940
+ 123 H_F1I53___     3.779661    -0.959732     0.414005     1.007940
+ 127 H_F1I54___    -3.198925     3.230344     0.337667     1.007940
+ 131 H_F2I55___     3.445402     9.091344     1.593514     1.007940
+ 135 H_F1I56___    11.488998    12.354590    -0.306236     1.007940
+ 139 H_F1I57___    13.065069     9.631164    -3.834531     1.007940
+ 143 H_F1I58___    10.301231     6.104937    -5.392999     1.007940
+ 147 H_F1I59___     6.183135     5.295931    -3.412922     1.007940
+ 151 H_F2I60___     4.848611    13.257538     4.456038     1.007940
+ 155 N_F1I44___     4.165490     7.736582     0.434109    14.006740
+ 159 O_F1I44___     4.957028    11.948018     3.153838    15.999400
+ 167 ClF1I44___    -3.454070   -11.510063    -0.806027    35.452700
+ 171 ClF1I45___    -9.413270   -11.873219     0.244708    35.452700
+
+Local axis set for molecule:    4
+ x=>          -0.685085         -0.383057          0.619618
+ y=>           0.561074         -0.819954          0.113448
+ z=>           0.464601          0.425373          0.776661
+
+ Atom positions in local axis system for molecule    4
+
+basis No.  Species         x y z (Angstroms)       Mass
+
+   4 C_F1I44___    -4.206356    -2.370672     0.536425    12.010700
+   8 C_F1I45___    -2.826704    -2.264548     0.292302    12.010700
+  12 C_F1I46___    -2.122833    -3.436489    -0.001121    12.010700
+  16 C_F1I47___    -2.766918    -4.677118    -0.055202    12.010700
+  20 C_F1I48___    -4.142689    -4.764782     0.188441    12.010700
+  24 C_F1I49___    -4.856348    -3.598572     0.485079    12.010700
+  28 C_F1I50___    -2.158888    -0.904123     0.346494    12.010700
+  32 C_F1I51___    -0.651117    -0.911138     0.113384    12.010700
+  36 C_F1I52___     0.112878     2.864370     0.188978    12.010700
+  40 C_F1I53___     1.514903     2.864370     0.188978    12.010700
+  44 C_F1I54___     2.183899     1.627617     0.213909    12.010700
+  48 C_F1I55___     1.459334     0.441918     0.198182    12.010700
+  52 C_F1I56___     0.054381     0.427136     0.178591    12.010700
+  56 C_F1I57___    -0.602546     1.663748     0.188978    12.010700
+  60 C_F1I58___     4.240568     5.479245     0.092173    12.010700
+  64 C_F1I59___     5.487328     5.700457    -0.531062    12.010700
+  68 C_F1I60___     5.946800     4.901441    -1.565190    12.010700
+  72 C_F1I61___     5.131019     3.853417    -2.015764    12.010700
+  76 C_F1I62___     3.903810     3.602767    -1.423426    12.010700
+  80 C_F1I63___     3.429293     4.384683    -0.343508    12.010700
+  84 C_F1I64___     3.909161     6.438288     1.166054    12.010700
+  88 H_F1I44___    -4.783377    -1.473280     0.769224     1.007940
+  92 H_F1I45___    -1.051909    -3.418342    -0.196726     1.007940
+  96 H_F1I46___    -5.927715    -3.673722     0.670946     1.007940
+ 100 H_F1I47___    -2.647592    -0.259096    -0.402872     1.007940
+ 104 H_F1I48___    -2.378493    -0.444476     1.324844     1.007940
+ 108 H_F1I49___    -0.443521    -1.358077    -0.874360     1.007940
+ 112 H_F1I50___    -0.176287    -1.582001     0.848253     1.007940
+ 116 H_F1I51___    -0.420788     3.816578     0.170906     1.007940
+ 120 H_F1I52___     3.272876     1.600782     0.262667     1.007940
+ 124 H_F1I53___     2.000110    -0.507868     0.219082     1.007940
+ 128 H_F1I54___    -1.692797     1.709424     0.178686     1.007940
+ 132 H_F2I55___     1.823228     4.810930     0.843251     1.007940
+ 136 H_F1I56___     6.079713     6.537765    -0.162053     1.007940
+ 140 H_F1I57___     6.913734     5.096591    -2.029146     1.007940
+ 144 H_F1I58___     5.451174     3.230592    -2.853851     1.007940
+ 148 H_F1I59___     3.271973     2.802485    -1.806040     1.007940
+ 152 H_F2I60___     2.565773     7.015584     2.358033     1.007940
+ 156 N_F1I44___     2.204281     4.094021     0.229721    14.006740
+ 160 O_F1I44___     2.623145     6.322616     1.668939    15.999400
+ 168 ClF1I44___    -1.827814    -6.090860    -0.426531    35.452700
+ 172 ClF1I45___    -4.981286    -6.283034     0.129494    35.452700
+
+basis No.  Species         x y z (AU)       Mass
+
+   4 C_F1I44___    -7.948864    -4.479922     1.013697    12.010700
+   8 C_F1I45___    -5.341698    -4.279377     0.552371    12.010700
+  12 C_F1I46___    -4.011575    -6.494026    -0.002118    12.010700
+  16 C_F1I47___    -5.228720    -8.838475    -0.104317    12.010700
+  20 C_F1I48___    -7.828552    -9.004137     0.356102    12.010700
+  24 C_F1I49___    -9.177171    -6.800318     0.916667    12.010700
+  28 C_F1I50___    -4.079708    -1.708545     0.654779    12.010700
+  32 C_F1I51___    -1.230433    -1.721802     0.214265    12.010700
+  36 C_F1I52___     0.213308     5.412878     0.357116    12.010700
+  40 C_F1I53___     2.862753     5.412878     0.357116    12.010700
+  44 C_F1I54___     4.126972     3.075751     0.404229    12.010700
+  48 C_F1I55___     2.757742     0.835104     0.374510    12.010700
+  52 C_F1I56___     0.102766     0.807171     0.337487    12.010700
+  56 C_F1I57___    -1.138648     3.144030     0.357116    12.010700
+  60 C_F1I58___     8.013516    10.354277     0.174182    12.010700
+  64 C_F1I59___    10.369551    10.772308    -1.003562    12.010700
+  68 C_F1I60___    11.237828     9.262385    -2.957782    12.010700
+  72 C_F1I61___     9.696225     7.281906    -3.809243    12.010700
+  76 C_F1I62___     7.377135     6.808246    -2.689886    12.010700
+  80 C_F1I63___     6.480427     8.285853    -0.649137    12.010700
+  84 C_F1I64___     7.387246    12.166605     2.203524    12.010700
+  88 H_F1I44___    -9.039276    -2.784097     1.453624     1.007940
+  92 H_F1I45___    -1.987821    -6.459734    -0.371759     1.007940
+  96 H_F1I46___   -11.201763    -6.942331     1.267904     1.007940
+ 100 H_F1I47___    -5.003226    -0.489621    -0.761318     1.007940
+ 104 H_F1I48___    -4.494703    -0.839939     2.503593     1.007940
+ 108 H_F1I49___    -0.838133    -2.566394    -1.652302     1.007940
+ 112 H_F1I50___    -0.333134    -2.989549     1.602966     1.007940
+ 116 H_F1I51___    -0.795174     7.212290     0.322966     1.007940
+ 120 H_F1I52___     6.184842     3.025041     0.496369     1.007940
+ 124 H_F1I53___     3.779661    -0.959732     0.414005     1.007940
+ 128 H_F1I54___    -3.198925     3.230344     0.337667     1.007940
+ 132 H_F2I55___     3.445402     9.091344     1.593514     1.007940
+ 136 H_F1I56___    11.488998    12.354590    -0.306236     1.007940
+ 140 H_F1I57___    13.065069     9.631164    -3.834531     1.007940
+ 144 H_F1I58___    10.301231     6.104937    -5.392999     1.007940
+ 148 H_F1I59___     6.183135     5.295931    -3.412922     1.007940
+ 152 H_F2I60___     4.848611    13.257538     4.456038     1.007940
+ 156 N_F1I44___     4.165490     7.736582     0.434109    14.006740
+ 160 O_F1I44___     4.957028    11.948018     3.153838    15.999400
+ 168 ClF1I44___    -3.454070   -11.510063    -0.806027    35.452700
+ 172 ClF1I45___    -9.413270   -11.873219     0.244708    35.452700

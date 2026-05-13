@@ -1,0 +1,24 @@
+#!/bin/bash
+#SBATCH --job-name={{prefix}}.opt
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node={{procs}}
+#SBATCH --mail-type=NONE
+#SBATCH --array={{array_ids}}
+#SBATCH --time={{walltime}}
+#SBATCH --mem=60GB
+#SBATCH --output="opt-{{prefix}}_%a-%A.out"
+
+export GAUSS_PDEF={{procs}}
+export GAUSS_MDEF=58GB
+DIR={{workdir}}
+com_file={{prefix}}_${SLURM_ARRAY_TASK_ID}{{suffix}}
+NAME=${com_file%{{suffix}}}
+echo "Geometry optimisation for $NAME"
+workdir="${DIR}/${NAME}"
+mkdir -p ${workdir}
+cp  ${com_file} ${workdir}
+cd ${workdir}
+g09 ${com_file}
+pexit=$?
+echo "exiting with status ${pexit}"
+exit $pexit

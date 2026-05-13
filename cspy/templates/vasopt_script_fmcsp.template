@@ -1,0 +1,209 @@
+#!/bin/bash
+#SBATCH --job-name=VASOPT{{mname}}
+#SBATCH --partition=batch
+#SBATCH --time=0:30:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=40
+#SBATCH --ntasks=40
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user={{user}}@soton.ac.uk
+
+WD=`pwd`
+
+. ~/.bashrc
+conda activate {{conda}}
+
+is_there_failed_structures () {
+if [ -f "failed_set_of_vasp_opt.dat" ];then
+  if [ -f "input-for-vasp-opt.txt" ] && [ -s "input-for-vasp-opt.txt" ];then
+    grep -v -f failed_set_of_vasp_opt.dat input-for-vasp-opt.txt > input-for-vasp-opt.txt.tmp
+    mv input-for-vasp-opt.txt.tmp input-for-vasp-opt.txt
+  fi
+fi
+if [ -f "symmetry_failed_opt.dat" ];then
+  if [ -f "input-for-vasp-opt.txt" ] && [ -s "input-for-vasp-opt.txt" ];then
+    grep -v -f symmetry_failed_opt.dat input-for-vasp-opt.txt > input-for-vasp-opt.txt.tmp
+    mv input-for-vasp-opt.txt.tmp input-for-vasp-opt.txt
+  fi
+fi
+}
+
+check_geom () {
+GEOM=$(grep "reached required accuracy - stopping structural energy minimisation" OUTCAR.$1)
+vars=$(echo "$2" | cut -d '-' -f 3,4)
+if [ -z "$GEOM" ];then
+  INCAR_STEPS=$(grep 'NSW' INCAR | awk '{print $3}')
+  STEPS=$(grep 'Iteration    ' OUTCAR.$1 | head --line=1 | awk '{print $3}' | awk '{sub(/\(/, "", $1); print $1}')
+  if [ $STEPS -eq $INCAR_STEPS ];then
+    echo $2 >> ../input-for-vasp-opt.txt
+  else
+    echo $vars >> ../failed_set_of_vasp_opt.dat
+  fi
+else
+  if [ "$1" -eq "300" ];then
+    echo $2 >> ../input-for-vasp-opt.txt
+  elif [ "$1" -eq "500" ];then
+    echo $vars >> ../finished.dat
+  fi
+fi
+}
+
+if [ ! -d "VASP-OPT" ];then
+  rm -rf vasp-sp-energy.dat
+  cd VASP-SP
+  if [ -f "failed_set_of_vasp_sp.dat" ];then
+    FAILED=$(wc -l failed_set_of_vasp_sp.dat | awk '{print $1}')
+  else
+    FAILED=0
+  fi
+  if [ -f "symmetry_fails_sp.dat" ];then
+    SYMMETRY_FAILS=$(wc -l symmetry_fails_sp.dat | awk '{print $1}')
+  else
+    SYMMETRY_FAILS=0
+  fi
+  FINISHED=$(wc -l finished.dat | awk '{print $1}')
+  ALL=$(wc -l ../Unique-{{vasp_sp_offset}}/input-for-vasp-sp.txt | awk '{print $1}')
+  TOTAL=$(($FAILED+$FINISHED+${SYMMETRY_FAILS}))
+  if [ $TOTAL -lt $ALL ];then
+    echo "VASOPT{{mname}}:    + There are VASP-SP crystals not converged!" 
+    echo "VASOPT{{mname}}:    + Check finished.dat and failed_set_of_vasp_sp.dat files within VASP-SP folder."
+    echo "VASOPT{{mname}}:    + Terminating VASOPT{{mname}}.sh script."
+    cd ..
+    exit
+  fi
+
+  cp {{mname}}.dat {{mname}}.dat.vasopt
+  cp finished.dat {{mname}}.dat
+  for var1 in `cat {{mname}}.dat`;do
+    var2={{mname}}-QR-${var1}-3-OPT-1
+    cd $var2
+    if [ -f "OUTCAR" ];then
+      ENER=`grep 'free  energy   TOTEN  =' OUTCAR | awk '{print $5}'`
+      ENER=$(tail --line=1 OSZICAR | awk '{print $3}')
+      ENER2F=$(echo "$(awk "BEGIN {print $ENER}")") 
+      NIONS=`grep 'number of ions' OUTCAR | awk '{print $12}'`
+      NMOL=$(( NIONS / {{natoms}} ))
+      ENORM=$(echo "scale=4; $ENER2F / $NMOL" | bc)
+      E2kjmol=$(echo "scale=4; $ENORM*96.48530749925793" | bc)
+      echo  "$var2  $NIONS  $NMOL  $ENER2F  $ENORM  $E2kjmol" >> ../../vasp-sp-energy.dat
+    else
+      echo -e "\nVASOPT{{mname}}:    Crystal ${var2} ------------" >> $WD/out.log
+      echo "VASOPT{{mname}}:       + OUTCAR file does not exists!!" >> $WD/out.log
+      exit
+    fi 
+    cd ..
+  done
+  cd ..
+
+# Sorting energies of vasp-sp-energy.dat file 
+  sort -k6,6n vasp-sp-energy.dat > vasp-sp-energy-ordered.txt
+
+
+# Final list of crystals to be optimised with VASP. 
+  awk 'NR == 1 { threshold = $6 + {{vasp_opt_offset}} } $6 < threshold' vasp-sp-energy-ordered.txt > input-for-vasp-opt.txt
+  STRUCTURES=`awk '{print $1}' input-for-vasp-opt.txt`
+
+  OLD="NSW    = 0 "
+  NEW="NSW    = 400 "
+  OLD_IB="IBRION = -1 "
+  NEW_IB="IBRION = 1 "
+  OLD_ENCUT="ENCUT = 500 "
+  NEW_ENCUT="ENCUT = 300 "
+  OLD_WAVE="LWAVE = .FALSE."
+  NEW_WAVE="LWAVE = .TRUE."
+  mkdir VASP-OPT
+  cd VASP-OPT
+  for var in $STRUCTURES;do
+    if [ ! -d "$var" ];then
+      mkdir $var
+    fi
+    cd $var
+    cp ../../VASP-SP/$var/KPOINTS ../../VASP-SP/$var/INCAR .
+    cp ../../VASP-SP/$var/POTCAR ../../VASP-SP/$var/POSCAR .
+    # If the name of the molecule has '-' cut command will fail, i.e., 
+    # it has to be XXXX-QR-SG-ID-3-OPT-1 with SG=Space group & ID=crystal id 
+    var2=$(echo "${var}" | cut -d '-' -f 3,4) 
+    sed -i "s%$OLD%$NEW%g" ./INCAR
+    sed -i "s%${OLD_IB}%${NEW_IB}%g" ./INCAR
+    sed -i "s%${OLD_ENCUT}%${NEW_ENCUT}%g" ./INCAR
+    sed -i "s%${OLD_WAVE}%${NEW_WAVE}%g" ./INCAR
+python3 - <<END
+from cspy.fmcspworkflow.fmcspwf import VASP_opt_script_generator 
+VASP_opt_script_generator("${var2}","batch","{{vasp_opt_offset}}","{{mname}}")
+END
+    sbatch QN${var2}.sh
+    cd ..
+  done
+  cd ..
+  echo "VASOPT{{mname}}:    VASP-OPT folder and files generated.....Done!" >> $WD/out.log
+
+else
+
+  STRUCTURES=($(awk '{print $1}' input-for-vasp-opt.txt))
+  cd VASP-OPT
+
+  rm -rf finished.dat input-for-vasp-opt.txt
+  touch "finished.dat"
+  touch "input-for-vasp-opt.txt"
+  for var1 in "${STRUCTURES[@]}"; do
+    cd $var1
+    if [ -f "OUTCAR.500" ];then
+      check_geom "500" $var1
+    else
+      if [ -f "OUTCAR.300" ];then
+        check_geom "300" $var1
+      else
+        echo $var1 >> ../input-for-vasp-opt.txt
+      fi
+    fi
+    cd ..
+  done
+
+  if [ -f "input-for-vasp-opt.txt" ] && [ -s "input-for-vasp-opt.txt" ];then
+
+    is_there_failed_structures
+
+    for var1 in `cat input-for-vasp-opt.txt`;do
+      var2=$(echo "${var1}" | cut -d '-' -f 3,4)
+      cd $var1
+python3 - <<END
+from cspy.fmcspworkflow.fmcspwf import VASP_opt_script_generator 
+VASP_opt_script_generator("${var2}","batch","{{vasp_opt_offset}}","{{mname}}")
+END
+      if [ -f "CONTCAR.500" ] && [ -s "CONTCAR.500" ];then 
+        cp CONTCAR.500 POSCAR
+        OLD='ENCUT=("300" "500")'
+        NEW='ENCUT=("500")'
+        sed -i "s|${OLD}|${NEW}|g" ./QN${var2}.sh  
+      elif [ -f "CONTCAR.500" ] && [ ! -s "CONTCAR.500" ];then
+        rm -rf CONTCAR.500
+        cp ../../VASP-SP/${var1}/POSCAR .
+      elif [ -f "CONTCAR.300" ] && [ -s "CONTCAR.300" ];then
+        cp CONTCAR.300 POSCAR
+      elif [ -f "CONTCAR.300" ] && [ ! -s "CONTCAR.300" ];then
+        rm -rf CONTCAR.300
+        cp ../../VASP-SP/${var1}/POSCAR .
+      else
+        OLD="NSW    = 0 "
+        NEW="NSW    = 400 "
+        OLD_IB="IBRION = -1 "
+        NEW_IB="IBRION = 1 "
+        OLD_ENCUT="ENCUT = 500 "
+        NEW_ENCUT="ENCUT = 300 "
+        OLD_WAVE="LWAVE = .FALSE."
+        NEW_WAVE="LWAVE = .TRUE."
+        cp ../../VASP-SP/${var1}/POSCAR .
+        cp ../../VASP-SP/${var1}/INCAR .
+        sed -i "s%$OLD%$NEW%g" ./INCAR
+        sed -i "s%${OLD_IB}%${NEW_IB}%g" ./INCAR
+        sed -i "s%${OLD_ENCUT}%${NEW_ENCUT}%g" ./INCAR
+        sed -i "s%${OLD_WAVE}%${NEW_WAVE}%g" ./INCAR
+      fi
+      sbatch QN${var2}.sh
+      cd ..
+    done
+
+  fi
+
+fi
+

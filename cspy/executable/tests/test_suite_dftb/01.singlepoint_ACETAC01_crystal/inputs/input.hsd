@@ -1,0 +1,45 @@
+Geometry = GenFormat {
+    <<< geometry.gen
+}
+Hamiltonian = DFTB {
+    Scc = Yes
+    SlaterKosterFiles = Type2FileNames {
+        Prefix = ../../parameter_sets/3ob-3-1/
+        Separator = "-"
+        Suffix = ".skf"
+    }
+
+    ThirdOrderFull = yes
+    SCCTolerance = 1e-05
+    MaxSCCIterations = 100
+    HCorrection = Damping{
+        Exponent = 4.0
+    }
+
+    Dispersion = DftD3 {
+        Damping = BeckeJohnson {
+            a1 = 0.841
+            a2 = 3.834
+        }
+        s6 = 1.0
+        s8 = 0.0
+    }
+
+    KPointsAndWeights = SupercellFolding {                           
+               2 0 0                              
+               0 5 0
+               0 0 4
+               0.5 0 0.5                            
+           } 
+
+    MaxAngularMomentum {
+         C = p
+         H = s
+         O = p
+     }
+    HubbardDerivs {
+        C = -0.1492
+        H = -0.1857
+        O = -0.1575
+    }
+}

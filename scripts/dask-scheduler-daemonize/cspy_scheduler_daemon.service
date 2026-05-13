@@ -1,0 +1,9 @@
+[Unit]
+Description=cspy dask scheduler
+
+[Install]
+WantedBy=default.target
+
+[Service]
+ExecStart=bash /home/prs1m18/repos/cspy/scripts/local-scheduler/cspy_scheduler_daemon.sh
+Restart=on-failure

@@ -1,0 +1,23 @@
+TITLE {{title}}
+{% if verbose -%}
+VERBOSE
+{% endif -%}
+FILE {{formchk}} DENSITY {{density}}
+ 
+{{units}}
+MULTIPOLES
+SWITCH {{dma_switch}}
+LIMIT {{limit}}
+PUNCH {{punch}}
+{%- if modified_sites %}
+DELETE ALL
+{%- endif %}
+{%- for label, x, y, z in modified_sites %}
+ADD {{label}} {{x}} {{y}} {{z}}
+{%- endfor %}
+{%- if hydrogen_radius %}
+RADIUS H {{hydrogen_radius}}
+{%- endif %}
+START
+ 
+FINISH

@@ -1,0 +1,160 @@
+[project]
+name = "cspy"
+version = "4.4.8"
+requires-python = ">=3.11, <3.12" # Very restrictive
+readme = "README.rst"
+description = "Crystal structure prediction using python"
+authors = [
+    {name = "Graeme M. Day"},
+    {name = "Sophie Bennett"},
+    {name = "James Bramley"},
+    {name = "Patrick W. V. Butler"},
+    {name = "Peter J. Bygrave"},
+    {name = "David H. Case"},
+    {name = "Chi Y. Cheng"},
+    {name = "Ramon Cuadrado"},
+    {name = "Joshua Dickman"},
+    {name = "Jordan Dorrell"},
+    {name = "Lucia Gigli"},
+    {name = "Joseph Glover"},
+    {name = "Roohollah Hafizi"},
+    {name = "Jay Johal"},
+    {name = "Pedro Juan Royo"},
+    {name = "Jennie Martin"},
+    {name = "David P. McMahon"},
+    {name = "Jonas Nyman"},
+    {name = "Peter R. Spackman"},
+    {name = "Christopher R. Taylor"},
+    {name = "Jack Yang"},
+    {name = "Shiyue Yang"},
+]
+keywords=[
+    "crystal structure prediction",
+    "crystal",
+    "quantum chemistry",
+    "job",
+    "hpc",
+    "high performance computing",
+    "forcefield",
+    "molecular crystals",
+    "pair potentials",
+    "distributed multipoles",
+]
+classifiers=[
+    "Programming Language :: Python",
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "rdkit==2024.09.3",
+    "scikit-learn>=1.5.2, <1.6", # Upper bound due to CSD API
+    "pandas>=2.2.3, <2.3.3", # applymap is deprecated. Lets fix this after iridis 5 is shut down
+    "ase>=3.24.0",
+    "scipy>=1.13.1",
+    "matplotlib>=3.10.1",
+    "mpi4py>=4.0.3",
+    "rtree>=1.4.0",
+    "distributed>=2025.2.0", # Do we need this?
+    "jinja2>=3.1.6",
+    "msgpack>=1.1.0",
+    "numpy>=1.24.1, <2.0.0",
+    "paramiko>=3.5.1",
+    "pip>=25.0.01",
+    "psutil>=7.0.0",
+    "six>=1.17.0",
+    "sympy>=1.13.3",
+    "wheel>=0.45.1",
+    "toml>=0.10.2",
+    "tqdm>=4.67.1",
+    "spglib>=2.6.0",
+    "networkx>=3.4.2",
+    "attrs>=25.3.0",
+    "pymatgen>=2025, <2026",
+    "mpich>4.0.0, <5.0.0"
+]
+
+[project.optional-dependencies]
+extras = [
+    "openbabel>=3.1.1.1", # Requires installing open babel from http://openbabel.org/ or raises error on build
+]
+nn = [
+    "mace-torch==0.3.12",
+]
+test = [
+    "pytest>=7.4.0",
+    "build",
+]
+dev = [
+    "cspy[test]",
+    "ipython>=9.0.0",
+    "ruff>=0.5.0",
+    "pre-commit>=4.3.0",
+]
+docs = [
+    "sphinx>=8.2.3",
+]
+all = [
+    "cspy[dev,test,nn,docs]",
+]
+full = [
+    "cspy[extras,dev,test,nn,docs]",
+]
+
+[project.scripts]
+cspy-csp = "cspy.apps.csp:main"
+cspy-flex = "cspy.apps.csp_flex:main"
+cspy-moldis = "cspy.apps.mol_dis:main"
+cspy-db = "cspy.apps.db:main"
+cspy-clg = "cspy.apps.clg:main"
+cspy-dma = "cspy.apps.dma:main"
+cspy-opt = "cspy.apps.opt:main"
+cspy-mulfit = "cspy.apps.dma:main_mulfit"
+cspy-axis = "cspy.crystal.neighcrys_axis:main"
+cspy-qrbh = "cspy.apps.qr_bh:main"
+cspy-threshold = "cspy.apps.threshold:main"
+cspy-reoptimize = "cspy.distributed.reoptimization:main"
+cspy-reoptimise = "cspy.distributed.reoptimization:main"
+cspy-conf = "cspy.apps.conf:main"
+cspy-gplus = "cspy.apps.gplus:main"
+cspy-threshold-utils = "cspy.apps.threshold_utils:main"
+cspy-sauce = "cspy.apps.sauce:main"
+cspy-templating = "cspy.apps.templating:main"
+
+[build-system]
+requires = [
+    "setuptools>=80.0", 
+    "setuptools-scm>=8", 
+    "numpy>=1.24.1,<2.0", 
+    "cython>=3.0.12", 
+    "meson>=1.9.0",
+    "ninja>=1.8.2",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["cspy"]
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F"]
+ignore = ["F401"]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+lines-between-types = 1
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = true

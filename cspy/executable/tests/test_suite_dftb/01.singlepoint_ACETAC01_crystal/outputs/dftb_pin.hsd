@@ -1,0 +1,147 @@
+Geometry = GenFormat {
+32 S
+C H O
+1 1 2.1974810000 1.1689220000 0.9859221000
+2 1 7.8449140000 0.5063420000 2.0081889000
+3 1 8.8524810000 0.8760780000 0.9859221000
+4 1 5.4650860000 3.5836580000 4.8926889000
+5 1 12.1200860000 2.5513420000 4.8926889000
+6 1 11.1125190000 2.9210780000 3.8704221000
+7 1 4.4575190000 3.2139220000 3.8704221000
+8 1 1.1899140000 1.5386580000 2.0081889000
+9 2 6.2157700000 0.1636000000 4.4940510000
+10 2 7.3604300000 1.3578800000 2.4287490000
+11 2 7.0942300000 3.9264000000 1.6095510000
+12 2 8.3586800000 4.0491000000 2.8325790000
+13 2 9.0774200000 1.8364100000 5.0997960000
+14 2 2.4224200000 0.2085900000 5.0997960000
+15 2 5.9495700000 2.7321200000 5.3132490000
+16 2 4.2325800000 2.2535900000 2.2152960000
+17 2 12.6045700000 3.4028800000 5.3132490000
+18 2 12.8707700000 1.8814000000 4.4940510000
+19 2 1.7036800000 2.0859000000 2.8325790000
+20 2 10.8875800000 3.8814100000 2.2152960000
+21 2 0.4392300000 2.2086000000 1.6095510000
+22 2 0.7054300000 0.6871200000 2.4287490000
+23 2 4.9513200000 0.0409000000 5.7170790000
+24 2 11.6063200000 2.0041000000 5.7170790000
+25 3 9.9439010000 2.5754730000 3.9050361000
+26 3 8.3679970000 1.6053250000 0.0000000000
+27 3 4.9420030000 2.4846750000 2.8845000000
+28 3 11.5970030000 3.6503250000 2.8845000000
+29 3 3.3660990000 1.5145270000 1.0205361000
+30 3 1.7129970000 0.4396750000 0.0000000000
+31 3 10.0210990000 0.5304730000 1.0205361000
+32 3 3.2889010000 3.5595270000 3.9050361000
+0.000000 0.000000 0.000000
+13.3100000000 0.0000000000 0.0000000000
+0.0000000000 4.0900000000 0.0000000000
+0.0000000000 0.0000000000 5.7690000000
+}
+Hamiltonian = DFTB {
+  Scc = Yes
+  SlaterKosterFiles = Type2FileNames {
+    Prefix = ../../parameter_sets/3ob-3-1/
+    Separator = "-"
+    Suffix = ".skf"
+    LowerCaseTypeName = No
+  }
+  ThirdOrderFull = yes
+  SCCTolerance = 1e-05
+  MaxSCCIterations = 100
+  HCorrection = Damping {
+    Exponent = 4.0
+  }
+  Dispersion = DftD3 {
+    Damping = BeckeJohnson {
+      a1 = 0.841
+      a2 = 3.834
+    }
+    s6 = 1.0
+    s8 = 0.0
+    cutoff = 94.868329805051374
+    cutoffcn = 40.000000000000000
+    threebody = No
+    hhrepulsion = No
+  }
+  KPointsAndWeights = SupercellFolding {
+2 0 0
+0 5 0
+0 0 4
+0.5 0 0.5
+  }
+  MaxAngularMomentum = {
+    C = p
+    H = s
+    O = p
+  }
+  HubbardDerivs = {
+    C = -0.1492
+    H = -0.1857
+    O = -0.1575
+  }
+  PolynomialRepulsive = {}
+  ShellResolvedSCC = No
+  OldSKInterpolation = No
+  RangeSeparated = None {}
+  ReadInitialCharges = No
+  InitialCharges = {}
+  EwaldParameter = 0.0000000000000000
+  EwaldTolerance = 1.0000000000000001E-009
+  ConvergentSCCOnly = Yes
+  SpinPolarisation = {}
+  ElectricField = {}
+  Solver = RelativelyRobust {}
+  Charge = 0.0000000000000000
+  OnSiteCorrection = {}
+  Solvation = {}
+  Electrostatics = GammaFunctional {}
+  ThirdOrder = No
+  Differentiation = FiniteDiff {
+    Delta = 1.2207031250000000E-004
+  }
+  ForceEvaluation = "Traditional"
+  Mixer = Broyden {
+    MixingParameter = 0.20000000000000001
+    InverseJacobiWeight = 1.0000000000000000E-002
+    MinimalWeight = 1.0000000000000000
+    MaximalWeight = 100000.00000000000
+    WeightFactor = 1.0000000000000000E-002
+  }
+  Filling = Fermi {
+    Temperature = 0.0000000000000000
+    IndependentKFilling = No
+  }
+}
+ParserOptions = {
+  ParserVersion = 10
+  WriteHSDInput = Yes
+  StopAfterParsing = No
+  IgnoreUnprocessedNodes = No
+}
+Reks = None {}
+Driver = {}
+Analysis = {
+  ProjectStates = {}
+  WriteEigenvectors = No
+  WriteBandOut = Yes
+  MullikenAnalysis = Yes
+  WriteNetCharges = No
+  AtomResolvedEnergies = No
+  CalculateForces = No
+}
+ExcitedState = {}
+Options = {
+  WriteDetailedOut = Yes
+  WriteAutotestTag = No
+  WriteDetailedXML = No
+  WriteResultsTag = No
+  RestartFrequency = 20
+  RandomSeed = 0
+  WriteHS = No
+  WriteRealHS = No
+  MinimiseMemoryUsage = No
+  ShowFoldedCoords = No
+  TimingVerbosity = 1
+  WriteChargesAsText = No
+}

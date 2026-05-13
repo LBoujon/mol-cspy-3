@@ -1,0 +1,16 @@
+#!/bin/bash
+#PBS -N {{prefix}}.dma
+#PBS -l walltime={{walltime}}
+#PBS -t {{array_ids}}
+#PBS -l nodes=1:ppn={{procs}}
+#PBS -l mem={{mem}}
+#PBS -j oe
+#PBS -o "dma-{{prefix}}_${PBS_ARRAYID}-${PBS_JOBID}.out"
+
+conda activate cspy
+DIR={{workdir}}
+cd ${DIR}/{{prefix}}_${PBS_ARRAYID}
+cspy-dma {{prefix}}_${PBS_ARRAYID}{{suffix}} -p {{force_field_type}} -j {{procs}}
+pexit=$?
+echo "exiting with status ${pexit}"
+exit $pexit

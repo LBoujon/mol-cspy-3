@@ -1,0 +1,6 @@
+To run NEIGHCRYS, type
+   cp NEIGHCRYS_input/* .
+   neighcrys.out < neighcrys_answers
+
+To run DMACRYS, type
+   dmacrys.out < BTXXII_20.dmain > BTXXII_20.dmaout

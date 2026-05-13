@@ -1,0 +1,9 @@
+The reasons for running this crystal structure in extended mode are given in the "reasons" directory.  The fort.21 in this case has an atom that is not included in 
+the molecule, as it is too many unit cells from the centre of mass of the molecule.
+
+To run NEIGHCRYS, type
+   cp NEIGHCRYS_input/* .
+   neighcrys.out < neighcrys_answers
+
+To run DMACRYS, type
+   dmacrys.out < BTXXIII_16.dmain > BTXXIII_16.dmaout

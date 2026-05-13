@@ -1,0 +1,6 @@
+To run NEIGHCRYS, type
+   cp NEIGHCRYS_input/* .
+   neighcrys.out < neighcrys_answers
+
+To run DMACRYS, type
+   dmacrys.out < PYR1opt.dmain > PYR1opt.dmaout

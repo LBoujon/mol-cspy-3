@@ -1,0 +1,8 @@
+To run NEIGHCRYS, type
+   cp NEIGHCRYS_input/* .
+   neighcrys.out < neighcrys_answers
+
+In order to use your NEIGHCRYS output files as DMACRYS input, add a line to say "PRES 0.5 GPa" after the CONP line of 4FTHP.dmain
+
+To run DMACRYS, type
+   dmacrys.out < 4FTHP.dmain > 4FTHP.dmaout

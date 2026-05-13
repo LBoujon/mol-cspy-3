@@ -1,0 +1,37 @@
+{{'E' if extended_mode else 'I'}}
+{{res_filename}}
+{{bondlength_filename}}
+{{max_intermolecular_distance}}
+{{'y' if insert_bond_centre_sites else 'n'}}
+{{'y' if standardise_bonds else 'n'}}
+{%- if extended_mode %}
+{{'y' if wcal_ngcv else 'n'}}
+{{step_size}}
+{{ '%d' | format(max_iterations)}}
+{{vdw_cutoff}}
+{{ '%d' | format(connectivity_search_max_cells)}}
+{%- endif %}
+{{potential_type}}
+{%- if labels_filename %}
+{{labels_filename}}
+{%- endif %}
+{{'y' if foreshorten_hydrogens else 'n'}}{{'\n'}}
+{%- for subgroup in symmetry_subgroup -%}
+{{ '%d' | format(subgroup)}}{{'\n'}}
+{%- endfor -%}
+{{'y' if multipole_filename else 'n'}}
+{%- if multipole_filename %}
+{{multipole_filename}}
+{%- endif %}
+{{'y' if axis_filename else 'n'}}
+{%- if axis_filename %}
+{{axis_filename}}
+{{'y' if paste_molecular_structure_filename else 'n'}}
+{%- if paste_molecular_structure_filename %}
+{{paste_molecular_structure_filename}}
+{%- endif %}
+{%- endif %}
+{{'y' if potential_filename else 'n'}}
+{%- if potential_filename %}
+{{potential_filename}}
+{%- endif %}

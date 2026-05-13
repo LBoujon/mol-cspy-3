@@ -1,0 +1,93 @@
+ ============================================================================== 
+ 
+ Phonon calculations in DMAREL or DMACRYS should reference:
+ G.M.Day, S.L.Price and M. Leslie, 
+ J. Phys. Chem. B (2003), vol.107, p.10919-10933.
+ 
+ Elastic constant calculations in DMAREL or DMACRYS should reference:
+ G.M.Day, S.L.Price and M. Leslie, 
+ Crystal Growth & Design (2001), vol.1, p.13-27.
+ 
+ Elastic Stiffness Matrix (Pa)
+    0.16884E+11    0.78175E+10    0.94347E+10    0.00000E+00   -0.34784E+10    0.00000E+00
+    0.78175E+10    0.32471E+11    0.34696E+10    0.00000E+00    0.32893E+09    0.00000E+00
+    0.94347E+10    0.34696E+10    0.13723E+11    0.00000E+00   -0.68397E+09    0.00000E+00
+    0.00000E+00    0.00000E+00    0.00000E+00    0.59966E+10    0.00000E+00   -0.63703E+09
+   -0.34784E+10    0.32893E+09   -0.68397E+09    0.00000E+00    0.11351E+11    0.00000E+00
+    0.00000E+00    0.00000E+00    0.00000E+00   -0.63703E+09    0.00000E+00    0.11398E+11
+ 
+ density (g/cm**3) =   1.32900000000000     
+ density (kg/m**3) =   1329.00000000000     
+ Cell lengths:
+ mod(A)=   7.87237310081205     
+ mod(B)=   11.0294480555465     
+ mod(C)=   13.6105969609676     
+ Frequencies (cm-1)
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+   42.3756000000000     
+   45.5384000000000     
+   47.4784000000000     
+   50.1256000000000     
+   53.7867000000000     
+   53.7961000000000     
+   57.7942000000000     
+   67.5939000000000     
+   69.7281000000000     
+   76.6065000000000     
+   82.4652000000000     
+   84.4618000000000     
+   86.8428000000000     
+   91.6871000000000     
+   100.149500000000     
+   102.281500000000     
+   105.397900000000     
+   108.194900000000     
+   127.880000000000     
+   130.462400000000     
+   134.377000000000     
+ Reciprocal Lattice vectors:
+ A*: ( 0.79878E+00, 0.00000E+00, 0.13210E-03)
+ mod(A*)= 0.79878E+00
+ B*: ( 0.00000E+00, 0.56967E+00, 0.00000E+00)
+ mod(B*)= 0.56967E+00
+ C*: ( 0.18550E-01, 0.00000E+00, 0.46164E+00)
+ mod(C*)= 0.46201E+00
+ ----------------------------
+ Average linearly extrapolated Debye frequency:
+ (scaled by   1.00000000000000      )
+                        wD (cm-1) =    59.8187608576981     
+ 
+ Average sinusoidaly extrapolated Debye frequency:
+ (scaled by   1.00000000000000      )
+                        wD (cm-1) =    45.4260764580391     
+ !! Using this value for the Debye frequency !!
+ 
+ Zero-Point Energy Calculations:
+ ZPE from optical modes (kJ/mol) =   2.57051461579617     
+ ZPE from acoustic modes (kJ/mol) =  0.152836113079392     
+ Total ZPE (kJ/mol) =    2.72335072887557     
+ -----------------------
+ 
+ entropy worked out for T (K) =    298.000000000000     
+ -------------------------------------
+ Entropy from optical modes (J/molK) =  -87.2146696803396     
+ Debye x =   0.219320687518172     
+ Debye function =   0.920152602545306     
+ kD(x) bit =   -1.91265860137880     
+ entropy from acoustical modes (J/molK) :
+ from Debye fiunction bit (J/molK) =   -2.07364893717513     
+ from other bit (J/molK) =   -15.7096067768345     
+ Total Entropy (J/molK) =   -104.997925394349     
+ 
+ thermal energy worked out for T (K) =   298.000000000000     
+ --------------------------------------------
+ thermal E from optical modes (kJ/mol) =  -15.3634642623644     
+ thermal E from -kTD(x) (kJ/mol) = -0.569972263210882     
+ thermal E from second bit (kJ/mol) =  -3.01950438657552     
+ Total Thermal Energy (kJ/mol) =   -18.9529409121508     
+ ---------------------------------
+ Vibrational Free Energy (including ZPE):
+                     Fvib (kJ/mol) =  -16.2295901832753     
+ ---------------------------------

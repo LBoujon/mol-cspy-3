@@ -1,0 +1,91 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+
+## [3.0.0] - 13/05/2026
+- Rebased mol-CSPy to restablish git trace with developer's internal branch
+- Introduced CspyApp and AppHeader classes
+    - Major apps, when run, will now print a header with relevant information
+    - Centralised code used for setting up mol-CSPy apps
+- Introduced ASE interface
+    - ASE may now will be used for geometry optimisations / singlepoints
+    - We support several simple calculators by default
+        - TIP3P
+        - TIP4P
+        - Lennard-Jones
+        - Morse
+        - dev-calculator (not for production use)
+        - n2p2 (example model bundled with cspy)
+        - MACE (models must be provided)
+    - We also support custom user-created calculators
+        - Calculator needs only be dropped into cspy/ase/calculators
+        - See dev-calculator.py or n2p2.py as examples
+- Flex
+    - Implemented method for CSP on molecules with flexibility
+    - conf app introduced to sample conformers from optimised molecule
+    - mol_dis app introduced to distort molecules around conformational minima
+    - cspy_flex app introduced for running cspy where distorted conformers are sampled from a database
+    - See paper for full details
+- Thresholding
+    - Running threshold jobs still uses the same commands as previously
+    - To make life easier a `cspy-threshold-utils` app has been added
+        - Can be used to create the disconnectivity graphs
+        - Can merge multiple threshold databases into a single one
+        - Can be used to setup the initial crystal structures, ensuring they have the right number of molecules
+- Introduced Sensible Asymmetric Units for Crystal Exploration (SAUCE)
+    - A method for efficient multicomponent CSP
+    - Apps/sauce.py offers several sauce related functions
+    - In its simplest use case, SAUCE can be enabled as a flag in cspy-csp
+    - See paper for full details
+- Introduced gplus app
+    - Used to efficiently generate multicomponent CSP when the same molecule/ions is used in different systems
+    - gplus stores single molecule/ion input files into a database, and can then combine those input files for a multicomponent system
+- Added Templating
+    - A method for producing unoptimised crystal structures of a target molecule, that are analogous to a given set of template crystal structures
+    - Functions in templating/analog_production.py and templating/analog_production_ccdc.py offer related functions
+    - Output of replace_molecules_by_substructure method of crystal.py edited to return new asymmetric unit molecules, and the RMSDS of the overlays
+- New cspy-db utility
+    - cspy-db info can be used to summarise the content of a cspy database
+    - cspy-db plot can be used to plot the landscape of a cspy database
+- Updated default parameters
+    - cspy_defaults.toml file is now blank
+    - mol-CSPy will no longer try to read parameters from hidden .cspy.toml file
+    - default dmacrys and pmin timings changed to 1200 seconds
+    - default basis set for multiploe recalculation following DFTB+ in relevant multi step cspy_reopt calculations is now 6-311G** 
+
+## [2.0.0] - 04/12/2025
+- Move build backend to not depend on deprecated `numpy.distutils`
+- Move most build instructions and dependencies from setup.py to pyproject.toml
+
+
+## [2.0.0] - 04/12/2025
+- Move build backend to not depend on deprecated `numpy.distutils`
+- Move most build instructions and dependencies from setup.py to pyproject.toml
+
+
+## [1.1.1] - 12/03/2025 (Based on #PR 6 & 7)
+- Added bug fix for issue #5
+- Added ability for cspy-csp command to parse space group and number of valid structures to sample from TOML file.
+
+
+## [1.1.0] - 27/01/2025 (Based on #PR 5)
+- Added interface to dftb+ for use in csp, reoptimize and opt apps
+- Crystal and Molecule classes updated to handle GEN file format
+- Tidied up halides potential files into one file.
+- Added D3 dispersion to default route commands for Gaussian calculations
+- Updated docs requirements file to account for changes in v1.0.0
+
+
+## [1.0.0] - 09-01-2025 (Based on #PR 2)
+Many thanks to Alexander Humeniuk (@humeniuka) for contributing to this release.
+
+- Updated conda/cspy.yml with various changes to deal with deprecated functions, unusued packages and channel priority.
+- Added a fall back to Gaussian09 if Gaussian16 is in users PATH
+- Added __rmul__ method to cvecto3d.pyx to deal with multiplication error with floats and cvector3d objects
+- Added PyMatGen dependency to perform PXRD calculations for users that can not access PLATON.
+- Fixed missing molecule_id column in cspy/db/info.py
+- Added fit_boron potential to list of default potentials
+
+
+## [0.1.0] - 30-05-2024
+- Initial commit from internal private repository

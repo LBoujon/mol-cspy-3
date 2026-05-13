@@ -1,0 +1,14 @@
+#!/bin/sh 
+APPLICATION_BASE=compack
+
+BINDIR=`dirname $0`
+RUNSCRIPT=$BINDIR/run_application.sh
+
+if test ! -x $RUNSCRIPT ; then
+	echo "Fatal error: $0 $RUNSCRIPT is either missing or not executable." >&2
+	exit 1
+fi
+
+#CCDC=CCDC_MERCURY
+
+. $RUNSCRIPT $*

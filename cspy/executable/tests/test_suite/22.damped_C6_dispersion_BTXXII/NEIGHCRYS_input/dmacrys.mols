@@ -1,0 +1,6 @@
+MOLX 1
+X LINE C_A1_1____ C_A6_4____ 3
+Y PLANE  C_A1_1____ C_A6_4____ 3 C_A2_2____ 1
+DDMP   2.47349488
+ENDS
+

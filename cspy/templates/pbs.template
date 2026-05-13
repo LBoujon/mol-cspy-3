@@ -1,0 +1,25 @@
+#!/bin/bash
+#PBS -N {{name}}
+#PBS -j oe
+#PBS -l nodes={{nodes}}:ppn={{ppn}}
+#PBS -m n
+#PBS -l walltime={{walltime}}
+{% if array_id %}
+#PBS -t {{array_id}}
+{% endif %}
+{% for resource_name, value in pbs_resources %}
+#PBS -l {{resource_name}}={{value}}
+{%- endfor -%}
+{% if workdir %}
+#PBS -w {{workdir}}
+#PBS -e {{workdir}}
+#PBS -o {{workdir}}
+{% endif %}
+
+{% for key, val in environment.items() %}
+export {{key}}={{val}}
+{%- endfor -%}
+
+{% for command in commands %}
+{{command}}
+{%- endfor -%}

@@ -1,0 +1,210 @@
+#re-orders and relabels the atoms from CP for dmacrys to match CO databases that have already been set up. Remember to look at the bottom folder locations.
+
+#!/bin/sh
+
+i=1
+
+while [ $i -le 1  ]
+do
+ 
+ sed -i 's/H O/O H/' ${i}.res
+
+ line=`gawk '/^C18/' ${i}.res`
+ sed -i '/^C18/d' ${i}.res
+ sed -i '/^SFAC/ a\'"$line"'' ${i}.res
+
+ line=`gawk '/^C23 /' ${i}.res`
+ sed -i '/^C23 /d' ${i}.res
+ sed -i '/^C18/ a\'"$line"'' ${i}.res
+
+ line=`gawk '/^C22 /' ${i}.res`
+ sed -i '/^C22 /d' ${i}.res
+ sed -i '/^C23 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^C21 /' ${i}.res`
+ sed -i '/^C21 /d' ${i}.res
+ sed -i '/^C22 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^C20 /' ${i}.res`
+ sed -i '/^C20 /d' ${i}.res
+ sed -i '/^C21 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^C19 /' ${i}.res`
+ sed -i '/^C19 /d' ${i}.res
+ sed -i '/^C20 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^C24 /' ${i}.res`
+ sed -i '/^C24 /d' ${i}.res
+ sed -i '/^C19 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^N4 /' ${i}.res`
+ sed -i '/^N4 /d' ${i}.res
+ sed -i '/^C24 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^N3 /' ${i}.res`
+ sed -i '/^N3 /d' ${i}.res
+ sed -i '/^N4 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^O2 /' ${i}.res`
+ sed -i '/^O2 /d' ${i}.res
+ sed -i '/^N3 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^O1 /' ${i}.res`
+ sed -i '/^O1 /d' ${i}.res
+ sed -i '/^O2 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^O6 /' ${i}.res`
+ sed -i '/^O6 /d' ${i}.res
+ sed -i '/^O1 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^O5 /' ${i}.res`
+ sed -i '/^O5 /d' ${i}.res
+ sed -i '/^O6 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^O4 /' ${i}.res`
+ sed -i '/^O4 /d' ${i}.res
+ sed -i '/^O5 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^O3 /' ${i}.res`
+ sed -i '/^O3 /d' ${i}.res
+ sed -i '/^O4 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^H21 /' ${i}.res`
+ sed -i '/^H21 /d' ${i}.res
+ sed -i '/^O3 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^H20 /' ${i}.res`
+ sed -i '/^H20 /d' ${i}.res
+ sed -i '/^H21 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^H19 /' ${i}.res`
+ sed -i '/^H19 /d' ${i}.res
+ sed -i '/^H20 / a\'"$line"'' ${i}.res
+
+ line=`gawk '/^H22 /' ${i}.res`
+ sed -i '/^H22 /d' ${i}.res
+ sed -i '/^H19 / a\'"$line"'' ${i}.res
+
+ sed -i 's/O2 /oxy1 /' ${i}.res
+ sed -i 's/O1 /oxy2 /' ${i}.res
+ sed -i 's/O6 /oxy3 /' ${i}.res
+ sed -i 's/O5 /oxy4 /' ${i}.res
+ sed -i 's/O4 /oxy5 /' ${i}.res
+ sed -i 's/O3 /oxy6 /' ${i}.res
+ sed -i 's/oxy1 /O1 /' ${i}.res
+ sed -i 's/oxy2 /O2 /' ${i}.res
+ sed -i 's/oxy3 /O3 /' ${i}.res
+ sed -i 's/oxy4 /O4 /' ${i}.res
+ sed -i 's/oxy5 /O5 /' ${i}.res
+ sed -i 's/oxy6 /O6 /' ${i}.res
+
+ sed -i 's/N4 /nit1 /' ${i}.res
+ sed -i 's/N3 /nit2 /' ${i}.res
+ sed -i 's/N1 /nit3 /' ${i}.res
+ sed -i 's/N2 /nit4 /' ${i}.res
+ sed -i 's/nit1 /N1 /' ${i}.res
+ sed -i 's/nit2 /N2 /' ${i}.res
+ sed -i 's/nit3 /N3 /' ${i}.res
+ sed -i 's/nit4 /N4 /' ${i}.res
+
+ sed -i 's/C18 /car1 /' ${i}.res
+ sed -i 's/C23 /car2 /' ${i}.res
+ sed -i 's/C22 /car3 /' ${i}.res
+ sed -i 's/C21 /car4 /' ${i}.res
+ sed -i 's/C20 /car5 /' ${i}.res
+ sed -i 's/C19 /car6 /' ${i}.res
+ sed -i 's/C24 /car7 /' ${i}.res
+ sed -i 's/C1 /car8 /' ${i}.res
+ sed -i 's/C2 /car9 /' ${i}.res
+ sed -i 's/C3 /car10 /' ${i}.res
+ sed -i 's/C4 /car11 /' ${i}.res
+ sed -i 's/C5 /car12 /' ${i}.res
+ sed -i 's/C6 /car13 /' ${i}.res
+ sed -i 's/C7 /car14 /' ${i}.res
+ sed -i 's/C8 /car15 /' ${i}.res
+ sed -i 's/C9 /car16 /' ${i}.res
+ sed -i 's/C10 /car17 /' ${i}.res
+ sed -i 's/C11 /car18 /' ${i}.res
+ sed -i 's/C12 /car19 /' ${i}.res
+ sed -i 's/C13 /car20 /' ${i}.res
+ sed -i 's/C14 /car21 /' ${i}.res
+ sed -i 's/C15 /car22 /' ${i}.res
+ sed -i 's/C16 /car23 /' ${i}.res
+ sed -i 's/C17 /car24 /' ${i}.res
+ sed -i 's/car1 /C1 /' ${i}.res
+ sed -i 's/car2 /C2 /' ${i}.res
+ sed -i 's/car3 /C3 /' ${i}.res
+ sed -i 's/car4 /C4 /' ${i}.res
+ sed -i 's/car5 /C5 /' ${i}.res
+ sed -i 's/car6 /C6 /' ${i}.res
+ sed -i 's/car7 /C7 /' ${i}.res
+ sed -i 's/car8 /C8 /' ${i}.res
+ sed -i 's/car9 /C9 /' ${i}.res
+ sed -i 's/car10 /C10 /' ${i}.res
+ sed -i 's/car11 /C11 /' ${i}.res
+ sed -i 's/car12 /C12 /' ${i}.res
+ sed -i 's/car13 /C13 /' ${i}.res
+ sed -i 's/car14 /C14 /' ${i}.res
+ sed -i 's/car15 /C15 /' ${i}.res
+ sed -i 's/car16 /C16 /' ${i}.res
+ sed -i 's/car17 /C17 /' ${i}.res
+ sed -i 's/car18 /C18 /' ${i}.res
+ sed -i 's/car19 /C19 /' ${i}.res
+ sed -i 's/car20 /C20 /' ${i}.res
+ sed -i 's/car21 /C21 /' ${i}.res
+ sed -i 's/car22 /C22 /' ${i}.res
+ sed -i 's/car23 /C23 /' ${i}.res
+ sed -i 's/car24 /C24 /' ${i}.res
+
+ sed -i 's/H21 /hyd1 /' ${i}.res
+ sed -i 's/H20 /hyd2 /' ${i}.res
+ sed -i 's/H19 /hyd3 /' ${i}.res
+ sed -i 's/H22 /hyd4 /' ${i}.res
+ sed -i 's/H1 /hyd5 /' ${i}.res
+ sed -i 's/H2 /hyd6 /' ${i}.res
+ sed -i 's/H3 /hyd7 /' ${i}.res
+ sed -i 's/H4 /hyd8 /' ${i}.res
+ sed -i 's/H5 /hyd9 /' ${i}.res
+ sed -i 's/H6 /hyd10 /' ${i}.res
+ sed -i 's/H7 /hyd11 /' ${i}.res
+ sed -i 's/H8 /hyd12 /' ${i}.res
+ sed -i 's/H9 /hyd13 /' ${i}.res
+ sed -i 's/H10 /hyd14 /' ${i}.res
+ sed -i 's/H11 /hyd15 /' ${i}.res
+ sed -i 's/H12 /hyd16 /' ${i}.res
+ sed -i 's/H13 /hyd17 /' ${i}.res
+ sed -i 's/H14 /hyd18 /' ${i}.res
+ sed -i 's/H15 /hyd19 /' ${i}.res
+ sed -i 's/H16 /hyd20 /' ${i}.res
+ sed -i 's/H17 /hyd21 /' ${i}.res
+ sed -i 's/H18 /hyd22 /' ${i}.res
+ sed -i 's/hyd1 /H1 /' ${i}.res
+ sed -i 's/hyd2 /H2 /' ${i}.res
+ sed -i 's/hyd3 /H3 /' ${i}.res
+ sed -i 's/hyd4 /H4 /' ${i}.res
+ sed -i 's/hyd5 /H5 /' ${i}.res
+ sed -i 's/hyd6 /H6 /' ${i}.res
+ sed -i 's/hyd7 /H7 /' ${i}.res
+ sed -i 's/hyd8 /H8 /' ${i}.res
+ sed -i 's/hyd9 /H9 /' ${i}.res
+ sed -i 's/hyd10 /H10 /' ${i}.res
+ sed -i 's/hyd11 /H11 /' ${i}.res
+ sed -i 's/hyd12 /H12 /' ${i}.res
+ sed -i 's/hyd13 /H13 /' ${i}.res
+ sed -i 's/hyd14 /H14 /' ${i}.res
+ sed -i 's/hyd15 /H15 /' ${i}.res
+ sed -i 's/hyd16 /H16 /' ${i}.res
+ sed -i 's/hyd17 /H17 /' ${i}.res
+ sed -i 's/hyd18 /H18 /' ${i}.res
+ sed -i 's/hyd19 /H19 /' ${i}.res
+ sed -i 's/hyd20 /H20 /' ${i}.res
+ sed -i 's/hyd21 /H21 /' ${i}.res
+ sed -i 's/hyd22 /H22 /' ${i}.res
+
+ sed -i 's/ 3 / temp /' ${i}.res
+ sed -i 's/ 4 / 3 /' ${i}.res
+ sed -i 's/ temp / 4 /' ${i}.res
+
+ i=`expr $i + 1`
+
+done

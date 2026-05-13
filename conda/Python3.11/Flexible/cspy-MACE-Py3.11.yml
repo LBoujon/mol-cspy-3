@@ -1,0 +1,43 @@
+name: cspy
+channels:
+  - conda-forge
+  - https://conda.ccdc.cam.ac.uk
+  - defaults
+dependencies:
+  - python==3.11.0
+  - csd-python-api==3.3.1
+  - rdkit==2024.09.3
+  - scikit-learn>=1.5.2
+  - pandas>=2.2.3
+  - ase>=3.24.0
+  - scipy>=1.13.1
+  - matplotlib-base>=3.10.1
+  - openbabel>=3.1.1
+  - mpi4py>=4.0.3
+  - rtree>=1.4.0
+  - psi4>=1.9.1
+  - distributed>=2025.2.0
+  - jinja2>=3.1.6
+  - msgpack-python>=1.1.0
+  - numpy==1.24.1
+  - paramiko>=3.5.1
+  - pip>=25.0.01
+  - psutil>=7.0.0
+  - ipython>=9.0.02
+  - setuptools==59.8.0
+  - six>=1.17.0
+  - sphinx>=8.2.3
+  - sqlite>=3.49.1
+  - sympy==1.13.1
+  - wheel>=0.45.1
+  - toml>=0.10.2
+  - tqdm>=4.67.1
+  - cython>=3.0.12
+  - spglib>=2.6.0
+  - networkx>=3.4.2
+  - attrs>=25.3.0
+  - gfortran_linux-64>=14.2.0
+  - gcc_linux-64>=14.2.0
+  - gxx_linux-64>=14.2.0
+  - pip:
+      - mace-torch==0.3.12

@@ -1,0 +1,73 @@
+package:
+    name: cspy
+    version: {{ GIT_DESCRIBE_TAG }}
+
+source:
+    git_url: ../
+
+build:
+    script:
+        python setup.py install
+
+requirements:
+    build:
+        - conda-build
+        - {{ compiler('fortran') }}
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - cython
+        - setuptools
+        - numpy >=1.12
+        - pytest-runner
+        - python
+
+    host:
+        - python
+        - numpy >=1.12
+        - dask
+        - distributed
+        - scipy
+        - libspatialindex
+        - rtree
+        - sphinx
+        - msgpack-numpy
+        - toml
+        - scikit-learn
+        - paramiko
+        - spglib
+        - psutil
+        - sympy
+        - networkx
+        - tqdm
+        - pandas
+        - mpi4py
+
+    run:
+        - python
+        - numpy >=1.12
+        - dask
+        - distributed
+        - scipy
+        - libspatialindex
+        - rtree
+        - sphinx
+        - msgpack-numpy
+        - toml
+        - scikit-learn
+        - paramiko
+        - spglib
+        - psutil
+        - sympy
+        - networkx
+        - tqdm
+        - mpi4py
+test:
+    imports:
+        - cspy
+    requires:
+        - python
+        - pytest
+        - pandas
+
+about:
+    home: https://bitbucket.org/gmdgroup/cspy-git.git

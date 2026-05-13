@@ -1,0 +1,78 @@
+MOLX 1                                                                          
+X LINE   C_CC_2____  C_CD_5____  3
+Y PLANE  C_CC_2____  C_CD_5____  3 C_CA_1____  1                                      
+ANIS
+ClCL_1____ 
+Z LINE C_CC_2____  ClCL_1____  1
+X PLANE C_CC_2____  C_CA_1____  1 C_CB_6____  2
+C_CC_2____ 
+Z LINE C_CC_2____  ClCL_1____  1
+X PLANE C_CC_2____  C_CA_1____  1 C_CB_6____  2
+BrBR_1____ 
+Z LINE C_CA_3____  BrBR_1____  1
+X PLANE C_CA_3____  C_CC_2____  1 C_CA_1____  2
+C_CA_3____ 
+Z LINE C_CA_3____  BrBR_1____  1
+X PLANE C_CA_3____  C_CC_2____  1 C_CA_1____  2
+BrBR_2____ 
+Z LINE C_CA_1____  BrBR_2____  1
+X PLANE C_CA_1____  C_CB_6____  1 C_CD_5____  2
+C_CA_1____ 
+Z LINE C_CA_1____  BrBR_2____  1
+X PLANE C_CA_1____  C_CB_6____  1 C_CD_5____  2
+H_HY_1____ 
+Z LINE C_CB_4____  H_HY_1____  1
+X PLANE C_CB_4____  C_CD_5____  1 C_CB_6____  2
+C_CB_4____ 
+Z LINE C_CB_4____  H_HY_1____  1
+X PLANE C_CB_4____  C_CD_5____  1 C_CB_6____  2
+F_FL_1____ 
+Z LINE C_CD_5____  F_FL_1____  1
+X PLANE C_CD_5____  C_CB_6____  1 C_CA_1____  2
+C_CD_5____ 
+Z LINE C_CD_5____  F_FL_1____  1
+X PLANE C_CD_5____  C_CB_6____  1 C_CA_1____  2
+H_HY_2____ 
+Z LINE C_CB_6____  H_HY_2____  1
+X PLANE C_CB_6____  C_CD_5____  1 C_CB_4____  2
+C_CB_6____ 
+Z LINE C_CB_6____  H_HY_2____  1
+X PLANE C_CB_6____  C_CD_5____  1 C_CB_4____  2
+ClCLI13___ 
+Z LINE C_CCI14___  ClCLI13___  1
+X PLANE C_CCI14___  C_CAI13___  1 C_CBI18___  2
+C_CCI14___ 
+Z LINE C_CCI14___  ClCLI13___  1
+X PLANE C_CCI14___  C_CAI13___  1 C_CBI18___  2
+BrBRI13___ 
+Z LINE C_CAI15___  BrBRI13___  1
+X PLANE C_CAI15___  C_CCI14___  1 C_CAI13___  2
+C_CAI15___
+Z LINE C_CAI15___  BrBRI13___  1
+X PLANE C_CAI15___  C_CCI14___  1 C_CAI13___  2
+BrBRI14___ 
+Z LINE C_CAI13____  BrBRI14___  1
+X PLANE C_CAI13___  C_CBI18___  1 C_CDI17___  2
+C_CAI13___ 
+Z LINE C_CAI13___  BrBRI14___  1
+X PLANE C_CAI13___  C_CBI18___  1 C_CDI17___  2
+H_HYI13___ 
+Z LINE C_CBI16___  H_HYI13___  1
+X PLANE C_CBI16___  C_CDI17___  1 C_CBI18___  2
+C_CBI16___ 
+Z LINE C_CBI16___  H_HYI13___  1
+X PLANE C_CBI16___  C_CDI17___  1 C_CBI18___  2
+F_FLI13___ 
+Z LINE C_CDI17___  F_FLI13___  1
+X PLANE C_CDI17___  C_CBI18___  1 C_CAI13___  2
+C_CDI17___ 
+Z LINE C_CDI17___  F_FLI13___  1
+X PLANE C_CDI17___  C_CBI18___  1 C_CAI13___  2
+H_HYI14___ 
+Z LINE C_CBI18___  H_HYI14___  1
+X PLANE C_CBI18___  C_CDI17___  1 C_CBI16___  2
+C_CBI18___ 
+Z LINE C_CBI18___  H_HYI14___  1
+X PLANE C_CBI18___  C_CDI17___  1 C_CBI16___  2
+ENDS
+ENDS

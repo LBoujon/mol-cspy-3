@@ -1,0 +1,4 @@
+MOLX 1                                                                          
+X LINE   C_F1_3____ C_F1_8____ 1
+Y PLANE  C_F1_3____ C_F1_8____ 1 C_F1_2____ 1                                      
+ENDS

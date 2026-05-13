@@ -1,0 +1,324 @@
+#!/bin/bash
+{% if name == "CDB" or name == "jointDB" or name == "jointSG" -%}
+#SBATCH --job-name={{name}}{{molecule_name}}{{sg}}
+{% else -%}
+#SBATCH --job-name={{name}}{{molecule_name}}_{{sg}}
+{% endif -%}
+#SBATCH --partition={{partition}}
+#SBATCH --ntasks-per-node=40
+{% if name == "jointDB" or name == "jointSG" or name == "DFTB" -%}
+{% if name == "DFTB" -%}
+#SBATCH --time={{computing}}:00:00
+#SBATCH --nodes={{nodes}}
+#SBATCH --ntasks={{ nodes * 40 }}
+{% else -%}
+#SBATCH --time=6:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=40
+{% endif -%}
+{% else -%}
+#SBATCH --time={{computing}}:00:00
+#SBATCH --nodes={{nodes}}
+#SBATCH --ntasks={{ nodes * 40 }}
+{% endif -%}
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user={{user}}@soton.ac.uk
+
+. ~/.bashrc
+{% if name == "CMPCK" -%}
+conda activate flex+dftb 
+{% else -%}
+conda activate {{conda}}
+{% endif -%}
+
+{% if name == "DFTB" %}
+export PATH="{{dftb_dir}}:$PATH"
+module load intel-mkl 
+{%- else %}
+module purge
+{%- endif %}
+
+export MKL_NUM_THREADS=1
+export NUMEXPR_NUM_THREADS=1
+export OMP_NUM_THREADS=1
+((NUM_WORKER_TASKS=SLURM_NTASKS - 2))
+
+WD=`pwd`
+cd $WD
+
+# Name of the script and user's scratch folder to run the job
+{% if name == "CDB" or name == "jointDB" or name == "jointSG" -%}
+NAME={{name}}{{molecule_name}}{{sg}}
+{% else -%}
+NAME={{name}}{{molecule_name}}_{{sg}}
+{% endif -%}
+LOGFILE=$WD/output.${NAME}-${SLURM_JOB_ID}.out
+SCHED={{calc_dir}}/${NAME}.$SLURM_JOB_ID
+mkdir -p ${SCHED}
+
+{% if name == "DFTB" -%}
+{% if nsg == 1 %}
+# Generation of the cspy.toml file and the input dftb db
+# This has to run here, after all FMCSP{{mname}}_(SG) finish. This is because of
+# we have to have structures-SG.csv files to know the GM of each SG set. 
+# It seems that the dftb_input db has to be created from scratch, otherwise
+# the number of crystasl to re-optimise will be doubled!! 
+if [ -f "./dftb_input_{{sg}}_{{dftb_offset}}.db" ]; then
+  rm -rf dftb_input_{{sg}}_{{dftb_offset}}.db
+fi
+
+python3 - <<END
+from cspy.fmcspworkflow.fmcspwf import dftb_input_database_generator
+dftb_input_database_generator({{dftb_offset}},"{{mname}}",{{sg_list}})
+END
+{% endif %}
+{%- endif %}
+
+# Input, output and variable's list 
+{%- if name == "jointDB" %}
+INPUT_FILES="molecules_list.txt *_flex.db"
+OUTPUT_FILES="{{mname}}_flex.db"
+{%- elif name == "CMPCK" %}
+INPUT_FILES="{{cspy_dir}}/conf_search/compack_mp.py dftb_optimised_structures_{{sg}}.tar input_{{sg}}.txt"
+OUTPUT_FILES="rmsd_*-{{sg}}.txt duplicates-{{sg}}.txt"
+{% elif name == "jointSG" %}
+INPUT_FILES="{{mname}}-*.db"
+OUTPUT_FILES="structures.csv all-SGs.db"
+{% elif name == "DFTB" %}
+INPUT_FILES="dftb_input_{{sg}}_{{dftb_offset}}.db cspy.toml"
+OUTPUT_FILES="dftb_optimised_{{sg}}_{{dftb_offset}}.db dftb_optimised_structures_{{sg}}.tar input_{{sg}}.txt"
+{%- elif name == "FMCSP" %}
+ENERGY={{energy}}
+SG={{sg}}
+NSTR={{crystals}}
+POTENTIAL="{{potential}}"
+INPUT_FILES="{{mname}}_flex.db status-{{sg}}.txt {{mname}}-{{sg}}.db"
+OUTPUT_FILES="status-{{sg}}.txt structures-{{sg}}.csv {{mname}}-{{sg}}.db structures-{{sg}}.csv.error {{mname}}-{{sg}}.db.error"
+
+if [ -f "cspy.toml" ]; then
+  rm -rf cspy.toml
+fi
+{%- else %}
+INPUT_FILES="{{molecule_name}}.xyz {{molecule_name}}_flex.db"
+OUTPUT_FILES="{{molecule_name}}-angles.dat {{molecule_name}}_flex.db"
+{%- endif %}
+
+# Let's copy the input files to the working directory and go there
+cp -p ${INPUT_FILES} ${SCHED}
+cd ${SCHED}
+
+{% if name == "jointDB" -%}
+# List of dregrees of freedom (dofs) representing the atoms' lits of each torsion,
+# angular steps, bound and total number of steps
+{%- set dof_list = [] %}
+{% for torsion, id in number_of_torsions.items() -%}
+dof{{loop.index}}="{c:'{{torsion}}',n:{{total_configs}},s:{{angular_step}},o:{{'-'}}{{bound}}}"
+{% set _ = dof_list.append("$dof"+loop.index|string) -%}
+{% endfor %}
+xvfb-run mpirun -np $SLURM_NTASKS cspy-moldis molecules_list.txt \
+       --scan --scan_dofs "[{{ ",".join(dof_list) }}]" \
+       --method "{{method}}" \
+       --basis_set "{{basis}}" --jointdb --potential "W"
+
+mv jointDB_flex.db {{mname}}_flex.db
+echo -e "CDB:     Total conformational Db.....Done!\n" >> $WD/out.log
+{% elif name == "DFTB" -%}
+xvfb-run mpiexec cspy-reoptimize dftb_input_{{sg}}_{{dftb_offset}}.db --log-level=INFO
+
+echo "DFTB{{mname}}:    Re-optimised crystals within {{dftb_offset}} kJ/mol of the GM for SG={{sg}}.....Done!" >> $WD/out.log
+# Extracting dftb re-optimised crystal structures less PXRD duplicates 
+cspy-db cluster dftb_input_{{sg}}_{{dftb_offset}}.opt.db 
+cspy-db dump dftb_input_{{sg}}_{{dftb_offset}}.opt.db
+cp dftb_input_{{sg}}_{{dftb_offset}}.opt.db dftb_optimised_{{sg}}_{{dftb_offset}}.db
+unzip structures.zip
+rm -rf structures.zip
+
+# Converting *.res files to *.cif and generate the input_{{sg}}.txt file 
+# to cluster the re-optimised crystal sctructures
+python3 - <<END
+import os
+import fnmatch
+from cspy.fmcspworkflow.fmcspwf import niggli
+from multiprocessing import Pool
+from functools import partial
+structures=fnmatch.filter(os.listdir("."), f'*{"OPT-1.res"}*')
+with Pool(int(10)) as pool:
+    pool.map(partial(niggli), structures)
+with open("structures.csv", 'r') as f1:
+    lines = f1.readlines()
+no_commas_lines = [line.replace(',', ' ') for line in lines]
+f2=open("input_{{sg}}.txt", "w+")
+for line in no_commas_lines[1:]:
+    f2.write(line.split()[0]
+       +".cif       "+line.split()[3]
+       +"       "+line.split()[2]+"\n")
+END
+tar -cf dftb_optimised_structures_{{sg}}.tar *.cif
+rm -rf *.res
+
+{%- elif name == "jointSG" -%}
+
+cspy-db cluster *.db 
+cspy-db cluster output.db 
+
+echo -e "FMCSP{{mname}}:   All crystal Dbs joined.....Done!\n" >> $WD/out.log
+mv output.db all-SGs.db
+cspy-db dump all-SGs.db
+{%- elif name == "CMPCK" -%}
+tar -xf dftb_optimised_structures_{{sg}}.tar
+
+xvfb-run python3 compack_mp.py input_{{sg}}.txt -j $SLURM_NTASKS 
+mv rmsd_uniquestr.txt rmsd_uniquestr-{{sg}}.txt
+mv rmsd_matches.txt rmsd_matches-{{sg}}.txt
+mv duplicates.txt duplicates-{{sg}}.txt
+
+echo "CMPCK{{mname}}:   DFTB re-optimised crystals clustered of SG={{sg}}.....Done!" >> $WD/out.log
+{% elif name == "FMCSP" -%}
+mv status-{{sg}}.txt status.txt
+xvfb-run mpirun -np $SLURM_NTASKS cspy-flex {{mname}}_flex.db \
+       --potential $POTENTIAL \
+       --top_energy $ENERGY -g $SG -n $NSTR 
+
+echo "FMCSP{{mname}}:   Crystal Db for SG={{sg}}.....Done!" >> $WD/out.log
+cspy-db cluster {{mname}}-{{sg}}.db
+cspy-db cluster output.db
+mv output.db {{mname}}-{{sg}}.db
+cspy-db dump {{mname}}-{{sg}}.db
+mv status.txt status-{{sg}}.txt
+mv structures.csv structures-{{sg}}.csv
+{% else -%}
+# List of dregrees of freedom (dofs) representing the atoms' lits of each torsion,
+# angular steps, bound and total number of steps
+{%- set dof_list = [] %}
+{% for torsion, id in number_of_torsions.items() -%}
+dof{{loop.index}}="{c:'{{torsion}}',n:{{total_configs}},s:{{angular_step}},o:{{'-'}}{{bound}}}"
+{% set _ = dof_list.append("$dof"+loop.index|string) -%}
+{% endfor %}
+xvfb-run mpirun -np $SLURM_NTASKS cspy-moldis {{molecule_name}}.xyz \
+       --scan --scan_dofs "[{{ ",".join(dof_list) }}]" \
+       --method "{{method}}" \
+       --basis_set "{{basis}}" --potential "W"
+
+echo "CDB:     Conformational Db of {{molecule_name}}.xyz.....Done!" >> $WD/out.log
+{% endif %}
+
+cp -r ${OUTPUT_FILES}  $WD
+cd $WD
+rm -rf $SCHED
+{% if name == "FMCSP" %}
+python3 - <<END
+with open("structures-{{sg}}.csv", 'r') as f1:
+    lines = f1.readlines()
+no_commas_lines = [line.replace(',', ' ') for line in lines]
+f2=open("structures-{{sg}}.txt", "w+")
+for line in no_commas_lines[1:]:
+    f2.write(line.split()[0]
+       +".cif       "+line.split()[3]
+       +"       "+line.split()[2]+"\n")
+END
+
+# We have to check if we have some very low energy structures after FMCSP{{mname}} run
+# So far we consider that the energy will be low if E_low < -300 kJ/mol
+rm -rf LowE_crystals.txt
+awk '$2 < -300 {print $1 > "LowE_crystals.txt"}' structures-{{sg}}.txt
+if [ -s "LowE_crystals.txt" ];then
+  echo "FMCSP{{mname}}:   There is at least one low energy structure: check LowE_crystals.txt file! " >> $WD/out.log 
+  NLINES=`wc -l LowE_crystals.txt | awk '{print $1}'`
+  if [ $NLINES -gt 1 ];then
+    echo "FMCSP{{mname}}:   There are more than one line in LowE_crystals.txt" >> $WD/out.log
+  else
+    echo "FMCSP{{mname}}:   There is only one line in LowE_crystals.txt" >> $WD/out.log
+    awk '{print $1}' LowE_crystals.txt >> LowE_crystals.txt
+  fi
+  sed -i "s%".cif"%""%g" LowE_crystals.txt
+  STR=`awk '{print $1}' LowE_crystals.txt`
+  for var in "${STR[@]}";do
+    echo "FMCSP{{mname}}:       - $var" >> $WD/out.log
+  done
+
+python3 - <<END
+from cspy.db.datastore import CspDataStore
+import sys
+
+def read_ignore_list(filename):
+    with open(filename, 'r') as f:
+        ignore_list = [line.split('\n')[0] for line in f]
+    return ignore_list
+
+db = CspDataStore("{{mname}}-{{sg}}.db")
+ignore_list = read_ignore_list("LowE_crystals.txt")
+
+other = CspDataStore('new_copy_excluded.db')
+other.close()
+db.query(f"attach 'new_copy_excluded.db' as tmp")
+
+search_seeds = tuple(ignore_list)
+db.query(f"insert or replace into tmp.crystal select crystal.* from crystal where crystal.id not in {search_seeds}")
+db.query("insert or replace into tmp.descriptor select descriptor.* from descriptor where descriptor.id in (select id from tmp.crystal)")
+db.query("insert or replace into tmp.trial_structure select trial_structure.* from trial_structure where trial_structure.id in (select id from tmp.crystal)")
+db.commit()
+db.query("detach tmp")
+END
+
+  mv {{mname}}-{{sg}}.db {{mname}}-{{sg}}.db.error
+  mv structures-{{sg}}.csv structures-{{sg}}.csv.error
+  mv new_copy_excluded.db {{mname}}-{{sg}}.db
+  cspy-db cluster {{mname}}-{{sg}}.db
+  cspy-db cluster output.db
+  cspy-db dump output.db
+  mv output.db {{mname}}-{{sg}}.db
+  mv structures.csv structures-{{sg}}.csv
+
+python3 - <<END
+with open("structures-{{sg}}.csv", 'r') as f1:
+    lines = f1.readlines()
+no_commas_lines = [line.replace(',', ' ') for line in lines]
+f2=open("structures-{{sg}}.txt", "w+")
+for line in no_commas_lines[1:]:
+    f2.write(line.split()[0]
+       +".cif       "+line.split()[3]
+       +"       "+line.split()[2]+"\n")
+END
+
+else
+  echo "FMCSP{{mname}}:   There are not low energy structures!" >> $WD/out.log
+fi
+
+NCRYS=`awk 'NR==1 { threshold = $2 + {{dftb_offset}} } $2<threshold' structures-{{sg}}.txt | wc -l`
+if [ $NCRYS -gt 40 ];then
+  sed -i "s%"nodes=1"%"nodes={{nodes}}"%g" DFTB{{mname}}{{sg}}.sh
+fi
+
+{% elif name == "jointSG" %}
+rm -rf dftb_input*.db
+python3 - <<END
+from cspy.fmcspworkflow.fmcspwf import dftb_input_database_generator
+dftb_input_database_generator({{dftb_offset}},"{{mname}}",{{sg_list}})
+END
+{% endif %}
+
+{% if name == "CMPCK" -%}
+# Let's put together the unique crystal structures deleting the duplicates
+if [ -d Unique-{{vasp_sp_offset}} ];then
+  echo "Unique-{{vasp_sp_offset}} folder already exists!!"
+else
+  mkdir Unique-{{vasp_sp_offset}}
+fi
+cp input_{{sg}}.txt duplicates-{{sg}}.txt dftb_optimised_structures_{{sg}}.tar Unique-{{vasp_sp_offset}}
+cd Unique-{{vasp_sp_offset}}
+tar -xf dftb_optimised_structures_{{sg}}.tar
+
+# Deleting duplicates from the input_{{sg}}.txt 
+if [ -s "duplicates-{{sg}}.txt" ];then
+  lines=`awk ' {print $1}' duplicates-{{sg}}.txt`
+  grep -v "${lines[@]}" input_{{sg}}.txt > temp_{{sg}}.txt
+  cp temp_{{sg}}.txt input_{{sg}}.txt
+
+# Deleting unnecessary *.cif files from the directory 
+  for var in `cat duplicates-{{sg}}.txt`;do
+    rm -rf $var
+  done
+fi
+rm -rf temp_{{sg}}.txt dftb_optimised_structures_{{sg}}.tar                  
+cd ..
+{% endif -%}

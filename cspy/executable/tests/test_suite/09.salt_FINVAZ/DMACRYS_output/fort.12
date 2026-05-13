@@ -1,0 +1,36 @@
+ Summary file for DMACRYS version 2.3.0        Run on 2018-04-19  14:59
+
+ 09.salt_FINVAZ.res 
+
+ Valid minimisation - converged on gradients
+
+ Eigenvalue calculation is approximate
+ Minimum passed eigenvalue test
+ Number of Iterations:    24
+ Lattice is C Centred. Calculated Lattice Energies
+Initial Lattice Energy:      -626.1229 kJ/mol
+Final Lattice Energy:        -626.1234 kJ/mol
+
+                  a (Ang)    b (Ang)    c (Ang)  alpha (Deg) beta (Deg) gamma (Deg)
+   Initial =>    23.2495    11.0767     9.8233    90.0000   123.1590    90.0000
+     Final =>    23.2600    11.0730     9.8245    90.0000   123.1401    90.0000
+diff.(abs) =>     0.0105    -0.0037     0.0012     0.0000    -0.0189     0.0000
+  diff.(%) =>     0.0450    -0.0330     0.0121     0.0000    -0.0153     0.0000
+
+           Cell Volume ( Cubic Angstroms )  Cell density ( g/cubic cm)
+
+   Initial =>          2117.8138                        1.1774
+   Final   =>          2118.7804                        1.1769
+diff.(abs) =>             0.9666                       -0.0005
+diff.(%)   =>             0.0456                       -0.0456
+
+ F =     0.007100
+
+Contributions to lattice energy (eV per primitive unit cell [kJ/mol])  ( Z =        4)
+Inter-molecular charge-charge energy....=             -24.1157[            -581.6984 ]
+Total charge-dipole+dipole-dipole energy=              -0.6106[             -14.7279 ]
+Higher multipole interaction energy.....=              -1.1101[             -26.7762 ]
+Total isotropic repulsion-dispersion....=              -0.1211[              -2.9209 ]
+Total anisotropic repulsion energy......=               0.0000[               0.0000 ]
+Intermolecular induction energy.........=               0.0000[               0.0000 ]
+PV energy..(P =   0.00E+00 Pa)..........=               0.0000[               0.0000 ]

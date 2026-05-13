@@ -1,0 +1,36 @@
+ Summary file for DMACRYS version 2.3.0        Run on 2018-04-19  14:53
+
+ 03.lem_custom_spli_SOXLEX.res 
+
+ Valid minimisation - converged on gradients
+
+ Eigenvalue calculation is approximate
+ Minimum passed eigenvalue test
+ Number of Iterations:    19
+ Lattice is P Centred. Calculated Lattice Energies
+Initial Lattice Energy:       -84.6923 kJ/mol
+Final Lattice Energy:         -85.1785 kJ/mol
+
+                  a (Ang)    b (Ang)    c (Ang)  alpha (Deg) beta (Deg) gamma (Deg)
+   Initial =>     3.8052    13.7907    14.5314    90.0000    93.7800    90.0000
+     Final =>     3.8430    14.0048    14.5186    90.0000    92.5989    90.0000
+diff.(abs) =>     0.0378     0.2141    -0.0128     0.0000    -1.1811     0.0000
+  diff.(%) =>     0.9922     1.5526    -0.0884     0.0000    -1.2595     0.0000
+
+           Cell Volume ( Cubic Angstroms )  Cell density ( g/cubic cm)
+
+   Initial =>           760.8962                        2.5170
+   Final   =>           780.5834                        2.4535
+diff.(abs) =>            19.6872                       -0.0635
+diff.(%)   =>             2.5874                       -2.5221
+
+ F =     8.374435
+
+Contributions to lattice energy (eV per primitive unit cell [kJ/mol])  ( Z =        4)
+Inter-molecular charge-charge energy....=               3.6167[              87.2387 ]
+Total charge-dipole+dipole-dipole energy=              -3.1575[             -76.1616 ]
+Higher multipole interaction energy.....=              -0.8255[             -19.9111 ]
+Total isotropic repulsion-dispersion....=              -5.8978[            -142.2616 ]
+Total anisotropic repulsion energy......=               2.7328[              65.9171 ]
+Intermolecular induction energy.........=               0.0000[               0.0000 ]
+PV energy..(P =   0.00E+00 Pa)..........=               0.0000[               0.0000 ]

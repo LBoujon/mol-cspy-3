@@ -1,0 +1,73 @@
+#!/bin/bash
+
+is_there_failed_structures () {
+if [ -f "failed_set_of_vasp_opt.dat" ];then
+  if [ -f "input-for-vasp-opt-check.txt" ] && [ -s "input-for-vasp-opt-check.txt" ];then
+    grep -v -f failed_set_of_vasp_opt-check.dat input-for-vasp-opt-check.txt > input-for-vasp-opt-check.txt.tmp
+    mv input-for-vasp-opt-check.txt.tmp input-for-vasp-opt-check.txt
+  fi
+fi
+if [ -f "symmetry_failed_opt.dat" ];then
+  if [ -f "input-for-vasp-opt-check.txt" ] && [ -s "input-for-vasp-opt-check.txt" ];then
+    grep -v -f symmetry_failed_opt-check.dat input-for-vasp-opt-check.txt > input-for-vasp-opt-check.txt.tmp
+    mv input-for-vasp-opt-check.txt.tmp input-for-vasp-opt-check.txt
+  fi
+fi
+}
+
+check_geom () {
+GEOM=$(grep "reached required accuracy - stopping structural energy minimisation" OUTCAR.$1)
+vars=$(echo "$2" | cut -d '-' -f 3,4)
+if [ -z "$GEOM" ];then
+  INCAR_STEPS=$(grep 'NSW' INCAR | awk '{print $3}')
+  STEPS=$(grep 'Iteration    ' OUTCAR.$1 | head --line=1 | awk '{print $3}' | awk '{sub(/\(/, "", $1); print $1}')
+  if [ $STEPS -eq $INCAR_STEPS ];then
+    echo $2 >> ../input-for-vasp-opt-check.txt
+  else
+    echo $vars >> ../failed_set_of_vasp_opt-check.dat
+  fi
+else
+  if [ "$1" -eq "300" ];then
+    echo $2 >> ../input-for-vasp-opt-check.txt
+  elif [ "$1" -eq "500" ];then
+    echo $vars >> ../finished-ckeck.dat
+    ENER=$(tail --line=1 OSZICAR.$1 | awk '{print $3}')
+    ENER2FLOAT=$(awk "BEGIN {print $ENER}")
+    NIONS=`grep 'number of ions' OUTCAR.$1 | awk '{print $12}'`
+    NMOL=$(( NIONS / 37 ))
+    ENORM=$(echo "scale=4; $ENER2FLOAT / $NMOL" | bc)
+    E2kjmol=$(echo "scale=4; $ENORM*96.48530749925793" | bc)
+    echo  "$var    $NIONS     $NMOL   $ENER    $ENORM  $E2kjmol" >> ../vasp-opt-energy.dat
+  fi
+fi
+}
+
+WD=`pwd`
+STRUCTURES=($(awk '{print $1}' input-for-vasp-opt.txt))
+cd VASP-OPT
+rm -rf finished-check.dat input-for-vasp-opt-check.txt
+touch "finished-check.dat"
+touch "input-for-vasp-opt-check.txt"
+for var1 in "${STRUCTURES[@]}"; do
+  cd $var1
+  if [ -f "OUTCAR.500" ];then
+    check_geom "500" $var1
+  else
+    if [ -f "OUTCAR.300" ];then
+      check_geom "300" $var1
+    else
+      echo $var1 >> ../input-for-vasp-opt-check.txt
+    fi
+  fi
+  cd ..
+done
+
+is_there_failed_structures
+
+sort -k6,6n vasp-opt-energy.dat > vasp-opt-energy-tmp.dat
+echo " " > vasp-opt-energy-ordered.dat
+echo "            ID               NAT   NMOLS      E[eV]        ENORM[eV]      ENORM[kJ/mol]" >> vasp-opt-energy-ordered.dat
+echo "-------------------------------------------------------------------------------------------"  >> vasp-opt-energy-ordered.dat
+cat vasp-opt-energy-tmp.dat >> vasp-opt-energy-ordered.dat
+rm -rf vasp-opt-energy-tmp.dat
+cd ..

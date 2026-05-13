@@ -1,0 +1,42 @@
+MOLX 1
+X LINE  ClCL_1____ C_BO_1_____ 1
+Y PLANE ClCL_1____ C_BO_1_____ 1 C_CA_2____ 2
+ANIS
+ClCL_1____
+Z LINE C_BO_1____ ClCL_1____ 1
+X PLANE C_BO_1____ C_CA_3____ 1 C_CA_2____ 1
+C_BO_1____
+Z LINE C_BO_1____ ClCL_1____ 1
+X PLANE C_BO_1____ C_CA_3____ 1 C_CA_2____ 1
+C_CA_2____
+Z LINE C_CA_2____ H_HY_1____ 1
+X PLANE C_BO_1____ C_CA_3____ 1 C_CA_2____ 1
+C_CA_3____
+Z LINE C_CA_3____ H_HY_2____ 1
+X PLANE C_BO_1____ C_CA_3____ 1 C_CA_2____ 1
+H_HY_1____
+Z LINE C_CA_2____ H_HY_1____ 1
+X PLANE C_BO_1____ C_CA_3____ 1 C_CA_2____ 1
+H_HY_2____
+Z LINE C_CA_3____ H_HY_2____ 1
+X PLANE C_BO_1____ C_CA_3____ 1 C_CA_2____ 1
+ClCL_2____
+Z LINE C_BO_4____ ClCL_2____ 1
+X PLANE C_BO_4____ C_CA_6____ 1 C_CA_5____ 1
+C_BO_4____
+Z LINE C_BO_4____ ClCL_2____ 1
+X PLANE C_BO_4____ C_CA_6____ 1 C_CA_5____ 1
+C_CA_5____
+Z LINE C_CA_5____ H_HY_3____ 1
+X PLANE C_BO_4____ C_CA_6____ 1 C_CA_5____ 1
+C_CA_6____
+Z LINE C_CA_6____ H_HY_4____ 1
+X PLANE C_BO_4____ C_CA_6____ 1 C_CA_5____ 1
+H_HY_3____
+Z LINE C_CA_5____ H_HY_3____ 1
+X PLANE C_BO_4____ C_CA_6____ 1 C_CA_5____ 1
+H_HY_4____
+Z LINE C_CA_6____ H_HY_4____ 1
+X PLANE C_BO_4____ C_CA_6____ 1 C_CA_5____ 1
+ENDS
+ENDS

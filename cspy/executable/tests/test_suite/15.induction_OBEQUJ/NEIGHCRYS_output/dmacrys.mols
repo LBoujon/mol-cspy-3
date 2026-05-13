@@ -1,0 +1,85 @@
+MOLX 1
+X LINE  C_C2_2____  N_N1_1____ 1
+Y PLANE C_C2_2____  N_N1_1____ 1 O_O1_1____  2
+DIND 1.0885
+ANIS
+C_C1_1____ 
+Z LINE C_C1_1____  O_O1_1____  1
+X PLANE C_C1_1____  O_O1_1____  1 C_C2_2____  1
+C_C2_2____ 
+Z LINE C_C2_2____  N_N1_1____  1
+X PLANE C_C2_2____  N_N1_1____  1 C_C3_3____  1
+C_C3_3____ 
+Z LINE C_C3_3____  H_H1_1____  1
+X PLANE C_C3_3____  H_H1_1____  1 C_C3_4____  1
+C_C3_4____ 
+Z LINE C_C3_4____  H_H1_2____  1
+X PLANE C_C3_4____  H_H1_2____  1 C_C3_5____  1
+C_C3_5____ 
+Z LINE C_C3_5____  H_H1_3____  1
+X PLANE C_C3_5____  H_H1_3____  1 C_C3_6____  1
+C_C3_6____ 
+Z LINE C_C3_6____  H_H1_4____  1
+X PLANE C_C3_6____  H_H1_4____  1 C_C1_1____  1
+O_O1_1____ 
+Z LINE C_C1_1____  O_O1_1____  1
+X PLANE C_C1_1____  O_O1_1____  1 C_C2_2____  1
+H_H1_1____ 
+Z LINE C_C3_3____  H_H1_1____  1
+X PLANE C_C3_3____  H_H1_1____  1 C_C3_4____  1
+H_H1_2____ 
+Z LINE C_C3_4____  H_H1_2____  1
+X PLANE C_C3_4____  H_H1_2____  1 C_C3_5____  1
+H_H1_3____ 
+Z LINE C_C3_5____  H_H1_3____  1
+X PLANE C_C3_5____  H_H1_3____  1 C_C3_6____  1
+H_H1_4____ 
+Z LINE C_C3_6____  H_H1_4____  1
+X PLANE C_C3_6____  H_H1_4____  1 C_C1_1____  1
+N_N1_1____ 
+Z LINE C_C2_2____  N_N1_1____  1
+X PLANE C_C2_2____  N_N1_1____  1 C_C3_3____  1
+N_N2_2____ 
+Z LINE N_N1_1____  N_N2_2____  1
+X PLANE N_N1_1____  C_C2_2____  1 C_C3_3____  1
+C_C1I14___ 
+Z LINE C_C1I14___  O_O1I14___  1
+X PLANE C_C1I14___  O_O1I14___  1 C_C2I15___  1
+C_C2I15___ 
+Z LINE C_C2I15___  N_N1I14___  1
+X PLANE C_C2I15___  N_N1I14___  1 C_C3I16___  1
+C_C3I16___ 
+Z LINE C_C3I16___  H_H1I14___  1
+X PLANE C_C3I16___  H_H1I14___  1 C_C3I17___  1
+C_C3I17___ 
+Z LINE C_C3I17___  H_H1I15___  1
+X PLANE C_C3I17___  H_H1I15___  1 C_C3I18___  1
+C_C3I18___ 
+Z LINE C_C3I18___  H_H1I16___  1
+X PLANE C_C3I18___  H_H1I16___  1 C_C3I19___  1
+C_C3I19___ 
+Z LINE C_C3I19___  H_H1I17___  1
+X PLANE C_C3I19___  H_H1I17___  1 C_C1I14___  1
+O_O1I14___ 
+Z LINE C_C1I14___  O_O1I14___  1
+X PLANE C_C1I14___  O_O1I14___  1 C_C2I15___  1
+H_H1I14___ 
+Z LINE C_C3I16___  H_H1I14___  1
+X PLANE C_C3I16___  H_H1I14___  1 C_C3I17___  1
+H_H1I15___ 
+Z LINE C_C3I17___  H_H1I15___  1
+X PLANE C_C3I17___  H_H1I15___  1 C_C3I18___  1
+H_H1I16___ 
+Z LINE C_C3I18___  H_H1I16___  1
+X PLANE C_C3I18___  H_H1I16___  1 C_C3I19___  1
+H_H1I17___ 
+Z LINE C_C3I19___  H_H1I17___  1
+X PLANE C_C3I19___  H_H1I17___  1 C_C1I14___  1
+N_N1I14___ 
+Z LINE C_C2I15___  N_N1I14___  1
+X PLANE C_C2I15___  N_N1I14___  1 C_C3I16___  1
+N_N2I15___ 
+Z LINE N_N1I14___  N_N2I15___  1
+X PLANE N_N1I14___  C_C2I15___  1 C_C3I16___  1
+ENDS
+ENDS

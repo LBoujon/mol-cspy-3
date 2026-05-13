@@ -1,0 +1,36 @@
+ Summary file for DMACRYS version 2.3.0        Run on 2018-04-19  14:47
+
+ 02.lem_will101_AXOSOW.res = 01.lem_fit_AXOSOW.res = cb106.res 
+
+ Valid minimisation - converged on gradients
+
+ Eigenvalue calculation is approximate
+ Minimum passed eigenvalue test
+ Number of Iterations:    21
+ Lattice is P Centred. Calculated Lattice Energies
+Initial Lattice Energy:       -44.6153 kJ/mol
+Final Lattice Energy:         -44.8553 kJ/mol
+
+                  a (Ang)    b (Ang)    c (Ang)  alpha (Deg) beta (Deg) gamma (Deg)
+   Initial =>     9.8641    10.1391     6.9997    90.0000    90.0000    90.0000
+     Final =>     9.3994    10.5737     6.9904    90.0000    90.0000    90.0000
+diff.(abs) =>    -0.4647     0.4346    -0.0093     0.0000     0.0000     0.0000
+  diff.(%) =>    -4.7110     4.2868    -0.1328     0.0000     0.0000     0.0000
+
+           Cell Volume ( Cubic Angstroms )  Cell density ( g/cubic cm)
+
+   Initial =>           700.0617                        1.0639
+   Final   =>           694.7546                        1.0720
+diff.(abs) =>            -5.3071                        0.0081
+diff.(%)   =>            -0.7581                        0.7639
+
+ F =    62.456438
+
+Contributions to lattice energy (eV per primitive unit cell [kJ/mol])  ( Z =        8)
+Inter-molecular charge-charge energy....=              -0.9627[             -11.6110 ]
+Total charge-dipole+dipole-dipole energy=               0.1215[               1.4655 ]
+Higher multipole interaction energy.....=              -0.8515[             -10.2693 ]
+Total isotropic repulsion-dispersion....=              -2.0265[             -24.4404 ]
+Total anisotropic repulsion energy......=               0.0000[               0.0000 ]
+Intermolecular induction energy.........=               0.0000[               0.0000 ]
+PV energy..(P =   0.00E+00 Pa)..........=               0.0000[               0.0000 ]

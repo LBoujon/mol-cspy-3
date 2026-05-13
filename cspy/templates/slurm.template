@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH --job-name={{name}}
+#SBATCH --nodes={{nodes}}
+#SBATCH --ntasks-per-node={{ppn}}
+#SBATCH --mail-type=NONE
+#SBATCH --time={{walltime}}
+{% if array_id %}
+#SBATCH --array={{array_id}}
+{% endif %}
+
+{% if workdir %}
+#SBATCH --workdir={{workdir}}
+{% endif %}
+
+{% for key, val in environment.items() %}
+export {{key}}={{val}}
+{%- endfor -%}
+
+{% for command in commands %}
+{{command}}
+{%- endfor -%}

@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH --job-name={{prefix}}.dma
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node={{procs}}
+#SBATCH --mail-type=NONE
+#SBATCH --array={{array_ids}}
+#SBATCH --time={{walltime}}
+#SBATCH --workdir={{workdir}}
+#SBATCH --mem={{mem}}
+#SBATCH --output="dma-{{prefix}}_%a-%A.out"
+
+conda activate cspy
+DIR={{workdir}}
+cd ${DIR}/{{prefix}}_${SLURM_ARRAY_TASK_ID}
+cspy-dma {{prefix}}_${SLURM_ARRAY_TASK_ID}{{suffix}} -p {{force_field_type}} -j {{procs}}
+pexit=$?
+echo "exiting with status ${pexit}"
+exit $pexit

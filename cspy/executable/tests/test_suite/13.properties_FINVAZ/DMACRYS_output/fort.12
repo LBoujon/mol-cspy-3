@@ -1,0 +1,53 @@
+ Summary file for DMACRYS version 2.3.0        Run on 2018-04-19  15:08
+
+ 13.properties_FINVAZ.res 
+
+ Valid minimisation - converged on displacements
+ Eigenvalue calculation is exact
+ Minimum passed eigenvalue test
+ Number of Iterations:    25
+ Lattice is C Centred. Calculated Lattice Energies
+Initial Lattice Energy:      -626.1263 kJ/mol
+Final Lattice Energy:        -626.1272 kJ/mol
+
+                  a (Ang)    b (Ang)    c (Ang)  alpha (Deg) beta (Deg) gamma (Deg)
+   Initial =>    23.2495    11.0767     9.8233    90.0000   123.1590    90.0000
+     Final =>    23.2596    11.0722     9.8252    90.0000   123.1460    90.0000
+diff.(abs) =>     0.0101    -0.0045     0.0019     0.0000    -0.0130     0.0000
+  diff.(%) =>     0.0434    -0.0405     0.0196     0.0000    -0.0106     0.0000
+
+           Cell Volume ( Cubic Angstroms )  Cell density ( g/cubic cm)
+
+   Initial =>          2117.8138                        1.1774
+   Final   =>          2118.6039                        1.1770
+diff.(abs) =>             0.7901                       -0.0004
+diff.(%)   =>             0.0373                       -0.0373
+
+ F =     0.007566
+
+Contributions to lattice energy (eV per primitive unit cell [kJ/mol])  ( Z =        4)
+Inter-molecular charge-charge energy....=             -24.1161[            -581.7066 ]
+Total charge-dipole+dipole-dipole energy=              -0.6103[             -14.7209 ]
+Higher multipole interaction energy.....=              -1.1101[             -26.7778 ]
+Total isotropic repulsion-dispersion....=              -0.1211[              -2.9219 ]
+Total anisotropic repulsion energy......=               0.0000[               0.0000 ]
+Intermolecular induction energy.........=               0.0000[               0.0000 ]
+PV energy..(P =   0.00E+00 Pa)..........=               0.0000[               0.0000 ]
+
+
+ Zone Centre Phonon Frequencies  (cm-1)
+    0.0000       0.0000       0.0000      29.6841      35.8839      36.8223
+   42.9154      46.6563      49.7245      52.7854      56.2845      56.6495
+   57.6731      66.4173      68.8675      74.3252      75.4281      79.1519
+   82.6188      88.4994      93.3421      97.0813     110.3716     110.9669
+  124.0169     134.7954     144.9962     149.4570     160.8888     161.0403
+  169.7963     177.0508     179.5408     180.0014     182.0893     184.9637
+
+
+ Elastic stiffness tensor (Cij): GPa (10**10 DYNE/CM**2)
+     17.90817      5.24651      7.30922      0.00000     -0.58927      0.00000
+      5.24651     11.52146      7.50822      0.00000     -1.53516      0.00000
+      7.30922      7.50822     18.95107      0.00000     -1.73090      0.00000
+      0.00000      0.00000      0.00000      7.97373      0.00000     -0.14060
+     -0.58927     -1.53516     -1.73090      0.00000      6.52270      0.00000
+      0.00000      0.00000      0.00000     -0.14060      0.00000      2.48850

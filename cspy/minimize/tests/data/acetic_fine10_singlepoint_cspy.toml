@@ -1,0 +1,16 @@
+[[csp_minimization_step]]
+kind = "dmacrys"
+electrostatics = "multipoles"
+
+[dmacrys]
+force_field_potentials = "fit"
+force_field_type = "F"
+timeout = 600.0
+foreshorten_hydrogens = false
+
+[csp]
+potential = "fit"
+backup_interval = -1
+
+[neighcrys]
+max_iterations = 0

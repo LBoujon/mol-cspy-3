@@ -1,0 +1,58 @@
+cff-version: 1.2.0
+title: mol-CSPy
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Graeme
+    family-names: Day
+  - given-names: Sophie
+    family-names: Bennett
+  - given-names: James
+    family-names: Bramley
+  - given-names: Patrick
+    family-names: Butler
+  - given-names: Peter
+    family-names: Bygrave
+  - given-names: David
+    family-names: Case
+  - given-names: Chi
+    family-names: Cheng
+  - given-names: Ramón
+    family-names: Cuadrado
+  - given-names: Joshua
+    family-names: Dickman
+  - given-names: Jordan
+    family-names: Dorrell
+  - given-names: Lucia
+    family-names: Gigli
+  - given-names: Joseph
+    family-names: Glover
+  - given-names: Roohollah
+    family-names: Hafizi
+  - given-names: Jay
+    family-names: Johal
+  - given-names: Jennie
+    family-names: Martin
+  - given-names: David
+    family-names: McMahon
+  - given-names: Jonas
+    family-names: Nyman
+  - given-names: Pedro
+    family-names: Juan Royo
+  - given-names: Peter
+    family-names: Spackman
+  - given-names: Christopher
+    family-names: Taylor
+  - given-names: Jack
+    family-names: Yang
+  - given-names: Shiyue
+    family-names: Yang
+  - given-names: Zhentao
+    family-names: Zhou
+repository-code: 'https://gitlab.com/mol-cspy/mol-cspy'
+license: GPL-3.0
+version: 3.0.0
+date-released: '2026-05-13'
+copyright: '2024-2026,The Day Group'

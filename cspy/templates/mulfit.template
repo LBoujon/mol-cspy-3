@@ -1,0 +1,18 @@
+TITLE {{title}}
+
+DMA {{dma_file}} {{dma_method}}
+RADII
+{% for k, v in type_radii.items() -%}
+{{k}} {{v}}
+{% endfor %}
+
+VERBOSE {{verbose}}
+{{method}}
+SHELL INNER {{shell_inner}} OUTER {{shell_outer}}
+LIMIT {{limit}}
+TENSORS {{tensors}}
+RANKS
+{% for k, v in type_ranks.items() -%}
+{{k}} {{v}}
+{% endfor %}
+{{'\n'}}
