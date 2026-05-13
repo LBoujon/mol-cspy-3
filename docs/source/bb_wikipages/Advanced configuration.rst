@@ -16,8 +16,8 @@ from other sources:
 3. ``cspy/cspy_defaults.toml`` source file. This file is initially blank upon installation but can be altered if you wish.
 4. The ``DEFAULTS`` variable in the ``cspy/configuration.py`` source file.
 
-If you’re changing settings and they don’t seem to be having an effect,
-check that one of the higher priority sources doesn’t override that
+If you're changing settings and they don't seem to be having an effect,
+check that one of the higher priority sources doesn't override that
 variable.
 
 Modifying Minimization Settings
@@ -56,12 +56,12 @@ Symmetry Reduction Stage
 
 You can add a symmetry reduction as a final stage of your ``cspy-csp`` search
 using specific settings in the toml for example here is a three stage
-process with a symmetry reduction to a P1 supercell that has Z’=16 in
+process with a symmetry reduction to a P1 supercell that has Z'=16 in
 the final optimisation. When using this option CSP will drop crystal
-structures to P1 and then expand to a supercell with Z’>=16, ensure that
+structures to P1 and then expand to a supercell with Z'>=16, ensure that
 you choose to sample space groups with the number of molecules in the
-unit cell that is a factor of the Z’ target if you want to sample only
-P1 Z’=16. If you just want to drop all structures to P1 with any Z’ you
+unit cell that is a factor of the Z' target if you want to sample only
+P1 Z'=16. If you just want to drop all structures to P1 with any Z' you
 can set reduction = 0.
 
 .. code:: toml
