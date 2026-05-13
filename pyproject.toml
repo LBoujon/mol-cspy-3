@@ -1,6 +1,6 @@
 [project]
 name = "cspy"
-version = "4.4.8"
+version = "3.0.1"
 requires-python = ">=3.11, <3.12" # Very restrictive
 readme = "README.rst"
 description = "Crystal structure prediction using python"
@@ -96,6 +96,8 @@ dev = [
 ]
 docs = [
     "sphinx>=8.2.3",
+    "sphinx-argparse-cli",
+    "sphinx_rtd_theme",
 ]
 all = [
     "cspy[dev,test,nn,docs]",
