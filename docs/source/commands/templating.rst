@@ -18,7 +18,7 @@ The ``cspy-templating`` command is used to create a set of unoptimized analogues
 
 .. note::
 
-     Currently the cspy-templating command and corresponding templating CSP approach is only applicable to Z’=1, G=1 systems. That is, all template crystal structures must be single component and the structure files used must provide Z’=1 representations of the crystal structures. The ‘new molecule’ for analogue formation must also be a single molecule. We hope that future versions of mol-cspy will expand upon this functionality
+     Currently the cspy-templating command and corresponding templating CSP approach is only applicable to Z'=1, G=1 systems. That is, all template crystal structures must be single component and the structure files used must provide Z'=1 representations of the crystal structures. The ‘new molecule' for analogue formation must also be a single molecule. We hope that future versions of mol-cspy will expand upon this functionality
 
 .. note::
 

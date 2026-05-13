@@ -32,7 +32,7 @@ This error usually occurs when DMACRYS or PMIN fail to optimise a crystal struct
 adjusted in the TOML configuration file as described in :ref:`config`.
 
 
-I am providing an axis file to Neighcrys, but it can’t find it
+I am providing an axis file to Neighcrys, but it can't find it
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Your axis file's name may be too long – Neighcrys cannot read filenames beyond a certain length. Try shortening the filename.

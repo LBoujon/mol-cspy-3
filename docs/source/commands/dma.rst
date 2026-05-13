@@ -48,7 +48,7 @@ ammonium (charge = 1, multiplicity = 1), charge and multiplicity
 
    cspy-dma ammonium.xyz --charges 1 --multiplicities 1
 
-Z’ > 1 structure or a co-crystal
+Z' > 1 structure or a co-crystal
 --------------------------------
 
 Simply call all the program with multipole geometry files in the
