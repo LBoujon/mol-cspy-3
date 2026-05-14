@@ -1,4 +1,4 @@
-cspy-db command
+﻿cspy-db command
 ===============
 
 The ``cspy-db`` command is used to process and analyse the SQLite3 database files that a produced from a crystal structure prediction simulation.
@@ -99,7 +99,7 @@ will affect the overlay comparison**).
 Extracting crystal structures from a database
 ------------------------------------------------
 
-If you�d prefer to work with a csv file, you can dump out the data about unique structures by using the
+If you’d prefer to work with a csv file, you can dump out the data about unique structures by using the
 ``dump`` subprogram in ``cspy-db``:
 
 .. code:: bash

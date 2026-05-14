@@ -1,5 +1,5 @@
 cspy-sauce command
-===============
+==================
 
 The ``cspy-sauce`` provides utilities for SAUCE. SAUCE with the AUT method can be enabled for ``cspy-csp`` with the ``--clg-aut`` flag, but this app is essential for UC2AU.
 

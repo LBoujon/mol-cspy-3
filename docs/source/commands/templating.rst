@@ -1,7 +1,7 @@
 .. _templating-app:
 
 cspy-templating command
-================
+=======================
 
 The ``cspy-templating`` command is used to create a set of unoptimized analogues, albeit being comprised of a new molecule, of a given set of molecular crystal structures. The primary use of this command is in the generation of trial structures in templating CSP
 
@@ -26,7 +26,7 @@ The ``cspy-templating`` command is used to create a set of unoptimized analogues
 
 
 Example Command Line Usage
---------
+--------------------------
 
 The analogue creation can be run using a single line of code:
 
@@ -42,6 +42,6 @@ This will produce a database named <database_name.db> containing unoptimized ana
 
 
 Continuing Templating CSP
---------
+-------------------------
 
 To complete the templating CSP process, the resulting database should be clustered using the ``cspy-db cluster`` command and then all unique structures should be lattice energy minimised using the ``cspy-reoptimize`` command.

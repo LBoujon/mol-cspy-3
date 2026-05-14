@@ -1,7 +1,7 @@
 .. _conf-app:
 
 cspy-conf command
-================
+=================
 
 The ``cspy-conf`` command is used for searching for and clustering conformers of a given molecule.
 Flexible molecules can adopt more than one stable conformation which we call conformers. These conformers are gas-phase minima in which there are no intermolecular interactions between the molecule and any other molecule. 
@@ -26,7 +26,7 @@ Therefore the first step in a flexible CSP is often to search for stable conform
    ``cspy-conf`` requires ``xtb``, ``openbabel`` and ``CREST`` to be installed.
 
 Generating conformations
---------
+------------------------
 
 To generate conformers, you can call the ``--SEARCH`` flag and specify the conformer generation method. Initial clustering of the resulting conformers will also be performed automatically during this process.
 
@@ -49,7 +49,7 @@ It is also possible to perform a dryrun before performing a conformer search to 
     cspy-conf -xyz molecule.xyz --search mCREST -dry
 
 Conformational clustering
---------
+-------------------------
 
 The ``cspy-conf`` command can also be used to cluster an existing set of conformers, whether they are generated via ``cspy-conf`` or generated elsewhere. To do this, use the ``--cluster`` flag. You should specify the clustering method you wish to use, i.e TORSIONS or RMSD. The molecule_torsions file is not required when clustering using RMSD.
 
@@ -57,9 +57,10 @@ The ``cspy-conf`` command can also be used to cluster an existing set of conform
 
     cspy-conf --cluster TORSIONS -e energies.txt -t molecule_torsions
 
-The -e flag indicates a file name which holds the name of each conformer and its corresponding energy in eV. This is provided in order to determine which conformers, based upon an energy window ``-ewin`` , should be compared during clustering.
+The ``-e`` flag indicates a file name which holds the name of each conformer and its corresponding energy in eV. This is provided in order to determine which conformers, based upon an energy window ``-ewin`` , should be compared during clustering.
  
-.. code:: code
+.. code:: text
+
     molecule_1.xyz -10.0
     molecule_2.xyz -10.1
     molecule_3.xyz -14.0
@@ -68,7 +69,7 @@ The -e flag indicates a file name which holds the name of each conformer and its
 
 The ``-t`` flag, which must be specified if choosing TORSIONS as the clustering method, indicates a torsion file. Each line of the file represents a torsion wherein each element is the atom number indexed from 1 and the final element is the rotational symmetry around that torsion.
 
-.. code:: code
+.. code:: text
     
     1 2 3 4 1 #torsion made from atoms 1-4 with rotational symmetry 1.
     2 3 4 5 2 #torsion made from atoms 2-5 with rotational symmetry 2.
@@ -83,5 +84,6 @@ If clustering using RMSD, the tolerance for identifying conformers as duplicates
 Inside the generated ``conformers`` directory, you will find a list of unique conformers in ``uniques.txt``, a concatenated set of unique conformer geometries in ``uniques.xyz``
 
 Optimisation
---------
+------------
+
 It is reccommended that following conformer generation and clustering, the resulting conformers files are reoptimised at a higher level of theory than that used by CREST - such as DFT. Gaussian input files and optimisation job scripts can be prepared automatically for this purpose using the ``cspy-setup`` command.

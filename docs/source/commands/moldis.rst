@@ -1,7 +1,7 @@
 .. _moldis-app:
 
 cspy-moldis command
-================
+===================
 
 The ``cspy-moldis`` command is used to distort molecular conformers to yield a database of molecular conformations around local conformational minima.
 
@@ -10,7 +10,7 @@ The conformations which are used should be considered within the context of thei
 The energy penalty associated with the distortion from vacuum minima may be compensated for by gains in lattice energy, but the higher the molecular strain, the less likely the conformation can be found in a stable crystal structure.
 
 .. sphinx_argparse_cli::
-  :module: cspy.apps.moldis
+  :module: cspy.apps.mol_dis
   :func: main
   :hook:
   :title:
@@ -18,9 +18,9 @@ The energy penalty associated with the distortion from vacuum minima may be comp
   :epilog:
   :group_title_prefix:
   :prog: cspy-moldis
+
 .. note:: 
    ``cspy-moldis`` requires either ``Psi4`` or  ``Gaussian`` to be installed.
-
 
 Overview
 --------
@@ -35,7 +35,8 @@ The output will be a conformational database for each conformation containg the 
 
 
 Scanning DOFs
---------
+-------------
+
 ``mol-CSPy`` does not make judgements on conformational flexibility by itself. It falls upon the user to decide which degrees of freedom should be sampled.
 The greater the number of degrees of freedom, the more conformations, and the greater the cost of the CSP. The scanned DOFs should therefore be selected carefully.
 
@@ -60,10 +61,11 @@ Grid Scanning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The recommended approach to scanning DOFs is a grid scan. No additional flag is required, but the parameters of the scan must be defined in the DOF.
 There are four terms that should be used to define a scan:
-    - ``n`` (number of steps)
-    - ``s`` (step size)
-    - ``o`` (offset)
-    - ``i`` (initial)
+
+- ``n`` (number of steps)
+- ``s`` (step size)
+- ``o`` (offset)
+- ``i`` (initial)
 
 ``n`` is the number of distorting steps that will be applied to the conformation. This will directly determine the number of the distorted conformers.
 ``s`` is the size of the step applied at each distortion. The sign determines the direction of the distortion. By default, radians are assumed, but the value may be provided in degrees if followed by ``.*D``.
@@ -78,7 +80,8 @@ The below DOF defines a torsion of atoms 4, 3, 6, and 6, and instructs moldis to
 
 
 Joining Databases
---------
+-----------------
+
 The output of ``cspy-moldis`` is one database per input conformation. If the user wishes for a single database comprising distorted conformations, they can run ``cspy-moldis`` again, but replace the input files with a list of databases and provide the ``-jointdb`` flag.
 This will yield a single database that is suitable for ``cspy-flex``.
 

@@ -15,7 +15,7 @@ This is the documentation page for mol-CSPy, the Day group crystal structure pre
    
    installation
    csd-python-api
-   bb_wikipages/Advanced configuration
+   bb_wikipages/Advanced_configuration
 
 
 .. toctree::
@@ -41,9 +41,10 @@ This is the documentation page for mol-CSPy, the Day group crystal structure pre
    :maxdepth: 1
    :caption: Misc
 
-   misc/*
+   ase_interface
+   efficient_optimisations
    bb_wikipages/FAQ.rst
    sql_schema.rst
    bb_wikipages/Papers
-   bb_wikipages/Scripts for CSPy
+   bb_wikipages/Scripts_for_CSPy
    license

@@ -161,7 +161,7 @@ Here is an example landscape from one of our simulations of acetic acid:
 .. _reoptimize:
 
 Step 6: Reoptimize the final crystal structures (optional)
----------------------------------------------------------
+----------------------------------------------------------
 
 If the user wishes to reoptimize the final crystal structures with different minimization parameters (in this example we will use a larger force-field ``cutoff``), 
 the user can employ the ``cspy-reoptimize``. 
