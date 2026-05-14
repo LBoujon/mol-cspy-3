@@ -41,8 +41,8 @@ This is the documentation page for mol-CSPy, the Day group crystal structure pre
    :maxdepth: 1
    :caption: Misc
 
-   ase_interface
-   efficient_optimisations
+   misc/ase_interface
+   misc/efficient_optimisations
    bb_wikipages/FAQ.rst
    sql_schema.rst
    bb_wikipages/Papers
