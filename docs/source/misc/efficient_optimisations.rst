@@ -1,7 +1,7 @@
 .. _efficient_optimisations:
 
 Efficient Geometry Optimisations
-======================
+================================
 
 mol-CSPy offers a couple of opt-in features to make geometry optimisations with DMACRYS more efficient.
 These features should not be used in combination with other optimisers like pmin, GULP, or ASE.

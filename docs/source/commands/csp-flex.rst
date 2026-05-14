@@ -1,7 +1,7 @@
-.. _flex-app:
+﻿.. _flex-app:
 
 cspy-flex command
-================
+=================
 
 The ``cspy-flex`` command is used to perform crystal structure prediction calculations for flexible molecules.
 Molecules are treated as rigid during geometry optimisation but molecules have different conformations at the point of random structure generation.
@@ -31,7 +31,7 @@ In ``cspy-flex``, instead of sourcing molecular geometries from ``.xyz`` files, 
 The conformation's corresponding ``_rank0.dma``, ``.dma`` and ``.mols`` files for DMACRYS geometry optimisations are sourced automatically from the same database.
 
 
-Command line usage of ``cspy-flex``
+Command line usage of cspy-flex
 ----------------------------------
 
 Running a local ``cspy-flex`` calculation differs from ``cspy-csp`` in that instead of providing a list of ``.xyz`` files, a list of conformational database files should be provided instead.

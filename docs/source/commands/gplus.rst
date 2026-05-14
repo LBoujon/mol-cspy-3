@@ -1,7 +1,7 @@
 .. _gplus-app:
 
 cspy-gplus command
-================
+==================
 
 ``cspy-gplus`` is a script for generating input files (``.xyz``, ``_rank0.dma``, ``.dma``, and ``.mols``) for running CSPy with DMACRYS on systems with G \>= 2 (i.e. Z'\>= 2 or co-crystals/salts).
 
@@ -22,7 +22,7 @@ If the user desires to do CSP on several related systems which vary in stoichiom
 
 
 Use with a Molecules Database
---------------------
+-----------------------------
 
 Molecules databases store data pertaining to specific conformers of molecules. 
 Each entry in the database contains:
@@ -52,7 +52,7 @@ See below for an example co-crystal with two of molecule A and one of molecule B
 
 
 Use without a Molecules Database
---------------------
+--------------------------------
 
 The user may wish to bypass building a database.
 This is possible if the user is in a directory containing the ``.xyz``, ``_rank0.dma``, ``.dma``, and ``.mols`` files for each relevant molecule.
