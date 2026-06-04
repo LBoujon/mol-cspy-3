@@ -1,5 +1,5 @@
 # mol-CSPy software package
-This is the official repository for mol-CSPy, the Day group crystal structure prediction software developed in Southampton, UK.
+This is the official repository for mol-CSPy, the [Day Group](https://mol-cspy.gitlab.io/daygroup-site/) crystal structure prediction software developed in Southampton, UK.
 
 <center>
 <img src=logo.png width=500>
