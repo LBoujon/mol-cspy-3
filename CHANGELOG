@@ -1,6 +1,14 @@
 # Change Log
 
 All notable changes to this project will be documented in this file.
+## [3.0.6] - 04/06/2026
+- Added link to group website in README.md
+
+## [3.0.5] - 28/05/2026
+-  Updated author list in pyproject.toml
+
+## [3.0.4] - 28/05/2026
+-  Added cspy-setup command missing from pyproject.toml
 
 ## [3.0.3] - 14/05/2026
 - Fixed encoding in doc files and removed spaces from file names

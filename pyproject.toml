@@ -1,6 +1,6 @@
 [project]
 name = "cspy"
-version = "3.0.3"
+version = "3.0.6"
 requires-python = ">=3.11, <3.12" # Very restrictive
 readme = "README.rst"
 description = "Crystal structure prediction using python"
@@ -27,6 +27,7 @@ authors = [
     {name = "Christopher R. Taylor"},
     {name = "Jack Yang"},
     {name = "Shiyue Yang"},
+    {name = "Zhengtao Zhou"},
 ]
 keywords=[
     "crystal structure prediction",
@@ -125,6 +126,7 @@ cspy-gplus = "cspy.apps.gplus:main"
 cspy-threshold-utils = "cspy.apps.threshold_utils:main"
 cspy-sauce = "cspy.apps.sauce:main"
 cspy-templating = "cspy.apps.templating:main"
+cspy-setup = "cspy.apps.setup:main"
 
 [build-system]
 requires = [
