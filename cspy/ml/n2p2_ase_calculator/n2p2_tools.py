@@ -158,51 +158,51 @@ def input_data_reader(fname: str) -> Snapshot:
     return None
 
 
-def n2p2_single_nnp_old(
-    model: pynnp.Model,
-    structure: pynnp.Structure,
-    calculate_forces: bool = False
-) -> Tuple[float, List[np.array]]:
-    """
-    Calculates energies and forces of Structure using a single NN model.
+# def n2p2_single_nnp_old(
+#     model: pynnp.Model,
+#     structure: pynnp.Structure,
+#     calculate_forces: bool = False
+# ) -> Tuple[float, List[np.array]]:
+#     """
+#     Calculates energies and forces of Structure using a single NN model.
 
-    Args:
-        model: pynnp.Mode object
-            Contains a single NNP.
-        structure: pynnp.Structure object
-            Contains structural information, typically from input.data file.
-        calculate_forces: bool
-            Is the calculation of forces required?
+#     Args:
+#         model: pynnp.Mode object
+#             Contains a single NNP.
+#         structure: pynnp.Structure object
+#             Contains structural information, typically from input.data file.
+#         calculate_forces: bool
+#             Is the calculation of forces required?
 
-    Returns:
-        Tuple[float, List[np.array]]: energy, np.array(forces)
-    """
+#     Returns:
+#         Tuple[float, List[np.array]]: energy, np.array(forces)
+#     """
 
-    # Calculate atomic neural networks.
-    model.calculateAtomicNeuralNetworks(structure, True)
+#     # Calculate atomic neural networks.
+#     model.calculateAtomicNeuralNetworks(structure, True)
 
-    # Sum up potential energy.
-    model.calculateEnergy(structure)
+#     # Sum up potential energy.
+#     model.calculateEnergy(structure)
 
-    # Collect force contributions.
-    forces = []
-    if calculate_forces:
-        model.calculateForces(structure)
-        for atom in structure.atoms:
-            forces.append(atom.f.r)
+#     # Collect force contributions.
+#     forces = []
+#     if calculate_forces:
+#         model.calculateForces(structure)
+#         for atom in structure.atoms:
+#             forces.append(atom.f.r)
 
-    # If normalization is used, convert structure data back to physical units.
-    if model.useNormalization():
-        structure.toPhysicalUnits(
-            model.getMeanEnergy(),
-            model.getConvEnergy(),
-            model.getConvLength(),
-            0,  # TODO: add convCharge
-        )
-    model.addEnergyOffset(structure, False)
-    model.addEnergyOffset(structure, True)
+#     # If normalization is used, convert structure data back to physical units.
+#     if model.useNormalization():
+#         structure.toPhysicalUnits(
+#             model.getMeanEnergy(),
+#             model.getConvEnergy(),
+#             model.getConvLength(),
+#             0,  # TODO: add convCharge
+#         )
+#     model.addEnergyOffset(structure, False)
+#     model.addEnergyOffset(structure, True)
 
-    return structure.energy, forces
+#     return structure.energy, forces
 
 
 def n2p2_committee_calculator_file(

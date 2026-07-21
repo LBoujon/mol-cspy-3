@@ -95,7 +95,7 @@ class AUTCSP(QuasiRandomCSP):
                 self.restart_from_aut_database(sg, self.asymu_dbs[sg])
                 # this should make sure that we don't try to make any new asymus
                 # for this spacegroup
-                LOG.info('Sourcing "%s" asymmetric units for spacegroup "%s" from %d.', len(self.valid_asymus[sg]), sg, self.asymu_dbs[sg])
+                LOG.info('Sourcing "%s" asymmetric units for spacegroup "%s" from %s.', len(self.valid_asymus[sg]), sg, self.asymu_dbs[sg])
                 self.target_num_asymus[sg] = len(self.valid_asymus[sg])
                 self.asymu_utilisation[sg] = [0 for _ in range(len(self.valid_asymus[sg]))]
 

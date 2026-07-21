@@ -1310,7 +1310,7 @@ class Crystal:
         y = np.asarray(cif_data.get("atom_site_fract_y", []))
         z = np.asarray(cif_data.get("atom_site_fract_z", []))
         occupation = np.asarray(cif_data.get("atom_site_occupancy", [1] * len(x)))
-        frac_pos = np.array([x, y, z]).T
+        frac_pos = np.array([x, y, z], dtype=np.float64).T
         asym = AsymmetricUnit(
             elements=elements, positions=frac_pos, labels=labels, occupation=occupation
         )

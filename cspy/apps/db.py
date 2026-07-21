@@ -14,6 +14,7 @@ Available commands are:
     info             Return information about the contents of a database
     remove_outliers  Remove gapped structures and undetected Buckingham catastrophies from a database
     convert          Convert an old 5-column database to a new 6-column format (adds molecule_id column)
+    build            Build a new database from res files in the current directory
 """
 
 
@@ -65,6 +66,11 @@ class DatabaseCLI:
 
     def remove_outliers(self):
         from cspy.db.outlier_removal import main
+
+        main(sys.argv[2:])
+
+    def build(self):
+        from cspy.db.build import main
 
         main(sys.argv[2:])
 

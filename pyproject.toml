@@ -1,6 +1,6 @@
 [project]
 name = "cspy"
-version = "3.0.6"
+version = "3.1.0"
 requires-python = ">=3.11, <3.12" # Very restrictive
 readme = "README.rst"
 description = "Crystal structure prediction using python"
@@ -23,6 +23,7 @@ authors = [
     {name = "Jennie Martin"},
     {name = "David P. McMahon"},
     {name = "Jonas Nyman"},
+    {name = "Anthony J. R. Payne"},
     {name = "Peter R. Spackman"},
     {name = "Christopher R. Taylor"},
     {name = "Jack Yang"},
@@ -85,6 +86,9 @@ extras = [
 nn = [
     "mace-torch==0.3.12",
 ]
+disord = [
+    "orgdisord @ git+https://github.com/anthonyjrpayne/orgdisord.git",
+]
 test = [
     "pytest>=7.4.0",
     "build",
@@ -101,10 +105,10 @@ docs = [
     "sphinx_rtd_theme",
 ]
 all = [
-    "cspy[dev,test,nn,docs]",
+    "cspy[dev,test,nn,docs,disord]",
 ]
 full = [
-    "cspy[extras,dev,test,nn,docs]",
+    "cspy[extras,dev,test,nn,docs,disord]",
 ]
 
 [project.scripts]
@@ -127,6 +131,7 @@ cspy-threshold-utils = "cspy.apps.threshold_utils:main"
 cspy-sauce = "cspy.apps.sauce:main"
 cspy-templating = "cspy.apps.templating:main"
 cspy-setup = "cspy.apps.setup:main"
+cspy-disord = "cspy.apps.disord:main"
 
 [build-system]
 requires = [

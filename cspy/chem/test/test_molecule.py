@@ -16,6 +16,9 @@ class TestMolecule(TestCase):
         n = Element.from_atomic_number(7)
         c = Element.from_atomic_number(6)
         h = Element.from_atomic_number(1)
+        f = Element.from_atomic_number(9)
+        cl = Element.from_atomic_number(17)
+        br = Element.from_atomic_number(35)
 
         self.oxygen_1 = Molecule(
             positions=np.array([[0.0000000000, 0.0000000000, 0.0000000000]]),
@@ -686,6 +689,18 @@ class TestMolecule(TestCase):
                 h, c, o, c, c, c, c, c, c, h, h, h, h, h, h, h, h, h, h
             ]
         )
+        self.c1h1f1cl1br1 = Molecule(
+            positions=np.array([
+                [0.00000000, 0.00000000, 0.00000000],
+                [1.01905009, -0.26757550, -0.27935689],
+                [0.02762499, 0.81542046, 1.07555861],
+                [-0.78300165, 0.83249316, -1.35157817],
+                [-0.99521511, -1.60800424, 0.43297720]
+            ]),
+            elements=[
+                c, h, f, cl, br
+            ]
+        )
 
     def test_overlay_of_nitrogen_1_with_nitrogen_1_returns_overlayed_with_small_rmsd(self):
         overlayed, order, rmsd = self.nitrogen_1.overlay(self.nitrogen_1, reorder_atoms_to="self")
@@ -1027,6 +1042,12 @@ class TestMolecule(TestCase):
         new_best_axes = temp_h2o.get_best_plane_axes()
         assert np.linalg.norm(np.abs(new_best_axes) - np.eye(3)) < 1e-5
 
-        
-        
-    
+    def test_positions_in_molecular_axis_frame(self):
+        methods = ("nc", "pca", "moi")
+        molecules = [self.c1h1f1cl1br1, self.h2o_2, self.aceta_1, self.galgax_3]
+        for method in methods:
+            for mol_og in molecules:
+                mol = deepcopy(mol_og)
+                mol.positions = mol.positions_in_molecular_axis_frame(method=method)
+                _, _, rmsd = mol_og.overlay(mol)
+                assert rmsd < 1e-6, f"{method}, {mol}"

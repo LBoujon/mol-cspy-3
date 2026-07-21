@@ -368,7 +368,7 @@ def scrape_molecular_data(molecule_seeds, file_extensions):
             if ext == '_rank0.dma':
                 dma_data = parse_dma(filename)
                 charge_data = dma_data[0]["charges"]
-                total_charge = int(np.sum(charge_data))
+                total_charge = int(round(np.sum(charge_data), 0))
 
                 molecule_data.append(total_charge)
 

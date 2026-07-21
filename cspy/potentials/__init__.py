@@ -20,9 +20,6 @@ available_potentials = {
     "w99rev_pcm_6311": ("W", os.path.join(_DIRNAME, "w99rev_pcm_6311.pots")),
     "w99_s_cl": ("W", os.path.join(_DIRNAME, "w99_s_cl.pots")),
     "w99sp": ("W", os.path.join(_DIRNAME, "w99sp.pots")),
-    "w99rev_pcm_6311_and_Chloride": ("W", os.path.join(_DIRNAME, "w99rev_pcm_6311_and_Chloride.pots")),
-    "w99rev_pcm_6311_and_Bromide": ("W", os.path.join(_DIRNAME, "w99rev_pcm_6311_and_Bromide.pots")),
-    "w99rev_pcm_6311_and_Iodide": ("W", os.path.join(_DIRNAME, "w99rev_pcm_6311_and_Iodide.pots")),
     "w99rev_pcm_6311_and_Halides": ("W", os.path.join(_DIRNAME, "w99rev_pcm_6311_and_Halides.pots")),
     "isoPAHAP": ("F", os.path.join(_DIRNAME, "isoPAHAP.pots")), # From: https://doi.org/10.1039/C2CP23008A. Tested on pyrene, phenanthrene and perylene  
     "PAHAP": ("F", os.path.join(_DIRNAME, "PAHAP.pots")), # From: https://doi.org/10.1021/ct9004883. Tested on pyrene, phenanthrene and perylene

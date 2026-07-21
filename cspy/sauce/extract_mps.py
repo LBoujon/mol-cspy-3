@@ -380,6 +380,11 @@ def main(sys_args=None):
                 help='Sample crystals randomly (must also specify -nc)')
         parser.add_argument('-as', '--asymm', action='store_true',
                 help='Store only asymmetric pairs')
+        parser.add_argument(
+                "--log-level", type=str,
+                choices=("INFO", "DEBUG", "ERROR", "WARN"),
+                default="INFO",
+                help="Control level of logging output")
 
         args = parser.parse_args(sys_args)
 

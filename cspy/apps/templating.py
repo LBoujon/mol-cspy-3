@@ -80,7 +80,7 @@ class TemplatingGenerator:
            #convert to mol2
            LOG.warning('Conversion to mol2 will be performed. Conversion can cause issues on occassion, if results are unexpected, check this conversion')
            self.targ_mol.to_mol2_file(targ_mol.split('.')[0] + '.mol2')
-           mol_reader=ccdc.io.MoleculeReader(targ_mol.split('.') + '.mol2')
+           mol_reader=ccdc.io.MoleculeReader(targ_mol.split('.')[0] + '.mol2')
            self.targ_mol2 = mol_reader[0]
         if temp_mol.split('.')[-1] == 'mol2':
            mol_reader=ccdc.io.MoleculeReader(temp_mol)
@@ -90,7 +90,7 @@ class TemplatingGenerator:
            #convert to mol2
            LOG.warning('Conversion to mol2 will be performed. Conversion can cause issues on occassion, if results are unexpected, check this conversion')
            self.temp_mol.to_mol2_file(temp_mol.split('.')[0] + '.mol2')
-           mol_reader=ccdc.io.MoleculeReader(temp_mol.split('.' + '.mol2'))
+           mol_reader=ccdc.io.MoleculeReader(temp_mol.split('.')[0] + '.mol2')
            self.temp_mol2 = mol_reader[0]
 
      def get_shared_substructure_instances(self) -> tuple[list[list[int]],list[list[int]]]:
@@ -108,8 +108,8 @@ class TemplatingGenerator:
           
           #find maximum shared substructure
           sub = ccdc.descriptors.MolecularDescriptors.MaximumCommonSubstructure()
-          sub.settings.check_bond_type=self.bond_check
-          sub.settings.connected=self.conn
+          sub.Settings.check_bond_type=self.bond_check
+          sub.Settings.connected=self.conn
           max_substruc = sub.search(self.temp_mol2,self.targ_mol2)
           
           #make molecule object corresponding to substructure
@@ -259,7 +259,7 @@ class TemplatingGenerator:
             rmsd=replacement[1][0]#assumes prime 1
             if rmsd > 2.0:
                 LOG.warning('RMSD failure for %s version %d skipping and continuing',switch_name,case_count)
-         
+                return
             #shift centroids and reconstruct resulting crystal
             reposition_centroids(mols,fresh_template)
             template_sg=fresh_template.space_group
@@ -276,7 +276,7 @@ class TemplatingGenerator:
                   write_ana_to_db(replaced,name,self.out_db_name,self.targ_name)
                else:
                   LOG.warning('Failure during construction and clash relief for %s version %d It is likely clashes could not be relieved. Skipping and continuing',switch_name,case_count)
-
+                  return
             
 
             else:

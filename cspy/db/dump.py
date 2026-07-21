@@ -27,11 +27,6 @@ UNIQUE_STRUCTURES_SQL = (
     " on T.id = crystal.id "
 )
 
-STRUCTURES_ENERGY_SQL = (
-    "where crystal.energy <= (select min(crystal.energy) from crystal) + {}"
-)
-
-
 def write_structures_to_zip(filename, ids, structures):
     import zipfile
 
@@ -58,7 +53,7 @@ def write_structures_to_cif(filename, ids, structures):
 
 def main(sys_args=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument("databases", nargs="+", type=str, help="Databases to process.")
+    parser.add_argument("dbname", nargs=1, type=str, help="Databases to process.")
     parser.add_argument(
         "-t", "--table-output", type=str, default="structures.csv", help="Output file "
     )
@@ -78,19 +73,33 @@ def main(sys_args=None):
         help="File type for compressed structures",
     )
     parser.add_argument(
-        "-d",
-        "--include-duplicates",
-        action="store_true",
-        default=False,
-        help="Dump duplicate structures also",
+        "-e",
+        "--energy-range",
+        nargs=2,
+        default=[None, None],
+        help="Constrain plot to only structures with energy greater than value 1\
+              and less than value 2. Value should be float or None.",
     )
     parser.add_argument(
-        "-e",
-        "--energy",
-        type=float,
+        "-d",
+        "--density-range",
+        nargs=2,
+        default=[None, None],
+        help="Constrain plot to only structures with density greater than value 1\
+              and less than value 2. Value should be float or None.",
+    )
+    parser.add_argument(
+        "-i",
+        "--id",
+        type=str,
         default=None,
-        help="Dump structures that are a within the inputted energy from the "
-        "global minimum",
+        help="Dump structure matching provided ID.",
+    )
+    parser.add_argument(
+        "--spg",
+        type=int,
+        default=None,
+        help="Dump structure matching provided space group number.",
     )
     parser.add_argument("--parse-metadata", action="store_true", default=False)
     parser.add_argument(
@@ -103,6 +112,12 @@ def main(sys_args=None):
         help="Use this option to copy structures within a specified energy window to a new database."
     )
     parser.add_argument(
+        "--include-duplicates", 
+        action="store_true", 
+        default=False, 
+        help="Dump duplicate structures also",
+    )
+    parser.add_argument(
         "--log-level",
         type=str,
         choices=("INFO", "DEBUG", "ERROR", "WARN"),
@@ -113,72 +128,120 @@ def main(sys_args=None):
     logging.basicConfig(
         level=args.log_level, format=FORMATS[args.log_level], datefmt=DATEFMT
     )
+
+    dbname = args.dbname[0]
+    db = CspDataStore(dbname)
+
+    clustered = False
+    num_equivalent_to = db.query("select count(*) from equivalent_to").fetchone()[0]
+    if num_equivalent_to > 0:
+        clustered = True
+    if clustered:
+        LOG.info("%s is clustered. Scraping only unique structures", dbname)
+    else:
+        LOG.info("%s is likely unclustered. Scraping all structures.", dbname)
+
+    if args.energy_range[0]:
+        LOG.info("Filtering to structures with relative lattice energy between %s and %s kJ/mol.", args.energy_range[0], args.energy_range[1])
+    if args.density_range[0]:
+        LOG.info("Filtering to structures with density between %s and %s gcm^{3}.", args.density_range[0], args.density_range[1])
+    if args.spg:
+        LOG.info("Filtering to structures in spacegroup %s.", args.spg)
+
+    # copy structures from this db to another one
     if args.copy_db:
-        energy = 10 if args.energy is None else args.energy
-        LOG.info("Copying structures within {} kJmol of GM".format(energy))
-        dataframes = []
-        for dbname in args.databases: #JG - this could be changd as typically only used with 1 db
-            ds = CspDataStore(dbname)
-            ds.copy_unique_structures_within_range(
-                "{}_{}kJmol_window.db".format(dbname[:-3], energy), energy_max = energy
-            )
-            ds.close()
-        exit()
+        if args.id is not None:
+            LOG.error("Filtering by ID not supported with copy_db. Ignoring this.")
 
-    dataframes = []
-    query_text = UNIQUE_STRUCTURES_SQL
-    if args.include_duplicates:
-        query_text = ALL_STRUCTURES_SQL
-    if args.energy is not None:
-        query_text += STRUCTURES_ENERGY_SQL.format(args.energy)
-    for dbname in args.databases:
-        ds = CspDataStore(dbname)
-        dataframe = pd.read_sql(query_text, ds.connection)
-        if not len(dataframe) == 0:
-            pass
+        new_dbname = dbname[:-3]
+        if args.energy_range[0]:
+            new_dbname += "_" + str(args.energy_range[0]) + "-" + str(args.energy_range[1]) + "kJmol_window"
+
+        if args.density_range[0]:
+            new_dbname += "_" + str(args.density_range[0]) + "-" + str(args.density_range[1]) + "gcm3_window"
+
+        if args.spg is not None:
+            new_dbname += "_spg" + str(args.spg)
+
+        new_dbname += ".db"
+
+        LOG.info("Copying rows to %s", new_dbname)
+        db.copy_unique_structures_within_range(new_dbname, 
+                                               energy_min=args.energy_range[0], energy_max=args.energy_range[1], 
+                                               density_min=args.density_range[0], density_max=args.density_range[1], 
+                                               spacegroup=args.spg, include_duplicates=args.include_duplicates)
+        
+        db.close()
+        
+    # dump structures to csv and zip
+    else:
+        conditions = []
+        if args.energy_range[0]:
+            conditions.append(("crystal.energy >= (select min(crystal.energy) from crystal) + {} "
+                                ).format(args.energy_range[0]))
+            conditions.append(("crystal.energy <= (select min(crystal.energy) from crystal) + {} "
+                                ).format(args.energy_range[1]))
+        if args.density_range[0]:
+            conditions.append(("crystal.density >= {} "
+                                ).format(args.density_range[0]))
+            conditions.append(("crystal.density <= {} "
+                                ).format(args.density_range[1]))
+        if args.spg is not None:
+            conditions.append(("crystal.spacegroup = {} "
+                                ).format(args.spg))
+        if args.id is not None:
+            conditions.append(("crystal.id = \"{}\" "
+                                ).format(args.id))
+
+        if conditions:
+            property_range_sql = " where " + "and ".join(conditions)
         else:
-            LOG.warning("Database %s contains no unique structures. Trying all structures instead.", dbname)
-            query_text = ALL_STRUCTURES_SQL
-            if args.energy is not None:
-                query_text += STRUCTURES_ENERGY_SQL.format(args.energy)
-            dataframe = pd.read_sql(query_text, ds.connection)
-        dataframes.append(dataframe)
-        ds.close()
-    LOG.info("Total rows: %d", sum(len(x) for x in dataframes))
-    all_data = pd.concat(dataframes)
-    all_data.sort_values("energy", inplace=True)
-    structure_files = all_data.pop("file_content")
+            property_range_sql = ''
 
-    if args.parse_metadata:
-        import json
+        
+        if clustered and not args.include_duplicates:
+            query_text = UNIQUE_STRUCTURES_SQL + property_range_sql
+        else:
+            query_text = ALL_STRUCTURES_SQL + property_range_sql
 
-        metadata = all_data.pop("metadata")
-        new_cols = pd.io.json.json_normalize(metadata.apply(json.loads))
-        all_data = pd.concat((all_data, new_cols.reset_index()), axis=1)
+        dataframe = pd.read_sql(query_text, db.connection)
 
-    table_file = Path(args.table_output)
-    structure_file = Path(args.structure_output)
+        db.close()
 
-    def to_latex(filename, **kwargs):
-        Path(filename).write_text(all_data.to_latex(**kwargs))
+        LOG.info("Total rows: %d", len(dataframe))
+        dataframe.sort_values("energy", inplace=True)
+        structure_files = dataframe.pop("file_content")
 
-    table_dispatch = {
-        ".csv": all_data.to_csv,
-        ".xlsx": all_data.to_excel,
-        ".h5": all_data.to_hdf,
-        ".hdf5": all_data.to_hdf,
-        ".hdf": all_data.to_hdf,
-        ".pickle": all_data.to_pickle,
-        ".tex": to_latex,
-    }
-    structure_dispatch = {
-        ".zip": write_structures_to_zip,
-        ".res": write_structures_to_res,
-        ".cif": write_structures_to_cif,
-    }
-    LOG.info("Writing %d rows to %s", len(all_data), args.table_output)
-    table_dispatch[table_file.suffix](args.table_output, index=False)
-    LOG.info("Writing %d structures to %s", len(all_data), args.structure_output)
-    structure_dispatch[structure_file.suffix](
-        args.structure_output, all_data["id"], structure_files
-    )
+        if args.parse_metadata:
+            import json
+
+            metadata = dataframe.pop("metadata")
+            new_cols = pd.io.json.json_normalize(metadata.apply(json.loads))
+            dataframe = pd.concat((dataframe, new_cols.reset_index()), axis=1)
+
+        table_file = Path(args.table_output)
+        structure_file = Path(args.structure_output)
+
+        def to_latex(filename, **kwargs):
+            Path(filename).write_text(dataframe.to_latex(**kwargs))
+
+        table_dispatch = {
+            ".csv": dataframe.to_csv,
+            ".xlsx": dataframe.to_excel,
+            ".h5": dataframe.to_hdf,
+            ".hdf5": dataframe.to_hdf,
+            ".hdf": dataframe.to_hdf,
+            ".pickle": dataframe.to_pickle,
+            ".tex": to_latex,
+        }
+        structure_dispatch = {
+            ".zip": write_structures_to_zip,
+            ".res": write_structures_to_res,
+            ".cif": write_structures_to_cif,
+        }
+        LOG.info("Writing %d rows to %s", len(dataframe), args.table_output)
+        table_dispatch[table_file.suffix](args.table_output, index=False)
+        LOG.info("Writing %d structures to %s", len(dataframe), args.structure_output)
+        structure_dispatch[structure_file.suffix](
+            args.structure_output, dataframe["id"], structure_files
+        )

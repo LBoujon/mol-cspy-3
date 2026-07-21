@@ -6,6 +6,7 @@ from collections import defaultdict
 from typing import List, Dict, Tuple, Literal, Union, Optional, TYPE_CHECKING
 
 import numpy as np
+import numpy.typing as npt
 from scipy.spatial import cKDTree as KDTree
 from scipy.spatial import distance_matrix
 from scipy.spatial.distance import cdist
@@ -727,19 +728,43 @@ class Molecule:
 
     def positions_in_molecular_axis_frame(
         self, method="nc", foreshorten_hydrogens=None
-    ):
+    ) -> npt.NDArray:
+        """
+        Align the molecule to the set axis: Neighcrys, PCA, or principal moments
+        of intertia.
+        
+        Parameters
+        ----------
+        method : Literal["nc", "pca", "moi"]
+            The method to use for aligning the molecule:
+                - nc: Neighcrys axis
+                - pca: PCA
+                - moi: Align along principal moments of inertia
+            
+            Default method is "nc"
+        
+        foreshorten_hydrogens : bool
+            Foreshorten hydrogen positions in the output
+
+        Returns
+        -------
+        np.ndarray
+            The atomic positions of the molecule with respect to the defined axis
+        """
         if method not in ("nc", "pca", "moi"):
             raise NotImplementedError("Only nc, pca, moi implemented")
         if len(self) == 1:
             return np.array([[0.0, 0.0, 0.0]])
-        axis = self.axes(method=method)
+        axis = self.axes(method=method).T
+        if np.linalg.det(axis) < 0: # https://pyxtal.readthedocs.io/en/latest/_modules/pyxtal/molecule.html#reoriented_molecule
+            axis[:, 0] *= -1
         if foreshorten_hydrogens:
             positions = self.foreshortened_hydrogen_positions(
                 reduction=foreshorten_hydrogens
             )
-            return np.dot(positions - self.center_of_mass, axis.T)
+            return np.dot(positions - self.center_of_mass, axis)
         else:
-            return np.dot(self.positions - self.center_of_mass, axis.T)
+            return np.dot(self.positions - self.center_of_mass, axis)
 
     @classmethod
     def group_atoms_by_element(cls, molecules):
@@ -1459,11 +1484,12 @@ class Molecule:
         with open(filename, "w") as f:
             f.write(self.to_mol2_string())
 
-    def to_rdkit_mol(self) -> RWMol:
+    def to_rdkit_mol(self, determine_bonds: bool = False) -> RWMol:
         """
         Convert the molecule to an RDKit molecule.
         """
         from rdkit import Chem
+        from rdkit.Chem.rdDetermineBonds import DetermineBonds
 
         atoms = [x.symbol for x in self.elements]
         coords = self.positions
@@ -1474,6 +1500,8 @@ class Molecule:
         for i, (x, y, z) in enumerate(coords):
             conf.SetAtomPosition(i, (float(x), float(y), float(z)))
         mol.AddConformer(conf)
+        if determine_bonds:
+            DetermineBonds(mol)
         return mol
 
     def to_xyz_string(self, header=True):
@@ -1972,3 +2000,30 @@ class Molecule:
         vdw_volume = np.sum(within_vdw) * d_grid**3
         return vdw_volume
 
+    def substructure_idxs(self, substructure: str, substructure_encoding: Literal["smiles", "smarts"] = "smarts") -> tuple[tuple[int, ...]] | None:
+        """Find the indices of a substructure in the molecule.
+
+        Parameters
+        ----------
+        substructure : str
+            The SMILES or SMARTS string of the substructure to find.
+
+        substructure_encoding : str, optional
+            The encoding of the substructure string. Either 'smiles' or 'smarts'. Default is 'smarts'.
+
+        Returns
+        -------
+        tuple[tuple[int]] | None
+            The indices of the atoms in the substructure.
+        """
+        from rdkit import Chem
+
+        mol = self.to_rdkit_mol(determine_bonds=True)
+        if substructure_encoding == "smarts":
+            sub_mol = Chem.MolFromSmarts(substructure)
+        else:
+            sub_mol = Chem.MolFromSmiles(substructure)
+        matches = mol.GetSubstructMatches(sub_mol)
+        if not matches:
+            return None
+        return matches

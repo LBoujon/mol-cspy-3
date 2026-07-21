@@ -66,6 +66,11 @@ def main(sys_args=None):
                 help='Specify number of paralllel process')
         parser.add_argument('-d', '--dump', action='store_true',
                 help='Dump pairs')
+        parser.add_argument(
+                "--log-level", type=str,
+                choices=("INFO", "DEBUG", "ERROR", "WARN"),
+                default="INFO",
+                help="Control level of logging output")
 
         args = parser.parse_args(sys_args)
 

@@ -491,22 +491,6 @@ COMMON_SAMPLING_SETTINGS = {
             145: 10000,
         },
     },
-    "JD_flex10": {
-        # 10 most common spacegroups with larger search count for flexible molecules
-        "space_group": MOST_COMMON_SPACEGROUPS["single"][:10],
-        "number_structures": {
-        61: 50000,
-        14: 100000,
-        19: 50000,
-        2: 50000,
-        4: 50000,
-        15: 50000,
-        33: 50000,
-        9: 50000,
-        29: 50000,
-        5: 50000,
-        },
-    },
 }
 
 

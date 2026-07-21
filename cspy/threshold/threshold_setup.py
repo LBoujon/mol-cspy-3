@@ -148,7 +148,7 @@ def check_bonding(crystals: List[Crystal], molecules: List[Molecule], tol: float
                 LOG.info(f"Attempting to fix bonding by replacing molecules in crystal")
                 try:
                     if fix_method == "replace_molecules":
-                        new_crystal = crystal.replace_molecules(molecules, reorder_to="other")
+                        new_crystal = crystal.replace_molecules(molecules, reorder_atoms_to="other")
                     else:
                         new_crystal = crystal.match_atom_ordering_to(molecules)
                     new_crystal.titl = crystal.titl

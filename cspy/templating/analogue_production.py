@@ -12,7 +12,7 @@ from cspy.crystal import AsymmetricUnit
 from cspy.crystal import Crystal
 
 
-def get_iso_overlays(mol_1:object,mol_2:object , inds_1:list[int],inds_2:list[int],possibilities:list[tuple[list[int],list[int]]]
+def get_iso_overlays(mol_1:object,mol_2:object , inds_1:list[int],inds_2:list[int],possibilities:list[tuple[list[int],list[int]]], atom_match_mode="exact",
     ) -> list[tuple[list[int],list[int]]] :
         """Calculate all isomorphic ways of overlaying two given substructure instances and add to existing list of possible overlays
 
@@ -54,7 +54,19 @@ def get_iso_overlays(mol_1:object,mol_2:object , inds_1:list[int],inds_2:list[in
         num_1 = mol_1_sub.atomic_numbers
         num_2 = mol_2_sub.atomic_numbers
         
+        if atom_match_mode == "exact":
+            match_1 = num_1
+            match_2 = num_2
 
+        elif atom_match_mode == "heavy":
+            # Treat all non-H atoms as equivalent.
+            match_1 = np.array([6 if n != 1 else 1 for n in num_1], dtype=int)
+            match_2 = np.array([6 if n != 1 else 1 for n in num_2], dtype=int)
+
+        elif atom_match_mode == "any":
+            # Ignore elements entirely.
+            match_1 = np.ones(len(num_1), dtype=int)
+            match_2 = np.ones(len(num_2), dtype=int)
         
         if mol_1_sub.bonds is None:
            mol_1_sub.guess_bonds()
@@ -69,10 +81,11 @@ def get_iso_overlays(mol_1:object,mol_2:object , inds_1:list[int],inds_2:list[in
             sorted_map = {i:mapping[i] for i in range(len(mol_2_sub))}
             order = list(sorted_map.values())
             reordered=inds_2[order]
-            equal = np.array_equal(num_1, num_2[order])
+            equal = np.array_equal(match_1, match_2[order])
             if equal:
                reordered=list(reordered)
                possibilities.append((inds_1,reordered))
+               
         return possibilities
 
 
@@ -261,7 +274,7 @@ def write_ana_to_db(analogue:object,name:str,db_name:str,targ_name:str) -> None:
 
 
 def get_shift(mol:object,original_copy:object,new_cell:object) -> object :
-    """write a given initial analogue  structure to cspy database -  supplies energies and densities of 0
+    """calculate shift in cartesian co-ordinates required to move the molecules and maintain their fractional centroid positions within a new cell
 
         Parameters
         ----------
@@ -278,7 +291,7 @@ def get_shift(mol:object,original_copy:object,new_cell:object) -> object :
         ---------
 
         cart_shift: object
-              np.nd.array defining the shift in cartesian co-ordinates required to move the moelcuels and maintain their fractional centroid positions within a new cell
+              np.nd.array defining the shift in cartesian co-ordinates required to move the molecules and maintain their fractional centroid positions within a new cell
 
     """
 

@@ -84,7 +84,7 @@ def test_check_multipoles():
 def test_check_bonding():
     xyz_file = DATA_DIR / "pyrene.xyz"
     loaded_c = load_crystals(CRYSTALS)
-    assert check_bonding(loaded_c, [Molecule.from_xyz_file(xyz_file)])
+    assert check_bonding(loaded_c, [Molecule.from_xyz_file(xyz_file)])[0]
 
 
 def test_molecular_axis():
