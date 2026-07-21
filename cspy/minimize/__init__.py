@@ -156,7 +156,7 @@ def calculate_multipoles_and_minimize(crystal, **kwargs):
             "Calculating single point energy for crystal %s, l_max=%d",
             crystal, mults.max_rank,
         )
-        dmacrys_kwargs["MAXI"] = 0
+        dmacrys_kwargs["MAXI"] = 1000
         # dmacrys_kwargs["CONV"] = True
         #LOG.info("Minimizing crystal %s with PROP calculation", crystal)
         # dmacrys_kwargs["ACCM"] = kwargs.get("ACCM", 100000000)

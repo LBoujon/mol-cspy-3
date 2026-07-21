@@ -75,6 +75,7 @@ class ReoptimizationManager:
 
         self.start_time = time.time()
         self.work_queue = WorkQueue(workers)
+        self.n_workers=len(workers)
         LOG.info('Starting ReoptimizationManager for target: "%s"', self.name)
         self.db_thread = None
         self.db_writer = None
@@ -167,7 +168,11 @@ class ReoptimizationManager:
 
     def restart_from_database(self, filename):
         ds = CspDataStore(filename)
-        name = Path(filename).stem.split(".")[0]
+        name_stem = Path(filename).stem
+        if name_stem[-4:] == ".opt":
+            name = name_stem[:-4]
+        else:
+            name = name_stem
         if name not in self.structures.keys():
             return
         LOG.info("Pruning structures found in database: %s", filename)
@@ -314,7 +319,7 @@ class ReoptimizationManager:
                     self.successful_minimizations[c.filename].append(c)
 
                     self.errors["summary"]["total"] += 1
-                    if valid == "timeout":
+                    if valid == "Timeout":
                         self.errors["summary"]["timeout"] += 1
                     elif valid == 'MaxIts':
                         self.errors["summary"]["max_its"] += 1
@@ -326,6 +331,7 @@ class ReoptimizationManager:
                         self.errors["summary"]["unknown"] += 1
                     self.progress[crystals[0].filename]["failed"] += 1
             self.update_errors()
+            self.update_status()
 
     def update_errors(self):
         errors_string = self.errors_table_string()

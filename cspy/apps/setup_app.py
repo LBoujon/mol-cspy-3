@@ -669,13 +669,13 @@ def add_CLG_arguments(parser: argparse.ArgumentParser) -> argparse.ArgumentParse
         "--number-structures",
         type=int,
         default=CONFIG.get("csp.number_structures"),
-        help="Number of structures for structure generation",
+        help="Number of structures in each spacegroup for structure generation. Should be provided as a single integer",
     )
     parser.add_argument(
         "--nudge",
         type=int,
         default=0,
-        help="Nudge molecules in assymetric unit that fail QR step",
+        help="Nudge molecules in asymmetric unit that fail QR step",
     )
     parser.add_argument(
         "--adaptcell",

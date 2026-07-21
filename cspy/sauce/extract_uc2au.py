@@ -5,12 +5,13 @@ from cspy.chem.molecule import Molecule
 from cspy.util.misc import mp_check_reservation
 from cspy.crystal.util import find_formula_unit
 from cspy.sauce.extract_aut import energy_filter, create_aus_database, update_aus_database, get_au_xyz, calculate_au_energy
+from cspy.crystal.space_group import n_symops_from_SG
 import multiprocessing
 import argparse
 import os
 import random
 import numpy as np
-from cspy.crystal.space_group import n_symops_from_SG
+from collections import Counter
 import logging
 
 LOG = logging.getLogger(__name__)
@@ -126,7 +127,7 @@ def extract_uc_as_au(crystal : Crystal,
         
         best_energy = 99999999999999999999
         for au_ind, candidate_au in enumerate(candidate_aus):
-            candidate_au_xyz_coords, energy = calculate_au_energy(candidate_au, molecules, Zp, pot, atom_types, charges, atom_ids)
+            candidate_au_xyz_coords, energy = calculate_au_energy(candidate_au, Zp, pot, atom_types, charges, atom_ids)
             if energy < best_energy:
                 best_energy = energy
                 au_xyz_coords = candidate_au_xyz_coords
@@ -238,6 +239,11 @@ def main(sys_args=None):
             help='Treat crystals with less energy has a buckingham catastrophe')
     parser.add_argument('-r', '--random', action='store_true',
             help='Sample crystals randomly (must also specify -nc)')
+    parser.add_argument(
+                "--log-level", type=str,
+                choices=("INFO", "DEBUG", "ERROR", "WARN"),
+                default="INFO",
+                help="Control level of logging output")
 
     args = parser.parse_args(sys_args)
 
@@ -282,7 +288,9 @@ def main(sys_args=None):
             unique_molecules[mol_id] = dict()
 
     # get Z' by finding greatest common divisor
-    formula_unit, unique_molecules, Zp = find_formula_unit(sorted_molecules)
+    # formula_unit, unique_molecules, Zp = find_formula_unit(sorted_molecules)  # this is for molecule objects
+    molecules_count_dict = Counter(sorted_molecules)
+    Zp = int(np.gcd.reduce(list(molecules_count_dict.values())))
 
     # get a list of list where each list contains the unique numerical id of each atom
     atom_ids = []
@@ -310,9 +318,11 @@ def main(sys_args=None):
     dma_data = parse_dma(dma_file)
     atom_types = []
     charges = []
-    for molecule_dma in dma_data:
-        atom_types.append(molecule_dma['atom_types'])
-        charges.append(molecule_dma['charges'])
+
+    for symop in range(n_symops):
+        for molecule_dma in dma_data:
+            atom_types.append(molecule_dma['atom_types'])
+            charges.append(molecule_dma['charges'])
 
     workers = args.numproc[0]
 
@@ -327,21 +337,36 @@ def main(sys_args=None):
     with multiprocessing.Pool(workers) as pool:
             pool.starmap(parallelise_uc2aut_extraction, [[data, sorted_molecules, molecules_elements, Zp, pot, atom_types, charges, atom_ids, Q, workers, args] for Q in range(workers)])
 
+    if os.path.isfile("jointDB_aus.db"):
+        LOG.info("Database already exists. Appending asymmetric units.")
+        db_old = CspDataStoreAUs("jointDB_aus.db")
+        (nvalid,) = db_old.query("select count(*) from asym_units ").fetchall()[0]
+        # offset makes sure asymmetric unit IDs don't clash
+        offset = nvalid
+        db_old.close()
+
+    else:
+        LOG.info("Creating new database")
+        create_aus_database("jointDB")
+        offset = 0
+
     T = {}
     for Q in range(workers):
         db = CspDataStoreAUs('AU_' + str(Q)+"_aus.db")
         for row in db.select("asym_units",
                                 ['id','energy', 'xyz_coordinates','molecule_ids']):
-            T[row[0]]={"energy" : row[1], "xyz_coordinates" : row[2], "molecule_ids" : row[3]}
+            T[row[0] + offset]={"energy" : row[1], "xyz_coordinates" : row[2], "molecule_ids" : row[3]}
             
-
         db.disconnect()
-    create_aus_database("jointDB")
+
     update_aus_database(unique_molecules,"jointDB")
     update_aus_database(T,"jointDB")
 
+    LOG.info("%s asymmetric units added to database, %s.", str(len(T)), "jointDB_aus.db")
+    db.close()
+
     for Q in range(workers):
         try:
-            os.remove('AsymU_' + str(Q) + '_mps.db')
+            os.remove('AU_' + str(Q) + '_aus.db')
         except:
             pass

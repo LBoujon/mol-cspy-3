@@ -8,10 +8,10 @@ from .cp2k_to_res2 import xyz_to_res
 from typing import Union, List, Optional, Dict, Tuple
 from atom import Atom
 
-if os.path.exists("/path/to/potpaw_PBE"):
-    potcar_path = "/path/to/potpaw_PBE"
-else:
-    raise Exception("POTCAR path not found. Please set the correct path to POTCAR files.")
+# if os.path.exists("/path/to/potpaw_PBE"):
+#     potcar_path = "/path/to/potpaw_PBE"
+# else:
+#     raise Exception("POTCAR path not found. Please set the correct path to POTCAR files.")
 
 
 class Snapshot:

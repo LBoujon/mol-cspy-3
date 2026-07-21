@@ -414,6 +414,7 @@ def main(sys_args=None):
                 choices=("INFO", "DEBUG", "ERROR", "WARN"),
                 default="INFO",
                 help="Control level of logging output")
+        
         args = parser.parse_args(sys_args)
 
         logging.basicConfig(

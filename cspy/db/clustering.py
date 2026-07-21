@@ -13,8 +13,9 @@ import logging
 import numpy as np
 import time
 import os
-from typing import Tuple, Union, Optional
+from typing import Tuple, Union, Optional, Any
 import sys
+
 
 LOG = logging.getLogger(__name__)
 
@@ -467,6 +468,56 @@ def structure_search(dbname, args):
     )
 
 
+
+
+def compack_compare_db(dbname:str,args:dict[str, Any])-> None:
+    """ search for matches between the supplied database and another database.
+
+    Parameters
+    ----------
+    dbname : str
+        CSPy database name/path
+
+    args: dict[str, Any]
+          The arguments passed to cspy-db cluster
+ 
+    """
+
+    from cspy.db.compack_clustering import iterative_compack_batch
+
+    eng_thresh = args.cluster_energy_threshold
+    den_thresh = args.cluster_density_threshold
+
+    ds=CspDataStore(dbname)
+    comp_ds=CspDataStore(args.compack_compdbname)
+
+    ids, eds, xs, molids, contents, no_desc = structure_rows(ds,kind='compack')
+    comp_ids, comp_eds, comp_xs, comp_molids, comp_contents, comp_no_desc = structure_rows(comp_ds,kind='compack')
+    config = CspyConfiguration()
+    settings = config['compack']
+    for i in range(len(ids)):
+        ed = eds[i]
+        comp_ed_a = np.abs(np.array(comp_eds) - ed)
+        idxs = np.where(
+            (comp_ed_a[:, 0] < eng_thresh)
+            & (comp_ed_a[:, 1] < den_thresh)
+        )[0]
+
+        refname=ids[i]
+        rmsds = iterative_compack_batch(contents[i],
+            [comp_contents[j] for j in idxs],
+            refname,comp_ids,
+            args.jobs,
+            settings)
+
+        matches = {j:rmsd for j,rmsd in rmsds.items() if rmsd < args.cluster_rms_threshold}
+        with open('comp_db_matches.txt', 'a') as f:
+             for j, rmsd in matches.items():
+                 f.write(f'{refname} {comp_ids[idxs[j]]} {rmsd}\n')
+
+
+
+
 def main(sys_args=None):
     import argparse
 
@@ -580,6 +631,13 @@ def main(sys_args=None):
              "e.g. name.cif, name.res, ACETAC01"
         )
 
+    parser.add_argument(
+        "--compack_compdbname",
+        type=str,
+        default=None,
+        help="File name of a comparison database"
+        )
+
 
     args = parser.parse_args(sys_args)
     logging.basicConfig(
@@ -601,7 +659,7 @@ def main(sys_args=None):
     # over structures rather than databases. This is done by setting job_pool to 1 and then
     # using args.jobs to set the number of parellel compack calculations 
     # in iterative_compack_batch
-    if not args.compack_exp_str:
+    if not args.compack_exp_str and not args.compack_compdbname:
         LOG.info(f'Task: Duplicate removal (clustering).')
         if args.method =='compack':
             job_pool = 1
@@ -647,7 +705,7 @@ def main(sys_args=None):
 
         LOG.info("Clustering output database %s. Unique structures will not be copied anywhere new.", args.output)
         find_equivalent_structures(args.output, args, calculate_missing=False)
-    else:
+    elif args.compack_exp_str:
         LOG.info(f'Task: Finding structure match(es) to {args.compack_exp_str}')
         if args.method not in ['compack', 'pymatgen']:
             raise NotImplementedError(f"Method {args.method} is not implemented for "
@@ -657,6 +715,14 @@ def main(sys_args=None):
             structure_search(dbname=db,
                              args=args,
                             )
+
+    elif args.compack_compdbname:
+        if args.method != 'compack':
+            raise NotImplementedError(f"Method {args.method} is not implemented for "
+                            "comparison of databases. Use 'compack'")
+        LOG.debug(f'Searching for matches between {args.databases} and {args.compack_compdbname}.')
+        for db in args.databases:
+            compack_compare_db(dbname=db,args=args)
 
 
 if __name__ == "__main__":

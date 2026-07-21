@@ -228,13 +228,14 @@ class DmacrysMinimizer:
         return exe
     
     def _directory_minimize(self, crystal, directory):
-        self.setup_minimization(crystal,
+        try:
+            self.setup_minimization(crystal,
                                 directory,
                                 reorder_atoms_if_high_rmsd=self.reorder_atoms_if_high_rmsd,
                                 reorder_method=self.reorder_method)
-        try:
+        
             nc = self.run_neighcrys(directory)
-        except (ReturnCodeError, TimeoutExpired) as exc:
+        except (ReturnCodeError, TimeoutExpired, ValueError, KeyError, IndexError) as exc:
             LOG.exception("Error in Neighcrys: %s", exc)
             return None
         self._last_ncin = nc.input_contents
@@ -248,7 +249,10 @@ class DmacrysMinimizer:
         self._last_symmetry = nc.symmetry_contents
         try:
             dm = self.run_dmacrys(nc, directory)
-        except (ReturnCodeError, TimeoutExpired) as exc:
+        except (ReturnCodeError) as exc:
+            LOG.exception("Error in Dmacrys: %s", exc, stack_info=False, exc_info=False)
+            return None
+        except (TimeoutExpired) as exc:
             LOG.exception("Error in Dmacrys: %s", exc, stack_info=False, exc_info=False)
             return 'Timeout'
         except Exception as exc:
@@ -265,7 +269,11 @@ class DmacrysMinimizer:
         if self._last_summary.error:
             return self._last_summary.error
         
-        new_crystal = Crystal.from_shelx_string(dm.shelx_contents)
+        try:
+            new_crystal = Crystal.from_shelx_string(dm.shelx_contents)
+        except (ValueError) as exc:
+            LOG.exception("Error in DMACRYS output: %s", exc)
+            return None
         crystal.properties["lattice_energy"] = self.summary.initial_energy
         crystal.properties["density"] = self.summary.initial_density
         new_crystal.properties["initial_energy"] = self.summary.initial_energy

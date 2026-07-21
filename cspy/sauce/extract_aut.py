@@ -153,7 +153,7 @@ def calculate_au_energy(candidate_au : str, Zp : int, pot : str, atom_types : li
     charges : list
         List of list of point charges. One value per atom.
 
-    atom_ids : list of list of iints
+    atom_ids : list of list of ints
         A list which contains one list per molecule in the 
         asymmetric unit. Each sublist contains a list of atom
         ids so that we can know which atom belongs to which
@@ -528,6 +528,11 @@ def main(sys_args=None):
             help='Treat crystals with less energy has a buckingham catastrophe')
     parser.add_argument('-r', '--random', action='store_true',
             help='Sample crystals randomly (must also specify -nc)')
+    parser.add_argument(
+                "--log-level", type=str,
+                choices=("INFO", "DEBUG", "ERROR", "WARN"),
+                default="INFO",
+                help="Control level of logging output")
 
     args = parser.parse_args(sys_args)
 

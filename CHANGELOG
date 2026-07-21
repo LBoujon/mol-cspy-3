@@ -1,6 +1,47 @@
 # Change Log
 
 All notable changes to this project will be documented in this file.
+
+## [3.1.0] - 20/07/2026
+- Introduced new optional application: cspy-disord (requires Orgdisord)
+    - A workflow for generating and analysing disordered and mixed crystals 
+    - cspy-disord prepare-cif prepares the input file for enumeration
+    - cspy-disord enumerate enumerates configurations via Orgdisord to produce a .db
+    - cspy-disord optimise optimises the structures in the enumerated .db via cspy-opt
+    - cspy-disord calc calculate ensemble free energies from the optimised database.
+- Databases
+    - Introduced new cspy-db function: cspy-db build
+        - Allows for the conversion of res files to CSPy database files
+    - Overhauled cspy-db dump for more flexible functionality:
+        - Files can now be dumped by id.
+        - Files can now be dumped within an arbitrary energy-density window 
+        - Files can now be dumped from a specific space group
+    - Added functionality to perform COMPACK comparisons between databases
+- Thresholding
+    - New cspy-threshold-utils subcommand: 'intra'. 
+        - Allows finding the indices of the atoms in molecules that satisfy SMILES or SMART strings. Useful to setup  intramolecular moves in MC jobs.
+- Reoptimise
+    - cspy-reoptimise will now report to a status.txt file
+- SAUCE
+    - Changes to cspy-sauce extract_uc2au
+        - Extracted asymmetric units can now be added to existing databases
+        - Fixed bugs related to extracting asymmetric units
+    - When running SAUCE, the asymmetric unit database can now be specified in the cspy.toml file
+        - When using this functionality, SAUCE will use exactly as many AUs as are in the db. (No further are generated.)
+- Bug fixes
+    - Fixed bug related to restarting reoptimisations
+        - When restarting from a database with a '.' it would run all the optimisations again. This is now been fixed.
+    - Fixed bug with cspy-setup command missing from pyproject.toml
+    - Fixed rounding error in GPlus
+    - Fixed bugs in capy-templating app
+    - Changed capitalisation when edditing settings of ccdc MaximumCommonSubstructure function
+    - Added missing return statements to end analogue generation on failure
+    - Fix an issue of the chirality of molecules changing when aligning the molecule.
+    - Fix an issue of the CIF parser that would sometimes read the atomic positions from the file as strings and not floats.
+    - Removed potentials from available potentials list in cases where potential files are unavailable
+    - Fixed bug that would cause cores to get stuck when NEIGHCRYS threw an error
+        - This could lead to situations where jobs would stay at 999/1000 crystals until the job timed out
+
 ## [3.0.6] - 04/06/2026
 - Added link to group website in README.md
 

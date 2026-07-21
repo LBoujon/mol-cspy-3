@@ -257,7 +257,7 @@ class CspDataStore(DataStore):
     def update_unique_structures(self, equivalence):
         pass
 
-    def unique_structures(self, with_file_content=False, with_trial_data=False, fallback=False, **kwargs) -> sqlite3.Cursor:
+    def unique_structures(self, with_file_content=False, with_trial_data=False, with_trial_metadata=False, fallback=False, **kwargs) -> sqlite3.Cursor:
         """
         Get the unique structures in the database crystal table. To get the N lowest energy structures
         you can use fetchmany(N) when consuming the cursor, instead of using fetchall().
@@ -270,6 +270,9 @@ class CspDataStore(DataStore):
 
         with_trial_data : bool
             Include the trial_structure data with each crystal. Default is False
+            
+        with_trial_metadata : bool
+            Include the metadata column from the trial_structure table. Default is False
 
         fallback : bool
             If database has not been clustered, return final minimizations instead. Default
@@ -309,7 +312,7 @@ class CspDataStore(DataStore):
             )
             if fallback:
                 LOG.info("Falling back to final minimizations")
-                return self.final_minimizations(with_file_content=with_file_content, with_trial_data=with_trial_data, **kwargs)
+                return self.final_minimizations(with_file_content=with_file_content, with_trial_data=with_trial_data, with_trial_metadata=with_trial_metadata, **kwargs)
             else:
                 return []
         else:
@@ -344,15 +347,38 @@ class CspDataStore(DataStore):
                 "on unique_id == C.id " + extra_txt +
                 "order by energy asc"
             )
-            if with_trial_data:
+            
+            if with_trial_data and with_trial_metadata:
+                query_text = (
+                    select_C + ", T.minimization_step, T.trial_number, T.minimization_time, T.metadata "
+                    "from crystal C join "
+                    "(select distinct unique_id from equivalent_to) "
+                    "on unique_id == C.id "
+                    "join trial_structure T on C.id = T.id " + extra_txt + 
+                    "order by energy asc"
+                )
+            
+            
+            elif with_trial_data:
                 query_text = (
                     select_C + ", T.minimization_step, T.trial_number, T.minimization_time "
                     "from crystal C join "
                     "(select distinct unique_id from equivalent_to) "
-                    "on unique_id == C.id"
+                    "on unique_id == C.id "
                     " join trial_structure T on C.id = T.id " + extra_txt +
                     "order by energy asc"
                 )
+                
+            elif with_trial_metadata:
+                query_text = (
+                    select_C + ", T.metadata " 
+                    "from crystal C join "
+                    "(select distinct unique_id from equivalent_to) "
+                    "on unique_id == C.id "
+                    "join trial_structure T on C.id = T.id " + extra_txt +
+                    "order by energy asc"
+                )
+                
         return self.query(query_text)
     
     def number_of_unique_structures(self):
@@ -407,7 +433,7 @@ class CspDataStore(DataStore):
             "select max(minimization_step) from trial_structure"
         ).fetchone()[0]
 
-    def final_minimizations(self, with_file_content=True, with_trial_data=False, **kwargs) -> sqlite3.Cursor:
+    def final_minimizations(self, with_file_content=True, with_trial_data=False, with_trial_metadata=False, **kwargs) -> sqlite3.Cursor:
         """
         Get the structures from the final minimization step from the crystal table. To get the N lowest energy structures
         you can use fetchmany(N) when consuming the cursor, instead of using fetchall().
@@ -420,6 +446,9 @@ class CspDataStore(DataStore):
 
         with_trial_data : bool
             Include the trial_structure data with each crystal. Default is False
+            
+        with_trial_metadata : bool
+            Include the metadata column from the trial_structure table. Default is False
 
         **kwargs : Dict[str, Any]
             Extra filters to the SQL query. See notes below for accepted keys
@@ -471,7 +500,7 @@ class CspDataStore(DataStore):
         max_energy = kwargs.get("max_energy", None)
         if max_energy is not None:
             extra_filter_txt.append(f"C.energy <= (select min(energy) from crystal) + {max_energy} ")
-
+        
         extra_txt = ""
         if len(extra_filter_txt) > 0:
             extra_txt = "where "
@@ -484,9 +513,28 @@ class CspDataStore(DataStore):
             "order by energy asc"
         ).format(max_step=max_step)
 
-        if with_trial_data:
+
+        if with_trial_data and with_trial_metadata:
+            query_text = (
+                select_C + ", T.minimization_step, T.trial_number, T.minimization_time, T.metadata "
+                "from crystal C join "
+                "(select * from trial_structure where minimization_step >= {max_step}) "
+                "T on C.id = T.id " + extra_txt +
+                "order by energy asc"
+            ).format(max_step=max_step)
+
+        elif with_trial_data:
             query_text = (
                 select_C + ", T.minimization_step, T.trial_number, T.minimization_time "
+                "from crystal C join "
+                "(select * from trial_structure where minimization_step >= {max_step}) "
+                "T on C.id = T.id " + extra_txt +
+                "order by energy asc"
+            ).format(max_step=max_step)
+            
+        elif with_trial_metadata:
+            query_text = (
+                select_C + ", T.metadata " 
                 "from crystal C join "
                 "(select * from trial_structure where minimization_step >= {max_step}) "
                 "T on C.id = T.id " + extra_txt +
@@ -561,7 +609,8 @@ class CspDataStore(DataStore):
 
     def copy_unique_structures_within_range(self, dbname, 
                                             energy_min: float = None, energy_max: float = None, 
-                                            density_min: float = None, density_max: float = None) -> None:
+                                            density_min: float = None, density_max: float = None,
+                                            spacegroup: int = None, include_duplicates : bool = False) -> None:
         
         """
         Take all crystal structures within specified energy-density range and copy to a new database.
@@ -603,18 +652,23 @@ class CspDataStore(DataStore):
         if density_max is not None:
             conditions.append(("crystal.density <= {} "
                                 ).format(density_max))
+            
+        if spacegroup is not None:
+            conditions.append(("crystal.spacegroup = {} "
+                                ).format(spacegroup))
 
         if conditions:
             property_range_sql = " where " + "and ".join(conditions)
     
-            if self.has_unique_structure_information():
+            if self.has_unique_structure_information() and include_duplicates is False:
                 self.query(
                     "insert or replace into tmp.crystal select crystal.* from crystal join "
                     "(select distinct unique_id from equivalent_to) "
                     "on unique_id == crystal.id "+ property_range_sql
                 )
             else:
-                LOG.warning("%s has no unique structure information. Copying ALL structures within specified range.", dbname)
+                if include_duplicates is False:
+                    LOG.warning("%s has no unique structure information. Copying ALL structures within specified range.", dbname)
                 self.query(
                     "insert or replace into tmp.crystal select crystal.* from crystal "+ property_range_sql
                 )
