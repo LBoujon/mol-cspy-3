@@ -17,7 +17,7 @@ from .disord_utils import query_rows, write_structure_rows
 from cspy.formats import DmacrysSummary
 
 
-LOG = logging.getLogger("cspy.progs.orgdisord.optimise")
+LOG = logging.getLogger(__name__)
 
 ERROR_FIELDS = [
     "id",

@@ -29,7 +29,7 @@ from .disord_utils import (
     write_disordered_cif,
 )
 
-LOG = logging.getLogger("cspy.progs.orgdisord.existing_disorder")
+LOG = logging.getLogger(__name__)
 
 
 def parse_group_component_map(text):

@@ -12,7 +12,7 @@ from .disord_utils import (
     write_structure_rows,
 )
 
-LOG = logging.getLogger("cspy.progs.orgdisord.database")
+LOG = logging.getLogger(__name__)
 
 # Preserve the original private helper name for existing callers/tests.
 _safe_spacegroup_number = safe_spacegroup_number

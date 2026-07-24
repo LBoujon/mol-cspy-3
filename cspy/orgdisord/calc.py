@@ -14,7 +14,7 @@ from cspy.db.datastore import CspDataStore
 from cspy.util.constants import KB
 from .disord_utils import query_rows
 
-LOG = logging.getLogger("cspy.progs.orgdisord.calc")
+LOG = logging.getLogger(__name__)
 
 
 def load_optimised_rows(input_db):

@@ -758,7 +758,7 @@ def main(sys_args=None):
     if args.command == "prepare-cif":
         LOG.info("Preparing CIF")
 
-        from progs.orgdisord.prepare_cif import run_prepare_cif
+        from cspy.orgdisord.prepare_cif import run_prepare_cif
 
         run_prepare_cif(args)
         LOG.info("Finished preparing CIF")
@@ -766,7 +766,7 @@ def main(sys_args=None):
     elif args.command == "enumerate":
         LOG.info("Starting orgdisord enumeration")
 
-        from progs.orgdisord.enumerate import (
+        from cspy.orgdisord.enumerate import (
             run_orgdisord_enumerate,
         )
 
@@ -776,7 +776,7 @@ def main(sys_args=None):
     elif args.command == "optimise":
         LOG.info("Starting cspy-opt minimisation")
 
-        from progs.orgdisord.optimise import (
+        from cspy.orgdisord.optimise import (
             run_cspy_disord_optimise,
         )
 
@@ -788,7 +788,7 @@ def main(sys_args=None):
             "Starting ensemble free-energy calculation"
         )
 
-        from progs.orgdisord.calc import run_cspy_disord_calc
+        from cspy.orgdisord.calc import run_cspy_disord_calc
 
         run_cspy_disord_calc(args)
 

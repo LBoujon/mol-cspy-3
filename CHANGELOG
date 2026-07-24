@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.1.1] - 24/07/2026
+- Moved orgdisord files from /progs/orgdisord to /cspy/orgdisord 
+
 ## [3.1.0] - 20/07/2026
 - Introduced new optional application: cspy-disord (requires Orgdisord)
     - A workflow for generating and analysing disordered and mixed crystals 
