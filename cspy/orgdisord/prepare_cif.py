@@ -22,7 +22,7 @@ from cspy.templating.analogue_production import get_iso_overlays
 from .disord_utils import ordered_proxy_crystal, safe_label, write_disordered_cif
 from .existing_disorder import annotate_existing_disorder_cif
 
-LOG = logging.getLogger("cspy.progs.orgdisord.prepare_cif")
+LOG = logging.getLogger(__name__)
 
 PXRD_METHOD = "cdtw_cos"
 PXRD_COS_THRESHOLD = 0.80

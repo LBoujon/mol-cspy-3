@@ -40,7 +40,7 @@ from .disord_utils import (
 )
 
 
-LOG = logging.getLogger("cspy.progs.orgdisord.enumerate")
+LOG = logging.getLogger(__name__)
 
 
 def _component_sort_key(component):

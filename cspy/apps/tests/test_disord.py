@@ -13,11 +13,11 @@ from cspy import Crystal
 from cspy.db.datastore import CspDataStore
 from cspy.apps.disord import main
 
-from progs.orgdisord.calc import (
+from cspy.orgdisord.calc import (
     calculate_ensemble_for_group,
     run_cspy_disord_calc,
 )
-from progs.orgdisord.optimise import (
+from cspy.orgdisord.optimise import (
     build_cspy_opt_command,
 )
 

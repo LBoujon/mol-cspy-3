@@ -16,7 +16,7 @@ from cspy.crystal import AsymmetricUnit
 from cspy.db.datastore import CspDataStore
 from cspy.formats.cif import Cif
 
-LOG = logging.getLogger("cspy.progs.orgdisord.disord_utils")
+LOG = logging.getLogger(__name__)
 
 CRYSTAL_FIELDS = (
     "id",
