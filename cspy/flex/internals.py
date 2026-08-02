@@ -170,5 +170,4 @@ class Internal(object):
         Returns:
             int: The number of sampling points
         """
-        return self.number_of_steps + 1
-
+        return self.number_of_steps

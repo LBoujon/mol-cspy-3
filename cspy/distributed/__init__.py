@@ -1,4 +1,21 @@
-from .csp_manager import QuasiRandomCSP
-from .aut_manager import AUTCSP
+"""Distributed workflow managers, imported lazily to avoid early MPI startup."""
 
-__all__ = ["QuasiRandomCSP", "AUTCSP"]
+from importlib import import_module
+
+
+__all__ = ["AUTCSP", "QuasiRandomCSP"]
+
+_EXPORTS = {
+    "QuasiRandomCSP": ("cspy.distributed.csp_manager", "QuasiRandomCSP"),
+    "AUTCSP": ("cspy.distributed.aut_manager", "AUTCSP"),
+}
+
+
+def __getattr__(name: str):
+    try:
+        module_name, attribute_name = _EXPORTS[name]
+    except KeyError as exc:
+        raise AttributeError(name) from exc
+    value = getattr(import_module(module_name), attribute_name)
+    globals()[name] = value
+    return value

@@ -14,7 +14,6 @@ from collections import deque, namedtuple
 import pandas as pd
 import numpy as np
 import pandas as pd
-from mpi4py import MPI
 from cspy.db import CspDataStore
 from cspy.util.path import Path
 from cspy.util.time_estimate import strfdelta, timedelta
@@ -759,6 +758,8 @@ class ThresholdOptimizationManager(ReoptimizationManager):
 
 
 def main():
+    from mpi4py import MPI
+
     import argparse
     from cspy.configuration import CONFIG
 

@@ -25,7 +25,6 @@ import logging
 import psutil
 from abc import ABC
 from abc import abstractmethod
-from mpi4py import MPI
 from enum import IntEnum
 
 
@@ -51,6 +50,17 @@ class Worker(ABC):
         https://github.com/luca-s/mpi-master-slave.
 
         """
+        self._MPI = None
+        self.comm = None
+        self.name = None
+        self.rank = None
+
+    def _initialize_mpi(self):
+        if self._MPI is not None:
+            return
+        from mpi4py import MPI
+
+        self._MPI = MPI
         self.comm = MPI.COMM_WORLD
         self.name = MPI.Get_processor_name()
         self.rank = self.comm.Get_rank()
@@ -59,9 +69,11 @@ class Worker(ABC):
         """Invoke this method when ready to put this worker to work.
 
         """
+        self._initialize_mpi()
         LOG.info('starting MPI worker %s rank %s property calculator with a '
                  'cpu affinity of %s',
                  self.name, self.rank, psutil.Process().cpu_affinity())
+        MPI = self._MPI
         status = MPI.Status()
 
         while True:

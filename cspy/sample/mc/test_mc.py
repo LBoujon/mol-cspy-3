@@ -266,7 +266,6 @@ class TestMCMove(TestCase):
         # with patch('cspy.sample.mc.mc_change.random.random', self.mock_random),\
         #      patch('cspy.sample.mc.mc_change.random.randint', self.mock_randint):
         new_crystal, rand = self.mc.volume(acemid_crys)
-        new_crystal.to_shelx_file("test.res")
         asym_mols = new_crystal.asym_mols()
         self.assertEqual(rand, 0.75)
         np.testing.assert_almost_equal(

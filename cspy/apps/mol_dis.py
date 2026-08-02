@@ -1,6 +1,5 @@
 import logging
 from cspy.flex.flex_molecule import create_flex_database, add_to_flex_database, FlexMolecule
-from mpi4py import MPI
 from cspy.db import CspDataStoreFlex
 import argparse
 from cspy.apps.setup_app import CspyApp, add_common_arguments, add_gaussian_arguments
@@ -85,6 +84,11 @@ def main(arguments=None):
     parser = add_common_arguments(parser)
 
     args = parser.parse_args(arguments)
+
+    # Importing mpi4py initializes the MPI runtime on some installations.  Keep
+    # it behind argument parsing so serial operations such as ``--help`` work on
+    # login nodes and machines without an active MPI fabric.
+    from mpi4py import MPI
 
     comm = MPI.COMM_WORLD
     rank = comm.Get_rank()

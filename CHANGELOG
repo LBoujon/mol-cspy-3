@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+- Added Good--Turing coverage, Chao lower-bound estimates, bootstrap confidence
+  intervals and trial-ordered convergence reports for clustered CSP databases.
+- Added restartable GPWDF/GVCPWDF validation of structural matches with Critic2.
+  Candidate calculations are isolated, individual failures are recorded, and
+  Critic2 is discovered from the active job ``PATH`` after Conda activation or
+  module loading; CLI and ``CSPY_CRITIC2_EXECUTABLE`` overrides remain available.
+- Added explicit Platon/pymatgen selection and provenance for generated PXRD
+  descriptors, plus a pymatgen fallback when ``auto`` is selected.
+- Added cluster-representative and multiplicity fields to database table exports.
+- Deferred MPI initialization until parallel workflows actually start, allowing
+  serial utilities and test collection to run without an active MPI runtime.
+- Fixed structure searches creating an unused ``output.db`` and corrected Python
+  package discovery and README metadata.
+
 ## [3.1.1] - 24/07/2026
 - Moved orgdisord files from /progs/orgdisord to /cspy/orgdisord 
 

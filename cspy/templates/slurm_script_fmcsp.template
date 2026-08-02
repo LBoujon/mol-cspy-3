@@ -108,19 +108,15 @@ cp -p ${INPUT_FILES} ${SCHED}
 cd ${SCHED}
 
 {% if name == "jointDB" -%}
-# List of dregrees of freedom (dofs) representing the atoms' lits of each torsion,
-# angular steps, bound and total number of steps
-{%- set dof_list = [] %}
-{% for torsion, id in number_of_torsions.items() -%}
-dof{{loop.index}}="{c:'{{torsion}}',n:{{total_configs}},s:{{angular_step}},o:{{'-'}}{{bound}}}"
-{% set _ = dof_list.append("$dof"+loop.index|string) -%}
-{% endfor %}
-xvfb-run mpirun -np $SLURM_NTASKS cspy-moldis molecules_list.txt \
-       --scan --scan_dofs "[{{ ",".join(dof_list) }}]" \
-       --method "{{method}}" \
-       --basis_set "{{basis}}" --jointdb --potential "W"
-
-mv jointDB_flex.db {{mname}}_flex.db
+# A single molecular component already has a complete conformational database.
+# For multicomponent systems, cspy-moldis joins all component databases.
+set -- *_flex.db
+if [ "$#" -eq 1 ]; then
+  cp "$1" {{mname}}_flex.db
+else
+  xvfb-run mpirun -np $SLURM_NTASKS cspy-moldis "$@" --jointdb
+  mv jointDB_flex.db {{mname}}_flex.db
+fi
 echo -e "CDB:     Total conformational Db.....Done!\n" >> $WD/out.log
 {% elif name == "DFTB" -%}
 xvfb-run mpiexec cspy-reoptimize dftb_input_{{sg}}_{{dftb_offset}}.db --log-level=INFO
@@ -192,10 +188,10 @@ mv structures.csv structures-{{sg}}.csv
 {%- set dof_list = [] %}
 {% for torsion, id in number_of_torsions.items() -%}
 dof{{loop.index}}="{c:'{{torsion}}',n:{{total_configs}},s:{{angular_step}},o:{{'-'}}{{bound}}}"
-{% set _ = dof_list.append("$dof"+loop.index|string) -%}
+{% set _ = dof_list.append("\"$dof"+loop.index|string+"\"") -%}
 {% endfor %}
 xvfb-run mpirun -np $SLURM_NTASKS cspy-moldis {{molecule_name}}.xyz \
-       --scan --scan_dofs "[{{ ",".join(dof_list) }}]" \
+       --scan_dofs {{ " ".join(dof_list) }} \
        --method "{{method}}" \
        --basis_set "{{basis}}" --potential "W"
 

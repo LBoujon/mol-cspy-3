@@ -49,7 +49,6 @@ from cspy.threshold.reoptimization_classes import ThresholdMinimizationManager, 
 import json
 import zipfile
 import pandas as pd
-from mpi4py import MPI
 import sys
 
 
@@ -92,6 +91,8 @@ def minimize_databases(databases: List[Path], skip: int = 0, increasing: bool = 
         When there are not enough MPI ranks to run the minimization jobs or when no valid
         worker_data can be created
     """
+
+    from mpi4py import MPI
 
     comm = MPI.COMM_WORLD
     rank = comm.Get_rank()

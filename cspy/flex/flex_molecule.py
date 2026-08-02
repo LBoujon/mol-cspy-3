@@ -39,8 +39,7 @@ from cspy.apps.dma import (
     generate_combined_res,
     generate_multipoles,
 )
-from mpi4py import MPI  # Necessary to interpret MPI.Comm objects
-from typing import List, Union, Tuple
+from typing import Any, List, Union, Tuple
 import traceback
 
 LOG = logging.getLogger(__name__)
@@ -2021,7 +2020,11 @@ class FlexMolecule:
             scan_point = []
             for i, v in enumerate(vec):
                 inter = internals[i].copy()
-                inter.current_step = vec[i]
+                # ``number_of_steps`` is the number of grid points, whose step
+                # indices run from zero to number_of_steps - 1.  Scale the
+                # Sobol coordinate over that same full interval rather than
+                # sampling only between grid steps zero and one.
+                inter.current_step = v * max(inter.number_of_steps - 1, 0)
                 scan_point.append(inter)
             scan_points.append(scan_point)
         return scan_points
@@ -2061,7 +2064,7 @@ class FlexMolecule:
     def gaussian_scan(
         self,
         internals: List,
-        comm: MPI.COMM_WORLD,
+        comm: Any,
         filename_prefix: str = "scan",
         gaussian_args: dict = {},
         method: str = "B3LYP",

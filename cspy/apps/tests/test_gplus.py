@@ -23,6 +23,15 @@ class GplusTests(TestCase):
     db_name = 'test.db'
     combined_name = generate_combined_name(['ACETAC01.xyz', 'ACETAC01.xyz'])
 
+    def setUp(self):
+        self._original_directory = os.getcwd()
+        self._temporary_directory = TemporaryDirectory()
+        os.chdir(self._temporary_directory.name)
+
+    def tearDown(self):
+        os.chdir(self._original_directory)
+        self._temporary_directory.cleanup()
+
 
     def test_setup_database(self):
         new_db_name = create_molecule_database(self.db_name)

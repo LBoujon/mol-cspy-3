@@ -47,7 +47,7 @@ Defining a DOF
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Each dof must be defined as torsion, comprised of four atoms. 
 We refer to the coordinates (``c``) of the torsion by the indices of each atom.
-For a torsion between atoms, 4, 3, 6, and 6, a torsion may be defined as:
+For a torsion between atoms 4, 3, 6, and 7, a torsion may be defined as:
 
 .. code:: bash
 
@@ -56,6 +56,8 @@ For a torsion between atoms, 4, 3, 6, and 6, a torsion may be defined as:
 Sobol Scanning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The user can quasi-randomly scan distortions around that torsion by providing the ``--scan_sobol`` with an integer that defines how many distortations to generate.
+For multiple DOFs, this samples the full multidimensional range described by
+each DOF without evaluating every Cartesian-product grid point.
 
 Grid Scanning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -97,6 +99,16 @@ The following bash will run ``cspy-moldis`` for two conformations of a single mo
     dof3="{c:'6_7_9_19',n:7,s:15.*D,o:-45.*D}"
 
     mpirun -np 4 cspy-moldis conf0.xyz conf1.xyz --scan_dofs $dof1 $dof2 $dof3
+
+Each DOF must be passed as a separate argument, as above; do not wrap the three
+definitions in an additional ``[...]`` string. With three DOFs and ``n:7``, a
+grid scan evaluates :math:`7^3=343` geometries. A smaller quasi-random pilot can
+sample the same three-dimensional angular ranges with, for example:
+
+.. code:: bash
+
+    mpirun -np 4 cspy-moldis conf0.xyz \
+        --scan_dofs "$dof1" "$dof2" "$dof3" --scan_sobol 64
 
 The following bash will run ``cspy-moldis`` for to combined two conformer databases into one.
 

@@ -2,7 +2,6 @@ import copy
 import logging
 import time
 import random
-from mpi4py import MPI
 import traceback
 from collections import namedtuple
 from enum import IntEnum
@@ -66,9 +65,10 @@ class CSPyWorker(Worker):
             to run the structure generation or minimisation tasks.
         """
         super().__init__()
+        self._initialize_mpi()
         self.data = data
         self.task_name = "QR"
-        comm = MPI.COMM_WORLD
+        comm = self._MPI.COMM_WORLD
         self.rank = comm.Get_rank()
 
     def calculate(self, data: tuple) -> tuple:
