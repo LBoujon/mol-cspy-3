@@ -1,0 +1,4 @@
+comparison,rmsd,gpwdf,vcpwdf,gvcpwdf
+original_experimental_vs_predicted_minimum,0.05357214613211358,0.6830216,0.013790655,0.0142535321
+original_experimental_vs_reoptimized_experimental,0.053249021948633554,0.6764076,0.012219434,0.0127271258
+reoptimized_experimental_vs_predicted_minimum,0.00635505670591694,0.01872917,0.000125586,0.0001489087

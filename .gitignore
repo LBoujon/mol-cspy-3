@@ -19,3 +19,23 @@ doc/_build
 sandbox/*
 .idea
 cspy/.idea
+
+# Local database runs and SQLite sidecars
+/*.db
+/*.db-shm
+/*.db-wal
+/rmsds.dat
+/rmsd_matches.txt
+/critic2_pattern_matches.csv
+/completeness.csv
+/test.res
+
+# Large, reproducible research artifacts under the local bases workspace
+/bases/**/*.db
+/bases/**/*.db-shm
+/bases/**/*.db-wal
+/bases/**/*.zip
+/bases/**/rmsds.dat
+/bases/**/rmsd_matches.txt
+/bases/**/*status.txt
+/bases/**/errors.txt

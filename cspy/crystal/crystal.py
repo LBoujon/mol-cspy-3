@@ -2061,10 +2061,17 @@ class Crystal:
     def calculate_powder_pattern(
         self, method="platon", wavelength=None, **kwargs
     ):
-        """Calculate the powder pattern for this crystal using platon"""
-        if method != "platon":
-            raise NotImplementedError
+        """Calculate the powder pattern for this crystal."""
         from cspy.ml.descriptors import PowderPattern
+
+        if method == "pymatgen":
+            return PowderPattern.from_pymatgen_cif_string(
+                self.to_cif_string(),
+                wavelength="CuKa" if wavelength is None else wavelength,
+                **kwargs,
+            )
+        if method != "platon":
+            raise NotImplementedError(f"Unknown powder-pattern method: {method}")
 
         if wavelength:
             try:
@@ -2076,7 +2083,7 @@ class Crystal:
                     self.to_cif_string(), wavelength=wavelength, **kwargs
                 )
         else:
-            pattern = PowderPattern.from_cif_string(self.to_cif_string())
+            pattern = PowderPattern.from_cif_string(self.to_cif_string(), **kwargs)
 
         return pattern
 

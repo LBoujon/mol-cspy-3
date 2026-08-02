@@ -1,7 +1,6 @@
 import logging
 import numpy as np
 import time
-import logging
 from cspy.crystal import Crystal as cspy_Crystal
 #from cspy.datastore import CspDataStore
 from cspy.db.datastore import CspDataStore
@@ -18,10 +17,8 @@ try:
     from ccdc.crystal import PackingSimilarity
     from ccdc.crystal import Crystal as ccdc_Crystal
 except ImportError:
-    import sys
-    LOG.error("COMPACK clustering is not available because the csd-pyhon-api package is not installed. "
-              "Follow installation instructions here: https://downloads.ccdc.cam.ac.uk/documentation/API/installation_notes.html")
-    sys.exit(1)
+    PackingSimilarity = None
+    ccdc_Crystal = None
 
 
 CONFIG = CspyConfiguration()
@@ -128,6 +125,11 @@ def mercury_compack(reference_structure,
                    ):
     """Compare a list of structures in comparison_structures to single
     reference_struture"""
+    if PackingSimilarity is None or ccdc_Crystal is None:
+        raise RuntimeError(
+            "COMPACK clustering requires the csd-python-api package. "
+            "See https://downloads.ccdc.cam.ac.uk/documentation/API/installation_notes.html"
+        )
     similarity_engine = PackingSimilarity()
     nmolecules = settings['packing_shell_size']
     for k, v in settings.items():

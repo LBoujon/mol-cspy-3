@@ -10,6 +10,7 @@ Available commands are:
     prune            Remove duplicate structures from databases
     cluster          synonymous with 'prune'
     dump             Extract data from databases into other formats
+    completeness     Estimate Good--Turing coverage and the Chao lower bound
     plot             Plot a landscape from a database
     info             Return information about the contents of a database
     remove_outliers  Remove gapped structures and undetected Buckingham catastrophies from a database
@@ -61,6 +62,11 @@ class DatabaseCLI:
 
     def dump(self):
         from cspy.db.dump import main
+
+        main(sys.argv[2:])
+
+    def completeness(self):
+        from cspy.db.completeness import main
 
         main(sys.argv[2:])
 

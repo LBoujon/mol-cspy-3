@@ -1,0 +1,5 @@
+id,spacegroup,density,energy,molecule_id,minimization_step,trial_number,minimization_time,metadata
+ACETAC01-OPT-3,33,1.2744,-61.1392,no mol_id exists,3,0,2.982940912246704,
+ACETAC01-OPT-2,33,1.3088,-59.2255,no mol_id exists,2,0,1.1240873336791992,
+ACETAC01-OPT-1,33,1.2957,-52.9893,no mol_id exists,1,0,0.26708555221557617,
+ACETAC01-OPT-0,33,,,no mol_id exists,0,0,,

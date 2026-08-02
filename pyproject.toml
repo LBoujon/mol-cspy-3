@@ -2,7 +2,7 @@
 name = "cspy"
 version = "3.1.1"
 requires-python = ">=3.11, <3.12" # Very restrictive
-readme = "README.rst"
+readme = "README.md"
 description = "Crystal structure prediction using python"
 authors = [
     {name = "Graeme M. Day"},
@@ -139,13 +139,14 @@ requires = [
     "setuptools-scm>=8", 
     "numpy>=1.24.1,<2.0", 
     "cython>=3.0.12", 
-    "meson>=1.9.0",
-    "ninja>=1.8.2",
 ]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["cspy"]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["cspy*"]
 
 [tool.ruff]
 line-length = 88

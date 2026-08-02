@@ -1,3 +1,4 @@
+from cspy.db.completeness import load_database_observations
 from cspy.db.datastore import CspDataStore
 from cspy.util.path import Path
 import pandas as pd
@@ -26,6 +27,18 @@ UNIQUE_STRUCTURES_SQL = (
     "trial_number, minimization_time, metadata from trial_structure) T "
     " on T.id = crystal.id "
 )
+
+FINAL_VALID_STRUCTURES_SQL = (
+    "with selected as ("
+    "select id, max(rowid) as selected_rowid from trial_structure "
+    "where valid = 1 and minimization_step = "
+    "(select max(minimization_step) from trial_structure) group by id) "
+    "select crystal.*, T.minimization_step, T.trial_number, "
+    "T.minimization_time, T.metadata from selected S "
+    "join trial_structure T on T.rowid = S.selected_rowid "
+    "join crystal on crystal.id = S.id "
+)
+
 
 def write_structures_to_zip(filename, ids, structures):
     import zipfile
@@ -118,6 +131,21 @@ def main(sys_args=None):
         help="Dump duplicate structures also",
     )
     parser.add_argument(
+        "--cluster-info",
+        action="store_true",
+        default=False,
+        help=(
+            "dump one row per valid final observation and include its cluster "
+            "representative and multiplicity"
+        ),
+    )
+    parser.add_argument(
+        "--table-only",
+        action="store_true",
+        default=False,
+        help="write the data table without creating a structure archive",
+    )
+    parser.add_argument(
         "--log-level",
         type=str,
         choices=("INFO", "DEBUG", "ERROR", "WARN"),
@@ -136,7 +164,14 @@ def main(sys_args=None):
     num_equivalent_to = db.query("select count(*) from equivalent_to").fetchone()[0]
     if num_equivalent_to > 0:
         clustered = True
-    if clustered:
+    if clustered and args.cluster_info:
+        LOG.info(
+            "%s is clustered. Exporting valid final observations with cluster data",
+            dbname,
+        )
+    elif clustered and args.include_duplicates:
+        LOG.info("%s is clustered. Scraping all structures", dbname)
+    elif clustered:
         LOG.info("%s is clustered. Scraping only unique structures", dbname)
     else:
         LOG.info("%s is likely unclustered. Scraping all structures.", dbname)
@@ -199,12 +234,38 @@ def main(sys_args=None):
             property_range_sql = ''
 
         
-        if clustered and not args.include_duplicates:
+        if args.cluster_info:
+            if not clustered:
+                parser.error("--cluster-info requires a clustered database")
+            query_text = FINAL_VALID_STRUCTURES_SQL + property_range_sql
+        elif clustered and not args.include_duplicates:
             query_text = UNIQUE_STRUCTURES_SQL + property_range_sql
         else:
             query_text = ALL_STRUCTURES_SQL + property_range_sql
 
         dataframe = pd.read_sql(query_text, db.connection)
+
+        if args.cluster_info:
+            observations = load_database_observations(dbname)
+            cluster_info = pd.DataFrame.from_records(
+                [
+                    {
+                        "id": item.structure_id,
+                        "representative_id": item.representative_id,
+                        "representative_spacegroup": item.representative_spacegroup,
+                        "representative_energy": item.representative_energy,
+                        "multiplicity": item.multiplicity,
+                    }
+                    for item in observations
+                ]
+            )
+            dataframe = dataframe.merge(
+                cluster_info, on="id", how="left", validate="one_to_one"
+            )
+            if dataframe["representative_id"].isna().any():
+                raise ValueError(
+                    "Unable to resolve cluster information for every dumped structure"
+                )
 
         db.close()
 
@@ -241,7 +302,10 @@ def main(sys_args=None):
         }
         LOG.info("Writing %d rows to %s", len(dataframe), args.table_output)
         table_dispatch[table_file.suffix](args.table_output, index=False)
-        LOG.info("Writing %d structures to %s", len(dataframe), args.structure_output)
-        structure_dispatch[structure_file.suffix](
-            args.structure_output, dataframe["id"], structure_files
-        )
+        if not args.table_only:
+            LOG.info(
+                "Writing %d structures to %s", len(dataframe), args.structure_output
+            )
+            structure_dispatch[structure_file.suffix](
+                args.structure_output, dataframe["id"], structure_files
+            )

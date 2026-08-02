@@ -9,6 +9,7 @@ try:
 except ImportError:
     from scipy.integrate import simpson as simps
 from collections import defaultdict
+import json
 import logging
 import numpy as np
 import time
@@ -20,13 +21,46 @@ import sys
 LOG = logging.getLogger(__name__)
 
 
-def calculate_missing_xrd(cid, res_content):
+def calculate_missing_xrd(
+    cid, res_content, backend="auto", return_backend=False
+):
+    """Calculate PXRD with an explicit backend and report the backend used."""
+
+    backend = backend.lower()
+    if backend not in {"auto", "platon", "pymatgen"}:
+        raise ValueError(f"Unknown PXRD backend: {backend}")
     LOG.info("trying to calculate missing powder pattern for %s", cid)
     c = Crystal.from_shelx_string(res_content)
-    pp = c.calculate_powder_pattern()
+    methods = ["platon", "pymatgen"] if backend == "auto" else [backend]
+    pp = None
+    selected_backend = None
+    for method in methods:
+        try:
+            if method == "platon":
+                pp = c.calculate_powder_pattern()
+            else:
+                pp = c.calculate_powder_pattern(method="pymatgen")
+        except Exception as exc:
+            LOG.warning("%s powder pattern failed for %s: %s", method, cid, exc)
+            pp = None
+        if pp is not None:
+            selected_backend = method
+            break
+        if backend == "auto" and method == "platon":
+            LOG.warning(
+                "falling back to pymatgen for %s; mixed PXRD backends can "
+                "require recalibrating clustering thresholds",
+                cid,
+            )
+
     i = pp.pattern if pp is not None else None
-    LOG.info("powder pattern for %s: %s", cid, "FAILED" if i is None else "SUCCESS")
-    return i
+    LOG.info(
+        "powder pattern for %s: %s%s",
+        cid,
+        "FAILED" if i is None else "SUCCESS",
+        "" if selected_backend is None else f" ({selected_backend})",
+    )
+    return (i, selected_backend) if return_backend else i
 
 
 def read_equivalent_table(ds):
@@ -41,7 +75,13 @@ def read_equivalent_table(ds):
     return equivalent_table
 
 
-def structure_rows(ds, cluster_from_equivalent=False, kind="cdtw", calculate_missing=True):
+def structure_rows(
+    ds,
+    cluster_from_equivalent=False,
+    kind="cdtw",
+    calculate_missing=True,
+    pxrd_backend="auto",
+):
     LOG.info("%s: loading crystals, descriptors", ds.filename)
     ids = []
     eds = []
@@ -49,7 +89,7 @@ def structure_rows(ds, cluster_from_equivalent=False, kind="cdtw", calculate_mis
 #RC
     molids = []
     contents = []
-    missing_descriptors = {}
+    missing_descriptors = defaultdict(dict)
     unique_structures = []
     if cluster_from_equivalent:
         rows = ds.unique_structures(with_file_content=True).fetchall()
@@ -88,9 +128,17 @@ def structure_rows(ds, cluster_from_equivalent=False, kind="cdtw", calculate_mis
                     a = np.frombuffer(descriptors[cid])
                     x = a / simps(a, dx=0.02)
                 else:
-                    x = calculate_missing_xrd(cid, content) if calculate_missing else None
+                    if calculate_missing:
+                        x, backend = calculate_missing_xrd(
+                            cid,
+                            content,
+                            backend=pxrd_backend,
+                            return_backend=True,
+                        )
+                    else:
+                        x, backend = None, None
                     if x is not None:
-                        missing_descriptors[cid] = x
+                        missing_descriptors[backend][cid] = x
                         x = x / simps(x, dx=0.02)
 
                 if x is None:
@@ -107,9 +155,17 @@ def structure_rows(ds, cluster_from_equivalent=False, kind="cdtw", calculate_mis
                     a = np.frombuffer(descriptors[cid])
                     x = a / simps(a, dx=0.02)
                 else:
-                    x = calculate_missing_xrd(cid, content) if calculate_missing else None
+                    if calculate_missing:
+                        x, backend = calculate_missing_xrd(
+                            cid,
+                            content,
+                            backend=pxrd_backend,
+                            return_backend=True,
+                        )
+                    else:
+                        x, backend = None, None
                     if x is not None:
-                        missing_descriptors[cid] = x
+                        missing_descriptors[backend][cid] = x
                         x = x / simps(x, dx=0.02)
 
                 if x is None:
@@ -121,9 +177,26 @@ def structure_rows(ds, cluster_from_equivalent=False, kind="cdtw", calculate_mis
                     molids.append('None')  #RC
                     contents.append(content)
 
-        if missing_descriptors:
-            ds.add_descriptors("xrd", missing_descriptors,
-                               metadata="{'two_theta': (0, 20), 'sep': 0.02}")
+        if len(missing_descriptors) > 1:
+            LOG.warning(
+                "%s: generated PXRD descriptors with multiple backends (%s). "
+                "Use --pxrd-backend to keep a homogeneous descriptor set.",
+                ds.filename,
+                ", ".join(sorted(missing_descriptors)),
+            )
+        for backend, values in missing_descriptors.items():
+            ds.add_descriptors(
+                "xrd",
+                values,
+                metadata=json.dumps(
+                    {
+                        "two_theta": [0, 20],
+                        "separation": 0.02,
+                        "backend": backend,
+                    },
+                    sort_keys=True,
+                ),
+            )
     else:
         raise NotImplementedError(
             f"Removing duplicates not supported for method='{kind}'"
@@ -341,10 +414,11 @@ def find_equivalent_structures(dbname : str,
     t1 = time.time()
 
     rows = structure_rows(
-        ds, 
-        cluster_from_equivalent=args.cluster_from_equivalent, 
-        kind=args.method, 
+        ds,
+        cluster_from_equivalent=args.cluster_from_equivalent,
+        kind=args.method,
         calculate_missing=calculate_missing,
+        pxrd_backend=getattr(args, "pxrd_backend", "auto"),
     )
     if len(rows) == 5:
         LOG.error("Input database has only 5 columns. It may use the old schema and need converting. Quitting...")
@@ -394,11 +468,24 @@ def structure_search(dbname, args):
     if args.cluster_from_equivalent:
         equivalent_table = read_equivalent_table(ds)
 
+    all_ids = ids
+    all_contents = contents
+    content_by_id = dict(zip(all_ids, all_contents))
+    pattern_content_by_id = content_by_id
+    if args.critic2_patterns:
+        if args.cluster_from_equivalent:
+            pattern_rows = ds.unique_structures(with_file_content=True).fetchall()
+        else:
+            pattern_rows = ds.final_minimizations(with_file_content=True).fetchall()
+        pattern_content_by_id = {row[0]: row[-1] for row in pattern_rows}
+    ds.close()
+
     t2 = time.time()
     LOG.debug("%s: loading data took %.3fs", dbname, t2 - t1)
     LOG.debug(f'Reference structure {args.compack_exp_str}')
     LOG.info("Comparing %d structures to %s", len(ids), args.compack_exp_str)
 
+    cached_rmsds = {}
     if os.path.exists('rmsds.dat'):
         LOG.info('Restarting structure search from rmsds.dat file.')
         existing_rmsds = {}
@@ -408,14 +495,16 @@ def structure_search(dbname, args):
                 id1, id2, rmsd_ = parts
                 existing_rmsds[tuple(sorted([id1, id2]))] = float(rmsd_)
         LOG.info(f'{len(existing_rmsds.keys())} structure pairs were read from rmsds.dat file.')
-        LOG.debug(f'number of comparison structures before pruning: {len(contents)}')
-        to_remove = []
-        for i, id_ in enumerate(ids):
-            if tuple(sorted([args.compack_exp_str, id_])) in existing_rmsds.keys():
-                to_remove.append(i)
-        for i in to_remove[::-1]:
-            ids.pop(i)
-            contents.pop(i)
+        LOG.debug(f'number of comparison structures before pruning: {len(all_contents)}')
+        pending = []
+        for i, id_ in enumerate(all_ids):
+            key = tuple(sorted([args.compack_exp_str, id_]))
+            if key in existing_rmsds:
+                cached_rmsds[id_] = existing_rmsds[key]
+            else:
+                pending.append(i)
+        ids = [all_ids[i] for i in pending]
+        contents = [all_contents[i] for i in pending]
         LOG.info(f'Number of comparison structures after pruning: {len(contents)}')
 
     try:
@@ -432,36 +521,99 @@ def structure_search(dbname, args):
             crystal = Structure.from_file(args.compack_exp_str)
             exp_cif_string = crystal.to(fmt='cif')
         LOG.info(f"Reference structure {args.compack_exp_str} read from file")
-    config = CspyConfiguration()
     time1 = time.time()
-    if args.method == 'compack':
-        settings = config['compack']
-        rmsds = iterative_compack_batch(
-            exp_cif_string,
-            contents,
-            args.compack_exp_str,
-            ids,
-            args.jobs,
-            settings,
-        )
-    elif args.method == 'pymatgen':
-        pymatgen_settings = config.get('structurematcher', {})
-        LOG.info('Following pymatgen StructureMatcher settings are overridden:')
-        LOG.info(f'{pymatgen_settings}')
-        rmsds = iterative_pymatgen_batch(
+    rmsds = {}
+    if ids:
+        config = CspyConfiguration()
+        if args.method == 'compack':
+            settings = config['compack']
+            rmsds = iterative_compack_batch(
                 exp_cif_string,
                 contents,
                 args.compack_exp_str,
                 ids,
                 args.jobs,
+                settings,
             )
-    else:
-        raise NotImplementedError(f"Method {args.method} is not implemented for structure search: ")
-        
-    matches = {idx:rmsd for idx, rmsd in rmsds.items() if rmsd < args.cluster_rms_threshold}
+        elif args.method == 'pymatgen':
+            pymatgen_settings = config.get('structurematcher', {})
+            LOG.info('Following pymatgen StructureMatcher settings are overridden:')
+            LOG.info(f'{pymatgen_settings}')
+            rmsds = iterative_pymatgen_batch(
+                    exp_cif_string,
+                    contents,
+                    args.compack_exp_str,
+                    ids,
+                    args.jobs,
+                )
+        else:
+            raise NotImplementedError(
+                f"Method {args.method} is not implemented for structure search: "
+            )
+
+    structural_scores = cached_rmsds.copy()
+    structural_scores.update({ids[idx]: rmsd for idx, rmsd in rmsds.items()})
+    matches = {
+        structure_id: rmsd
+        for structure_id, rmsd in structural_scores.items()
+        if rmsd < args.cluster_rms_threshold
+    }
     with open('rmsd_matches.txt', 'w') as f:
-        for idx, rmsd in matches.items():
-            f.write(f'{ids[idx]} {rmsd}\n')
+        for structure_id, rmsd in sorted(matches.items(), key=lambda item: item[1]):
+            f.write(f'{structure_id} {rmsd}\n')
+
+    if args.critic2_patterns:
+        from cspy.db.critic2_patterns import (
+            compare_patterns,
+            read_pattern_comparisons,
+            write_pattern_comparisons,
+        )
+
+        pattern_candidates = [
+            (structure_id, rmsd, pattern_content_by_id[structure_id])
+            for structure_id, rmsd in matches.items()
+        ]
+        pattern_reference = exp_cif_string
+        reference_suffix = ".cif"
+        if os.path.isfile(args.compack_exp_str):
+            with open(args.compack_exp_str, encoding="utf-8") as handle:
+                pattern_reference = handle.read()
+            reference_suffix = os.path.splitext(args.compack_exp_str)[1] or ".cif"
+        critic2_config = CspyConfiguration().get("critic2", {})
+        critic2_timeout = (
+            args.critic2_timeout
+            if args.critic2_timeout is not None
+            else float(critic2_config.get("timeout", 300.0))
+        )
+        previous = []
+        if args.critic2_resume:
+            previous = read_pattern_comparisons(args.critic2_output)
+            if previous:
+                LOG.info(
+                    "Resuming critic2 comparisons from %s (%d rows)",
+                    args.critic2_output,
+                    len(previous),
+                )
+        comparisons = compare_patterns(
+            pattern_reference,
+            pattern_candidates,
+            jobs=args.jobs,
+            executable=args.critic2_executable,
+            timeout=critic2_timeout,
+            reference_suffix=reference_suffix,
+            previous=previous,
+            retry_errors=args.critic2_retry_errors,
+            fail_fast=args.critic2_fail_fast,
+            checkpoint=args.critic2_output,
+        )
+        write_pattern_comparisons(comparisons, args.critic2_output)
+        failures = sum(row.status != "ok" for row in comparisons)
+        if failures:
+            LOG.warning(
+                "%d critic2 comparisons failed; details are recorded in %s",
+                failures,
+                args.critic2_output,
+            )
     LOG.info(
         "Found %d equivalent structures to %s in %s seconds",
         len(matches), args.compack_exp_str, time.time()-time1
@@ -514,6 +666,56 @@ def compack_compare_db(dbname:str,args:dict[str, Any])-> None:
         with open('comp_db_matches.txt', 'a') as f:
              for j, rmsd in matches.items():
                  f.write(f'{refname} {comp_ids[idxs[j]]} {rmsd}\n')
+
+
+def write_completeness_report(args) -> None:
+    """Write completeness estimates after duplicate-removal clustering."""
+
+    from cspy.db.completeness import (
+        combine_database_observations,
+        convergence,
+        summarize,
+        write_convergence,
+        write_summary,
+    )
+
+    global_clusters = args.output if len(args.databases) > 1 else None
+    observations = combine_database_observations(
+        args.databases,
+        global_clusters=global_clusters,
+        strict_assignments=not args.completeness_allow_incomplete_clusters,
+    )
+    rows = summarize(
+        observations,
+        windows=args.completeness_windows,
+        by_spacegroup=not args.completeness_total_only,
+        bootstrap_samples=args.completeness_bootstrap_samples,
+        confidence_level=args.completeness_confidence_level,
+        random_seed=args.completeness_random_seed,
+    )
+    with open(
+        args.completeness_output, "w", newline="", encoding="utf-8"
+    ) as handle:
+        write_summary(rows, handle)
+    LOG.info("Wrote completeness report to %s", args.completeness_output)
+    if args.completeness_convergence_output:
+        curve = convergence(
+            observations,
+            windows=args.completeness_windows,
+            points=args.completeness_convergence_points,
+            by_spacegroup=not args.completeness_total_only,
+        )
+        with open(
+            args.completeness_convergence_output,
+            "w",
+            newline="",
+            encoding="utf-8",
+        ) as handle:
+            write_convergence(curve, handle)
+        LOG.info(
+            "Wrote completeness convergence curve to %s",
+            args.completeness_convergence_output,
+        )
 
 
 
@@ -608,6 +810,15 @@ def main(sys_args=None):
         default=False
     )
     parser.add_argument(
+        "--pxrd-backend",
+        choices=("auto", "platon", "pymatgen"),
+        default="auto",
+        help=(
+            "backend for missing PXRD descriptors; choose an explicit backend "
+            "to keep descriptors homogeneous (default: auto)"
+        ),
+    )
+    parser.add_argument(
         "-o", 
         "--output", 
         type=str, 
@@ -630,16 +841,131 @@ def main(sys_args=None):
              "Alternatively, specify the CCDC reference code."
              "e.g. name.cif, name.res, ACETAC01"
         )
+    parser.add_argument(
+        "--critic2-patterns",
+        action="store_true",
+        help=(
+            "after structural matching, compare GPWDF and GVCPWDF patterns with "
+            "critic2 only for structures below --cluster-rms-threshold"
+        ),
+    )
+    parser.add_argument(
+        "--critic2-executable",
+        type=str,
+        default=None,
+        help=(
+            "critic2 executable name or path; otherwise use "
+            "CSPY_CRITIC2_EXECUTABLE or resolve critic2 from the job PATH "
+            "after conda activation/module loading"
+        ),
+    )
+    parser.add_argument(
+        "--critic2-output",
+        type=str,
+        default="critic2_pattern_matches.csv",
+        help=(
+            "CSV for structural and critic2 pattern scores "
+            "(default: critic2_pattern_matches.csv)"
+        ),
+    )
+    parser.add_argument(
+        "--critic2-timeout",
+        type=float,
+        default=None,
+        help="timeout in seconds for each comparison (configured default: 300)",
+    )
+    parser.add_argument(
+        "--critic2-resume",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="reuse successful rows already present in --critic2-output",
+    )
+    parser.add_argument(
+        "--critic2-retry-errors",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="retry checkpoint rows whose status is error",
+    )
+    parser.add_argument(
+        "--critic2-fail-fast",
+        action="store_true",
+        help="abort the pattern run when one candidate fails",
+    )
 
     parser.add_argument(
         "--compack_compdbname",
         type=str,
         default=None,
         help="File name of a comparison database"
-        )
+    )
+    parser.add_argument(
+        "--completeness",
+        action="store_true",
+        help=(
+            "calculate Good--Turing/Chao estimates after clustering and write "
+            "them to a CSV file"
+        ),
+    )
+    parser.add_argument(
+        "--completeness-windows",
+        nargs="*",
+        type=float,
+        default=(5.0, 10.0, 15.0),
+        metavar="KJ_MOL",
+        help="energy windows for --completeness (default: 5 10 15)",
+    )
+    parser.add_argument(
+        "--completeness-total-only",
+        action="store_true",
+        help="omit per-space-group rows from the completeness report",
+    )
+    parser.add_argument(
+        "--completeness-output",
+        type=str,
+        default="completeness.csv",
+        help="CSV written by --completeness (default: completeness.csv)",
+    )
+    parser.add_argument(
+        "--completeness-bootstrap-samples",
+        type=int,
+        default=1000,
+        help="bootstrap resamples for completeness intervals (default: 1000)",
+    )
+    parser.add_argument(
+        "--completeness-confidence-level",
+        type=float,
+        default=0.95,
+        help="confidence level for completeness intervals (default: 0.95)",
+    )
+    parser.add_argument(
+        "--completeness-random-seed",
+        type=int,
+        default=0,
+        help="random seed for completeness intervals (default: 0)",
+    )
+    parser.add_argument(
+        "--completeness-allow-incomplete-clusters",
+        action="store_true",
+        help="treat final structures absent from equivalent_to as singletons",
+    )
+    parser.add_argument(
+        "--completeness-convergence-output",
+        type=str,
+        help="CSV for the trial-ordered completeness curve",
+    )
+    parser.add_argument(
+        "--completeness-convergence-points",
+        type=int,
+        default=20,
+        help="number of convergence checkpoints (default: 20)",
+    )
 
 
     args = parser.parse_args(sys_args)
+    if args.critic2_patterns and not args.compack_exp_str:
+        parser.error("--critic2-patterns requires --compack_exp_str")
+    if args.critic2_timeout is not None and args.critic2_timeout <= 0:
+        parser.error("--critic2-timeout must be greater than zero")
     logging.basicConfig(
         level=args.log_level,
         format='%(asctime)s - %(levelname)s - %(module)s %(lineno)d - '
@@ -647,10 +973,6 @@ def main(sys_args=None):
     )
 
     LOG.info("%d databases to process", len(args.databases))
-
-    LOG.info("Creating output database: %s", args.output)
-    output_db = CspDataStore(args.output)
-    output_db.close()
 
     calculate_missing = False if args.skip_calculate_missing_pxrd else True
     n_uniques = 0
@@ -660,6 +982,9 @@ def main(sys_args=None):
     # using args.jobs to set the number of parellel compack calculations 
     # in iterative_compack_batch
     if not args.compack_exp_str and not args.compack_compdbname:
+        LOG.info("Creating output database: %s", args.output)
+        output_db = CspDataStore(args.output)
+        output_db.close()
         LOG.info(f'Task: Duplicate removal (clustering).')
         if args.method =='compack':
             job_pool = 1
@@ -701,10 +1026,14 @@ def main(sys_args=None):
 
         LOG.info("Found %d unique structures in total", n_uniques)
         if len(args.databases) == 1:
+            if args.completeness:
+                write_completeness_report(args)
             return
 
         LOG.info("Clustering output database %s. Unique structures will not be copied anywhere new.", args.output)
         find_equivalent_structures(args.output, args, calculate_missing=False)
+        if args.completeness:
+            write_completeness_report(args)
     elif args.compack_exp_str:
         LOG.info(f'Task: Finding structure match(es) to {args.compack_exp_str}')
         if args.method not in ['compack', 'pymatgen']:

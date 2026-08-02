@@ -89,6 +89,51 @@ class PowderPattern:
         return pattern
 
     @classmethod
+    def from_pymatgen_cif_string(
+        cls,
+        contents,
+        two_theta_range=DEFAULT_TT_RANGE,
+        separation=DEFAULT_SEPARATION,
+        wavelength="CuKa",
+    ):
+        """Calculate a binned powder pattern from a CIF using pymatgen."""
+        from pymatgen.analysis.diffraction.xrd import XRDCalculator
+        from pymatgen.core import Structure
+
+        start, stop = two_theta_range
+        if separation <= 0:
+            raise ValueError("separation must be positive")
+
+        nbins = int(round((stop - start) / separation))
+        if nbins <= 0 or not np.isclose(nbins * separation, stop - start):
+            raise ValueError("two_theta_range must be divisible by separation")
+
+        structure = Structure.from_str(contents, fmt="cif")
+        diffraction = XRDCalculator(wavelength=wavelength).get_pattern(
+            structure,
+            scaled=True,
+            two_theta_range=two_theta_range,
+        )
+        if len(diffraction.x) == 0:
+            LOG.error(
+                "pymatgen found no diffraction peaks in the range %s",
+                two_theta_range,
+            )
+            return None
+
+        bin_edges = np.linspace(start, stop, nbins + 1)
+        intensities, _ = np.histogram(
+            diffraction.x,
+            bins=bin_edges,
+            weights=diffraction.y,
+        )
+        return cls(
+            intensities,
+            two_theta_range=two_theta_range,
+            separation=separation,
+        )
+
+    @classmethod
     def from_raw_data_file(cls, 
         filename,
         zero_negatives=False):

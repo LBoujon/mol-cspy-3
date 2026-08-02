@@ -246,6 +246,9 @@ DEFAULTS = {
         "show_highest_similarity_result": True,
         "skip_when_identifiers_equal": True
     },
+    "critic2": {
+        "timeout": 300.0,
+    },
     "descriptors" : {"pxrd" : "Platon"},
     "crest" : {},
 }
