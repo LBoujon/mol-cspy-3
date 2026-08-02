@@ -30,6 +30,29 @@ from typing import Union, NamedTuple
 LOG = logging.getLogger(__name__)
 
 
+def _mean_conformational_energy_correction(energies, minimum_energies):
+    """Return the mean conformational penalty for a flexible asymmetric unit."""
+    corrections = [
+        energy - minimum
+        for energy, minimum in zip(energies, minimum_energies, strict=True)
+    ]
+    return sum(corrections) / len(corrections)
+
+
+def _cleanup_flexible_setup_files(cleanup_files, spacegroup, seed):
+    """Remove only temporary files belonging to one flexible-CSP seed."""
+    prefix = f"{spacegroup}_{seed}_"
+    files = set(cleanup_files)
+    files.update(
+        item
+        for item in listdir()
+        if item.startswith(prefix)
+        and item.endswith((".dma", ".res", ".mols", ".xyz"))
+    )
+    for filename in files:
+        Path(filename).unlink(missing_ok=True)
+
+
 GeneratedStructure = namedtuple(
     "GeneratedStructure", "name spacegroup trial_number file_content"
 )
@@ -413,16 +436,7 @@ class CSPyWorker(Worker):
         finally:
             # if error was raised during create_axis_charges_mults_from_conformations
             # then it is possible some files were not passed to cleanup.
-            prefix = str(spacegroup) + "_" + str(seed)
-            cleanup_files += [
-                item
-                for item in listdir()
-                if prefix in item and item.endswith((".dma", ".res", ".mols", ".xyz"))
-            ]
-            for fname in cleanup_files:
-                f = Path(fname)
-                if f.exists():
-                    f.unlink()
+            _cleanup_flexible_setup_files(cleanup_files, spacegroup, seed)
 
     def worker_data_aut(self, seed : int) -> None:
         """Randomly (not quasi) selects an asymmetric unit from a dictionary
@@ -888,12 +902,9 @@ class CSPyWorker(Worker):
                             xrd = None
 
                 if self.data["flex"]:
-                    energy_correction = 0.0
-                    for idx, ener in enumerate(ei):
-                        energy_correction += energy_correction + (
-                            ener - self.data["min_energy"][idx]
-                        )
-                    energy = energy + (energy_correction / len(ei))
+                    energy += _mean_conformational_energy_correction(
+                        ei, self.data["min_energy"]
+                    )
                     res = crystal.to_shelx_string(
                         titl=f"{structure_id} {energy} {density}"
                     )
