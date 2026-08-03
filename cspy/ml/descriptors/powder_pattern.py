@@ -9,6 +9,7 @@ LOG = logging.getLogger(__name__)
 #LOG.setLevel(logging.DEBUG)
 DEFAULT_SEPARATION = 0.02
 DEFAULT_TT_RANGE = (0, 20)
+PYMATGEN_LORENTZIAN_FWHM = 0.05
 
 
 class PowderPattern:
@@ -96,7 +97,13 @@ class PowderPattern:
         separation=DEFAULT_SEPARATION,
         wavelength="CuKa",
     ):
-        """Calculate a binned powder pattern from a CIF using pymatgen."""
+        """Calculate the CSPy 2-style powder pattern from a CIF using pymatgen.
+
+        CSPy 2 broadened every calculated Bragg reflection with a Lorentzian
+        profile before sampling it on the regular two-theta grid.  Retaining
+        that profile is important for the cosine prefilter used by PXRD
+        clustering: small peak shifts should still leave overlapping signal.
+        """
         from pymatgen.analysis.diffraction.xrd import XRDCalculator
         from pymatgen.core import Structure
 
@@ -111,7 +118,7 @@ class PowderPattern:
         structure = Structure.from_str(contents, fmt="cif")
         diffraction = XRDCalculator(wavelength=wavelength).get_pattern(
             structure,
-            scaled=True,
+            scaled=False,
             two_theta_range=two_theta_range,
         )
         if len(diffraction.x) == 0:
@@ -121,12 +128,19 @@ class PowderPattern:
             )
             return None
 
-        bin_edges = np.linspace(start, stop, nbins + 1)
-        intensities, _ = np.histogram(
-            diffraction.x,
-            bins=bin_edges,
-            weights=diffraction.y,
-        )
+        grid = np.arange(start, stop, separation)
+        if len(grid) != nbins:
+            raise ValueError("unexpected number of points in two-theta grid")
+
+        # Keep the reflection profile used by CSPy 2 and PLATON's simulated
+        # powder output.  A point-bin histogram makes slightly shifted peaks
+        # orthogonal and causes the cosine prefilter to miss duplicates.
+        lorentzian_a = (2 / PYMATGEN_LORENTZIAN_FWHM) ** 2
+        intensities = np.zeros_like(grid)
+        for two_theta, intensity in zip(diffraction.x, diffraction.y):
+            intensities += intensity / (
+                1 + lorentzian_a * (grid - two_theta) ** 2
+            )
         return cls(
             intensities,
             two_theta_range=two_theta_range,

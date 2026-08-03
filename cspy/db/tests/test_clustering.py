@@ -81,6 +81,34 @@ def test_pymatgen_cif_is_binned_on_the_existing_grid():
     assert pattern.separation == 0.02
     assert pattern.nbins == 1000
     assert np.max(pattern.pattern) > 0
+    assert np.count_nonzero(pattern.pattern) == pattern.nbins
+
+
+@patch("pymatgen.analysis.diffraction.xrd.XRDCalculator")
+@patch("pymatgen.core.Structure.from_str")
+def test_pymatgen_pxrd_matches_cspy2_lorentzian_profile(from_str, calculator_cls):
+    diffraction = Mock(
+        x=np.array([1.0, 2.0]),
+        y=np.array([3.0, 5.0]),
+    )
+    calculator_cls.return_value.get_pattern.return_value = diffraction
+
+    pattern = PowderPattern.from_pymatgen_cif_string(
+        "cif contents", two_theta_range=(0, 3), separation=1.0
+    )
+
+    grid = np.arange(0, 3, 1.0)
+    lorentzian_a = (2 / 0.05) ** 2
+    expected = (
+        3.0 / (1 + lorentzian_a * (grid - 1.0) ** 2)
+        + 5.0 / (1 + lorentzian_a * (grid - 2.0) ** 2)
+    )
+    np.testing.assert_allclose(pattern.pattern, expected)
+    calculator_cls.return_value.get_pattern.assert_called_once_with(
+        from_str.return_value,
+        scaled=False,
+        two_theta_range=(0, 3),
+    )
 
 
 def test_pymatgen_clustering_import_does_not_require_ccdc():

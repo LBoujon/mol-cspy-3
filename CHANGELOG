@@ -10,7 +10,9 @@ All notable changes to this project will be documented in this file.
   Critic2 is discovered from the active job ``PATH`` after Conda activation or
   module loading; CLI and ``CSPY_CRITIC2_EXECUTABLE`` overrides remain available.
 - Added explicit Platon/pymatgen selection and provenance for generated PXRD
-  descriptors, plus a pymatgen fallback when ``auto`` is selected.
+  descriptors, plus a pymatgen fallback when ``auto`` is selected. The
+  pymatgen backend now restores the CSPy 2-compatible unscaled Lorentzian
+  powder profile (FWHM 0.05 degrees) instead of point-binning reflections.
 - Added cluster-representative and multiplicity fields to database table exports.
 - Deferred MPI initialization until parallel workflows actually start, allowing
   serial utilities and test collection to run without an active MPI runtime.

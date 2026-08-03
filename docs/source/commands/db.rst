@@ -186,6 +186,11 @@ explicit backend so every descriptor is generated consistently. Platon and
 pymatgen patterns should not be mixed without validating the clustering
 thresholds on representative structures.
 
+The pymatgen backend uses the CSPy 2 powder-profile convention: unscaled Bragg
+intensities are broadened with a Lorentzian profile of FWHM 0.05 degrees on the
+regular two-theta grid. This broadening preserves overlap between slightly
+shifted peaks for the cosine prefilter used by ``cdtw_cos``.
+
 
 Extracting crystal structures from a database
 ------------------------------------------------

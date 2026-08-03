@@ -185,17 +185,19 @@ def structure_rows(
                 ", ".join(sorted(missing_descriptors)),
             )
         for backend, values in missing_descriptors.items():
+            descriptor_metadata = {
+                "two_theta": [0, 20],
+                "separation": 0.02,
+                "backend": backend,
+            }
+            if backend == "pymatgen":
+                descriptor_metadata.update(
+                    {"profile": "lorentzian", "fwhm": 0.05}
+                )
             ds.add_descriptors(
                 "xrd",
                 values,
-                metadata=json.dumps(
-                    {
-                        "two_theta": [0, 20],
-                        "separation": 0.02,
-                        "backend": backend,
-                    },
-                    sort_keys=True,
-                ),
+                metadata=json.dumps(descriptor_metadata, sort_keys=True),
             )
     else:
         raise NotImplementedError(
