@@ -13,6 +13,8 @@ All notable changes to this project will be documented in this file.
   descriptors, plus a pymatgen fallback when ``auto`` is selected. The
   pymatgen backend now restores the CSPy 2-compatible unscaled Lorentzian
   powder profile (FWHM 0.05 degrees) instead of point-binning reflections.
+  Missing patterns are generated with ``--jobs`` worker processes and
+  checkpointed to the input database every 100 successful structures.
 - Added cluster-representative and multiplicity fields to database table exports.
 - Deferred MPI initialization until parallel workflows actually start, allowing
   serial utilities and test collection to run without an active MPI runtime.

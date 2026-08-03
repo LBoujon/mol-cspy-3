@@ -7,7 +7,11 @@ import numpy as np
 import pytest
 from pymatgen.core import Lattice, Structure
 
-from cspy.db.clustering import calculate_missing_xrd, main as clustering_main
+from cspy.db.clustering import (
+    _generate_missing_xrd_descriptors,
+    calculate_missing_xrd,
+    main as clustering_main,
+)
 from cspy.db.critic2_patterns import (
     PatternComparison,
     compare_patterns,
@@ -69,6 +73,72 @@ def test_explicit_pxrd_backend_does_not_mix_methods(crystal_cls):
     assert result is None
     assert backend is None
     crystal.calculate_powder_pattern.assert_called_once_with()
+
+
+@patch("cspy.db.clustering.calculate_missing_xrd")
+def test_missing_pxrd_is_checkpointed_in_batches(calculate, tmp_path):
+    class DataStore:
+        filename = str(tmp_path / "input.db")
+
+        def __init__(self):
+            self.checkpoints = []
+
+        def add_descriptors(self, kind, values, metadata, **kwargs):
+            self.checkpoints.append((kind, dict(values), metadata, kwargs))
+
+    calculate.side_effect = lambda cid, content, **kwargs: (
+        np.array([float(cid[-1]), 1.0]),
+        "pymatgen",
+    )
+    rows = [
+        (f"id-{idx}", 14, 1.0, float(idx), "mol", f"res-{idx}")
+        for idx in range(5)
+    ]
+    datastore = DataStore()
+
+    generated = _generate_missing_xrd_descriptors(
+        datastore,
+        rows,
+        descriptors={"id-0": b"existing"},
+        backend="pymatgen",
+        jobs=1,
+        batch_size=2,
+    )
+
+    assert set(generated) == {"id-1", "id-2", "id-3", "id-4"}
+    assert [len(values) for _, values, _, _ in datastore.checkpoints] == [2, 2]
+    assert all(kind == "xrd" for kind, _, _, _ in datastore.checkpoints)
+    assert all(kwargs == {"replace": True} for _, _, _, kwargs in datastore.checkpoints)
+    assert all('"profile": "lorentzian"' in metadata for _, _, metadata, _ in datastore.checkpoints)
+    assert [call.args[0] for call in calculate.call_args_list] == [
+        "id-1",
+        "id-2",
+        "id-3",
+        "id-4",
+    ]
+
+
+@patch("cspy.db.clustering.ProcessPoolExecutor")
+@patch("cspy.db.clustering.calculate_missing_xrd")
+def test_missing_pxrd_uses_requested_process_count(calculate, executor_cls):
+    datastore = Mock(filename="input.db")
+    rows = [("id-1", 14, 1.0, 0.0, "mol", "res")]
+    calculate.return_value = (np.array([1.0, 2.0]), "pymatgen")
+    executor = executor_cls.return_value
+    executor.map.side_effect = lambda function, tasks, chunksize: map(function, tasks)
+
+    generated = _generate_missing_xrd_descriptors(
+        datastore,
+        rows,
+        descriptors={},
+        backend="pymatgen",
+        jobs=8,
+    )
+
+    assert set(generated) == {"id-1"}
+    executor_cls.assert_called_once_with(max_workers=8)
+    executor.map.assert_called_once()
+    executor.shutdown.assert_called_once_with(wait=True, cancel_futures=True)
 
 
 def test_pymatgen_cif_is_binned_on_the_existing_grid():

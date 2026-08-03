@@ -3,7 +3,7 @@ from cspy.configuration import CspyConfiguration
 from cspy.db.clustering_loops import find_duplicates
 from cspy.util.logging_config import FORMATS, DATEFMT
 from cspy.crystal import Crystal
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 try:
     from scipy.integrate import simps
 except ImportError:
@@ -16,9 +16,11 @@ import time
 import os
 from typing import Tuple, Union, Optional, Any
 import sys
+from copy import copy
 
 
 LOG = logging.getLogger(__name__)
+PXRD_CHECKPOINT_BATCH_SIZE = 100
 
 
 def calculate_missing_xrd(
@@ -63,6 +65,112 @@ def calculate_missing_xrd(
     return (i, selected_backend) if return_backend else i
 
 
+def _calculate_missing_xrd_task(task):
+    """Worker entry point for parallel, restartable PXRD generation."""
+
+    cid, res_content, backend = task
+    try:
+        pattern, selected_backend = calculate_missing_xrd(
+            cid,
+            res_content,
+            backend=backend,
+            return_backend=True,
+        )
+    except Exception as exc:
+        LOG.warning("PXRD generation failed for %s: %s", cid, exc)
+        pattern, selected_backend = None, None
+    return cid, pattern, selected_backend
+
+
+def _pxrd_descriptor_metadata(backend):
+    metadata = {
+        "two_theta": [0, 20],
+        "separation": 0.02,
+        "backend": backend,
+    }
+    if backend == "pymatgen":
+        metadata.update({"profile": "lorentzian", "fwhm": 0.05})
+    return json.dumps(metadata, sort_keys=True)
+
+
+def _checkpoint_pxrd_descriptors(ds, pending):
+    count = 0
+    for backend, values in pending.items():
+        if not values:
+            continue
+        ds.add_descriptors(
+            "xrd",
+            values,
+            metadata=_pxrd_descriptor_metadata(backend),
+            replace=True,
+        )
+        count += len(values)
+    pending.clear()
+    if count:
+        LOG.info("%s: checkpointed %d generated PXRD descriptors", ds.filename, count)
+
+
+def _generate_missing_xrd_descriptors(
+    ds,
+    rows,
+    descriptors,
+    backend,
+    jobs,
+    batch_size=PXRD_CHECKPOINT_BATCH_SIZE,
+):
+    """Generate absent PXRD descriptors in parallel and checkpoint batches."""
+
+    tasks = [
+        (row[0], row[-1], backend)
+        for row in rows
+        if row[0] not in descriptors
+    ]
+    if not tasks:
+        return {}
+
+    LOG.info(
+        "%s: generating %d missing PXRD descriptors using %d process(es)",
+        ds.filename,
+        len(tasks),
+        jobs,
+    )
+    if jobs > 1:
+        chunksize = max(1, min(50, len(tasks) // (jobs * 8)))
+        executor = ProcessPoolExecutor(max_workers=jobs)
+        results = executor.map(_calculate_missing_xrd_task, tasks, chunksize=chunksize)
+    else:
+        executor = None
+        results = map(_calculate_missing_xrd_task, tasks)
+
+    generated = {}
+    generated_backends = set()
+    pending = defaultdict(dict)
+    pending_count = 0
+    try:
+        for cid, pattern, selected_backend in results:
+            if pattern is None:
+                continue
+            generated[cid] = pattern
+            generated_backends.add(selected_backend)
+            pending[selected_backend][cid] = pattern
+            pending_count += 1
+            if pending_count >= batch_size:
+                _checkpoint_pxrd_descriptors(ds, pending)
+                pending_count = 0
+    finally:
+        _checkpoint_pxrd_descriptors(ds, pending)
+        if executor is not None:
+            executor.shutdown(wait=True, cancel_futures=True)
+    if len(generated_backends) > 1:
+        LOG.warning(
+            "%s: generated PXRD descriptors with multiple backends (%s). "
+            "Use --pxrd-backend to keep a homogeneous descriptor set.",
+            ds.filename,
+            ", ".join(sorted(generated_backends)),
+        )
+    return generated
+
+
 def read_equivalent_table(ds):
     """Read existing equivalent_table from previous clustering"""
     equivalent_table = defaultdict(list)
@@ -81,6 +189,7 @@ def structure_rows(
     kind="cdtw",
     calculate_missing=True,
     pxrd_backend="auto",
+    jobs=1,
 ):
     LOG.info("%s: loading crystals, descriptors", ds.filename)
     ids = []
@@ -89,7 +198,6 @@ def structure_rows(
 #RC
     molids = []
     contents = []
-    missing_descriptors = defaultdict(dict)
     unique_structures = []
     if cluster_from_equivalent:
         rows = ds.unique_structures(with_file_content=True).fetchall()
@@ -120,6 +228,15 @@ def structure_rows(
                 contents.append(res_to_cif(content))
 
     elif kind in ("cdtw_cos", "cdtw", "cos"):
+        generated_descriptors = {}
+        if calculate_missing:
+            generated_descriptors = _generate_missing_xrd_descriptors(
+                ds,
+                rows,
+                descriptors,
+                backend=pxrd_backend,
+                jobs=jobs,
+            )
 #RC
 #        for cid, sg, density, energy, content in rows:
         try:
@@ -127,19 +244,11 @@ def structure_rows(
                 if cid in descriptors:
                     a = np.frombuffer(descriptors[cid])
                     x = a / simps(a, dx=0.02)
+                elif cid in generated_descriptors:
+                    a = generated_descriptors[cid]
+                    x = a / simps(a, dx=0.02)
                 else:
-                    if calculate_missing:
-                        x, backend = calculate_missing_xrd(
-                            cid,
-                            content,
-                            backend=pxrd_backend,
-                            return_backend=True,
-                        )
-                    else:
-                        x, backend = None, None
-                    if x is not None:
-                        missing_descriptors[backend][cid] = x
-                        x = x / simps(x, dx=0.02)
+                    x = None
 
                 if x is None:
                     unique_structures.append(cid)
@@ -154,19 +263,11 @@ def structure_rows(
                 if cid in descriptors:
                     a = np.frombuffer(descriptors[cid])
                     x = a / simps(a, dx=0.02)
+                elif cid in generated_descriptors:
+                    a = generated_descriptors[cid]
+                    x = a / simps(a, dx=0.02)
                 else:
-                    if calculate_missing:
-                        x, backend = calculate_missing_xrd(
-                            cid,
-                            content,
-                            backend=pxrd_backend,
-                            return_backend=True,
-                        )
-                    else:
-                        x, backend = None, None
-                    if x is not None:
-                        missing_descriptors[backend][cid] = x
-                        x = x / simps(x, dx=0.02)
+                    x = None
 
                 if x is None:
                     unique_structures.append(cid)
@@ -177,28 +278,6 @@ def structure_rows(
                     molids.append('None')  #RC
                     contents.append(content)
 
-        if len(missing_descriptors) > 1:
-            LOG.warning(
-                "%s: generated PXRD descriptors with multiple backends (%s). "
-                "Use --pxrd-backend to keep a homogeneous descriptor set.",
-                ds.filename,
-                ", ".join(sorted(missing_descriptors)),
-            )
-        for backend, values in missing_descriptors.items():
-            descriptor_metadata = {
-                "two_theta": [0, 20],
-                "separation": 0.02,
-                "backend": backend,
-            }
-            if backend == "pymatgen":
-                descriptor_metadata.update(
-                    {"profile": "lorentzian", "fwhm": 0.05}
-                )
-            ds.add_descriptors(
-                "xrd",
-                values,
-                metadata=json.dumps(descriptor_metadata, sort_keys=True),
-            )
     else:
         raise NotImplementedError(
             f"Removing duplicates not supported for method='{kind}'"
@@ -421,6 +500,7 @@ def find_equivalent_structures(dbname : str,
         kind=args.method,
         calculate_missing=calculate_missing,
         pxrd_backend=getattr(args, "pxrd_backend", "auto"),
+        jobs=getattr(args, "jobs", 1),
     )
     if len(rows) == 5:
         LOG.error("Input database has only 5 columns. It may use the old schema and need converting. Quitting...")
@@ -466,6 +546,7 @@ def structure_search(dbname, args):
         ds,
         cluster_from_equivalent=args.cluster_from_equivalent,
         kind=args.method,
+        jobs=getattr(args, "jobs", 1),
     )
     if args.cluster_from_equivalent:
         equivalent_table = read_equivalent_table(ds)
@@ -964,6 +1045,8 @@ def main(sys_args=None):
 
 
     args = parser.parse_args(sys_args)
+    if args.jobs < 1:
+        parser.error("--jobs must be greater than zero")
     if args.critic2_patterns and not args.compack_exp_str:
         parser.error("--critic2-patterns requires --compack_exp_str")
     if args.critic2_timeout is not None and args.critic2_timeout <= 0:
@@ -979,38 +1062,49 @@ def main(sys_args=None):
     calculate_missing = False if args.skip_calculate_missing_pxrd else True
     n_uniques = 0
 
-    # compack calculation likely going to be run on single database, therefore parallelise
-    # over structures rather than databases. This is done by setting job_pool to 1 and then
-    # using args.jobs to set the number of parellel compack calculations 
-    # in iterative_compack_batch
+    # Pair matching and missing-PXRD generation parallelise over structures
+    # within one database. Process databases sequentially to avoid creating
+    # args.jobs ** 2 workers.
     if not args.compack_exp_str and not args.compack_compdbname:
         LOG.info("Creating output database: %s", args.output)
         output_db = CspDataStore(args.output)
         output_db.close()
         LOG.info(f'Task: Duplicate removal (clustering).')
-        if args.method =='compack':
-            job_pool = 1
-        elif args.method == 'pymatgen':
-            job_pool = 1
+        if args.method == 'pymatgen':
             config = CspyConfiguration()
             pymatgen_settings = config.get('structurematcher', {})
             LOG.info('Following pymatgen StructureMatcher settings are overridden:')
             LOG.info(f'{pymatgen_settings}')
-        else:
-            job_pool = args.jobs
-        with ThreadPoolExecutor(job_pool) as e:
+
+        executor = None
+        if args.method in ("cdtw_cos", "cdtw", "cos") and len(args.databases) > 1:
+            # Preserve the existing database-level parallelism for multi-SG
+            # inputs without starting a full process pool inside every thread.
+            per_database_args = copy(args)
+            per_database_args.jobs = 1
+            executor = ThreadPoolExecutor(max_workers=args.jobs)
             futures = [
-                e.submit(
-                    find_equivalent_structures, 
-                    dbname, 
-                    args, 
-                    calculate_missing=calculate_missing
+                executor.submit(
+                    find_equivalent_structures,
+                    dbname,
+                    per_database_args,
+                    calculate_missing=calculate_missing,
                 )
                 for dbname in args.databases
             ]
+            results = (future.result() for future in as_completed(futures))
+        else:
+            results = (
+                find_equivalent_structures(
+                    dbname,
+                    args,
+                    calculate_missing=calculate_missing,
+                )
+                for dbname in args.databases
+            )
 
-            for future in as_completed(futures):
-                inputdbname, duplicates = future.result()
+        try:
+            for inputdbname, duplicates in results:
                 outputdbname = args.output
                 if inputdbname != outputdbname:
                     ds = CspDataStore(inputdbname)
@@ -1025,6 +1119,9 @@ def main(sys_args=None):
                         "Unique structures have not been copied anywhere new.", inputdbname, outputdbname
                     )
                 n_uniques += len(duplicates)
+        finally:
+            if executor is not None:
+                executor.shutdown(wait=True, cancel_futures=True)
 
         LOG.info("Found %d unique structures in total", n_uniques)
         if len(args.databases) == 1:

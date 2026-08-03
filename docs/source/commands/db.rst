@@ -191,6 +191,11 @@ intensities are broadened with a Lorentzian profile of FWHM 0.05 degrees on the
 regular two-theta grid. This broadening preserves overlap between slightly
 shifted peaks for the cosine prefilter used by ``cdtw_cos``.
 
+For a single input database with missing descriptors, ``--jobs`` controls the
+number of worker processes used to generate them. Successful patterns are
+committed to the input database every 100 structures, so an interrupted command
+can be restarted and will calculate only the descriptors that are still absent.
+
 
 Extracting crystal structures from a database
 ------------------------------------------------
