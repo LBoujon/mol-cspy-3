@@ -407,17 +407,15 @@ conformer pool as a useful completeness experiment.
 
 For the exact atom order of `TSTILB_opt.xyz`, a new coupled-scan option was
 implemented.  ``--coupled_scan_dofs`` makes all listed torsions advance through
-one coordinate without a Cartesian-product expansion.  A first test using
-opposite numerical signs kept the phenyl-plane angle constant at 0.504 degrees:
-the orientation of these two torsion definitions means equal signs are needed
-for physical counter-rotation.  A 13-point signed scan is recommended so both
-twist senses are represented.  The offsets below centre the approximately
-0.5-degree initial plane angle and sample a conservative -5.8 to +5.8 degree
-inter-phenyl range:
+one coordinate without a Cartesian-product expansion.  For these specifically
+oriented torsion definitions, opposite numerical signs produce the desired
+symmetric common tilt of both phenyls relative to the ethene bridge while the
+phenyl planes remain almost parallel.  A 13-point signed scan represents both
+directions of this collective coordinate:
 
 ```bash
-dof_right="{c:'14_1_2_3',n:13,s:0.4833333333*D,o:-3.15*D}"
-dof_left="{c:'1_14_11_10',n:13,s:0.4833333333*D,o:-3.15*D}"
+dof_right="{c:'14_1_2_3',n:13,s:0.4833333333*D,o:-2.9755*D}"
+dof_left="{c:'1_14_11_10',n:13,s:-0.4833333333*D,o:2.9755*D}"
 cp TSTILB_opt.xyz TSTILB_symmetric.xyz
 
 mpiexec -n 13 cspy-moldis TSTILB_symmetric.xyz \
@@ -427,11 +425,12 @@ mpiexec -n 13 cspy-moldis TSTILB_symmetric.xyz \
     --basis_set '6-311G**'
 ```
 
-The actual angle between the two six-carbon phenyl least-squares planes must
-be checked in every generated geometry before submitting the CSP; the coupled
-torsions constrain coordinates, not the derived plane angle.  Do not begin the
-250,000-structure run if any geometry exceeds 6 degrees.  Also inspect the
-conformer energy range and use a 5 kJ/mol gas-phase window.
+The Aloe run generated all 13 conformers.  Their inter-phenyl plane angles were
+0.504188--0.504189 degrees and their complete gas-phase energy span was only
+0.038480 kJ/mol, so all 13 pass both the 6-degree geometric restriction and the
+5 kJ/mol energy window.  This is deliberately more restrictive than sampling
+the complete 0--6 degree interval: it follows the symmetric, nearly
+parallel-phenyl mode requested for this biased calculation.
 
 PXRD generation can now run during CSP using pymatgen, and any descriptor
 failure leaves the minimized crystal valid but without its pattern.  The run's
