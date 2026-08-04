@@ -39,8 +39,8 @@ def main(arguments=None):
         action="store_true",
         default=False,
         help="Advance all scan DOFs with one shared coordinate instead of "
-        "sampling their Cartesian product. Opposite step signs produce a "
-        "symmetric counter-rotation.",
+        "sampling their Cartesian product. Step signs control the relative "
+        "numerical direction of each coordinate.",
     )
     parser.add_argument(
         "--constraints",

@@ -407,15 +407,17 @@ conformer pool as a useful completeness experiment.
 
 For the exact atom order of `TSTILB_opt.xyz`, a new coupled-scan option was
 implemented.  ``--coupled_scan_dofs`` makes all listed torsions advance through
-one coordinate; opposite step signs counter-rotate the two phenyls without a
-Cartesian-product expansion.  A 13-point signed scan is recommended so both
-twist senses are represented.  The rounded starting torsions leave a residual
-0.151-degree difference, so the offsets below first centre the phenyl planes
-and then sample a conservative -5.8 to +5.8 degree inter-phenyl range:
+one coordinate without a Cartesian-product expansion.  A first test using
+opposite numerical signs kept the phenyl-plane angle constant at 0.504 degrees:
+the orientation of these two torsion definitions means equal signs are needed
+for physical counter-rotation.  A 13-point signed scan is recommended so both
+twist senses are represented.  The offsets below centre the approximately
+0.5-degree initial plane angle and sample a conservative -5.8 to +5.8 degree
+inter-phenyl range:
 
 ```bash
-dof_right="{c:'14_1_2_3',n:13,s:0.4833333333*D,o:-2.9755*D}"
-dof_left="{c:'1_14_11_10',n:13,s:-0.4833333333*D,o:2.9755*D}"
+dof_right="{c:'14_1_2_3',n:13,s:0.4833333333*D,o:-3.15*D}"
+dof_left="{c:'1_14_11_10',n:13,s:0.4833333333*D,o:-3.15*D}"
 cp TSTILB_opt.xyz TSTILB_symmetric.xyz
 
 mpiexec -n 13 cspy-moldis TSTILB_symmetric.xyz \

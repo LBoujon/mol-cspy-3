@@ -88,8 +88,9 @@ and must advance together.  All grid DOFs must have the same ``n`` value; the
 result then contains ``n`` conformers rather than ``n`` raised to the number of
 DOFs.  The same option makes all DOFs share one coordinate in a Sobol scan.
 
-For example, these two torsions counter-rotate symmetrically through seven
-points.  The negative step on the second coordinate reverses its direction:
+For example, these two torsion coordinates advance together through seven
+points.  The negative step on the second coordinate reverses its numerical
+direction:
 
 .. code:: bash
 
@@ -99,6 +100,8 @@ points.  The negative step on the second coordinate reverses its direction:
         --coupled_scan_dofs
 
 Coupling controls the scan coordinates, not a derived geometric quantity.
+The atom ordering in each torsion also determines whether equal or opposite
+step signs produce a physical counter-rotation.
 If the scientific constraint is an angle between molecular planes, calculate
 that angle from the generated geometries before starting the CSP.
 
