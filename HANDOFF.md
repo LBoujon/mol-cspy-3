@@ -421,7 +421,7 @@ cp TSTILB_opt.xyz TSTILB_symmetric.xyz
 mpiexec -n 13 cspy-moldis TSTILB_symmetric.xyz \
     --scan_dofs "$dof_right" "$dof_left" \
     --coupled_scan_dofs \
-    --functional PBE1PBE \
+    --functional B3LYP \
     --basis_set '6-311G**'
 ```
 
