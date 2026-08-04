@@ -80,6 +80,28 @@ The below DOF defines a torsion of atoms 4, 3, 6, and 6, and instructs moldis to
 
     "{c:'4_3_6_7',n:7,s:15.*D,o:-45.*D}"
 
+Coupled Scanning
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+By default, multiple DOFs form a Cartesian-product grid.  Use
+``--coupled_scan_dofs`` when the coordinates describe one collective motion
+and must advance together.  All grid DOFs must have the same ``n`` value; the
+result then contains ``n`` conformers rather than ``n`` raised to the number of
+DOFs.  The same option makes all DOFs share one coordinate in a Sobol scan.
+
+For example, these two torsions counter-rotate symmetrically through seven
+points.  The negative step on the second coordinate reverses its direction:
+
+.. code:: bash
+
+    dof1="{c:'14_1_2_3',n:7,s:1.*D,o:-3.*D}"
+    dof2="{c:'1_14_11_10',n:7,s:-1.*D,o:3.*D}"
+    cspy-moldis molecule.xyz --scan_dofs "$dof1" "$dof2" \
+        --coupled_scan_dofs
+
+Coupling controls the scan coordinates, not a derived geometric quantity.
+If the scientific constraint is an angle between molecular planes, calculate
+that angle from the generated geometries before starting the CSP.
+
 
 Joining Databases
 -----------------

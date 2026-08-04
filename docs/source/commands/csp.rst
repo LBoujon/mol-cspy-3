@@ -180,6 +180,23 @@ valid structures inside the ``cspy.toml`` file. This is done by adding the follo
 
 Where the key is the space group number and the value is the number of valid structures that the user wants to generate.
 
+Calculating PXRD during CSP
+---------------------------
+
+PXRD descriptors can be generated for each valid final structure during the
+CSP by selecting a backend in ``cspy.toml``:
+
+.. code:: toml
+
+   [descriptors]
+   pxrd = "pymatgen"
+
+The supported values are ``"pymatgen"`` and ``"Platon"``.  Pymatgen uses the
+CSPy 2-compatible unscaled Cu K-alpha pattern on the 0--20 degree grid with
+0.02-degree spacing and Lorentzian broadening.  Descriptor errors are logged
+but do not invalidate an otherwise successful crystal structure.  Setting
+``pxrd = "none"`` disables generation.
+
 Running ``cspy-csp`` on ARCHER2
 -------------------------------
 

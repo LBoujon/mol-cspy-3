@@ -12,6 +12,36 @@ DEFAULT_TT_RANGE = (0, 20)
 PYMATGEN_LORENTZIAN_FWHM = 0.05
 
 
+def calculate_crystal_powder_pattern(crystal, backend):
+    """Return a crystal's PXRD array using the configured backend.
+
+    Descriptor generation is auxiliary to CSP.  A missing executable, an
+    unparsable CIF, or a diffraction failure must therefore not discard an
+    otherwise valid minimized structure.
+    """
+    if backend is None or backend is False:
+        return None
+
+    method = str(backend).strip().lower()
+    if method in {"", "none", "false", "off"}:
+        return None
+    if method not in {"platon", "pymatgen"}:
+        LOG.warning("Unknown PXRD backend %r; descriptor was not calculated", backend)
+        return None
+
+    try:
+        pattern = crystal.calculate_powder_pattern(method=method)
+    except Exception as exc:
+        LOG.warning(
+            "PXRD calculation with %s failed; keeping structure without the "
+            "descriptor: %s",
+            method,
+            exc,
+        )
+        return None
+    return None if pattern is None else pattern.pattern
+
+
 class PowderPattern:
     def __init__(
         self, data, two_theta_range=DEFAULT_TT_RANGE, separation=DEFAULT_SEPARATION

@@ -1,6 +1,6 @@
 # mol-CSPy project handoff
 
-Last updated: 2026-08-03 (Europe/Madrid).
+Last updated: 2026-08-04 (Europe/Madrid).
 
 This file transfers the useful context from Codex CLI session
 `019fc22f-7f38-7671-ba9e-fd88b589e5a0`. The raw transcript is intentionally
@@ -387,6 +387,75 @@ one-time parallel descriptor generation.
 6. Before updating the existing Aloe clone, reconcile its manual edits with
    commit `e02cdb2`; a fresh clone is safer than overwriting a dirty editable
    installation.
+
+## 2026-08-04 clustering validation and biased rerun
+
+The restored PXRD clustering was validated against the CSPy 2 ACETAC01
+space-group-33 database.  Reusing the 10,000 legacy patterns took 4.2 seconds
+and reproduced exactly 83 families and 9,917 duplicate assignments.  Generating
+10,000 patterns with the current pymatgen Lorentzian backend and clustering
+took 87 seconds and again produced the same 83/9,917 partition.  Although only
+5,111 raw descriptor BLOBs were byte-identical, there were zero differing
+cluster assignments.  This establishes functional compatibility for this
+test, rather than byte-for-byte identity.
+
+The 19,998-structure flexible trans-stilbene run finished PXRD clustering with
+19,995 families and only three doubletons.  Good--Turing coverage was 0.0300%
+for the complete energy range.  This very low recurrence motivated a larger,
+more physically constrained run rather than treating the original 256-member
+conformer pool as a useful completeness experiment.
+
+For the exact atom order of `TSTILB_opt.xyz`, a new coupled-scan option was
+implemented.  ``--coupled_scan_dofs`` makes all listed torsions advance through
+one coordinate; opposite step signs counter-rotate the two phenyls without a
+Cartesian-product expansion.  A 13-point signed scan is recommended so both
+twist senses are represented.  The rounded starting torsions leave a residual
+0.151-degree difference, so the offsets below first centre the phenyl planes
+and then sample a conservative -5.8 to +5.8 degree inter-phenyl range:
+
+```bash
+dof_right="{c:'14_1_2_3',n:13,s:0.4833333333.*D,o:-2.9755.*D}"
+dof_left="{c:'1_14_11_10',n:13,s:-0.4833333333.*D,o:2.9755.*D}"
+cp TSTILB_opt.xyz TSTILB_symmetric.xyz
+
+mpiexec -n 13 cspy-moldis TSTILB_symmetric.xyz \
+    --scan_dofs "$dof_right" "$dof_left" \
+    --coupled_scan_dofs \
+    --functional PBE1PBE \
+    --basis_set '6-311G**'
+```
+
+The actual angle between the two six-carbon phenyl least-squares planes must
+be checked in every generated geometry before submitting the CSP; the coupled
+torsions constrain coordinates, not the derived plane angle.  Do not begin the
+250,000-structure run if any geometry exceeds 6 degrees.  Also inspect the
+conformer energy range and use a 5 kJ/mol gas-phase window.
+
+PXRD generation can now run during CSP using pymatgen, and any descriptor
+failure leaves the minimized crystal valid but without its pattern.  The run's
+``cspy.toml`` needs:
+
+```toml
+[descriptors]
+pxrd = "pymatgen"
+```
+
+Once the conformer geometry and energy audits pass, the intended CSP command
+is:
+
+```bash
+mpiexec -n 256 cspy-flex \
+    ../flex/TSTILB_symmetric_flex.db \
+    ../flex/TSTILB_symmetric_flex.db \
+    --conf_energy_window 5 \
+    -g 14 \
+    -n 250000 \
+    --adaptcell \
+    --nudge 1
+```
+
+As before, use `ulimit -n 8192`, one thread per MPI rank, and the Aloe Gaussian
+setup documented above.  This run has not yet been launched on Aloe.
 
 ## Suggested first prompt on the other computer
 

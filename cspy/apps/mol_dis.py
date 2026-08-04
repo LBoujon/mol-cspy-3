@@ -34,6 +34,15 @@ def main(arguments=None):
         "Atoms should be indexed starting from 1.",
     )
     parser.add_argument(
+        "--coupled_scan_dofs",
+        "--coupled-scan-dofs",
+        action="store_true",
+        default=False,
+        help="Advance all scan DOFs with one shared coordinate instead of "
+        "sampling their Cartesian product. Opposite step signs produce a "
+        "symmetric counter-rotation.",
+    )
+    parser.add_argument(
         "--constraints",
         nargs="+",
         default=[],
@@ -184,6 +193,7 @@ def main(arguments=None):
                     multiplicities=multiplicity,
                     basis_set=args.basis_set,
                     sobol_points=args.scan_sobol,
+                    coupled_scan_dofs=args.coupled_scan_dofs,
                     constraints=args.constraints,
                     redundant=redundant,
                 )

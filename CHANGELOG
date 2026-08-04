@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+- Added coupled molecular DOF scans for collective motions, including
+  symmetric counter-rotation without a Cartesian-product expansion.
+- Added pymatgen PXRD generation during CSP and made PXRD descriptor failures
+  non-fatal to otherwise valid minimized structures.
 - Added Good--Turing coverage, Chao lower-bound estimates, bootstrap confidence
   intervals and trial-ordered convergence reports for clustered CSP databases.
 - Added restartable GPWDF/GVCPWDF validation of structural matches with Critic2.

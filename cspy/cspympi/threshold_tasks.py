@@ -10,7 +10,7 @@ from cspy.crystal.space_group import n_symops_from_SG
 from cspy.db.key import CspDatabaseId
 from cspy.minimize import CompositeMinimizer
 from cspy.minimize import single_point_evaluation
-from cspy.ml.descriptors import PowderPattern
+from cspy.ml.descriptors import calculate_crystal_powder_pattern
 from cspy.sample.mc.mc_change import MC
 from .worker import Worker, WorkerCommTag
 from cspy.crystal.util import find_formula_unit
@@ -265,14 +265,9 @@ class ThresholdWorker(Worker):
                         )
                 if check_through:
                         valid = True
-                        # pxrd is only supported descriptor atm but this can be expanded on
-                        # Platon is only supported method for pxrd, but we can add others (e.g. pymatgen)
-                        if self.data["descriptors"].get("pxrd", None) in ['Platon']:
-                            pp = PowderPattern.from_cif_string(crystal.to_cif_string())
-                            if pp is not None:
-                                xrd = pp.pattern
-                        else:
-                            xrd = None
+                        xrd = calculate_crystal_powder_pattern(
+                            crystal, self.data["descriptors"].get("pxrd")
+                        )
 
             crystals.append(
                 MC_MinimizedStructure(

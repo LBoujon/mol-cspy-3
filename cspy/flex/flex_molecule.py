@@ -1999,7 +1999,10 @@ class FlexMolecule:
 
     @staticmethod
     def make_sobol_points_of_internals(
-        internals: List[Internal], npoints: int, starting_seed: int = 1
+        internals: List[Internal],
+        npoints: int,
+        starting_seed: int = 1,
+        coupled: bool = False,
     ) -> List:
         """Creates a series of scan points for internal coordinates based on the Sobol method
 
@@ -2007,19 +2010,22 @@ class FlexMolecule:
             internals (List[Internals]): A list of Internals
             npoints (_type_): The number of sobol points
             starting_seed (int, optional): The initial seed number. Defaults to 1.
+            coupled (bool, optional): Make every internal share one Sobol
+                coordinate. Defaults to False.
 
         Returns:
             List: A list of scan points
         """
-        ndim = len(internals)
+        ndim = 1 if coupled else len(internals)
         seed = starting_seed
         scan_points = []
         for n in range(npoints):
             vec = sobol_vector(seed, ndim)
             seed += 1
             scan_point = []
-            for i, v in enumerate(vec):
-                inter = internals[i].copy()
+            for i, internal in enumerate(internals):
+                v = vec[0] if coupled else vec[i]
+                inter = internal.copy()
                 # ``number_of_steps`` is the number of grid points, whose step
                 # indices run from zero to number_of_steps - 1.  Scale the
                 # Sobol coordinate over that same full interval rather than
@@ -2030,11 +2036,15 @@ class FlexMolecule:
         return scan_points
 
     @staticmethod
-    def make_combination_of_internal_steps(internals: List) -> List:
+    def make_combination_of_internal_steps(
+        internals: List[Internal], coupled: bool = False
+    ) -> List:
         """Create a combination of scan steps from a list of internal coordinates
 
         Args:
             internals (List): A list of Internals
+            coupled (bool, optional): Advance every internal using the same
+                scan index instead of constructing a Cartesian product.
 
         Returns:
             List: A list containing the combination of scan points
@@ -2046,7 +2056,15 @@ class FlexMolecule:
             tails = perm(alist[1:])
             return [[item] + p for item in alist[0] for p in tails]
 
-        n_points = [x.n_points for x in internals]
+        if coupled:
+            n_points = {internal.n_points for internal in internals}
+            if len(n_points) != 1:
+                raise ValueError(
+                    "Coupled grid scan DOFs must have the same number of steps"
+                )
+            scans = [internal.scan_internals() for internal in internals]
+            return [list(point) for point in zip(*scans)]
+
         scan_points = perm([x.scan_internals() for x in internals])
         return scan_points
 
@@ -2074,6 +2092,7 @@ class FlexMolecule:
         basis_set: str = "6-311G**",
         foreshorten_hydrogens: Union[None, float] = None,
         sobol_points: int = 0,
+        coupled_scan_dofs: bool = False,
         constraints: Union[None, List] = None,
         redundant: Union[None, str] = None,
     ) -> None:
@@ -2092,6 +2111,8 @@ class FlexMolecule:
             basis_set (str, optional): The basis set to employ during the Gaussian single-point energy calculation. Defaults to "6-311G**".
             foreshorten_hydrogens (Union[None,float], optional): Amount to foreshorten hydrogen positions by. Usually set to None for FIT potentials and 0.1 for Williams potentials. Defaults to None.
             sobol_points (int, optional): The number of points to use for generating the sobol grid. Defaults to 0.
+            coupled_scan_dofs (bool, optional): Advance all scan DOFs with a
+                shared coordinate. Defaults to False.
             constraints (Union[None, List], optional): Constraints for a constrained gaussian calculation. ['1 2 3', '5 6 7 8', '9'] would lead to the fixing of the angle between" \
                                                     "atoms 1,2, and 3, the dihedral angle between atoms 5, 6, 7 and 8, and the atomic position of atom '9'."
             redundant (Union[None, str], optional): Constraints mandatory option for Gaussian calc; It should be opt=ModRedundant. Defaults to None.
@@ -2114,10 +2135,12 @@ class FlexMolecule:
 
             if sobol_points > 0:
                 scan_points = FlexMolecule.make_sobol_points_of_internals(
-                    internals, sobol_points
+                    internals, sobol_points, coupled=coupled_scan_dofs
                 )
             else:
-                scan_points = FlexMolecule.make_combination_of_internal_steps(internals)
+                scan_points = FlexMolecule.make_combination_of_internal_steps(
+                    internals, coupled=coupled_scan_dofs
+                )
 
             map_dict = {}
             if exists_db:
