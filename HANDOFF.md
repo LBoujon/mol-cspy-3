@@ -414,8 +414,8 @@ twist senses are represented.  The rounded starting torsions leave a residual
 and then sample a conservative -5.8 to +5.8 degree inter-phenyl range:
 
 ```bash
-dof_right="{c:'14_1_2_3',n:13,s:0.4833333333.*D,o:-2.9755.*D}"
-dof_left="{c:'1_14_11_10',n:13,s:-0.4833333333.*D,o:2.9755.*D}"
+dof_right="{c:'14_1_2_3',n:13,s:0.4833333333*D,o:-2.9755*D}"
+dof_left="{c:'1_14_11_10',n:13,s:-0.4833333333*D,o:2.9755*D}"
 cp TSTILB_opt.xyz TSTILB_symmetric.xyz
 
 mpiexec -n 13 cspy-moldis TSTILB_symmetric.xyz \
